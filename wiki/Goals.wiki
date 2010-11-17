@@ -1,0 +1,6 @@
+#summary Goals for this project
+
+= Goals =
+
+  * Develop a vocabulary and simple ontology for sharing biodiversity data on the semantic web
+  * Initially focussed more on Linked Open Data applications than machine reasoning, but (hopefully) making design choices that do not constrain full SW reasoning downstream 
