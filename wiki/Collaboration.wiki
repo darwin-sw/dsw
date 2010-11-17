@@ -17,7 +17,9 @@ Each Class and Property should get a Wiki page of its own, where basic issues ar
 
 === Discussion and criticism ===
 
-We can either add comments to the Wiki pages or add Issues for major discussion items.  The latter would allow the Wiki pages to look tidier, and would allow a particular thread to be followed more easily and 'closed' when resolved.  However, localizing comments on their associated Wiki page will probably be more efficient.
+We can either add comments to the Wiki pages or add Issues for major discussion items.  The latter would allow the Wiki pages to look tidier, and would allow a particular thread to be followed more easily and 'closed' when resolved.  However, localizing comments on their associated Wiki page will probably be more efficient.  
+
+Note that Issues and Comments are not entered as data into the SVN system, so will be harder to backup and extract.  Any major contributions should be added as Wiki text.
 
 == SVN access ==
 
