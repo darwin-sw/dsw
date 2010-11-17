@@ -1,0 +1,28 @@
+#summary Conventions and rules for collaboration
+
+= Ontology files =
+
+It is expected that most people will use an ontology editor (like [http://protege.stanford.edu/ Protege] to edit the ontologies, so these files:
+
+  * Should be saved as RDF/XML 
+  * Should not include hand-written comments
+
+= SVN access =
+
+All source files and wiki files can be accessed and edited via an SVN client.  For first checkout:
+
+{{{
+$ svn checkout https://darwin-sw.googlecode.com/svn/ darwin-sw --username foo.bar
+}}}
+
+This will make a directory called `darwin-sw` under SVN control.  It will include the contents of the wiki.  The standard work cycle is:
+
+{{{
+$ cd .../darwin-sw
+$ svn update
+... edit files
+$ svn add foo  # for any new files
+$ svn ci -m "An informative comment"
+}}}
+
+You will be asked for a username (`foo.bar` if you are `foo.bar@gmail.com`) and password (obtained via your googlecode settings page; _not_ your main gmail password). 
