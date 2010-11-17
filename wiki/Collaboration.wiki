@@ -1,4 +1,4 @@
-#summary Conventions and rules for collaboration
+#summary Conventions and suggested rules for collaboration
 
 = Collaboration =
 
@@ -7,7 +7,7 @@
 It is expected that most people will use an ontology editor (like [http://protege.stanford.edu/ Protege] to edit the ontologies, so these files:
 
   * Should be saved as RDF/XML 
-  * Should not include hand-written comments
+  * Should not include hand-written comments in the raw code, but reasons and decisions may be contained in the annotations.
 
 == Conversation ==
 
