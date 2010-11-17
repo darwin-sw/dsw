@@ -1,22 +1,21 @@
 <?xml version="1.0"?>
 
+
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY dsw "http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#" >
 ]>
 
 
-<rdf:RDF xmlns="http://code.google.com/p/darwin-sw/source/browse/trunk/dsw.owl#"
-     xml:base="http://code.google.com/p/darwin-sw/source/browse/trunk/dsw.owl"
+<rdf:RDF xmlns="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+     xml:base="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://code.google.com/p/darwin-sw/source/browse/trunk/dsw.owl"/>
+    <owl:Ontology rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl"/>
     
 
 
@@ -31,10 +30,11 @@
     
 
 
-    <!-- http://code.google.com/p/darwin-sw/source/browse/trunk/dsw.owl#hasOccurrence -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence -->
 
-    <owl:ObjectProperty rdf:about="&dsw;hasOccurrence">
-        <rdfs:domain rdf:resource="&dsw;IndividualOrganism"/>
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence">
+        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
+        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -42,9 +42,7 @@
 
     <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
 
-    <owl:ObjectProperty rdf:about="&owl;topObjectProperty">
-        <rdfs:range rdf:resource="&dsw;Occurrence"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
     
 
 
@@ -59,15 +57,15 @@
     
 
 
-    <!-- http://code.google.com/p/darwin-sw/source/browse/trunk/dsw.owl#IndividualOrganism -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
 
-    <owl:Class rdf:about="&dsw;IndividualOrganism"/>
+    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
     
 
 
-    <!-- http://code.google.com/p/darwin-sw/source/browse/trunk/dsw.owl#Occurrence -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence -->
 
-    <owl:Class rdf:about="&dsw;Occurrence"/>
+    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
 </rdf:RDF>
 
 
