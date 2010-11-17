@@ -1,0 +1,5 @@
+#summary The IndividualOrganism class
+
+= The IndividualOrganism class =
+
+[ summary of the tdwg-content mailing list discussion ]

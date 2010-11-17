@@ -9,6 +9,16 @@ It is expected that most people will use an ontology editor (like [http://proteg
   * Should be saved as RDF/XML 
   * Should not include hand-written comments
 
+== Conversation ==
+
+=== Building the ontology ===
+
+Each Class and Property should get a Wiki page of its own, where basic issues are reviewed and documented.
+
+=== Discussion and criticism ===
+
+We can either add comments to the Wiki pages or add Issues for major discussion items.  The latter would allow the Wiki pages to look tidier, and would allow a particular thread to be followed more easily and 'closed' when resolved.  However, localizing comments on their associated Wiki page will probably be more efficient.
+
 == SVN access ==
 
 All source files and wiki files can be accessed and edited via an SVN client.  For first checkout:
