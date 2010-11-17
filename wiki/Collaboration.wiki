@@ -1,13 +1,15 @@
 #summary Conventions and rules for collaboration
 
-= Ontology files =
+= Collaboration =
+
+== Ontology files ==
 
 It is expected that most people will use an ontology editor (like [http://protege.stanford.edu/ Protege] to edit the ontologies, so these files:
 
   * Should be saved as RDF/XML 
   * Should not include hand-written comments
 
-= SVN access =
+== SVN access ==
 
 All source files and wiki files can be accessed and edited via an SVN client.  For first checkout:
 
