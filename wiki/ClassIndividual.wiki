@@ -2,4 +2,4 @@
 
 = The IndividualOrganism class =
 
-[ summary of the tdwg-content mailing list discussion ]
+(add summary of the tdwg-content mailing list discussion)
