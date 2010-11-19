@@ -1,4 +1,4 @@
-#summary Description of the Location class
+#summary The Location class
 
 = Introduction =
 
