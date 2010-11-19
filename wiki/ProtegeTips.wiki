@@ -1,0 +1,7 @@
+= Protégé Tips =
+
+== Importing terms from other namespaces/ontologies ==
+
+  # Menu --> File --> Open from URL (or open a local, downloaded copy)
+  # Menu --> Ontologies --> Show all ontologies
+  # Now, when adding a term, you will be able to link to these new external terms, e.g. {{{ :hasLocation rdfs:range :Ocean <http://purl.org/dc/terms/Location> .}}}
