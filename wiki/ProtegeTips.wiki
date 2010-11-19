@@ -2,6 +2,6 @@
 
 == Importing terms from other namespaces/ontologies ==
 
-  # Menu --> File --> Open from URL (or open a local, downloaded copy)
+  # Menu --> File --> Open from URL e.g. http://purl.org/dc/terms/ (or open a local, downloaded copy)
   # Menu --> Ontologies --> Show all ontologies
-  # Now, when adding a term, you will be able to link to these new external terms, e.g. {{{ :hasLocation rdfs:range :Ocean <http://purl.org/dc/terms/Location> .}}}
+  # Now, when adding a term, you will be able to link to these new external terms, e.g. {{{ :hasLocation rdfs:range <http://purl.org/dc/terms/Location> .}}}
