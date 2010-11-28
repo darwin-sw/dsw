@@ -1,0 +1,6 @@
+#summary Relevant background
+= Background =
+
+== Biodiversity informatics and RDF ==
+
+  * [http://community.gbif.org/pg/file/BMorris/read/10694/gbifkos-draft-white-paper-v-2010_11250400 Draft White Paper on Knowledge Organization Systems] (KOS)
