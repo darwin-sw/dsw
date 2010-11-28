@@ -4,4 +4,5 @@
 
 == Issues ==
 
+  * The name 'Token.' Is 'Record' better?
   * Are specimens, etc, sub-classes of Token?
