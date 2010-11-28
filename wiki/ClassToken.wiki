@@ -1,0 +1,7 @@
+#summary Issues of the Token class (incl specimens, photos, etc)
+
+= The Token Class =
+
+== Issues ==
+
+  * Are specimens, etc, sub-classes of Token?
