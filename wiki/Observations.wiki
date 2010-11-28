@@ -1,0 +1,7 @@
+#summary General issues relating to encoding human observations
+
+= Observations =
+
+== Linking to OBOE ==
+
+  * A [https://sonet.ecoinformatics.org/observational-data-use-cases/oboe-representation-examples representation] of a DwC observation in OBOE.
