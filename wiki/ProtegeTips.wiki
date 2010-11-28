@@ -1,5 +1,9 @@
 = Protégé Tips =
 
+== Tutorials (Protege OWL version) ==
+
+  * [http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/ Pizzas]
+
 == Importing terms from other namespaces/ontologies ==
 
   # Menu --> File --> Open from URL e.g. http://purl.org/dc/terms/ (or open a local, downloaded copy)
