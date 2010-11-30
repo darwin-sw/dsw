@@ -1,5 +1,9 @@
 = Protégé Tips =
 
+== Version ==
+
+Please use [http://protege.stanford.edu/download/registered.html#p4.1 Version 4.1] (or a version using the OWL API) so that the format of the RDF is the same for all users and so that the Diff'ing tools work.
+
 == Tutorials (Protege OWL version) ==
 
   * [http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/ Pizzas]
