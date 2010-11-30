@@ -3,6 +3,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY terms2 "http://rs.tdwg.org/dwc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
     <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
@@ -24,7 +25,8 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms2="http://rs.tdwg.org/dwc/terms/">
     <owl:Ontology rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl"/>
     
 
@@ -40,22 +42,11 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#event -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#event">
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Event"/>
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrence"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence">
         <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
+        <rdfs:range rdf:resource="&terms2;Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -64,8 +55,8 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasToken -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasToken">
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
         <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Token"/>
+        <rdfs:domain rdf:resource="&terms2;Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -74,19 +65,9 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt">
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Event"/>
         <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent"/>
         <rdfs:range rdf:resource="&terms;Location"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrence -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrence">
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Event"/>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
+        <rdfs:domain rdf:resource="&terms2;Event"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -95,9 +76,19 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent">
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Event"/>
         <rdfs:domain rdf:resource="&terms;Location"/>
+        <rdfs:range rdf:resource="&terms2;Event"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofIndividual -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofIndividual">
+        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
+        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence"/>
+        <rdfs:range rdf:resource="&terms2;Occurrence"/>
     </owl:ObjectProperty>
     
 
@@ -105,9 +96,9 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#tokenFor -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#tokenFor">
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
         <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Token"/>
         <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasToken"/>
+        <rdfs:range rdf:resource="&terms2;Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -172,12 +163,6 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Event -->
-
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Event"/>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#HumanObservation -->
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#HumanObservation">
@@ -189,12 +174,6 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence -->
-
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Occurrence"/>
     
 
 
@@ -223,9 +202,33 @@
     <!-- http://purl.org/dc/terms/Location -->
 
     <owl:Class rdf:about="&terms;Location"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Event -->
+
+    <owl:Class rdf:about="&terms2;Event"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Identification -->
+
+    <owl:Class rdf:about="&terms2;Identification"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Occurrence -->
+
+    <owl:Class rdf:about="&terms2;Occurrence"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Taxon -->
+
+    <owl:Class rdf:about="&terms2;Taxon"/>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
 
