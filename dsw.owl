@@ -48,6 +48,12 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#collectionURI -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#collectionURI"/>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#documentedBy -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#documentedBy">
@@ -88,6 +94,12 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#georeferencedByURI -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#georeferencedByURI"/>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasEvidence -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasEvidence">
@@ -116,6 +128,12 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedByURI -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedByURI"/>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies">
@@ -134,6 +152,12 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#institutionURI -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#institutionURI"/>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt">
@@ -142,6 +166,12 @@
         <rdfs:domain rdf:resource="&dwc;Event"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#nameAccordingToURI -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#nameAccordingToURI"/>
     
 
 
@@ -162,6 +192,12 @@
         <rdfs:range rdf:resource="&dwc;Event"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#recordedByURI -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#recordedByURI"/>
     
 
 
