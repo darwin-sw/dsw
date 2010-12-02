@@ -3,6 +3,8 @@
 # Conversion of OWL file to simple network diagram
 # Cam Webb <cwebb@oeb.harvard.edu>
 
+cd `dirname $0`
+
 TMP1=`mktemp`.n3
 TMP2=`mktemp`.rdf
 TMP3=`mktemp`.dot
