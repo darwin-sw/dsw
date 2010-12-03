@@ -223,9 +223,20 @@
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <dc:creator>Cam Webb</dc:creator>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent"/>
+        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locates"/>
         <rdfs:range rdf:resource="&dcterms;Location"/>
         <rdfs:domain rdf:resource="&dwc;Event"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locates -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locates">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&dcterms;Location"/>
+        <rdfs:range rdf:resource="&dwc;Event"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -256,17 +267,6 @@
         <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
         <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent">
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="&dcterms;Location"/>
-        <rdfs:range rdf:resource="&dwc;Event"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
