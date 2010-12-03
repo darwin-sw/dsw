@@ -1,0 +1,111 @@
+#summary Serialization possibilities
+
+= Serialization possibilities =
+
+== RDF/XML (Abbreviated) ==
+
+Using the nested, compact XML form of RDF, we can create a compact XML object to store basic data, without needing URIs for all internal nodes.  This object could be given an XML schema and used in an XML database.  For example, the individual <http://foo.bar#>IndividualOrganism0> derived from the ontology of 2010-12-03:
+
+{{{
+@prefix dsw: <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix : <http://foo.bar#> .
+
+:IndividualOrganism0
+    dsw:hasID [
+           a dwc:Identification ;
+       dsw:identifier :Person0 ;
+       dsw:toTaxon [
+               a dwc:Taxon ;
+                   dsw:usesName :TaxonName0 ;
+       ] ;
+    ] ;
+        dsw:hasOccurrence [
+            a dwc:Occurrence ;
+        dsw:atEvent [
+                    a dwc:Event ;
+            dsw:hasDate "2010-12-12" ;
+            dsw:locatedAt :Location0 ;
+                ] ;
+        dsw:hasEvidence :Specimen0 ;
+    ] .
+}}}
+
+can be serialized as RDF/XML-Abbreviated (using {{{rapper -i turtle -o rdfxml-abbrev my.ttl}}}):
+
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+   xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns="http://foo.bar#">
+  <rdf:Description rdf:about="http://foo.bar#IndividualOrganism0">
+    <dsw:hasID>
+      <dwc:Identification>
+        <dsw:identifier rdf:resource="http://foo.bar#Person0"/>
+        <dsw:toTaxon>
+          <dwc:Taxon>
+            <dsw:usesName rdf:resource="http://foo.bar#TaxonName0"/>
+          </dwc:Taxon>
+        </dsw:toTaxon>
+      </dwc:Identification>
+    </dsw:hasID>
+    <dsw:hasOccurrence>
+      <dwc:Occurrence>
+        <dsw:atEvent>
+          <dwc:Event>
+            <dsw:hasDate>2010-12-12</dsw:hasDate>
+            <dsw:locatedAt rdf:resource="http://foo.bar#Location0"/>
+          </dwc:Event>
+        </dsw:atEvent>
+        <dsw:hasEvidence rdf:resource="http://foo.bar#Specimen0"/>
+      </dwc:Occurrence>
+    </dsw:hasOccurrence>
+  </rdf:Description>
+</rdf:RDF>
+}}}
+
+This has a Relax NG (compact) schema of:
+
+{{{
+namespace dsw = "http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+namespace dwc = "http://rs.tdwg.org/dwc/terms/"
+namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+
+start =
+  element rdf:RDF {
+    element rdf:Description {
+      attribute rdf:about { xsd:anyURI },
+      element dsw:hasID {
+        element dwc:Identification {
+          element dsw:identifier {
+            attribute rdf:resource { xsd:anyURI }
+          },
+          element dsw:toTaxon {
+            element dwc:Taxon {
+              element dsw:usesName {
+                attribute rdf:resource { xsd:anyURI }
+              }
+            }
+          }
+        }
+      },
+      element dsw:hasOccurrence {
+        element dwc:Occurrence {
+          element dsw:atEvent {
+            element dwc:Event {
+              element dsw:hasDate { xsd:NMTOKEN },
+              element dsw:locatedAt {
+                attribute rdf:resource { xsd:anyURI }
+              }
+            }
+          },
+          element dsw:hasEvidence {
+            attribute rdf:resource { xsd:anyURI }
+          }
+        }
+      }
+    }
+  }
+}}}
