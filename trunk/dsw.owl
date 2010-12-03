@@ -78,32 +78,6 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#documentedBy -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#documentedBy">
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:comment>Cam Webb: Comment on choice of term documentedBy. If an Occurrence is an abstract intersection of Individual and Space, it does not necessarily document the Individual.  Can we not use `hasOccurrence&#39;? </rdfs:comment>
-        <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-        <rdfs:range rdf:resource="&dwc;Occurrence"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#documents -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#documents">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:comment>Cam Webb: Comment on choice of term documents. If an Occurrence is an abstract intersection of Individual and Space, it does not necessarily document the Individual.  Can we not use `occurrenceOf&#39;? </rdfs:comment>
-        <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#documentedBy"/>
-        <rdfs:domain rdf:resource="&dwc;Occurrence"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#during -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#during">
@@ -155,27 +129,26 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasUsage -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasID -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasUsage">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:comment>Cam Webb on choice of term: I would suggest using a more descriptive term, such as toTaxon</rdfs:comment>
-        <rdfs:domain rdf:resource="&dwc;Identification"/>
-        <rdfs:range rdf:resource="&dwc;Taxon"/>
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasID">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
+        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies"/>
+        <rdfs:range rdf:resource="&dwc;Identification"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedBy -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedBy">
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:comment>Comment by Cam Webb on term choice: Is an Individual _indentified by_ an Indentification event? Rather an Indiv has one or more Indentifications, so I prefer hasID or hasIndentification. Also, identifiedBy might better be attached to the link between the Indentification and the person who identifies, as in DwC. I _do_ like the term identifies for the inverse of this term.</rdfs:comment>
+        <dc:creator>Cam Webb</dc:creator>
         <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies"/>
-        <rdfs:range rdf:resource="&dwc;Identification"/>
+        <rdfs:range rdf:resource="&dwc;Occurrence"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -230,6 +203,7 @@
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <dc:creator>Cam Webb</dc:creator>
         <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent"/>
         <rdfs:range rdf:resource="&dcterms;Location"/>
         <rdfs:domain rdf:resource="&dwc;Event"/>
@@ -255,6 +229,18 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
+        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence"/>
+        <rdfs:domain rdf:resource="&dwc;Occurrence"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#ofEvent">
@@ -272,13 +258,25 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#usedIn -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#taxonOfID -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#usedIn">
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#taxonOfID">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasUsage"/>
+        <dc:creator>Cam Webb</dc:creator>
+        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
         <rdfs:domain rdf:resource="&dwc;Taxon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:domain rdf:resource="&dwc;Identification"/>
+        <rdfs:range rdf:resource="&dwc;Taxon"/>
     </owl:ObjectProperty>
     
 
