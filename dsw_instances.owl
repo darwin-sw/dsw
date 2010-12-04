@@ -2,6 +2,7 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY foo "http://foo.bar/" >
     <!ENTITY dcterms "http://purl.org/dc/terms/" >
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY dwc "http://rs.tdwg.org/dwc/terms/" >
@@ -27,6 +28,7 @@
      xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
      xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
      xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+     xmlns:foo="http://foo.bar/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
@@ -67,9 +69,9 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasID -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentification -->
 
-    <owl:ObjectProperty rdf:about="&dsw;hasID"/>
+    <owl:ObjectProperty rdf:about="&dsw;hasIdentification"/>
     
 
 
@@ -79,9 +81,9 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifier -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon -->
 
-    <owl:ObjectProperty rdf:about="&dsw;identifier"/>
+    <owl:ObjectProperty rdf:about="&dsw;identificationUsingTaxon"/>
     
 
 
@@ -91,21 +93,44 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="&dsw;locatedAt"/>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf -->
 
     <owl:ObjectProperty rdf:about="&dsw;occurrenceOf"/>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#taxonOfID -->
-
-    <owl:ObjectProperty rdf:about="&dsw;taxonOfID"/>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon -->
 
     <owl:ObjectProperty rdf:about="&dsw;toTaxon"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/identifiedBy -->
+
+    <owl:ObjectProperty rdf:about="&dwc;identifiedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
+
+    <owl:DatatypeProperty rdf:about="&dwc;eventDate"/>
     
 
 
@@ -129,12 +154,6 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
 
     <owl:Class rdf:about="&dsw;IndividualOrganism"/>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person -->
-
-    <owl:Class rdf:about="&dsw;Person"/>
     
 
 
@@ -168,6 +187,12 @@
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -192,7 +217,8 @@
 
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Event0">
         <rdf:type rdf:resource="&dwc;Event"/>
-        <dsw:eventOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0"/>
+        <dwc:eventDate>1963-03-08T14:07-0600</dwc:eventDate>
+        <dsw:locatedAt rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Location0"/>
     </owl:NamedIndividual>
     
 
@@ -202,8 +228,8 @@
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0">
         <rdf:type rdf:resource="&dwc;Identification"/>
         <dsw:identifies rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0"/>
-        <dsw:identifier rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Person0"/>
         <dsw:toTaxon rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0"/>
+        <dwc:identifiedBy rdf:resource="&foo;Person0"/>
     </owl:NamedIndividual>
     
 
@@ -212,7 +238,7 @@
 
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0">
         <rdf:type rdf:resource="&dsw;IndividualOrganism"/>
-        <dsw:hasID rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
+        <dsw:hasIdentification rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
         <dsw:hasOccurrence rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0"/>
     </owl:NamedIndividual>
     
@@ -236,20 +262,20 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Person0 -->
-
-    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Person0">
-        <rdf:type rdf:resource="&dsw;Person"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0 -->
 
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0">
         <rdf:type rdf:resource="&dwc;Taxon"/>
-        <dsw:taxonOfID rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
+        <dsw:identificationUsingTaxon rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://foo.bar/Person0 -->
+
+    <foaf:Person rdf:about="&foo;Person0">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </foaf:Person>
 </rdf:RDF>
 
 
