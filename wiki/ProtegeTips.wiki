@@ -13,3 +13,8 @@ Please use [http://protege.stanford.edu/download/registered.html#p4.1 Version 4.
   # Menu --> File --> Open from URL e.g. http://purl.org/dc/terms/ (or open a local, downloaded copy)
   # Menu --> Ontologies --> Show all ontologies
   # Now, when adding a term, you will be able to link to these new external terms, e.g. {{{ :hasLocation rdfs:range <http://purl.org/dc/terms/Location> .}}}
+
+== Reasoning ==
+
+You can test the structure of your classes and Individuals using the built in reasoner HermiT.  See [http://protegewiki.stanford.edu/wiki/Protege4GettingStarted#Reasoning Protege 4 Getting Started].  From that wiki: &ldquo;To classify your ontology, open the Reasoner menu and select HermiT, which will automatically classify your ontology. After the reasoner finishes classifying, an additional sub tab appears on the Entites tab to show the inferred class hierarchy. Unsatisfiable classes appear in red under Nothing and everything else appears in the hierarchy under their inferred superclasses. The asserted class hierarchy is still available, stacked under the asserted one.&rdquo;
+
