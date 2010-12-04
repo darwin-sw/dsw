@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY dwc "http://rs.tdwg.org/dwc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY dctype "http://purl.org/dc/dcmitype/Image" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY dsw "http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#"
+     xml:base="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+     xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:dctype="http://purl.org/dc/dcmitype/Image"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#atEvent -->
+
+    <owl:ObjectProperty rdf:about="&dsw;atEvent"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#eventOf -->
+
+    <owl:ObjectProperty rdf:about="&dsw;eventOf"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#evidenceFor -->
+
+    <owl:ObjectProperty rdf:about="&dsw;evidenceFor"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasID -->
+
+    <owl:ObjectProperty rdf:about="&dsw;hasID"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence -->
+
+    <owl:ObjectProperty rdf:about="&dsw;hasOccurrence"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifier -->
+
+    <owl:ObjectProperty rdf:about="&dsw;identifier"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies -->
+
+    <owl:ObjectProperty rdf:about="&dsw;identifies"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf -->
+
+    <owl:ObjectProperty rdf:about="&dsw;occurrenceOf"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#taxonOfID -->
+
+    <owl:ObjectProperty rdf:about="&dsw;taxonOfID"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon -->
+
+    <owl:ObjectProperty rdf:about="&dsw;toTaxon"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#DriedSpecimen -->
+
+    <owl:Class rdf:about="&dsw;DriedSpecimen"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
+
+    <owl:Class rdf:about="&dsw;IndividualOrganism"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person -->
+
+    <owl:Class rdf:about="&dsw;Person"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/Location -->
+
+    <owl:Class rdf:about="&dcterms;Location"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Event -->
+
+    <owl:Class rdf:about="&dwc;Event"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Identification -->
+
+    <owl:Class rdf:about="&dwc;Identification"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Occurrence -->
+
+    <owl:Class rdf:about="&dwc;Occurrence"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Taxon -->
+
+    <owl:Class rdf:about="&dwc;Taxon"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#DriedSpecimen0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#DriedSpecimen0">
+        <rdf:type rdf:resource="&dsw;DriedSpecimen"/>
+        <dsw:evidenceFor rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Event0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Event0">
+        <rdf:type rdf:resource="&dwc;Event"/>
+        <dsw:eventOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0">
+        <rdf:type rdf:resource="&dwc;Identification"/>
+        <dsw:identifies rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0"/>
+        <dsw:identifier rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Person0"/>
+        <dsw:toTaxon rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0">
+        <rdf:type rdf:resource="&dsw;IndividualOrganism"/>
+        <dsw:hasID rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
+        <dsw:hasOccurrence rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Location0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Location0">
+        <rdf:type rdf:resource="&dcterms;Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0">
+        <rdf:type rdf:resource="&dwc;Occurrence"/>
+        <dsw:atEvent rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Event0"/>
+        <dsw:occurrenceOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Person0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Person0">
+        <rdf:type rdf:resource="&dsw;Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0">
+        <rdf:type rdf:resource="&dwc;Taxon"/>
+        <dsw:taxonOfID rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+
