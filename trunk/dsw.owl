@@ -122,6 +122,7 @@
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#evidenceFor">
         <dc:creator>Cam Webb</dc:creator>
+        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
         <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasEvidence"/>
         <rdfs:range rdf:resource="&dwc;Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
@@ -159,14 +160,22 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasID -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentification -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasID">
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentification">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
         <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentificationByURI -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentificationByURI">
+        <dc:creator>Steve Baskauf; name changed by Cam Webb, due to clash with dwc:identifiedBy</dc:creator>
     </owl:ObjectProperty>
     
 
@@ -183,20 +192,14 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedByURI -->
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedByURI"/>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifier -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifier">
-        <dc:creator>Cam Webb</dc:creator>
-        <rdfs:comment>The person who completes the Indentification</rdfs:comment>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person"/>
-        <rdfs:domain rdf:resource="&dwc;Identification"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
+        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon"/>
+        <rdfs:range rdf:resource="&dwc;Identification"/>
+        <rdfs:domain rdf:resource="&dwc;Taxon"/>
     </owl:ObjectProperty>
     
 
@@ -279,18 +282,6 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#taxonOfID -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#taxonOfID">
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon"/>
-        <rdfs:range rdf:resource="&dwc;Identification"/>
-        <rdfs:domain rdf:resource="&dwc;Taxon"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon">
@@ -313,6 +304,15 @@
     
 
 
+    <!-- http://rs.tdwg.org/dwc/terms/identifiedBy -->
+
+    <owl:ObjectProperty rdf:about="&dwc;identifiedBy">
+        <rdfs:comment>Suggested domain: dwc:Identification, suggested range: a foaf:Person</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
 
     <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
@@ -330,13 +330,10 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasDate -->
+    <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
 
-    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasDate">
-        <dc:creator>Cam Webb</dc:creator>
-        <rdfs:domain rdf:resource="&dwc;Event"/>
-        <rdfs:range rdf:resource="&xsd;date"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    <owl:DatatypeProperty rdf:about="&dwc;eventDate">
+        <rdfs:comment>Suggested domain: dwc:Event; suggested range: xsd:dateTime. DwC allows the range to be date or time in any format.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
     </owl:DatatypeProperty>
     
@@ -385,15 +382,6 @@
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#LivingSpecimen">
         <rdfs:subClassOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
-    </owl:Class>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person -->
-
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person">
-        <dc:creator>A human person. May not be needed in final ontology, but needed now for range of identifiedBy</dc:creator>
-        <dc:creator>Cam Webb</dc:creator>
     </owl:Class>
     
 
