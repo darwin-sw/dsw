@@ -4,7 +4,7 @@
 
 == RDF/XML (Abbreviated) ==
 
-Using the nested, compact XML form of RDF, we can create a compact XML object to store basic data, without needing URIs for all internal nodes.  This object could be given an XML schema and used in an XML database.  For example, the individual <http://foo.bar#>IndividualOrganism0> derived from the ontology of 2010-12-03:
+Using the nested, compact XML form of RDF, we can create a compact XML object to store basic data, without needing URIs for all internal nodes.  This object could be given an XML schema and used in an XML database.  For example, the individual <http://foo.bar#IndividualOrganism0> derived from the ontology of 2010-12-03:
 
 {{{
 @prefix dsw: <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#> .
