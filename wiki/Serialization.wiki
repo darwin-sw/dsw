@@ -13,21 +13,21 @@ Using the nested, compact XML form of RDF, we can create a compact XML object to
 
 :IndividualOrganism0
     dsw:hasID [
-           a dwc:Identification ;
-       dsw:identifier :Person0 ;
-       dsw:toTaxon [
-               a dwc:Taxon ;
-                   dsw:usesName :TaxonName0 ;
-       ] ;
-    ] ;
-        dsw:hasOccurrence [
-            a dwc:Occurrence ;
-        dsw:atEvent [
-                    a dwc:Event ;
-            dsw:hasDate "2010-12-12" ;
-            dsw:locatedAt :Location0 ;
-                ] ;
-        dsw:hasEvidence :Specimen0 ;
+        a dwc:Identification ;
+        dsw:identifier :Person0 ;
+        dsw:toTaxon [
+            a dwc:Taxon ;
+            dsw:usesName :TaxonName0 ;
+            ] ;
+        ] ;
+    dsw:hasOccurrence [
+    a dwc:Occurrence ;
+    dsw:atEvent [
+        a dwc:Event ;
+        dsw:hasDate "2010-12-12" ;
+        dsw:locatedAt :Location0 ;
+        ] ;
+    dsw:hasEvidence :Specimen0 ;
     ] .
 }}}
 
