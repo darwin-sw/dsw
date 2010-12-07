@@ -2,4 +2,19 @@
 
 = Taxon and TaxonName =
 
-We follow the TDWG Taxonomic Concept Transfer Schema (TCS; http://www.tdwg.org/standards/117/).  See especially the document: !UserGuidev_1.3.pdf. The XML schema is at: TcsSchema. In short, the Taxon or !TaxonConcept (equivalent terms, according to the http://rs.tdwg.org/ontology/voc/TaxonConcept.owl) is the meaningful biological conscription of real individuals, according to a taxonomist.  The !TaxonName is just a name string that is often reused in different concepts.  We have attached Functional Data proprties to Taxon (accordingTo), and !TaxonName (hasGenus, hasSpecificEpithet), mirroring their usage in TCS.  One question is whether we need a !TaxonName term: the concept could hold the hasGenus, hasSpecificEpithet properties, with little loss.
+== DwC vs. TCS ==
+
+Our choice is: we either model a taxon concept (name + authority):
+  - using DwC, where dwc:Taxon is a taxon concept with dwc:nameAccordingTo (or dwc:scientificNameAuthorship), dwc:genus, dwc:specificEpithet, etc, or,
+  - as the far more complex TCS ((http://www.tdwg.org/standards/117/) !TaxonConcept+!TaxonName, when tcs:!TaxonConcept can have dsw:accordingTo and dsw:hasTaxonName, and then !TaxonName can have dsw:hasGenus, and dsw:hasSpecies, etc.
+
+We have currently modeled it here as TCS, but it is much simpler to use DwC and more in line with our general philosophy, and does not need us to create terms (we can't use the TCS terms because there is no namespace, but we _could_ use the TDWG voc rdf...). However, the issue is that it is less clear _what_ a Taxon is under DwC. From the wiki (http://code.google.com/p/darwincore/wiki/Taxon): &ldquo;If no nameAccordingTo or nameAccordingToID is given explicitly given for a Taxon record, the &ldquo;nominal concept&rdquo; as defined by TCS should be assumed.&rdquo; - so the Taxon could be a taxon concept or a nominal concept.  This goes against the increased clarity we hope for from the SW.  
+
+One remaining niggle is that dwc:scientificNameAuthorship (which is what we usually have) may not be enough to fully specify dwc:nameAccordingTo (&ldquo;The _reference to the source_ in which the specific taxon concept circumscription...&rdquo;), which is required for a taxon concept.
+
+== TCS model ==
+
+If we follow the TDWG Taxonomic Concept Transfer Schema (TCS; http://www.tdwg.org/standards/117/):  
+  - See especially the document: !UserGuidev_1.3.pdf.
+  - The XML schema is at: TcsSchema. 
+  - In short, the Taxon or !TaxonConcept (equivalent terms, according to the http://rs.tdwg.org/ontology/voc/TaxonConcept.owl) is the meaningful biological conscription of real individuals, according to a taxonomist.  The !TaxonName is just a name string that is often reused in different concepts.  We have attached Functional Data proprties to Taxon (accordingTo), and !TaxonName (hasGenus, hasSpecificEpithet), mirroring their usage in TCS.

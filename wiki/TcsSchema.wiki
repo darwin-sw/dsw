@@ -1,4 +1,4 @@
-# summary TDWG TCS schema
+#summary TDWG TCS schema
 
 = TDWG TCS schema =
 
