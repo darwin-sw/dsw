@@ -1,0 +1,5 @@
+#summary Taxon and TaxonName issues
+
+= Taxon and TaxonName =
+
+We follow the TDWG Taxonomic Concept Transfer Schema (TCS; http://www.tdwg.org/standards/117/).  See especially the document: !UserGuidev_1.3.pdf. The XML schema is at: TcsSchema. In short, the Taxon or !TaxonConcept (equivalent terms, according to the http://rs.tdwg.org/ontology/voc/TaxonConcept.owl) is the meaningful biological conscription of real individuals, according to a taxonomist.  The !TaxonName is just a name string that is often reused in different concepts.  We have attached Functional Data proprties to Taxon (accordingTo), and !TaxonName (hasGenus, hasSpecificEpithet), mirroring their usage in TCS.  One question is whether we need a !TaxonName term: the concept could hold the hasGenus, hasSpecificEpithet properties, with little loss.

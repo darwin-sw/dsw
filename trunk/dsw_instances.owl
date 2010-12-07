@@ -13,6 +13,7 @@
     <!ENTITY dctype "http://purl.org/dc/dcmitype/Image" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ont "http://www.co-ode.org/ontologies/ont.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
     <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
@@ -33,10 +34,23 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:dctype="http://purl.org/dc/dcmitype/Image"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
     
 
 
@@ -78,6 +92,12 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence -->
 
     <owl:ObjectProperty rdf:about="&dsw;hasOccurrence"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasTaxonName -->
+
+    <owl:ObjectProperty rdf:about="&dsw;hasTaxonName"/>
     
 
 
@@ -128,6 +148,24 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#accordingTo -->
+
+    <owl:DatatypeProperty rdf:about="&dsw;accordingTo"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasGenus -->
+
+    <owl:DatatypeProperty rdf:about="&dsw;hasGenus"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasSpecificEpithet -->
+
+    <owl:DatatypeProperty rdf:about="&dsw;hasSpecificEpithet"/>
+    
+
+
     <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
 
     <owl:DatatypeProperty rdf:about="&dwc;eventDate"/>
@@ -154,6 +192,12 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
 
     <owl:Class rdf:about="&dsw;IndividualOrganism"/>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName -->
+
+    <owl:Class rdf:about="&dsw;TaxonName"/>
     
 
 
@@ -266,7 +310,10 @@
 
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0">
         <rdf:type rdf:resource="&dwc;Taxon"/>
+        <dsw:accordingTo>Dyer</dsw:accordingTo>
+        <rdfs:comment>See: http://www.ubio.org/authority/metadata.php?lsid=urn:lsid:ubio.org:namebank:1830385</rdfs:comment>
         <dsw:identificationUsingTaxon rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
+        <dsw:hasTaxonName rdf:resource="&ont;TaxonName0"/>
     </owl:NamedIndividual>
     
 
@@ -276,6 +323,16 @@
     <foaf:Person rdf:about="&foo;Person0">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </foaf:Person>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#TaxonName0 -->
+
+    <owl:NamedIndividual rdf:about="&ont;TaxonName0">
+        <rdf:type rdf:resource="&dsw;TaxonName"/>
+        <dsw:hasGenus>Shorea</dsw:hasGenus>
+        <dsw:hasSpecificEpithet>parvifolia</dsw:hasSpecificEpithet>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

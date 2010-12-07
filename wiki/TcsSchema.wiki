@@ -1,0 +1,337 @@
+# summary TDWG TCS schema
+
+= TDWG TCS schema =
+
+In RelaxNG Compact form:
+
+{{{
+default namespace = "http://www.tdwg.org/schemas/tcs/1.01"
+
+start = DataSet
+anonymous0 =
+  attribute type {
+    xsd:string "is congruent to"
+    | xsd:string "is included in"
+    | xsd:string "is not congruent to"
+    | xsd:string "is parent taxon of"
+    | xsd:string "excludes"
+    | xsd:string "has vernacular"
+    | xsd:string "is child taxon of"
+    | xsd:string "is hybrid child of"
+    | xsd:string "includes"
+    | xsd:string "is first parent of"
+    | xsd:string "is teleomorph of"
+    | xsd:string "has synonym"
+    | xsd:string "is second parent of"
+    | xsd:string "overlaps"
+    | xsd:string "is anamorph of"
+    | xsd:string "is vernacular for"
+    | xsd:string "is ambiregnal of"
+    | xsd:string "is not included in"
+    | xsd:string "does not include"
+    | xsd:string "is hybrid parent of"
+    | xsd:string "does not overlap"
+    | xsd:string "is male parent of"
+    | xsd:string "is female parent of"
+  }
+DataSet =
+  notAllowed
+  | element DataSet {
+      element MetaData {
+        element Simple { \string },
+        element MetaDataDetailed { PlaceholderType }?
+      }?,
+      element Specimens {
+        element Specimen {
+          attribute id { xsd:token },
+          (element Simple { \string },
+           element Institution {
+             attribute identifier { xsd:token },
+             (element InstitutionName { \string },
+              element Code { \string }?,
+              element Address { \string }?,
+              element Phone { \string }?,
+              element URL { \string }?,
+              element Email { \string }?)?
+           }?,
+           element Collection {
+             anonymous1,
+             attribute identifier { xsd:token },
+             attribute * { text }*
+           }?,
+           element SpecimenItem {
+             anonymous1,
+             attribute identifier { xsd:token },
+             attribute * { text }*
+           })?
+        }*
+      }?,
+      element Publications {
+        element Publication {
+          attribute id { xsd:token },
+          (element Simple { \string },
+           element PublicationDetailed { PlaceholderType }?)?
+        }*
+      }?,
+      element TaxonNames {
+        element TaxonName {
+          attribute nomenclaturalCode {
+            xsd:Name "Zoological"
+            | xsd:Name "Bacteriological"
+            | xsd:Name "Viral"
+            | xsd:Name "Indeterminate"
+            | xsd:Name "CultivatedPlant"
+            | xsd:Name "Botanical"
+          },
+          attribute isAnamorphic { xsd:boolean }?,
+          attribute id { xsd:NMTOKEN },
+          element Simple { \string },
+          element Rank { TaxonomicRank }?,
+          element CanonicalName {
+            element Simple { \string },
+            (element Uninomial { \string }
+             | (element Genus { ReferenceType },
+                (element InfragenericEpithet { \string }
+                 | (element SpecificEpithet { \string },
+                    element InfraspecificEpithet { \string }?))))?,
+            element CultivarNameGroup { \string }?
+          }?,
+          element CanonicalAuthorship {
+            element Simple { \string },
+            (element Authorship { NameCitation }
+             | (element BasionymAuthorship { NameCitation },
+                element CombinationAuthorship { NameCitation }?))?
+          }?,
+          element PublishedIn { ReferenceType }?,
+          element Year { gYear }?,
+          element MicroReference { \string }?,
+          element Typification {
+            element Simple { \string },
+            (element TypeVouchers {
+               element TypeVoucher {
+                 attribute typeOfType {
+                   xsd:Name "syn"
+                   | xsd:Name "epi"
+                   | xsd:Name "allo"
+                   | xsd:Name "neo"
+                   | xsd:Name "expara"
+                   | xsd:Name "type"
+                   | xsd:Name "exlecto"
+                   | xsd:Name "isolecto"
+                   | xsd:Name "holo"
+                   | xsd:Name "exepi"
+                   | xsd:Name "supp"
+                   | xsd:Name "exiso"
+                   | xsd:Name "exsyn"
+                   | xsd:Name "lecto"
+                   | xsd:Name "exholo"
+                   | xsd:Name "ex"
+                   | xsd:Name "allolecto"
+                   | xsd:Name "iso"
+                   | xsd:Name "alloneo"
+                   | xsd:Name "topo"
+                   | xsd:Name "plastoneo"
+                   | xsd:Name "plastoiso"
+                   | xsd:Name "exneo"
+                   | xsd:Name "plastolecto"
+                   | xsd:Name "para"
+                   | xsd:Name "hapanto"
+                   | xsd:Name "not"
+                   | xsd:Name "paraneo"
+                   | xsd:Name "plastosyn"
+                   | xsd:Name "co"
+                   | xsd:Name "plastopara"
+                   | xsd:Name "sec"
+                   | xsd:Name "plastoholo"
+                   | xsd:Name "isosyn"
+                   | xsd:Name "icono"
+                   | xsd:Name "plasto"
+                   | xsd:Name "paralecto"
+                   | xsd:Name "isoneo"
+                 }?,
+                 element VoucherReference { ReferenceType }?,
+                 element LectotypePublication { ReferenceType }?,
+                 element LectotypeMicroReference { \string }?
+               }+
+             }
+             | element TypeName {
+                 element NameReference { ReferenceType }?,
+                 element LectotypePublication { ReferenceType }?,
+                 element LectotypeMicroReference { \string }?
+               })
+          }?,
+          element SpellingCorrectionOf { NomenclaturalNoteType }*,
+          element Basionym { NomenclaturalNoteType }?,
+          element BasedOn { NomenclaturalNoteType }?,
+          element ConservedAgainst { NomenclaturalNoteType }*,
+          element LaterHomonymOf { NomenclaturalNoteType }?,
+          element Sanctioned { NomenclaturalNoteType }?,
+          element ReplacementNameFor { NomenclaturalNoteType }?,
+          element PublicationStatus { NomenclaturalNoteType }?,
+          element ProviderLink { \string }?,
+          element ProviderSpecificData { PlaceholderType }?
+        }*
+      }?,
+      element TaxonConcepts {
+        element TaxonConcept {
+          attribute form {
+            xsd:string "anamorph"
+            | xsd:string "teleomorph"
+            | xsd:string "hybrid"
+          }?,
+          attribute primary { xsd:boolean }?,
+          attribute type {
+            xsd:string "revision"
+            | xsd:string "aggregate"
+            | xsd:string "original"
+            | xsd:string "nominal"
+            | xsd:string "incomplete"
+          }?,
+          attribute id { xsd:token },
+          (element Name {
+             anonymous2,
+             attribute scientific { xsd:boolean },
+             attribute language { xsd:language }?
+           },
+           element Rank { TaxonomicRank }?,
+           element AccordingTo { AccordingToType }?,
+           element TaxonRelationships {
+             element TaxonRelationship {
+               anonymous0,
+               element ToTaxonConcept { ReferenceType }
+             }+
+           }?,
+           element SpecimenCircumscription {
+             element CircumscribedBy { ReferenceType }+
+           }?,
+           element CharacterCircumscription { PlaceholderType }?,
+           element ProviderLink { \string }?,
+           element ProviderSpecificData { PlaceholderType }?)?
+        }*
+      }?,
+      element TaxonRelationshipAssertions {
+        element TaxonRelationshipAssertion {
+          anonymous0,
+          (element AccordingTo { AccordingToType },
+           element FromTaxonConcept { anonymous2 },
+           element ToTaxonConcept { anonymous2 })?,
+          attribute id { xsd:token }
+        }*
+      }?
+    }
+\string = xsd:string
+anonymous1 = QName*
+anonymous2 =
+  mixed {
+    attribute linkType {
+      xsd:string "other" | xsd:string "external" | xsd:string "local"
+    }?,
+    attribute ref { xsd:token }?
+  }
+NomenclaturalNoteType =
+  ((notAllowed
+    | element RuleConsidered { \string })?,
+   (notAllowed
+    | element Note { \string })?,
+   (notAllowed
+    | element RelatedName { ReferenceType })?,
+   (notAllowed
+    | element PublishedIn { ReferenceType })?,
+   (notAllowed
+    | element MicroReference { \string })?),
+  empty
+NameCitation =
+  ((notAllowed
+    | element Simple { \string }),
+   (notAllowed
+    | element Year { gYear })?,
+   (notAllowed
+    | element Authors {
+        element AgentName {
+          anonymous2,
+          attribute role { xsd:Name "ex" | xsd:Name "sanctioning" }?
+        }+
+      })?),
+  empty
+gYear = xsd:gYear
+ReferenceType = anonymous2, empty
+TaxonomicRank =
+  mixed {
+    attribute code {
+      (xsd:Name "subsubfm"
+       | xsd:Name "var"
+       | xsd:Name "subfm"
+       | xsd:Name "cand"
+       | xsd:Name "bv"
+       | xsd:Name "taxinfrasp"
+       | xsd:Name "fm"
+       | xsd:Name "fsp"
+       | xsd:Name "subvar"
+       | xsd:Name "subsubvar"
+       | xsd:Name "pv"
+       | xsd:Name "infrasp")
+      | (xsd:Name "sp" | xsd:Name "subsp_aggr" | xsd:Name "ssp")
+      | (xsd:Name "taxinfragen"
+         | xsd:Name "subser"
+         | xsd:Name "ser"
+         | xsd:Name "sect"
+         | xsd:Name "subsect"
+         | xsd:Name "aggr")
+      | (xsd:Name "gen" | xsd:Name "subgen" | xsd:Name "infragen")
+      | (xsd:Name "subtrib"
+         | xsd:Name "supertrib"
+         | xsd:Name "trib"
+         | xsd:Name "infratrib")
+      | (xsd:Name "infrafam"
+         | xsd:Name "fam"
+         | xsd:Name "superfam"
+         | xsd:Name "subfam")
+      | (xsd:Name "infrareg"
+         | xsd:Name "infracl"
+         | xsd:Name "dom"
+         | xsd:Name "infraphyl_div"
+         | xsd:Name "subord"
+         | xsd:Name "subreg"
+         | xsd:Name "supercl"
+         | xsd:Name "ord"
+         | xsd:Name "phyl_div"
+         | xsd:Name "superphyl_div"
+         | xsd:Name "superreg"
+         | xsd:Name "subcl"
+         | xsd:Name "superord"
+         | xsd:Name "infraord"
+         | xsd:Name "reg"
+         | xsd:Name "cl"
+         | xsd:Name "taxsupragen"
+         | xsd:Name "subphyl_div")
+      | (xsd:Name "graftchimaera"
+         | xsd:Name "convar"
+         | xsd:Name "denomclass"
+         | xsd:Name "grex"
+         | xsd:Name "cv"
+         | xsd:Name "cvgroup")
+    }?
+  },
+  empty
+PlaceholderType =
+  anonymous1,
+  attribute * { text }*
+AccordingToType =
+  ((notAllowed
+    | element Simple { \string }),
+   (notAllowed
+    | element AccordingToDetailed {
+        element AuthorTeam { NameCitation }?,
+        element PublishedIn { ReferenceType }?,
+        element MicroReference { \string }?
+      })?),
+  empty
+QName =
+  element * - DataSet {
+    mixed {
+      (attribute * { text }
+       | QName)*
+    }
+  }
+  | DataSet
+}}}

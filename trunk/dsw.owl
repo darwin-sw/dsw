@@ -53,23 +53,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-    <rdfs:Datatype rdf:about="&xsd;date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -192,6 +175,20 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasTaxonName -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasTaxonName">
+        <rdfs:comment>The link from Taxon to TaxonName.  Fron the TCS guide: &quot;Each &lt;TaxonConcept&gt; ... may have a reference to a
+single &lt;TaxonName&gt; element&quot;
+</rdfs:comment>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
+        <rdfs:domain rdf:resource="&dwc;Taxon"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon">
@@ -252,18 +249,6 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#nameUsedIn -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#nameUsedIn">
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#usesName"/>
-        <rdfs:range rdf:resource="&dwc;Taxon"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf">
@@ -286,20 +271,10 @@
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>This property should link to a taxon concept (i.e. Taxon name plus Authority) URI, such as: http://www.ipni.org/ipni/idPlantNameSearch.do?&amp;output_format=lsid-metadata&amp;id=321394-1 or to a dws:Taxon class.</rdfs:comment>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
         <rdfs:range rdf:resource="&dwc;Taxon"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#usesName -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#usesName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
-        <rdfs:domain rdf:resource="&dwc;Taxon"/>
     </owl:ObjectProperty>
     
 
@@ -327,6 +302,42 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#accordingTo -->
+
+    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#accordingTo">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>Use in TCS: &lt;TaxonConcept&gt;&lt;AccordingTo&gt;&lt;Simple&gt;Judd &amp;amp; Kron (1995)&lt;/Simple&gt;&lt;/AccordingTo&gt;&lt;/TaxonConcept&gt;. We will use for the Authority text string commonly used in Name+Auth</rdfs:comment>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:domain rdf:resource="&dwc;Taxon"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasGenus -->
+
+    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasGenus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:comment>Used in TCS: &lt;TaxonName&gt;&lt;CanonicalName&gt;&lt;Genus&gt;Rhododendron&lt;/Genus&gt;&lt;SpecificEpithet&gt;pentaphyllum&lt;/SpecificEpithet&gt;&lt;/CanonicalName&gt;&lt;/TaxonName&gt;.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasSpecificEpithet -->
+
+    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasSpecificEpithet">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>Used in TCS: &lt;TaxonName&gt;&lt;CanonicalName&gt;&lt;Genus&gt;Rhododendron&lt;/Genus&gt;&lt;SpecificEpithet&gt;pentaphyllum&lt;/SpecificEpithet&gt;&lt;/CanonicalName&gt;&lt;/TaxonName&gt;.</rdfs:comment>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -368,7 +379,6 @@
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism">
         <owl:disjointWith rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
-        <owl:disjointWith rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
         <owl:disjointWith rdf:resource="&dcterms;Location"/>
         <owl:disjointWith rdf:resource="&dwc;Event"/>
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
@@ -397,7 +407,6 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen -->
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen">
-        <owl:disjointWith rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
         <owl:disjointWith rdf:resource="&dcterms;Location"/>
         <owl:disjointWith rdf:resource="&dwc;Event"/>
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
@@ -418,11 +427,7 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName -->
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName">
-        <owl:disjointWith rdf:resource="&dcterms;Location"/>
-        <owl:disjointWith rdf:resource="&dwc;Event"/>
-        <owl:disjointWith rdf:resource="&dwc;Identification"/>
-        <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
-        <owl:disjointWith rdf:resource="&dwc;Taxon"/>
+        <rdfs:comment>A taxon name class, equivalent to: http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonName, and equivalent to TaxonName in TDWG TCS (http://www.tdwg.org/standards/117/). Linked to from TaxonConcept</rdfs:comment>
     </owl:Class>
     
 
@@ -467,7 +472,9 @@
 
     <!-- http://rs.tdwg.org/dwc/terms/Taxon -->
 
-    <owl:Class rdf:about="&dwc;Taxon"/>
+    <owl:Class rdf:about="&dwc;Taxon">
+        <rdfs:comment>A taxon concept class (name plus authority), equivalent to: http://rs.tdwg.org/ontology/voc/TaxonConcept#Taxon, and equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/)</rdfs:comment>
+    </owl:Class>
 </rdf:RDF>
 
 
