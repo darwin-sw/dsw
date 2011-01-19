@@ -41,6 +41,10 @@ http://taxon.luomus.fi/rdf.php?lsid=urn:lsid:luomus.fi:taxonconcept:95a2abc0-5e4
 
 provided by Hannu Saarenmaa (personal communication)
 
+http://lod.taxonconcept.org/ses/v6n7p
+
+provided by Pete DeVries.  Note: rdf:type and other properties not defined in terms of the TDWG ontology.  Also, I can't find any "_sec._" (accordingTo) type properties.
+
 == Strategy for darwin-sw suggested by the TCS model ==
 The description of a TaxonConcept on p. 89 of Kennedy et al., 2005 provides ideas on how the Taxon class could be represented in darwin-sw.  In each of the two required components of a taxon concept, Name and AccordingTo, the TCS model contains a simple string representation ("NameSimple" and "AccordingToSimple") as well as an optional NameDetailed and AccordingToDetailed which are references to other resources that describe the Name and AccordingTo resources more thoroughly.  In our model, the "simple" representations could be made using string literal properties that are already terms in Darwin Core (in keeping with the general strategy outlined for darwin-sw).  The "detailed" representations could be URI references to resources that are not defined by darwin-sw, but rather by the functional parts of the TDWG ontology.  In particular, tc:hasName and tc:accordingTo properties of the TaxonConcept part of the TDWG ontology could be made properties of the darwin-sw Taxon class which refer to resources that are defined outside darwin-sw (i.e. by the TDWG ontology).  That would get us out of the business of trying to define relationships that have already been defined and are functional.  It would also avoid embroiling our effort to represent Darwin Core terms in RDF in the endless debate about the minutiae of things taxonomic.  
 
