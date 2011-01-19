@@ -2,6 +2,54 @@
 
 = Taxon and TaxonName =
 
+== What is a Taxon? ==
+(The following information is summarized from a number of documents and threads from the tdwg-content email list as documented below.)
+
+A taxon is a unit of biodiversity (Hyam and Kennedy,2006) e.g. species, genus, family, etc.  However, taxonomists consider a particular taxon to be defined not only by a name, but also by an understanding of what organisms should be included in the taxon under that name.  Taxa can be referenced in varying degrees of detail:  
+ # *Nominal Concept* - reference is made to a taxon name but no information is available about how the user intends for that name to be applied.
+ # *Taxon Name Usage (TNU)* (synonym: *assertion*, defined in Pyle,2004,p.20) - reference is made to a taxon name with some indication of what the author intends the name to mean.  This may or may not include published details about how the author intends to define the taxon.  See http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001831.html 
+ # *Taxon Concept* - reference is made to a taxon name along with a publication which explains how the author intends for the name to be applied (Kennedy et al.2005, p.81).  The name used is followed by "_sec._" (_secundum_) or "_sensu_" then a citation for the reference which explains the author's intention.  A taxon concept is a more rigorously defined TNU.  See http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001820.html
+
+A taxon concept can be defined by a *circumscription* which refers to a collection of specimens that represent the concept.  Alternatively, a taxon concept can defined by describing the characters that define the concept (Kennedy et al., 2005, p.84).  
+
+*Note:*  A reference defining a taxon concept is not necessarily synonymous with the reference which published the name (although it could be if the intended concept was also expressed by the author when the name was published).  Thus a text representation identifying a taxon concept could be:
+
+genus+specificEpithet+scientificNameAuthorship+ "_sec._" (or "_sensu_")+ conceptAuthor+publicationDate
+
+for example:
+
+_Aus bus_ L. 1758 _sec._ Archer 1965
+
+where the species name was published by Linnaeus in 1758 and the taxon concept describing _Aus bus_ was published by Archer in 1965.  The Darwin Core term nameAccordingTo is for the concept publication, whereas the namePublishedIn term is for the name publication.  
+
+*Note:* I recall that somewhere in a tdwg-content post (which I have not yet located) that Rich Pyle stated and Markus Döring verified that it was intended that the Darwin Core Taxon class represent TNUs (or taxon concepts - a term used more broadly by people who don't make a distinction between taxon concepts and TNUs).  Thus one can infer that terms in the dwc:Taxon class may be properties of taxon concepts.  However, there are also some terms that may apply specifically to names rather than concepts.
+
+== TCS model ==
+
+The TDWG Taxonomic Concept Transfer Schema (TCS; http://www.tdwg.org/standards/117/) is an XML schema which provides a means for transferring information about the definitions of taxon concepts.  It is a ratified TDWG standard.  It is *not* a schema for transfer of metadata representing instances of taxon concepts. 
+  * See especially the document: !UserGuidev_1.3.pdf.
+  * The XML schema is at: TcsSchema. 
+
+== The TDWG Ontology ==
+The TDWG Ontology describes many kinds of resources relevant to biodiversity informatics.  However, most cases where it is actually being referenced in RDF seem to be descriptions of taxa (i.e. taxon concepts), taxon names, and "according to" references, with the latter two being components of taxa.  To some extent, the structure of the TDWG Ontology follows the TCS model.  However, since the TCS model is an XML schema and not defined in RDF, the TDWG Ontology makes reference to it through the property tcsEquivalence whose object is a string literal references to part of TCS. RDF examples of taxa described by the TDWG Ontology:
+
+http://biodiversity.org.au/apni.taxon/118883.rdf
+
+provided by Paul Murray in http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002204.html
+
+http://taxon.luomus.fi/rdf.php?lsid=urn:lsid:luomus.fi:taxonconcept:95a2abc0-5e47-4f4d-b161-4880ae982dcf:1
+
+provided by Hannu Saarenmaa (personal communication)
+
+== Strategy for darwin-sw suggested by the TCS model ==
+The description of a TaxonConcept on p. 89 of Kennedy et al., 2005 provides ideas on how the Taxon class could be represented in darwin-sw.  In each of the two required components of a taxon concept, Name and AccordingTo, the TCS model contains a simple string representation ("NameSimple" and "AccordingToSimple") as well as an optional NameDetailed and AccordingToDetailed which are references to other resources that describe the Name and AccordingTo resources more thoroughly.  In our model, the "simple" representations could be made using string literal properties that are already terms in Darwin Core (in keeping with the general strategy outlined for darwin-sw).  The "detailed" representations could be URI references to resources that are not defined by darwin-sw, but rather by the functional parts of the TDWG ontology.  In particular, tc:hasName and tc:accordingTo properties of the TaxonConcept part of the TDWG ontology could be made properties of the darwin-sw Taxon class which refer to resources that are defined outside darwin-sw (i.e. by the TDWG ontology).  That would get us out of the business of trying to define relationships that have already been defined and are functional.  It would also avoid embroiling our effort to represent Darwin Core terms in RDF in the endless debate about the minutiae of things taxonomic.
+
+
+_Comments from Cam not yet edited by Steve_
+
+  * In short, the Taxon or !TaxonConcept (equivalent terms, according to the http://rs.tdwg.org/ontology/voc/TaxonConcept.owl) is the meaningful biological conscription of real individuals, according to a taxonomist.  The !TaxonName is just a name string that is often reused in different concepts.  We have attached Functional Data proprties to Taxon (accordingTo), and !TaxonName (hasGenus, hasSpecificEpithet), mirroring their usage in TCS.
+
+
 == DwC vs. TCS ==
 
 Our choice is: we either model a taxon concept (name + authority):
@@ -12,9 +60,11 @@ We have currently modeled it here as TCS, but it is much simpler to use DwC and 
 
 One remaining niggle is that dwc:scientificNameAuthorship (which is what we usually have) may not be enough to fully specify dwc:nameAccordingTo (&ldquo;The _reference to the source_ in which the specific taxon concept circumscription...&rdquo;), which is required for a taxon concept.
 
-== TCS model ==
 
-If we follow the TDWG Taxonomic Concept Transfer Schema (TCS; http://www.tdwg.org/standards/117/):  
-  * See especially the document: !UserGuidev_1.3.pdf.
-  * The XML schema is at: TcsSchema. 
-  * In short, the Taxon or !TaxonConcept (equivalent terms, according to the http://rs.tdwg.org/ontology/voc/TaxonConcept.owl) is the meaningful biological conscription of real individuals, according to a taxonomist.  The !TaxonName is just a name string that is often reused in different concepts.  We have attached Functional Data proprties to Taxon (accordingTo), and !TaxonName (hasGenus, hasSpecificEpithet), mirroring their usage in TCS.
+== References: ==
+
+Hyam, R. and J. Kennedy. 2006. Taxon Concept Schema - User Guide.  http://www.tdwg.org/standards/117/
+
+Kennedy, J.B., R. Kukla, and T. Paterson. 2005. Scientific names are ambiguous as identifiers for biological taxa: their context and definition are required for accurate data integration.  Data Integration in the Life Sciences 2005, LNBI 3615, 80-95.  http://www.springerlink.com/content/7bv5pa3falxwrrvx/
+
+Pyle, R.L. 2004. Taxonomer: a relational data model for managing information relevant to taxonomic research.  PhyloInformatics 1:1-54.  http://systbio.org/files/phyloinformatics/1.pdf
