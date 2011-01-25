@@ -1,6 +1,6 @@
-#summary Taxon and TaxonName issues
+#summary Taxon issues
 
-= Taxon and TaxonName =
+= Taxon =
 
 == What is a Taxon? ==
 (The following information is summarized from a number of documents and threads from the tdwg-content email list as documented below.)
@@ -66,13 +66,12 @@ The description of a TaxonConcept on p. 89 of Kennedy et al., 2005 provides idea
 
 The "detailed" representations could be URI references to resources that are not defined by darwin-sw, but rather by the functioning parts of the TDWG ontology.  In particular, tc:hasName and tc:accordingTo properties of the TaxonConcept part of the TDWG ontology could be made properties of the darwin-sw Taxon class which refer to resources that are defined outside darwin-sw (i.e. by the TDWG ontology).  That would get us out of the business of trying to define relationships that have already been defined and are functional.  It would also avoid embroiling our effort to represent Darwin Core terms in RDF in the endless debate about the minutiae of things taxonomic.  
 
-If this strategy were followed, the TaxonName class would go away.  Under darwin-sw, the assertion would be made that the class Taxon (i.e. corresponding to the Darwin Core class Taxon) would be equivalent to the class Taxon in the TDWG Ontology.  Thus the properties established in darwin-sw and related to the dsw:Taxon class would also be related to the Taxon class (== the TaxonConcept class) of the TDWG Ontology.  Essentially, darwin-sw would be "connected" to the taxonomy components of the TDWG Ontology by declaring this equivalence.
+*Note:* in revision 54 I deleted the TaxonName class and declared dsw:Taxon to be equivalent to tc:TaxonConcept which is declared to be equivalent to tc:Taxon .  
+
+Under darwin-sw, the assertion has been made that the class Taxon (i.e. corresponding to the Darwin Core class Taxon) would be equivalent to the class Taxon in the TDWG Ontology.  Thus the properties established in darwin-sw and related to the dsw:Taxon class would also be related to the Taxon class (== the TaxonConcept class) of the TDWG Ontology.  Essentially, darwin-sw would be "connected" to the taxonomy components of the TDWG Ontology by declaring this equivalence.
 
 
-_Comments from Cam not yet edited by Steve_
-
-We have attached Functional Data proprties to Taxon (accordingTo), and !TaxonName (hasGenus, hasSpecificEpithet), mirroring their usage in TCS.
-
+_Issue raised by Cam_
 
 From the wiki (http://code.google.com/p/darwincore/wiki/Taxon): &ldquo;If no nameAccordingTo or nameAccordingToID is given explicitly given for a Taxon record, the &ldquo;nominal concept&rdquo; as defined by TCS should be assumed.&rdquo; - so the Taxon could be a taxon concept or a nominal concept.  This goes against the increased clarity we hope for from the SW.  
 
