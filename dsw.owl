@@ -13,6 +13,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY tc "http://rs.tdwg.org/ontology/voc/TaxonConcept#" >
     <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
     <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
 ]>
@@ -29,6 +30,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:dctype="http://purl.org/dc/dcmitype/Image"
+     xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
@@ -175,20 +177,6 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasTaxonName -->
-
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasTaxonName">
-        <rdfs:comment>The link from Taxon to TaxonName.  Fron the TCS guide: &quot;Each &lt;TaxonConcept&gt; ... may have a reference to a
-single &lt;TaxonName&gt; element&quot;
-</rdfs:comment>
-        <dc:creator>Cam Webb</dc:creator>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
-        <rdfs:domain rdf:resource="&dwc;Taxon"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon">
@@ -317,30 +305,6 @@ single &lt;TaxonName&gt; element&quot;
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasGenus -->
-
-    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasGenus">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <dc:creator>Cam Webb</dc:creator>
-        <rdfs:comment>Used in TCS: &lt;TaxonName&gt;&lt;CanonicalName&gt;&lt;Genus&gt;Rhododendron&lt;/Genus&gt;&lt;SpecificEpithet&gt;pentaphyllum&lt;/SpecificEpithet&gt;&lt;/CanonicalName&gt;&lt;/TaxonName&gt;.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasSpecificEpithet -->
-
-    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasSpecificEpithet">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:comment>Used in TCS: &lt;TaxonName&gt;&lt;CanonicalName&gt;&lt;Genus&gt;Rhododendron&lt;/Genus&gt;&lt;SpecificEpithet&gt;pentaphyllum&lt;/SpecificEpithet&gt;&lt;/CanonicalName&gt;&lt;/TaxonName&gt;.</rdfs:comment>
-        <dc:creator>Cam Webb</dc:creator>
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
 
     <owl:DatatypeProperty rdf:about="&dwc;eventDate">
@@ -424,14 +388,6 @@ single &lt;TaxonName&gt; element&quot;
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName -->
-
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName">
-        <rdfs:comment>A taxon name class, equivalent to: http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonName, and equivalent to TaxonName in TDWG TCS (http://www.tdwg.org/standards/117/). Linked to from TaxonConcept</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/dc/terms/Location -->
 
     <owl:Class rdf:about="&dcterms;Location">
@@ -473,11 +429,20 @@ single &lt;TaxonName&gt; element&quot;
     <!-- http://rs.tdwg.org/dwc/terms/Taxon -->
 
     <owl:Class rdf:about="&dwc;Taxon">
-        <rdfs:comment>A taxon concept class (name plus authority), equivalent to: http://rs.tdwg.org/ontology/voc/TaxonConcept#Taxon, and equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/)</rdfs:comment>
+        <owl:equivalentClass rdf:resource="&tc;TaxonConcept"/>
+        <rdfs:comment>A taxon concept class (name plus accordingTo), declared equivalent to: http://rs.tdwg.org/ontology/voc/TaxonConcept#Taxon, and equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept -->
+
+    <owl:Class rdf:about="&tc;TaxonConcept">
+        <rdfs:comment>Imported from the TDWG Ontology.  In that ontology, TaxonConcept is an equivalent property to tc:Taxon.  Thus dsw:Taxon is also equivalent to tc:Taxon.</rdfs:comment>
     </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
 
