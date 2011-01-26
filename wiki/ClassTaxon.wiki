@@ -1,4 +1,4 @@
-#summary Taxon issues
+#summary The Taxon class
 
 = Taxon =
 
