@@ -1,0 +1,56 @@
+#summary Compares darwin-sw to previous models.
+
+= Relationship of darwin-sw to earlier models =
+
+Note: this page is a modification of a post by Steve Baskauf to the tdwg-content list on 2010-11-13 (http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001944.html)
+
+The Association of Systematics Collections 
+(ASC)report on an Information Model for Biological Collections, posted at 
+http://wiki.tdwg.org/twiki/bin/view/TAG/HistoricalDocuments contains the chart:
+http://wiki.tdwg.org/twiki/bin/viewfile/TAG/HistoricalDocuments?rev=1;filename=Ascfig2.pdf
+
+Below are a series of diagrams that show increasingly normalized models.  For each model, a portion of that ASC chart is shown along with a simplified diagram showing the relationship among Darwin Core (DwC) classes which correspond roughly to the entities diagrammed on the ASC chart. (This simplified model originated from a diagram posted by Richard Pyle in http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001703.html .)
+
+The final diagram represents the main structure of darwin-sw, except as noted.  It does not represent all of the relationships that "tokens" can have with other resources in the diagram, just the token's role as documentation for an Occurrence.
+
+== ASC model ==
+The first model is the ASC model itself
+http://bioimages.vanderbilt.edu/pages/asc-model.jpg
+
+There are several differences in names between ASC and DwC.  
+dwc:Location corresponds to Locality in ASC, dwc:Event corresponds to 
+Collecting Event in ASC, dwc:Identification corresponds to Determination in ASC, and Collecting Unit in ASC corresponds to a subset of what I have been calling the "token" (evidence) that is limited to organisms, their pieces, and their conglomerations.  One may quibble about exact correspondence, but I think that fundamentally those things are congruent.  In the ASC model, the lines with crow's feet correspond to one-to-many relationships, with the foot at the "many" end.  In my diagram a triangle does the same thing with the point of the triangle representing the "one" end.  As you can see, the subset of the ASC model shown here can summarized in simplified form using DwC classes (with taxonNameUsage representing the DwC Taxon class or the TDWG Ontology TaxonConcept class).  The ASC model reflects the "museum" perspective: in many or most cases the whole organism is collected, or if only part of the organism is collected (e.g. tree branch) the organism is rarely re-visited for additional collections.  So this model is denormalized (flattened) to the extent that it doesn't allow for multiple types of tokens per organism or for resampling of the organism over time.
+
+== Darwin Core (DwC) Standard, 2009 ==
+The second diagram represents Darwin Core at the time it became a 
+standard in 2009.
+http://bioimages.vanderbilt.edu/pages/darwin-core-model.jpg
+
+The difference from the previous diagram is the creation of the 
+Occurrence class.  This class recognizes the needs of the observation 
+community because it allows one to connect Events to Determinations 
+directly without forcing them to be associated with a physical object 
+(token).  This modification was beneficial because terms describing the act of documenting the presence of a taxon during an Event are shared between observations and specimen collection.  This model presupposes that there is no more than one token per Occurrence. I say that this model represents the DwC standard because comments made following the adoption of the standard indicated that the drafters of the standard considered the evidence (e.g. specimens) to be considered a part of the Occurrence itself.  Further evidence of this is the fact that terms which describe specimens (such as dwc:preparations and dwc:disposition are included in the Occurrence class.  dwc:basisOfRecord is used to describe the nature of the one token.  Terms for handling tokens other than specimens are not well developed.
+
+== "Explicit Token" model ==
+The third diagram is a slight modification of the second and is what 
+I've call the "explicit token" model.  
+http://bioimages.vanderbilt.edu/pages/dwc-explicit-token-model.jpg
+
+It was not clear to me that it was universally accepted that the evidence which supports an Occurrence should be considered to be a part of the Occurrence itself.  In the discussion which took place on tdwg-content list (http://lists.tdwg.org/pipermail/tdwg-content/) during Sep-Nov 2010, it was confirmed that at least part of the DwC constituency felt that it would be best to separate an Occurrence as an entity from the evidence that documents it.  However, it was not clear from that discussion how the evidence should be classed/typed.
+
+The only difference between the model diagrammed above and the previous model is that there is now recognition that the token is a separate thing from the Occurrence.  Types of tokens other than specimens (such as images and sounds) are recognized explicitly as means of documenting Occurrences.  The lines connecting Occurrence to tokens have "crow's feet" on the token side, allowing that there may be one to many tokens that act as evidence for a single Occurrence.  When I complain that basisOfRecord "doesn't work", it is with this model in mind.  In this model, there is not one single "basis" (token) for a record - under this model there would need to be the possibility to have multiple basisOfRecord values for an Occurrence, which I don't really think is supported currently in DwC. 
+
+== Fully normalized model==
+The fourth diagram adds one component to the explicit token model.
+http://bioimages.vanderbilt.edu/pages/full-model.jpg
+
+This model introduces an Individual class (called the IndividualOrganism class in DSW) as a node that connects Occurrences to Identifications (a.k.a. Determinations).  In some sense, this is not really an addition to the existing Darwin Core standard because the term individualID already exists in the Occurrence class.  The fundamental purpose that Individual serves is to accommodate the "crow's foot" on the Occurrence side of the line that connects Individual to Occurrence, i.e. to allow re-sampling over time and space.  The line going to 
+Identification/Determination has to be connected somewhere and it makes sense to connect it to Individual rather than Occurrence since the resampled entity is not going to change its identity from one sampling to another.
+
+The other thing that has been added to this model to make it more denormalized is a spin-off from Paul Murray's post 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001771.html
+If we were to treat time in the same way we are treating Locations and other entities a fully normalized model would have a class for Time since time can have varying degrees of specificity (just like Location and Taxon) and there is a one-to-many relationship between Time and Event (i.e. there can be many Events going on at different Locations at a given Time, just like there can be many Events at different Times at a given Location).  We almost always denormalize the Time class out of our models because in most cases it can be represented as a single ISO 8601 string.  But as Paul points out, 
+Time can be a complicated thing that one might want to model in a more sophisticated way than a single string.  At this point, there does not seem to be a demand for time as a separate class, so DSW does not represent it as a separate entity.  
+
+The original ASC model itself is more complex and more "normalized" than the last model shown here.  However, this level of complexity does not seem to be in demand currently and is not represented in the class structure of DwC.  So DSW does not include the additional level of complexity represented in the full ASC model.  
