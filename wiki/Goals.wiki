@@ -1,4 +1,4 @@
-#summary Goals and design principles for this project
+#summary Goals and specific design principles for this project
 
 = Goals =
 
