@@ -1,0 +1,8 @@
+#summary Issues Specimen class
+
+= The Specimen Class =
+
+== Issues ==
+
+  * The name 'Token.' Is 'Record' better?
+  * Are specimens, etc, sub-classes of Token?
