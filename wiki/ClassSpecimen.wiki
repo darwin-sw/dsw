@@ -1,4 +1,4 @@
-#summary Issues Specimen class
+#summary Issues related to the Specimen class
 
 = The Specimen Class =
 
