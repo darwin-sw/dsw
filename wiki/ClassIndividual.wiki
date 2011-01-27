@@ -2,4 +2,18 @@
 
 = The IndividualOrganism class =
 
+This class does not exist in the current Darwin Core (DwC) standard.  There is a pending proposal (currently stalled) to add a class to DwC called Individual which would be the object of the existing term dwc:individualID (http://rs.tdwg.org/dwc/terms/index.htm#individualID) and which would accommodate resampling of the same individual or group over time.  In this ontology, we have called this class IndividualOrganism to prevent confusion with an "individual" in the sense of an OWL ontology (i.e. "objects in the domain in which we are interested"; see p. 10 of A Practical Guide to Building OWL Ontologies Using Protege 4 and CO-ODE Tools, Edition 1.2).  
+
+Mirroring the use in dwc:individualID, an instance of the IndividualOrganism class could be a biological individual or a small population of the same kind organism.  Allowing IndividualOrganism instances to include small populations is a concession to the fact that it is sometimes inconvenient or not possible to tell where one biological individual ends and another begins (e.g. clones, colonial organisms, densely packed populations).  It also mirrors the common practice of collecting several biological individuals in the same sample (e.g. several grass plants in the same bundle or a clump of moss).  
+
+The original intent when the DwC class was proposed was for a dwc:Individual to represent a particular taxon at the lowest level (i.e. having a homogeneous taxonomic identity).  In the discussion that took place on the tdwg-content email list from Oct-Nov 2010, it was suggested that the class be more broadly defined to allow heterogeneous mixtures of biological individuals that would be identified to the lowest shared taxonomic identity.  We do not model that here, primarily because we don't know how. 
+
 (add summary of the tdwg-content mailing list discussion)
+
+==Properties suitable for use in DSW (not a complete list)==
+===Data properties defined in the darwin-sw ontology===
+ * *individualOrganismRemarks* Text literal
+
+===Object properties defined in the darwin-sw ontology===
+ * *hasOccurrence* range Occurrence
+ * *hasIdentification* range Identification
