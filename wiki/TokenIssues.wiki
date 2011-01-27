@@ -1,0 +1,10 @@
+#summary Issues of the Token class (incl specimens, photos, etc)
+
+= The Token Class =
+
+== Issues ==
+
+  * The name 'Token.' Is 'Record' better?
+  * Are specimens, etc, sub-classes of Token?
+
+I renamed this class to Specimen because I don't really think that the other types of tokens (images, text records, etc.) should be subclasses of this. They can serve as objects of the hasEvidence property, but really any class of thing can serve as evidence for an Occurrence without us having to make all of those classes be subclasses of "Token". I don't see a benefit of it - they don't really share any properties that I can think of. On the other hand, the types of things that are specimens (living or preserved, whole or pieces) do share properties. 
