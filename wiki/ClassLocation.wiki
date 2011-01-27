@@ -1,6 +1,6 @@
 #summary The Location class
 
-= Location =
+= The Location class=
 
 The Location class mirrors dcterms:Location which is imported into the Darwin Core vocabulary.  It is imported directly into darwin-sw (DSW).
 
