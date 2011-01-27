@@ -3,7 +3,12 @@
 = The Occurrence class =
 The Occurrence class represents instances where the presence of an organism at a location is documented.  It functions primarily as a node that connects IndividualOrganisms to Events as well as to evidence that supports the record.  In DSW, the Occurrence class differs somewhat from DwC because some terms in the DwC Occurrence class are placed within the Specimen class of DSW.
 
-==DwC terms suitable for use as properties in DSW (not a complete list)==
-===Data properties===
+==Properties suitable for use in DSW (not a complete list)==
+===Data properties from DwC===
  * *occurrenceRemarks* Text literal
  * *recordedBy* Text literal form, use recordedByURI for an object property
+
+===Object properties defined in the darwin-sw ontology===
+ * *atEvent* range Event
+ * *hasEvidence* range can be any class of token that is suitable for evidence
+ * *occurrenceOf* range IndividualOrganism
