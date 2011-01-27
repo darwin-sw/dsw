@@ -1,10 +1,12 @@
-#summary Issues of the Token class (incl specimens, photos, etc)
+#summary Issues of tokens (incl specimens, photos, etc)
 
-= The Token Class =
+= Issues related to tokens (evidence) =
+Originally we created a class called "Token" which represented the evidence that was used to document an Occurrence.  However, after some discussion we got rid of it because I don't really think that the various types of tokens (images, text records, etc.) should be subclasses of one kind of thing. In that case, we are defining a class by what purpose we want it to serve, not on the basis of what it "is" (see DesignPrinciples, IV).  The token itself may have many uses.  They can serve as objects of the hasEvidence property, but they could also serve many other uses, such as an illustration for a book, as a source of DNA, as the basis of a species description, etc.  Tokens don't really share any properties that I can think of. Some of the kinds of tokens already have classes/types defined in other vocabularies (such as dctype:StillImage) and we don't need to re-define them here.  
+
+One kind of token that does not have a class definition elsewhere (outside of TDWG) is Specimen.  For that reason, we have defined Specimen as a class.  Several terms that are currently listed under dwc:Occurrence probably actually belong in the class we have defined as specimen.  We have noted them on the ClassSpecimen page.  
+
 
 == Issues ==
 
-  * The name 'Token.' Is 'Record' better?
-  * Are specimens, etc, sub-classes of Token?
+  * The name 'Token.' Is 'Record' better?  How about 'evidence'?
 
-I renamed this class to Specimen because I don't really think that the other types of tokens (images, text records, etc.) should be subclasses of this. They can serve as objects of the hasEvidence property, but really any class of thing can serve as evidence for an Occurrence without us having to make all of those classes be subclasses of "Token". I don't see a benefit of it - they don't really share any properties that I can think of. On the other hand, the types of things that are specimens (living or preserved, whole or pieces) do share properties. 
