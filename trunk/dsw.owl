@@ -305,6 +305,15 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#individualOrganismRemarks -->
+
+    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#individualOrganismRemarks">
+        <dc:creator>Steve Baskauf</dc:creator>
+        <rdfs:comment>In the proposed additions to DwC this was called individualRemarks</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
 
     <owl:DatatypeProperty rdf:about="&dwc;eventDate">
