@@ -10,7 +10,6 @@
 
 ===Object properties defined in the darwin-sw ontology===
  * *evidenceFor* range Occurrence
- * *usedInIdentification* range Identification
+ * *basisForIdentification* range Identification
 
 Note: on 2011-01-27 I removed Specimen as the range of *hasEvidence* and as the domain of *evidenceFor*.  I did this because Specimen is not the only class that can serve as evidence for an Occurrence.  If these range and domain specifications were in place then one would reason that anything which is the object of the hasEvidence property (or the subject of the evidenceFor property) IS type Specimen.  It MAY be a specimen but does not HAVE to be one.
-
