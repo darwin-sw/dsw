@@ -1,0 +1,14 @@
+#summary The Identification class
+
+= The Identification class =
+The Identification class connects an individual organisms to a Taxon.  Taxon is understood to be an instance of a taxon concept or taxon name usage (see the discussion of the Taxon class).  A particular individual organism may be assigned several identifications.  Each identification should be a separate instance of Identification.  
+
+==Properties suitable for use in DSW (not a complete list)==
+===Data properties from DwC===
+ * *identifiedBy* string literal
+ * *dateIdentified* ISO 8601 date-time string literal
+ * *identificationRemarks* string literal
+
+===Object properties defined in the darwin-sw ontology===
+ * *identifies* range IndividualOrganism
+ * *toTaxon* range Taxon
