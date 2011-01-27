@@ -1,6 +1,6 @@
 #summary The Location class
 
-= Introduction =
+= Location =
 
 The Location class mirrors dcterms:Location which is imported into the Darwin Core vocabulary.  It is imported directly into darwin-sw (DSW).
 
@@ -11,9 +11,11 @@ The Location class mirrors dcterms:Location which is imported into the Darwin Co
  * *minimumElevationInMeters* and *maximumElevationInMeters*  Can both be replaced by a single value for *geo:alt*
  * *geodeticDatum*  Note: not necessary with geo: terms
  * *coordinateUncertaintyInMeters*  Suitable term for indicating uncertainty in latitude and longitude
- * *locationRemarks*
- * *georeferenceRemarks*
+ * *locationRemarks* text literal
+ * *georeferenceRemarks* text literal
+ * *georeferencedBy* text literal form, us georeferencedByURI for object property
 
 ===Object properties===
- * *georeferencedBy* The object can be FOAF entities (e.g. a *foaf:Person*)
+ * *georeferencedByURI* range FOAF entities (e.g. a *foaf:Person*)
+ * *locates* range Event
  
