@@ -12,3 +12,4 @@ The Occurrence class represents instances where the presence of an organism at a
  * *atEvent* range Event
  * *hasEvidence* range can be any class of token that is suitable for evidence
  * *occurrenceOf* range IndividualOrganism
+ * *recordedByURI* range probably foaf:Person
