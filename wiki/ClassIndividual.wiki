@@ -17,3 +17,8 @@ The original intent when the DwC class was proposed was for a dwc:Individual to 
 ===Object properties defined in the darwin-sw ontology===
  * *hasOccurrence* range Occurrence
  * *hasIdentification* range Identification
+ * *hasDerivative* range is any token that is derived directly from the IndividualOrganism.  May be a physical thing like a specimen, an information resource like a digital image, a text reference, etc.
+
+===Object properties defined outside the darwin-sw ontology===
+ * *dcterms:hasPart* range can include any physical object that was removed from the IndividualOrganism, e.g. preserved specimen, blood sample (see http://dublincore.org/documents/dcmi-terms/#terms-hasPart)
+ * *foaf:depiction* range dctype:StillImage (?) see http://xmlns.com/foaf/spec/#term_depiction
