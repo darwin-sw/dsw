@@ -1,8 +1,0 @@
-#summary Issues of the Token class (incl specimens, photos, etc)
-
-= The Token Class =
-
-== Issues ==
-
-  * The name 'Token.' Is 'Record' better?
-  * Are specimens, etc, sub-classes of Token?
