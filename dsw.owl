@@ -373,7 +373,6 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism">
-        <owl:disjointWith rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
         <owl:disjointWith rdf:resource="&dcterms;Location"/>
         <owl:disjointWith rdf:resource="&dwc;Event"/>
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
