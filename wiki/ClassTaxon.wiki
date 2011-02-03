@@ -31,7 +31,7 @@ The TDWG Taxonomic Concept Transfer Schema (TCS; http://www.tdwg.org/standards/1
   * The XML schema is at: TcsSchema. 
 
 == The TDWG Ontology ==
-Note: the qualified namespace tc: is 
+Note: the qualified namespace *tc:* is 
 
 http://rs.tdwg.org/ontology/voc/TaxonConcept#
 
@@ -39,7 +39,15 @@ which is can be viewed at
 
 http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl
 
-The qualified namespace tcom: is 
+The qualified namespace *tn:* is 
+
+http://rs.tdwg.org/ontology/voc/TaxonName#
+
+which can be viewed at
+
+http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonName.rdf
+
+The qualified namespace *tcom:* is 
 
 http://rs.tdwg.org/ontology/voc/Common#
 
@@ -74,6 +82,19 @@ Under darwin-sw, the assertion has been made that the class Taxon (i.e. correspo
 _Issue raised by Cam_
 
 From the wiki (http://code.google.com/p/darwincore/wiki/Taxon): &ldquo;If no nameAccordingTo or nameAccordingToID is given explicitly given for a Taxon record, the &ldquo;nominal concept&rdquo; as defined by TCS should be assumed.&rdquo; - so the Taxon could be a taxon concept or a nominal concept.  This goes against the increased clarity we hope for from the SW.  
+
+
+==Properties suitable for use in DSW (not a complete list)==
+===Object properties defined in the darwin-sw ontology===
+ * *identificationUsingTaxon* range Identification
+
+===Data properties defined outside the darwin-sw ontology===
+ * *tc:nameString * string literal of scientific name plus author  (see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
+ * *tc:accordingToString * string literal describing the publication that makes the assertion  (see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
+
+===Object properties defined outside the darwin-sw ontology===
+ * *tc:hasName * range tn:TaxonName of the TDWG ontology (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
+ * *tc:accordingTo * range a reference to the publication that makes the assertion (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
 
 
 == References: ==
