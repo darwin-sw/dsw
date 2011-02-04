@@ -8,6 +8,8 @@ The Identification class connects an individual organisms to a Taxon.  Taxon is 
  * *identifiedBy* string literal
  * *dateIdentified* ISO 8601 date-time string literal
  * *identificationRemarks* string literal
+ * *identificationReferences* string literal
+ * *identificationQualifier* string literal
 
 ===Object properties defined in the darwin-sw ontology===
  * *identifies* range IndividualOrganism
