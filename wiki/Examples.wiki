@@ -5,7 +5,8 @@
 
 Note in this example: 
  * the rdf:type is explicitly declared as a property.
- * the tree is both a living specimen in an arboretum and an IndividualOrganism
+ * the tree is both type LivingSpecimen (in an arboretum) and an IndividualOrganism.  
+ * because it's also a LivingSpecimen, it has properties (such as catalog number) that a wild IndividualOrganism would not.
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -20,11 +21,6 @@ Note in this example:
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
 >
 
-<!-- For use in AJAX/XSLT, URIs are labeled here -->
-<rdf:Description rdf:about="http://biocol.org/urn:lsid:biocol.org:col:35115">
-<rdfs:label>Bioimages</rdfs:label>
-</rdf:Description>
-
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126">
 	<rdf:type rdf:resource ="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism" />
 	<rdf:type rdf:resource ="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#LivingSpecimen" />
@@ -33,6 +29,11 @@ Note in this example:
 	<!--Basic information about the individual organism-->
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:identifier>
 	<dcterms:description>Field individual of Ginkgo biloba L. with GUID: http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
+	
+	<!-- Properties that the tree has by virtue of its LivingSpecimen type -->
+	<dwc:collectionID rdf:resource ="http://biocol.org/urn:lsid:biocol.org:col:35259" />
+	<dwc:collectionCode>Vanderbilt</dwc:collectionCode>
+	<dwc:catalogNumber>12-126</dwc:catalogNumber>
 	
 	<!-- Relationships of the individual to other resources.  -->
 	<foaf:isPrimaryTopicOf rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126.rdf" />
