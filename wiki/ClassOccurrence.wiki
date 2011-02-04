@@ -7,6 +7,8 @@ The Occurrence class represents instances where the presence of an organism at a
 ===Data properties from DwC===
  * *occurrenceRemarks* Text literal
  * *recordedBy* Text literal form, use recordedByURI for an object property
+ * *recordNumber* text literal
+ * *individualCount* literal
 
 ===Object properties defined in the darwin-sw ontology===
  * *atEvent* range Event
