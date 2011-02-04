@@ -14,6 +14,11 @@ The Location class mirrors dcterms:Location which is imported into the Darwin Co
  * *locationRemarks* text literal
  * *georeferenceRemarks* text literal
  * *georeferencedBy* text literal form, us georeferencedByURI for object property
+ * *countryCode* ISO 3166-1-alpha-2 country codes (text literal)
+ * *stateProvince* unabbreviated text literal
+ * *county* unabbreviated text literal
+ * *locality* text literal
+
 
 ===Object properties===
  * *georeferencedByURI* range FOAF entities (e.g. a *foaf:Person*)
