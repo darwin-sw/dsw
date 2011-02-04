@@ -7,6 +7,7 @@
  * *catalogNumber* string literal
  * *preparations* string literal
  * *disposition* string literal
+ * *catalogNumber* string literal
 
 ===Object properties defined in the darwin-sw ontology===
  * *evidenceFor* range Occurrence
