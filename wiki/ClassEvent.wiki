@@ -6,7 +6,11 @@ The Event class functions primarily as a node to connect one or  more Occurrence
 ==Properties suitable for use in DSW (not a complete list)==
 ===Data properties from DwC===
  * *eventDate* Use ISO 8601 dates (see http://en.wikipedia.org/wiki/ISO_8601).  Note: follow the convention of DwC where eventDate includes either the date only or the date+time.  dwc:eventTime is only appropriate when the time is atomized separately from the date.
- * *eventRemarks* String literal
+ * *eventRemarks* string literal
+ * *samplingProtocol* string literal
+ * *samplingEffort* string literal
+ * *fieldNotes* string literal
+ * *fieldNumber* string literal
 
 ===Object properties defined in the darwin-sw ontology===
  * *eventOf* range Occurrence
