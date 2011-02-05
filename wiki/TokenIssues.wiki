@@ -38,9 +38,67 @@ Note: although not shown here, the LivingSpecimen could simultaneously be typed 
 The diagram could be even more complex if an herbarium specimen had been collected from the original tree in Borneo.  Darwin-sw allows for any degree of complexity of relationships.
 
 = Types of token relationships illustrated in the above examples =
-Enough for one day.  To be finished later...
+General principle #2 stated above stated that in darwin-sw different object properties are used to describe how tokens are related to each other according to the purpose that one wishes to achieve in describing the relationship.
+
 == Documentation of an Occurrence ==
+In an Occurrence, we wish to document that the IndividualOrganism was present at an Event.  In its simplest form, an Occurrence may simply be asserted by the subject of dwc:recordedBy (i.e. the person or persons who observed the organism) without any evidence.  One could call such an Occurrence an observation (Observations need not be totally lacking of associated resources since they could be documented by physical resources,such as lab notebooks, which could be scanned with a representation delivered electronically.)  However, it is preferable to have some kind of objective resource that was collected at the time at which the Occurrence was recorded.  In darwin-sw, an Occurrence can have the property *dsw:hasEvidence* to connect the Occurrence resource to the token that documents it.  A token can be assigned the inverse property *dsw:evidenceFor* which would assert exactly the same relationship.
+
+ 
+http://bioimages.vanderbilt.edu/pages/dsw-tree-occ.gif
+
+In the example above, each of the two Occurrences of the tree is documented by a token: Occurrence 1 by the herbarium specimen and Occurrence 2 by the live plant image.
+
+
+
+http://bioimages.vanderbilt.edu/pages/dsw-insect-occ.gif
+
+In the example above, the single Occurrence of the insect documented by the collection has two pieces of evidence: the image of the live insect, and the pinned insect itself in the museum collection.
+
+
+
+http://bioimages.vanderbilt.edu/pages/dsw-wildebeest-occ.gif
+
+In the example above, the Occurrence of the wildebeest calf in the wild has two forms of evidence: the image of the calf taken at the capture, and the calf itself as a living specimen in the zoo.
+
+
+http://bioimages.vanderbilt.edu/pages/dsw-botanical-occ.gif
+
+In the example above, the Occurrence of the tree in Borneo is documented by the live plant image taken when the tree was observed in the field and by the living specimen in the botanical garden that was grown from the cutting taken from the tree.
+
+
 == Relationship of a token to a parent resource ==
+There are relationships defined by vocabularies functioning outside the biodiversity informatics community, such as Dublin Core(DCIM) and Friend-of-a-friend (FOAF), that can be used to explain how two resources are related.  Because terms from these vocabularies are widely understood, it is desirable to use them to describe relationships among resources in the context of darwin-sw so that general-purpose semantic clients which are not familiar with dsw can "understand" the connection between the resources.
+
+http://bioimages.vanderbilt.edu/pages/dsw-tree-relate.gif
+
+In the example above, *foaf:depiction* is used to indicate that the live-pant image is a picture of the tree and that the herbarium specimen image is a picture of the specimen.  The inverse property *foaf:depicts* could be used as a property of the images and impart the same relationship.  *dcterms:hasPart* is used as a property of the tree to indicate that the specimen was part of it.  The inverse property *isPartOf* could have been used as a property of the specimen to indicate the same relationship.
+
+
+http://bioimages.vanderbilt.edu/pages/dsw-insect-relate.gif
+
+*dcterms:hasPart* is used to indicate that the pinned specimen is part of (in this case the whole part of) the insect and that the leg specimen is part of the pinned specimen.  *foaf:depiction* is used to relate the images to the resource they depict.
+
+
+http://bioimages.vanderbilt.edu/pages/dsw-wildebeest-relate.gif
+
+*dcterms:hasPart* and *foaf:depiction* are used as above.  I don't if there is a standard term to indicate the relationship between a DNA sequence and its source.
+
+
+http://bioimages.vanderbilt.edu/pages/dsw-botanical-relate.gif
+
+The same terms are used as above, but in a more complex network.
+
+
 == Tracking provenance of a token ==
+In darwin-sw, the term *dsw:hasDerivative* indicates that a resource of any sort is derived from the subject resource.  The inverse property *dsw:derivedFrom* serves the same purpose but has the derived resource as the subject.  Both of these properties are defined in the ontology as type owl:TransitiveProperty .  This means that if a subject resource A (e.g. a specimen image) is related to object resource B (e.g. the specimen) by the transitive derivedFrom property, and if subject resource B (e.g. the specimen) is also related to object resource C (e.g. the tree from which the specimen is collected) by the transitive derivedFrom property, then resource A (the specimen image) is also derivedFrom resource C (the tree).  Thus, no matter how many steps removed a derived resource is from the original source, the relationship of that derived resource to the original source can always be inferred by a chain of derivedFrom (or hasDerivative) relationships.
 
 
+http://bioimages.vanderbilt.edu/pages/dsw-tree-prov.gif
+
+The example above illustrates the circumstance described in the introduction to this section.  
+
+http://bioimages.vanderbilt.edu/pages/dsw-insect-prov.gif
+
+http://bioimages.vanderbilt.edu/pages/dsw-wildebeest-prov.gif
+
+http://bioimages.vanderbilt.edu/pages/dsw-botanical-prov.gif
