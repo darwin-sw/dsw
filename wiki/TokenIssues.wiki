@@ -90,15 +90,25 @@ The same terms are used as above, but in a more complex network.
 
 
 == Tracking provenance of a token ==
-In darwin-sw, the term *dsw:hasDerivative* indicates that a resource of any sort is derived from the subject resource.  The inverse property *dsw:derivedFrom* serves the same purpose but has the derived resource as the subject.  Both of these properties are defined in the ontology as type owl:TransitiveProperty .  This means that if a subject resource A (e.g. a specimen image) is related to object resource B (e.g. the specimen) by the transitive derivedFrom property, and if subject resource B (e.g. the specimen) is also related to object resource C (e.g. the tree from which the specimen is collected) by the transitive derivedFrom property, then resource A (the specimen image) is also derivedFrom resource C (the tree).  Thus, no matter how many steps removed a derived resource is from the original source, the relationship of that derived resource to the original source can always be inferred by a chain of derivedFrom (or hasDerivative) relationships.
+In darwin-sw, the term *dsw:hasDerivative* indicates that a resource of any sort is derived from the subject resource.  The inverse property *dsw:derivedFrom* serves the same purpose but has the derived resource as the subject.  Both of these properties are defined in the ontology as type owl:TransitiveProperty .  This means that if a subject resource A (e.g. a specimen image) is related to object resource B (e.g. the specimen) by the transitive derivedFrom property, and if subject resource B (e.g. the specimen) is also related to object resource C (e.g. the tree from which the specimen is collected) by the transitive derivedFrom property, then resource A (the specimen image) is also derivedFrom resource C (the tree).  Thus, no matter how many steps removed a derived resource is from the original source, the relationship of that derived resource to the original source (e.g. the organism in the wild) can always be inferred by a client through a chain of derivedFrom (or hasDerivative) relationships.  
+
+The ability to do this kind of tracking seems somewhat trivial in simple cases (such as the tree specimen or wildebeest - see below).  However, in more complex cases (e.g. the insect case below), or in cases where metadata for diverse types of resources are being managed across several institutions (e.g. the botanical garden example below), the ability to track provenance through the Internet using globally unique identifiers could be very important.
 
 
 http://bioimages.vanderbilt.edu/pages/dsw-tree-prov.gif
 
-The example above illustrates the circumstance described in the introduction to this section.  
+The example above illustrates how a client can use multiple hasDerivative properties to infer that the specimen image is derived from the tree. 
 
 http://bioimages.vanderbilt.edu/pages/dsw-insect-prov.gif
 
+In the example above, each set of colored arrows shows a chain of hasDerivative relationships that would show that the terminal resource was derived from the insect.  If the same arrows were pointed in the other direction, they would show how derivedFrom could be used to infer that each terminal resource was derived from the insect.
+
 http://bioimages.vanderbilt.edu/pages/dsw-wildebeest-prov.gif
 
+Chains of hasDerivative properties in the wildebeest example.
+
 http://bioimages.vanderbilt.edu/pages/dsw-botanical-prov.gif
+
+In even the most complex example, hasDerivative/derivedFrom can be used to determine the source IndividualOrganism.  This is particularly important in situations such as botanical gardens where living specimens are frequently propagated and sent to other institutions.  As long as each institution is careful to maintain a record of the source from which its specimens is derived, it is possible (in theory) to track each specimen to the source individual in the wild. Whether this level of diligence would be attained remains to be seen, but this system would at least make it possible.
+
+Although not shown in any of these examples, derivedFrom could be used to track the provenance of multiple electronic resources.  Any of the following examples could be related to their source IndividualOrganism using derivedFrom: a still image cropped from a larger image, a still image captured from a film, an image used as part of a key, or an image generated from non-image digital data.
