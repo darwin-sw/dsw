@@ -53,10 +53,8 @@ Note in this example:
 	<dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/baskauf/10554#occ" />
 	
 	<!-- Identifications applied to the individual-->
-	<!-- note: I am going to allow a blank node here because I can't see that it is likely anyone would make reference to this resource
-		Also, I don't know how to name it! -->
 	<dsw:hasIdentification>
-		<dwc:Description>
+		<dwc:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126#2002-04-10baskauf">
 			<dcterms:description>Determination of Ginkgo biloba L. for the individual http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
 			<rdf:type rdf:resource ="http://rs.tdwg.org/dwc/terms/Identification" />
 			
