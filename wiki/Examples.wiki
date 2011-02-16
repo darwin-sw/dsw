@@ -175,7 +175,8 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	<rdf:type rdf:resource ="http://xxx.org/XXX/MultiMediaObject" />
 	<dcterms:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/baskauf/10554</dcterms:identifier>
-	<dcterms:creator rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
+	<dcterms:creator>Steven J. Baskauf</dcterms:creator>
+	<foaf:maker rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
 	<dcterms:created>2002-04-15T08:54:22</dcterms:created>
 	<dwc:collectionID rdf:resource ="http://biocol.org/urn:lsid:biocol.org:col:35115" />
 	<dwc:institutionCode>bioimages</dwc:institutionCode>
