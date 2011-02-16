@@ -32,7 +32,7 @@ Note in this example:
 	
 	<!-- Properties that the tree has by virtue of its LivingSpecimen type -->
 	<dwc:collectionID rdf:resource ="http://biocol.org/urn:lsid:biocol.org:col:35259" />
-	<dwc:collectionCode>Vanderbilt</dwc:collectionCode>
+	<dwc:collectionCode>vanderbilt</dwc:collectionCode>
 	<dwc:catalogNumber>12-126</dwc:catalogNumber>
 	
 	<!-- Relationships of the individual to other resources.  -->
