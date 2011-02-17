@@ -218,10 +218,11 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	<rdf:type rdf:resource ="http://rs.tdwg.org/dwc/terms/Occurrence" />
 	<dsw:occurrenceOf rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126" />
 	<dwc:recordedBy>Steven J. Baskauf</dwc:recordedBy>
+	<dsw:recordedByURI rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
 	<dsw:atEvent>
 		<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#eve">
 			<rdf:type rdf:resource ="http://rs.tdwg.org/dwc/terms/Event" />
-			<dsw:recordedByURI rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
+
 			<dwc:eventDate>2002-04-15T08:54:22</dwc:eventDate>
 			<dsw:locatedAt>
 				<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#loc">
