@@ -55,7 +55,7 @@ Note in this example:
 	
 	<!-- Identifications applied to the individual-->
 	<dsw:hasIdentification>
-		<dwc:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126#2002-04-10baskauf">
+		<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126#2002-04-10baskauf">
 			<dcterms:description>Determination of Ginkgo biloba L. for the individual http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
 			<rdf:type rdf:resource ="http://rs.tdwg.org/dwc/terms/Identification" />
 			
@@ -69,7 +69,7 @@ Note in this example:
 			<!-- Relationship of the identification to other resources -->
 			<dsw:identifies rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126"/>
 			<dsw:identifiedBasedOn rdf:resource="http://bioimages.vanderbilt.edu/baskauf/10554"/>
-		</dwc:Description>
+		</rdf:Description>
 	</dsw:hasIdentification>
 </rdf:Description>
 
