@@ -29,6 +29,7 @@ Note in this example:
 	<!--Basic information about the individual organism-->
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:identifier>
 	<dcterms:description>Field individual of Ginkgo biloba L. with GUID: http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
+	<dsw:individualOrganismRemarks>This tree was miraculously spared from destruction in the building of the 21st Ave. crosswalk.</dsw:individualOrganismRemarks>
 	
 	<!-- Properties that the tree has by virtue of its LivingSpecimen type -->
 	<dwc:collectionID rdf:resource ="http://biocol.org/urn:lsid:biocol.org:col:35259" />
