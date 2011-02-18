@@ -229,6 +229,7 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 					<rdf:type rdf:resource ="http://purl.org/dc/terms/Location" />
 					<geo:lat>36.143951</geo:lat>
 					<geo:long>-86.799121</geo:long>
+					<geo:alt>198</geo:alt>
 					<dwc:coordinateUncertaintyInMeters>10</dwc:coordinateUncertaintyInMeters>
 					<dwc:locality>Vanderbilt University, Nashville</dwc:locality>
 					<dwc:georeferenceRemarks>Location of individual determined from GIS database.</dwc:georeferenceRemarks>
