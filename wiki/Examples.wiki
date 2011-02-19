@@ -22,8 +22,8 @@ Note in this example:
 >
 
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126">
-	<rdf:type rdf:resource ="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism" />
-	<rdf:type rdf:resource ="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#LivingSpecimen" />
+	<rdf:type rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism" />
+	<rdf:type rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#LivingSpecimen" />
 	<mrtg:MetadataLanguage>en</mrtg:MetadataLanguage>
 	
 	<!--Basic information about the individual organism-->
@@ -32,7 +32,7 @@ Note in this example:
 	<dsw:individualOrganismRemarks>This tree was miraculously spared from destruction in the building of the 21st Ave. crosswalk.</dsw:individualOrganismRemarks>
 	
 	<!-- Properties that the tree has by virtue of its LivingSpecimen type -->
-	<dwc:collectionID rdf:resource ="http://biocol.org/urn:lsid:biocol.org:col:35259" />
+	<dwc:collectionID rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35259" />
 	<dwc:collectionCode>vanderbilt</dwc:collectionCode>
 	<dwc:catalogNumber>12-126</dwc:catalogNumber>
 	
@@ -57,12 +57,12 @@ Note in this example:
 	<dsw:hasIdentification>
 		<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126#2002-04-10baskauf">
 			<dcterms:description>Determination of Ginkgo biloba L. for the individual http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
-			<rdf:type rdf:resource ="http://rs.tdwg.org/dwc/terms/Identification" />
+			<rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Identification" />
 			
 			<!-- In lieu of stable external identifiers for taxon concepts, I'm defining some onsite -->
 			<dsw:toTaxon rdf:resource="http://bioimages.vanderbilt.edu/taxonConcepts#1" />
 			
-			<dsw:hasIdentificationByURI rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
+			<dsw:hasIdentificationByURI rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 			<dwc:identifiedBy>Steven J. Baskauf</dwc:identifiedBy>
 			<dwc:dateIdentified>2002-04-10</dwc:dateIdentified>
 		
@@ -78,7 +78,8 @@ Information about the metadata document itself
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126.rdf">
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/vanderbilt/12-126.rdf</dcterms:identifier>
 	<dcterms:description>RDF formatted description of the living organism http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
-	<dcterms:creator rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115"/>
+	<dcterms:creator>Bioimages http://bioimages.vanderbilt.edu/</dcterms:creator>
+	<foaf:maker rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115" />
 	<dcterms:language>en</dcterms:language>
 	<dcterms:modified>2010-11-08T11:13:49</dcterms:modified>
 	<xmp:MetadataDate>2010-11-08T11:13:49</xmp:MetadataDate>
@@ -103,7 +104,7 @@ Information about the metadata document itself
 
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/taxonConcepts#1">
 	<mrtg:MetadataLanguage>en</mrtg:MetadataLanguage>
-	<rdf:type rdf:resource ="http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept" />
+	<rdf:type rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept" />
 	<rdfs:label>Ginkgo biloba L. sensu Flora of North America</rdfs:label>
 	<dcterms:description>Taxon concept of Ginkgo biloba L. sensu Flora of North America</dcterms:description>
 	
@@ -137,7 +138,8 @@ Information about the metadata document itself
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/taxonConcepts.rdf">
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/vanderbilt/taxonConcepts.rdf</dcterms:identifier>
 	<dcterms:description>RDF formatted description of taxon concepts used in the Bioimages website</dcterms:description>
-	<dcterms:creator rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115"/>
+	<dcterms:creator>Bioimages http://bioimages.vanderbilt.edu/</dcterms:creator>
+	<foaf:maker rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115" />
 	<dcterms:language>en</dcterms:language>
 	<dcterms:modified>2011-02-03</dcterms:modified>
 	<xmp:MetadataDate>2011-02-03</xmp:MetadataDate>
@@ -172,22 +174,22 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 
 	<mrtg:MetadataLanguage>en</mrtg:MetadataLanguage>
 	<!--Basic information about the image-->
-	<rdf:type rdf:resource ="http://xxx.org/XXX/MultiMediaObject" />
+	<rdf:type rdf:resource="http://xxx.org/XXX/MultiMediaObject" />
 	<dcterms:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/baskauf/10554</dcterms:identifier>
 	<dcterms:creator>Steven J. Baskauf</dcterms:creator>
-	<foaf:maker rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
+	<foaf:maker rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 	<dcterms:created>2002-04-15T08:54:22</dcterms:created>
-	<dwc:collectionID rdf:resource ="http://biocol.org/urn:lsid:biocol.org:col:35115" />
+	<dwc:collectionID rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115" />
 	<dwc:institutionCode>bioimages</dwc:institutionCode>
 	<dwc:collectionCode>baskauf</dwc:collectionCode>
 	<dwc:catalogNumber>10554</dwc:catalogNumber>
 	<!--Other properties of the image related to intellectual property rights, use and attribution guidelines, etc. -->
 	<dcterms:rights>(c) 2002 Steven J. Baskauf</dcterms:rights>
-	<xmpRights:owner rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
+	<xmpRights:owner rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 	<Iptc4xmpExt:creditLine>Steven J. Baskauf http://bioimages.vanderbilt.edu/</Iptc4xmpExt:creditLine>
 	<mbank:view>463939</mbank:view>
-	<Iptc4xmpExt:CVterm rdf:resource ="http://bioimages.vanderbilt.edu/rdf/stdview#030501" />
+	<Iptc4xmpExt:CVterm rdf:resource="http://bioimages.vanderbilt.edu/rdf/stdview#030501" />
 	<dcterms:title>Ginkgo biloba (Ginkgoaceae) - cone - male</dcterms:title>
 	<xmpRights:UsageTerms>Available under Creative Commons Attribution-Noncommercial-Share Alike 3.0 license</xmpRights:UsageTerms>
 	<xmpRights:WebStatement>http://creativecommons.org/licenses/by-nc-sa/3.0/us/</xmpRights:WebStatement>
@@ -215,18 +217,18 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 </rdf:Description>
 
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#occ">
-	<rdf:type rdf:resource ="http://rs.tdwg.org/dwc/terms/Occurrence" />
+	<rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence" />
 	<dsw:occurrenceOf rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126" />
 	<dwc:recordedBy>Steven J. Baskauf</dwc:recordedBy>
-	<dsw:recordedByURI rdf:resource ="http://bioimages.vanderbilt.edu/contact/baskauf" />
+	<dsw:recordedByURI rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 	<dsw:atEvent>
 		<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#eve">
-			<rdf:type rdf:resource ="http://rs.tdwg.org/dwc/terms/Event" />
+			<rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Event" />
 
 			<dwc:eventDate>2002-04-15T08:54:22</dwc:eventDate>
 			<dsw:locatedAt>
 				<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#loc">
-					<rdf:type rdf:resource ="http://purl.org/dc/terms/Location" />
+					<rdf:type rdf:resource="http://purl.org/dc/terms/Location" />
 					<geo:lat>36.143951</geo:lat>
 					<geo:long>-86.799121</geo:long>
 					<geo:alt>198</geo:alt>
@@ -247,7 +249,7 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 ServiceAccessPoints provide information about alternative versions of the image having different resolutions
 -->
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#bq">
-	<rdf:type rdf:resource ="http://xxx.org/XXX/ServiceAccessPoint" />
+	<rdf:type rdf:resource="http://xxx.org/XXX/ServiceAccessPoint" />
 	<mrtg:variant>Best Quality</mrtg:variant>
 	<mrtg:accessURL>http://www.cas.vanderbilt.edu/bioimages/biohires/g/hgibi2-comale10554.JPG</mrtg:accessURL>
 	<dcterms:format>image/jpeg</dcterms:format>
@@ -255,7 +257,7 @@ ServiceAccessPoints provide information about alternative versions of the image 
 	<mix:imageHeight>2160</mix:imageHeight>
 </rdf:Description>
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#tn">
-	<rdf:type rdf:resource ="http://xxx.org/XXX/ServiceAccessPoint" />
+	<rdf:type rdf:resource="http://xxx.org/XXX/ServiceAccessPoint" />
 	<mrtg:variant>Thumbnail</mrtg:variant>
 	<mrtg:accessURL>http://bioimages.vanderbilt.edu/tn/baskauf/tgibi2-comale10554.jpg</mrtg:accessURL>
 	<dcterms:format>image/jpeg</dcterms:format>
@@ -263,7 +265,7 @@ ServiceAccessPoints provide information about alternative versions of the image 
 	<mix:imageHeight>100</mix:imageHeight>
 </rdf:Description>
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#lq">
-	<rdf:type rdf:resource ="http://xxx.org/XXX/ServiceAccessPoint" />
+	<rdf:type rdf:resource="http://xxx.org/XXX/ServiceAccessPoint" />
 	<mrtg:variant>Lower Quality</mrtg:variant>
 	<mrtg:accessURL>http://bioimages.vanderbilt.edu/lq/baskauf/wgibi2-comale10554.jpg</mrtg:accessURL>
 	<dcterms:format>image/jpeg</dcterms:format>
@@ -271,7 +273,7 @@ ServiceAccessPoints provide information about alternative versions of the image 
 	<mix:imageHeight>480</mix:imageHeight>
 </rdf:Description>
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#gq">
-	<rdf:type rdf:resource ="http://xxx.org/XXX/ServiceAccessPoint" />
+	<rdf:type rdf:resource="http://xxx.org/XXX/ServiceAccessPoint" />
 	<mrtg:variant>Good Quality</mrtg:variant>
 	<mrtg:accessURL>http://bioimages.vanderbilt.edu/gq/baskauf/ggibi2-comale10554.jpg</mrtg:accessURL>
 	<dcterms:format>image/jpeg</dcterms:format>
@@ -285,7 +287,8 @@ Information about the metadata document itself
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554.rdf">
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/baskauf/10554.rdf</dcterms:identifier>
 	<dcterms:description>RDF formatted description of the live organism image http://bioimages.vanderbilt.edu/baskauf/10554</dcterms:description>
-	<dcterms:creator rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115"/>
+	<dcterms:creator>Bioimages http://bioimages.vanderbilt.edu/</dcterms:creator>
+	<foaf:maker rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115" />
 	<dcterms:language>en</dcterms:language>
 	<dcterms:modified>2010-11-08T11:13:49</dcterms:modified>
 	<xmp:MetadataDate>2010-11-08T11:13:49</xmp:MetadataDate>
