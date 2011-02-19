@@ -84,7 +84,7 @@ Information about the metadata document itself
 	<dcterms:modified>2010-11-08T11:13:49</dcterms:modified>
 	<xmp:MetadataDate>2010-11-08T11:13:49</xmp:MetadataDate>
 	<dcterms:references rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126"/>
-<foaf:primaryTopic rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126"/>
+	<foaf:primaryTopic rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126"/>
 </rdf:Description>
 </rdf:RDF>
 }}}
