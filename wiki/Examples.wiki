@@ -67,7 +67,6 @@ Note in this example:
 			<dwc:dateIdentified>2002-04-10</dwc:dateIdentified>
 		
 			<!-- Relationship of the identification to other resources -->
-			<dsw:identifies rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126"/>
 			<dsw:identifiedBasedOn rdf:resource="http://bioimages.vanderbilt.edu/baskauf/10554"/>
 		</rdf:Description>
 	</dsw:hasIdentification>
