@@ -56,14 +56,14 @@ Note in this example:
 	<!-- Identifications applied to the individual-->
 	<dsw:hasIdentification>
 		<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126#2002-04-10baskauf">
-			<dcterms:description>Determination of Ginkgo biloba L. for the individual http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
+			<dcterms:description>Determination of Ginkgo biloba L. sensu Flora of North America (1993) for the individual http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
 			<rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Identification" />
 			
 			<!-- In lieu of stable external identifiers for taxon concepts, I'm defining some onsite -->
-			<dsw:toTaxon rdf:resource="http://bioimages.vanderbilt.edu/taxonConcepts#1" />
+			<dsw:toTaxon rdf:resource="http://bioimages.vanderbilt.edu/taxonConcepts#183269-fna1993" />
 			
-			<dsw:hasIdentificationByURI rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 			<dwc:identifiedBy>Steven J. Baskauf</dwc:identifiedBy>
+			<dsw:hasIdentificationByURI rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 			<dwc:dateIdentified>2002-04-10</dwc:dateIdentified>
 		
 			<!-- Relationship of the identification to other resources -->
@@ -76,6 +76,7 @@ Note in this example:
 Information about the metadata document itself
 -->
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126.rdf">
+	<dcterms:type rdf:resource ="http://xmlns.com/foaf/0.1/Document" />
 	<dcterms:identifier>http://bioimages.vanderbilt.edu/vanderbilt/12-126.rdf</dcterms:identifier>
 	<dcterms:description>RDF formatted description of the living organism http://bioimages.vanderbilt.edu/vanderbilt/12-126</dcterms:description>
 	<dcterms:creator>Bioimages http://bioimages.vanderbilt.edu/</dcterms:creator>
@@ -102,7 +103,7 @@ Information about the metadata document itself
 	xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
 >
 
-<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/taxonConcepts#1">
+<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/taxonConcepts#183269-fna1993">
 	<mrtg:MetadataLanguage>en</mrtg:MetadataLanguage>
 	<rdf:type rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept" />
 	<rdfs:label>Ginkgo biloba L. sensu Flora of North America</rdfs:label>
