@@ -13,12 +13,14 @@
     <!ENTITY dctype "http://purl.org/dc/dcmitype/Image" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
     <!ENTITY ont "http://www.co-ode.org/ontologies/ont.owl#" >
     <!ENTITY TaxonName "http://rs.tdwg.org/ontology/voc/TaxonName#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
     <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
     <!ENTITY dsw "http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#" >
+    <!ENTITY output_format "http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=" >
 ]>
 
 
@@ -26,10 +28,12 @@
      xml:base="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
      xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
      xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+     xmlns:output_format="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format="
      xmlns:foo="http://foo.bar/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:TaxonName="http://rs.tdwg.org/ontology/voc/TaxonName#"
@@ -41,6 +45,7 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl"/>
     
 
 
@@ -94,12 +99,6 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence -->
 
     <owl:ObjectProperty rdf:about="&dsw;hasOccurrence"/>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasTaxonName -->
-
-    <owl:ObjectProperty rdf:about="&dsw;hasTaxonName"/>
     
 
 
@@ -162,6 +161,14 @@
     
 
 
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#authorship -->
+
+    <owl:DatatypeProperty rdf:about="&TaxonName;authorship">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://rs.tdwg.org/ontology/voc/TaxonName#genusPart -->
 
     <owl:DatatypeProperty rdf:about="&TaxonName;genusPart"/>
@@ -171,6 +178,36 @@
     <!-- http://rs.tdwg.org/ontology/voc/TaxonName#specificEpithet -->
 
     <owl:DatatypeProperty rdf:about="&TaxonName;specificEpithet"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="&owl;topDataProperty"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#alt -->
+
+    <owl:DatatypeProperty rdf:about="&wgs84_pos;alt">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:DatatypeProperty rdf:about="&wgs84_pos;lat">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:DatatypeProperty rdf:about="&wgs84_pos;long">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -194,12 +231,6 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
 
     <owl:Class rdf:about="&dsw;IndividualOrganism"/>
-    
-
-
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#TaxonName -->
-
-    <owl:Class rdf:about="&dsw;TaxonName"/>
     
 
 
@@ -230,6 +261,12 @@
     <!-- http://rs.tdwg.org/dwc/terms/Taxon -->
 
     <owl:Class rdf:about="&dwc;Taxon"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+    <owl:Class rdf:about="&wgs84_pos;SpatialThing"/>
     
 
 
@@ -273,9 +310,9 @@
 
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0">
         <rdf:type rdf:resource="&dwc;Identification"/>
-        <dsw:identifies rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0"/>
         <dsw:toTaxon rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0"/>
         <dwc:identifiedBy rdf:resource="&foo;Person0"/>
+        <dsw:toTaxon rdf:resource="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=lsid-metadata"/>
     </owl:NamedIndividual>
     
 
@@ -292,9 +329,13 @@
 
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Location0 -->
 
-    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Location0">
+    <wgs84_pos:SpatialThing rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Location0">
         <rdf:type rdf:resource="&dcterms;Location"/>
-    </owl:NamedIndividual>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <wgs84_pos:lat rdf:datatype="&xsd;double">-1.00</wgs84_pos:lat>
+        <wgs84_pos:long rdf:datatype="&xsd;double">109.00</wgs84_pos:long>
+        <wgs84_pos:alt rdf:datatype="&xsd;double">200</wgs84_pos:alt>
+    </wgs84_pos:SpatialThing>
     
 
 
@@ -303,7 +344,6 @@
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Occurrence0">
         <rdf:type rdf:resource="&dwc;Occurrence"/>
         <dsw:atEvent rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Event0"/>
-        <dsw:occurrenceOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#IndividualOrganism0"/>
     </owl:NamedIndividual>
     
 
@@ -313,9 +353,9 @@
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0">
         <rdf:type rdf:resource="&dwc;Taxon"/>
         <TaxonName:genusPart>Shorea</TaxonName:genusPart>
+        <TaxonName:authorship>Dyer</TaxonName:authorship>
         <rdfs:comment>See: http://www.ubio.org/authority/metadata.php?lsid=urn:lsid:ubio.org:namebank:1830385</rdfs:comment>
         <TaxonName:specificEpithet>parvifolia</TaxonName:specificEpithet>
-        <dsw:identificationUsingTaxon rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0"/>
     </owl:NamedIndividual>
     
 
@@ -325,6 +365,14 @@
     <foaf:Person rdf:about="&foo;Person0">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </foaf:Person>
+    
+
+
+    <!-- http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=lsid-metadata -->
+
+    <owl:NamedIndividual rdf:about="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=lsid-metadata">
+        <rdf:type rdf:resource="&dwc;Taxon"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
