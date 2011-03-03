@@ -14,6 +14,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY foaf2 "http://phylodiversity.net/cwebb/foaf.rdf#" >
     <!ENTITY ont "http://www.co-ode.org/ontologies/ont.owl#" >
     <!ENTITY TaxonName "http://rs.tdwg.org/ontology/voc/TaxonName#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -27,6 +28,7 @@
 <rdf:RDF xmlns="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#"
      xml:base="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:foaf2="http://phylodiversity.net/cwebb/foaf.rdf#"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -41,8 +43,8 @@
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:dctype="http://purl.org/dc/dcmitype/Image"
      xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl"/>
@@ -102,6 +104,14 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationMadeBy -->
+
+    <owl:ObjectProperty rdf:about="&dsw;identificationMadeBy">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon -->
 
     <owl:ObjectProperty rdf:about="&dsw;identificationUsingTaxon"/>
@@ -132,9 +142,9 @@
     
 
 
-    <!-- http://rs.tdwg.org/dwc/terms/identifiedBy -->
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
 
-    <owl:ObjectProperty rdf:about="&dwc;identifiedBy"/>
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
     
 
 
@@ -158,6 +168,14 @@
     <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
 
     <owl:DatatypeProperty rdf:about="&dwc;eventDate"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/identifiedBy -->
+
+    <owl:DatatypeProperty rdf:about="&dwc;identifiedBy">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -311,8 +329,8 @@
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Identification0">
         <rdf:type rdf:resource="&dwc;Identification"/>
         <dsw:toTaxon rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0"/>
-        <dwc:identifiedBy rdf:resource="&foo;Person0"/>
         <dsw:toTaxon rdf:resource="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=lsid-metadata"/>
+        <dsw:identificationMadeBy rdf:resource="&foaf2;me"/>
     </owl:NamedIndividual>
     
 
@@ -356,15 +374,8 @@
         <TaxonName:authorship>Dyer</TaxonName:authorship>
         <rdfs:comment>See: http://www.ubio.org/authority/metadata.php?lsid=urn:lsid:ubio.org:namebank:1830385</rdfs:comment>
         <TaxonName:specificEpithet>parvifolia</TaxonName:specificEpithet>
+        <owl:sameAs rdf:resource="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=lsid-metadata"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://foo.bar/Person0 -->
-
-    <foaf:Person rdf:about="&foo;Person0">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </foaf:Person>
     
 
 
@@ -373,6 +384,14 @@
     <owl:NamedIndividual rdf:about="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=lsid-metadata">
         <rdf:type rdf:resource="&dwc;Taxon"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylodiversity.net/cwebb/foaf.rdf#me -->
+
+    <foaf:Person rdf:about="&foaf2;me">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </foaf:Person>
 </rdf:RDF>
 
 

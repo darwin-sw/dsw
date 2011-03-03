@@ -56,6 +56,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -170,6 +187,17 @@
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
         <rdfs:range rdf:resource="&dwc;Occurrence"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationMadeBy -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationMadeBy">
+        <dc:date rdf:datatype="&xsd;date">2011-03-03</dc:date>
+        <rdfs:comment>The SW version of dwc:identifiedBy that points to a URI. A tidier term than hasIdentifcationByURI</rdfs:comment>
+        <dc:creator>Cam Webb</dc:creator>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -389,6 +417,12 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person -->
+
+    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person"/>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#PreservedSpecimen -->
 
     <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#PreservedSpecimen">
@@ -469,6 +503,31 @@
     <owl:Class rdf:about="&tc;TaxonConcept">
         <rdfs:comment>Imported from the TDWG Ontology.  In that ontology, TaxonConcept is an equivalent property to tc:Taxon.  Thus dsw:Taxon is also equivalent to tc:Taxon.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
+            <rdf:Description rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person"/>
+            <rdf:Description rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
+            <rdf:Description rdf:about="&dcterms;Location"/>
+            <rdf:Description rdf:about="&dwc;Event"/>
+            <rdf:Description rdf:about="&dwc;Identification"/>
+            <rdf:Description rdf:about="&dwc;Occurrence"/>
+            <rdf:Description rdf:about="&dwc;Taxon"/>
+            <rdf:Description rdf:about="&tc;TaxonConcept"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
