@@ -304,6 +304,17 @@
     
 
 
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#sensu -->
+
+    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#sensu">
+        <dc:date rdf:datatype="&xsd;date">2011-03-05</dc:date>
+        <dc:creator>Cam Webb</dc:creator>
+        <rdfs:comment>A DSW alternative to http://rs.tdwg.org/ontology/voc/TaxonConcept.rdf#accordingTo (range may be either string or URI).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon -->
 
     <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon">
