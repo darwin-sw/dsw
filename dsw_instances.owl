@@ -18,6 +18,7 @@
     <!ENTITY ont "http://www.co-ode.org/ontologies/ont.owl#" >
     <!ENTITY TaxonName "http://rs.tdwg.org/ontology/voc/TaxonName#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY TaxonConcept "http://rs.tdwg.org/ontology/voc/TaxonConcept#" >
     <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
     <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
     <!ENTITY dsw "http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#" >
@@ -37,6 +38,7 @@
      xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
      xmlns:output_format="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format="
      xmlns:foo="http://foo.bar/"
+     xmlns:TaxonConcept="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:TaxonName="http://rs.tdwg.org/ontology/voc/TaxonName#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -139,6 +141,12 @@
     <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon -->
 
     <owl:ObjectProperty rdf:about="&dsw;toTaxon"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonConcept#hasName -->
+
+    <owl:ObjectProperty rdf:about="&TaxonConcept;hasName"/>
     
 
 
@@ -282,6 +290,12 @@
     
 
 
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#TaxonName -->
+
+    <owl:Class rdf:about="&TaxonName;TaxonName"/>
+    
+
+
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
 
     <owl:Class rdf:about="&wgs84_pos;SpatialThing"/>
@@ -370,11 +384,20 @@
 
     <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#Taxon0">
         <rdf:type rdf:resource="&dwc;Taxon"/>
-        <TaxonName:genusPart>Shorea</TaxonName:genusPart>
-        <TaxonName:authorship>Dyer</TaxonName:authorship>
         <rdfs:comment>See: http://www.ubio.org/authority/metadata.php?lsid=urn:lsid:ubio.org:namebank:1830385</rdfs:comment>
-        <TaxonName:specificEpithet>parvifolia</TaxonName:specificEpithet>
+        <TaxonConcept:hasName rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#TaxonName0"/>
         <owl:sameAs rdf:resource="http://ipni.org/ipni/plantNameByVersion.do?id=321394-1&amp;version=1.2&amp;output_format=lsid-metadata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#TaxonName0 -->
+
+    <owl:NamedIndividual rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw_instances.owl#TaxonName0">
+        <rdf:type rdf:resource="&TaxonName;TaxonName"/>
+        <TaxonName:authorship>Dyer</TaxonName:authorship>
+        <TaxonName:genusPart>Shorea</TaxonName:genusPart>
+        <TaxonName:specificEpithet>parvifolia</TaxonName:specificEpithet>
     </owl:NamedIndividual>
     
 
