@@ -25,7 +25,7 @@ WHERE { ?s rdfs:domain ?o }" >> $TMP1
 roqet -D $TMP1 -r rdfxml --exec "
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
-PREFIX dsw: <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#>
+PREFIX dsw: <http://purl.org/dsw/0.1/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 CONSTRUCT { ?s ?v ?o }
