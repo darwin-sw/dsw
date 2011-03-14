@@ -28,6 +28,7 @@ PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX dsw: <http://purl.org/dsw/0.1/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 CONSTRUCT { ?s ?v ?o }
 WHERE { ?v rdfs:domain ?s .
         ?v rdfs:range ?o . }" > $TMP2
