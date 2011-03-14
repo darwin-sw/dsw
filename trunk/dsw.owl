@@ -286,9 +286,11 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/sensu">
         <dc:date rdf:datatype="&xsd;date">2011-03-05</dc:date>
-        <rdfs:comment>A DSW alternative to http://rs.tdwg.org/ontology/voc/TaxonConcept.rdf#accordingTo (range may be either string or URI).</rdfs:comment>
+        <rdfs:comment>A DSW alternative to http://rs.tdwg.org/ontology/voc/TaxonConcept.rdf#accordingTo (range may be either string or URI).  The range of dsw:sensu is a URI for a publication.</rdfs:comment>
         <dc:creator>Cam Webb</dc:creator>
+        <rdfs:domain rdf:resource="&dwc;Taxon"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="&foaf;Document"/>
     </owl:ObjectProperty>
     
 
@@ -386,6 +388,7 @@
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
+        <owl:disjointWith rdf:resource="&foaf;Document"/>
         <owl:disjointWith rdf:resource="&foaf;Person"/>
     </owl:Class>
     <owl:Axiom>
@@ -436,6 +439,7 @@
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
+        <owl:disjointWith rdf:resource="&foaf;Document"/>
         <owl:disjointWith rdf:resource="&foaf;Person"/>
     </owl:Class>
     
@@ -471,6 +475,14 @@
     <!-- http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept -->
 
     <owl:Class rdf:about="&tc;TaxonConcept"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="&foaf;Document">
+        <rdfs:comment>See also http://purl.org/ontology/bibo/Document</rdfs:comment>
+    </owl:Class>
     
 
 
