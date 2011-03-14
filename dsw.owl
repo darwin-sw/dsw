@@ -19,8 +19,8 @@
 ]>
 
 
-<rdf:RDF xmlns="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
-     xml:base="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl"
+<rdf:RDF xmlns="http://purl.org/dsw/0.1/"
+     xml:base="http://purl.org/dsw/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -35,7 +35,10 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl"/>
+    <owl:Ontology rdf:about="http://purl.org/dsw/0.1/">
+        <dc:description>Darwin Semantic Web, verison 0.1</dc:description>
+        <owl:versionInfo>0.1</owl:versionInfo>
+    </owl:Ontology>
     
 
 
@@ -47,8 +50,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
     <owl:AnnotationProperty rdf:about="&dc;creator"/>
     <owl:AnnotationProperty rdf:about="&dc;date"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
     <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
     
 
@@ -81,38 +86,38 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#atEvent -->
+    <!-- http://purl.org/dsw/0.1/atEvent -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#atEvent">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/atEvent">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <dc:creator>Steve Baskauf</dc:creator>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#eventOf"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/eventOf"/>
         <rdfs:range rdf:resource="&dwc;Event"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#collectionURI -->
+    <!-- http://purl.org/dsw/0.1/collectionURI -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#collectionURI">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/collectionURI">
         <dc:creator>Steve Baskauf</dc:creator>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#derivedFrom -->
+    <!-- http://purl.org/dsw/0.1/derivedFrom -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#derivedFrom">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/derivedFrom">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <dc:creator>Steve Baskauf</dc:creator>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#eventOf -->
+    <!-- http://purl.org/dsw/0.1/eventOf -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#eventOf">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/eventOf">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:domain rdf:resource="&dwc;Event"/>
@@ -121,38 +126,38 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#evidenceFor -->
+    <!-- http://purl.org/dsw/0.1/evidenceFor -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#evidenceFor">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/evidenceFor">
         <dc:creator>Cam Webb</dc:creator>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasEvidence"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/hasEvidence"/>
         <rdfs:range rdf:resource="&dwc;Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#georeferencedByURI -->
+    <!-- http://purl.org/dsw/0.1/georeferencedByURI -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#georeferencedByURI">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/georeferencedByURI">
         <dc:creator>Steve Baskauf</dc:creator>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasDerivative -->
+    <!-- http://purl.org/dsw/0.1/hasDerivative -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasDerivative">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/hasDerivative">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <dc:creator>Steve Baskauf</dc:creator>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#derivedFrom"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/derivedFrom"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasEvidence -->
+    <!-- http://purl.org/dsw/0.1/hasEvidence -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasEvidence">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/hasEvidence">
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
@@ -160,41 +165,41 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentification -->
+    <!-- http://purl.org/dsw/0.1/hasIdentification -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentification">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/hasIdentification">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies"/>
+        <rdfs:domain rdf:resource="http://purl.org/dsw/0.1/IndividualOrganism"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/identifies"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentificationByURI -->
+    <!-- http://purl.org/dsw/0.1/hasIdentificationByURI -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasIdentificationByURI">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/hasIdentificationByURI">
         <dc:creator>Steve Baskauf; name changed by Cam Webb, due to clash with dwc:identifiedBy</dc:creator>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence -->
+    <!-- http://purl.org/dsw/0.1/hasOccurrence -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/hasOccurrence">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
-        <rdfs:domain rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
+        <rdfs:domain rdf:resource="http://purl.org/dsw/0.1/IndividualOrganism"/>
         <rdfs:range rdf:resource="&dwc;Occurrence"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationMadeBy -->
+    <!-- http://purl.org/dsw/0.1/identificationMadeBy -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationMadeBy">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/identificationMadeBy">
         <dc:date rdf:datatype="&xsd;date">2011-03-03</dc:date>
         <rdfs:comment>The SW version of dwc:identifiedBy that points to a URI. A tidier term than hasIdentifcationByURI</rdfs:comment>
         <dc:creator>Cam Webb</dc:creator>
@@ -203,50 +208,50 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon -->
+    <!-- http://purl.org/dsw/0.1/identificationUsingTaxon -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identificationUsingTaxon">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/identificationUsingTaxon">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/toTaxon"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
         <rdfs:domain rdf:resource="&dwc;Taxon"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedBasedOn -->
+    <!-- http://purl.org/dsw/0.1/identifiedBasedOn -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifiedBasedOn">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/identifiedBasedOn">
         <rdfs:comment>The subject identification was in part based on the object token.</rdfs:comment>
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:date>2011-01-27</dc:date>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#isBasisForIdentification"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/isBasisForIdentification"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies -->
+    <!-- http://purl.org/dsw/0.1/identifies -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#identifies">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/identifies">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
+        <rdfs:range rdf:resource="http://purl.org/dsw/0.1/IndividualOrganism"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#institutionURI -->
+    <!-- http://purl.org/dsw/0.1/institutionURI -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#institutionURI"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/institutionURI"/>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#isBasisForIdentification -->
+    <!-- http://purl.org/dsw/0.1/isBasisForIdentification -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#isBasisForIdentification">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/isBasisForIdentification">
         <dc:date>2011-01-27</dc:date>
         <rdfs:comment>The subject resource is a basis on which the object identification is made.</rdfs:comment>
         <dc:creator>Steve Baskauf</dc:creator>
@@ -255,12 +260,12 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt -->
+    <!-- http://purl.org/dsw/0.1/locatedAt -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locatedAt">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/locatedAt">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <dc:creator>Cam Webb</dc:creator>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locates"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/locates"/>
         <rdfs:range rdf:resource="&dcterms;Location"/>
         <rdfs:domain rdf:resource="&dwc;Event"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
@@ -268,9 +273,9 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locates -->
+    <!-- http://purl.org/dsw/0.1/locates -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#locates">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/locates">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:domain rdf:resource="&dcterms;Location"/>
@@ -280,33 +285,33 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#nameAccordingToURI -->
+    <!-- http://purl.org/dsw/0.1/nameAccordingToURI -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#nameAccordingToURI"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/nameAccordingToURI"/>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf -->
+    <!-- http://purl.org/dsw/0.1/occurrenceOf -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#occurrenceOf">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/occurrenceOf">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
-        <rdfs:range rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-        <owl:inverseOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#hasOccurrence"/>
+        <rdfs:range rdf:resource="http://purl.org/dsw/0.1/IndividualOrganism"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/0.1/hasOccurrence"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#recordedByURI -->
+    <!-- http://purl.org/dsw/0.1/recordedByURI -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#recordedByURI"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/recordedByURI"/>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#sensu -->
+    <!-- http://purl.org/dsw/0.1/sensu -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#sensu">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/sensu">
         <dc:date rdf:datatype="&xsd;date">2011-03-05</dc:date>
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:comment>A DSW alternative to http://rs.tdwg.org/ontology/voc/TaxonConcept.rdf#accordingTo (range may be either string or URI).</rdfs:comment>
@@ -315,9 +320,9 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon -->
+    <!-- http://purl.org/dsw/0.1/toTaxon -->
 
-    <owl:ObjectProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#toTaxon">
+    <owl:ObjectProperty rdf:about="http://purl.org/dsw/0.1/toTaxon">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment>This property should link to a taxon concept (i.e. Taxon name plus Authority) URI, such as: http://www.ipni.org/ipni/idPlantNameSearch.do?&amp;output_format=lsid-metadata&amp;id=321394-1 or to a dws:Taxon class.</rdfs:comment>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
@@ -353,9 +358,9 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#accordingTo -->
+    <!-- http://purl.org/dsw/0.1/accordingTo -->
 
-    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#accordingTo">
+    <owl:DatatypeProperty rdf:about="http://purl.org/dsw/0.1/accordingTo">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment>Use in TCS: &lt;TaxonConcept&gt;&lt;AccordingTo&gt;&lt;Simple&gt;Judd &amp;amp; Kron (1995)&lt;/Simple&gt;&lt;/AccordingTo&gt;&lt;/TaxonConcept&gt;. We will use for the Authority text string commonly used in Name+Auth</rdfs:comment>
         <dc:creator>Cam Webb</dc:creator>
@@ -365,9 +370,9 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#individualOrganismRemarks -->
+    <!-- http://purl.org/dsw/0.1/individualOrganismRemarks -->
 
-    <owl:DatatypeProperty rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#individualOrganismRemarks">
+    <owl:DatatypeProperty rdf:about="http://purl.org/dsw/0.1/individualOrganismRemarks">
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:comment>In the proposed additions to DwC this was called individualRemarks</rdfs:comment>
     </owl:DatatypeProperty>
@@ -400,17 +405,17 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#DriedSpecimen -->
+    <!-- http://purl.org/dsw/0.1/DriedSpecimen -->
 
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#DriedSpecimen">
-        <rdfs:subClassOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#PreservedSpecimen"/>
+    <owl:Class rdf:about="http://purl.org/dsw/0.1/DriedSpecimen">
+        <rdfs:subClassOf rdf:resource="http://purl.org/dsw/0.1/PreservedSpecimen"/>
     </owl:Class>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism -->
+    <!-- http://purl.org/dsw/0.1/IndividualOrganism -->
 
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism">
+    <owl:Class rdf:about="http://purl.org/dsw/0.1/IndividualOrganism">
         <owl:disjointWith rdf:resource="&dcterms;Location"/>
         <owl:disjointWith rdf:resource="&dwc;Event"/>
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
@@ -420,31 +425,31 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#LivingSpecimen -->
+    <!-- http://purl.org/dsw/0.1/LivingSpecimen -->
 
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#LivingSpecimen">
-        <rdfs:subClassOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
+    <owl:Class rdf:about="http://purl.org/dsw/0.1/LivingSpecimen">
+        <rdfs:subClassOf rdf:resource="http://purl.org/dsw/0.1/Specimen"/>
     </owl:Class>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person -->
+    <!-- http://purl.org/dsw/0.1/Person -->
 
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person"/>
+    <owl:Class rdf:about="http://purl.org/dsw/0.1/Person"/>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#PreservedSpecimen -->
+    <!-- http://purl.org/dsw/0.1/PreservedSpecimen -->
 
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#PreservedSpecimen">
-        <rdfs:subClassOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
+    <owl:Class rdf:about="http://purl.org/dsw/0.1/PreservedSpecimen">
+        <rdfs:subClassOf rdf:resource="http://purl.org/dsw/0.1/Specimen"/>
     </owl:Class>
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen -->
+    <!-- http://purl.org/dsw/0.1/Specimen -->
 
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen">
+    <owl:Class rdf:about="http://purl.org/dsw/0.1/Specimen">
         <owl:disjointWith rdf:resource="&dcterms;Location"/>
         <owl:disjointWith rdf:resource="&dwc;Event"/>
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
@@ -454,10 +459,10 @@
     
 
 
-    <!-- http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#SpecimenInAlcohol -->
+    <!-- http://purl.org/dsw/0.1/SpecimenInAlcohol -->
 
-    <owl:Class rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#SpecimenInAlcohol">
-        <rdfs:subClassOf rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#PreservedSpecimen"/>
+    <owl:Class rdf:about="http://purl.org/dsw/0.1/SpecimenInAlcohol">
+        <rdfs:subClassOf rdf:resource="http://purl.org/dsw/0.1/PreservedSpecimen"/>
     </owl:Class>
     
 
@@ -528,9 +533,9 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism"/>
-            <rdf:Description rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Person"/>
-            <rdf:Description rdf:about="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#Specimen"/>
+            <rdf:Description rdf:about="http://purl.org/dsw/0.1/IndividualOrganism"/>
+            <rdf:Description rdf:about="http://purl.org/dsw/0.1/Person"/>
+            <rdf:Description rdf:about="http://purl.org/dsw/0.1/Specimen"/>
             <rdf:Description rdf:about="&dcterms;Location"/>
             <rdf:Description rdf:about="&dwc;Event"/>
             <rdf:Description rdf:about="&dwc;Identification"/>
