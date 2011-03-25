@@ -12,6 +12,6 @@ The Identification class connects an individual organisms to a Taxon.  Taxon is 
  * *identificationQualifier* string literal
 
 ===Object properties defined in the darwin-sw ontology===
- * *identifies* range IndividualOrganism
+ * *identifies* range !IndividualOrganism
  * *toTaxon* range Taxon
- * *identifiedBasedOn* range is any class of token (specimen, image, DNA sample, etc.)
+ * *identifiedBasedOn* range Token (or subclass: specimen, image, DNA sample, etc.)
