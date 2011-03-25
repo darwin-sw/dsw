@@ -1,10 +1,11 @@
-#summary The Location class
+#summary The dcterms:Location class
 
-= The Location class=
+= The dcterms:Location class=
 
-The Location class mirrors dcterms:Location which is imported into the Darwin Core vocabulary.  It is imported directly into darwin-sw (DSW).
+The dcterms:Location class is imported directly into darwin-sw (DSW).
 
 ==DwC terms suitable for use as properties in DSW (not a complete list)==
+
 ===Data properties===
  * *decimalLatitude*  can use *geo:lat* instead if geodetic reference datum is  WGS84
  * *decimalLongitude*  Can use *geo:long* instead if if geodetic reference datum is  WGS84
@@ -19,8 +20,10 @@ The Location class mirrors dcterms:Location which is imported into the Darwin Co
  * *county* unabbreviated text literal
  * *locality* text literal
 
+==DSW terms ==
 
 ===Object properties===
- * *georeferencedByURI* range FOAF entities (e.g. a *foaf:Person*)
- * *locates* range Event
+
+ * *georefBy* range FOAF entities (e.g. a *foaf:Person*)
+ * *locates* range [ClassEvent dwc:Event]
  
