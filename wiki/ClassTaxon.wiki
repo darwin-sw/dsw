@@ -1,6 +1,6 @@
-#summary The Taxon class
+#summary The dwc:Taxon class
 
-= Taxon =
+= dwc:Taxon =
 
 == What is a Taxon? ==
 (The following information is summarized from a number of documents and threads from the tdwg-content email list as documented below.)
@@ -86,7 +86,7 @@ From the wiki (http://code.google.com/p/darwincore/wiki/Taxon): &ldquo;If no nam
 
 ==Properties suitable for use in DSW (not a complete list)==
 ===Object properties defined in the darwin-sw ontology===
- * *identificationUsingTaxon* range Identification
+ * *dsw:taxonOfId* range Identification
 
 ===Data properties defined outside the darwin-sw ontology===
  * *tc:nameString * string literal of scientific name plus author  (see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
