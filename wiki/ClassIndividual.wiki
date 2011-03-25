@@ -1,6 +1,6 @@
 #summary The IndividualOrganism class
 
-= The IndividualOrganism class =
+= The !IndividualOrganism class =
 
 This class does not exist in the current Darwin Core (DwC) standard.  There is a pending proposal (currently stalled) to add a class to DwC called Individual which would be the object of the existing term dwc:individualID (http://rs.tdwg.org/dwc/terms/index.htm#individualID) and which would accommodate resampling of the same individual or group over time.  In this ontology, we have called this class IndividualOrganism to prevent confusion with an "individual" in the sense of an OWL ontology (i.e. "objects in the domain in which we are interested"; see p. 10 of A Practical Guide to Building OWL Ontologies Using Protege 4 and CO-ODE Tools, Edition 1.2).  
 
