@@ -2,6 +2,8 @@
 
 = The dsw:Token Class =
 
+*See [TokenIssues this page] for discussion of issues relating to tokens.*
+
 ==Object properties defined in the darwin-sw ontology==
 
  * *evidenceFor* range [ClassOccurrence Occurrence]
