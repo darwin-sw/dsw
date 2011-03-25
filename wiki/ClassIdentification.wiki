@@ -1,4 +1,4 @@
-#summary The Identification class
+#summary The dwc:Identification class
 
 = The dwc:Identification class =
 
@@ -15,6 +15,6 @@ The dwc:Identification class connects an [ClassIndividual individual organism] t
  * *identificationQualifier* string literal
 
 ===Object properties defined in the darwin-sw ontology===
- * *identifies* range [ClassIndividual IndividualOrganism]
- * *toTaxon* range [ClassTaxon Taxon]
- * *idBasedOn* range [ClassToken Token] (or subclass: specimen, image, DNA sample, etc.)
+ * *identifies* range [ClassIndividual dsw:IndividualOrganism]
+ * *toTaxon* range [ClassTaxon dwc:Taxon]
+ * *idBasedOn* range [ClassToken dsw:Token] (or subclass: specimen, image, DNA sample, etc.)
