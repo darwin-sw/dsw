@@ -1,3 +1,9 @@
 #summary The dsw:Token Class
 
 = The dsw:Token Class =
+
+==Object properties defined in the darwin-sw ontology==
+
+ * *evidenceFor* range [ClassOccurrence Occurrence]
+ * *isBasisForId* range [ClassIdentification Identification]
+ * *derivedFrom* range can be [ClassIndividual IndividualOrganism] or another [ClassSpecimen Specimen]
