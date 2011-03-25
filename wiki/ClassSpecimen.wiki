@@ -12,12 +12,6 @@
  * *disposition* string literal
  * *catalogNumber* string literal
 
-===Object properties defined in the darwin-sw ontology===
-
- * *evidenceFor* range [ClassOccurrence Occurrence]
- * *isBasisForId* range [ClassIdentification Identification]
- * *derivedFrom* range can be [ClassIndividual IndividualOrganism] or another [ClassSpecimen Specimen]
-
 ===Object properties defined outside the darwin-sw ontology===
 
  * *dcterms:isPartOf* range can be !IndividualOrganism or another Specimen
