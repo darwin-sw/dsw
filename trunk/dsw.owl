@@ -383,7 +383,6 @@
     <!-- http://purl.org/dsw/0.1/IndividualOrganism -->
 
     <owl:Class rdf:about="http://purl.org/dsw/0.1/IndividualOrganism">
-        <owl:disjointWith rdf:resource="http://purl.org/dsw/0.1/Token"/>
         <owl:disjointWith rdf:resource="&dwc;Event"/>
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
