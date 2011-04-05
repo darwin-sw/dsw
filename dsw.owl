@@ -35,10 +35,10 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://purl.org/dsw/0.1/">
-        <dc:description>Darwin Semantic Web, verison 0.1</dc:description>
-        <dc:creator>Steve Baskauf &amp; Cam Webb</dc:creator>
+    <owl:Ontology rdf:about="http://purl.org/dsw/">
         <owl:versionInfo>0.1</owl:versionInfo>
+        <dc:creator>Steve Baskauf &amp; Cam Webb</dc:creator>
+        <dc:description>Darwin Semantic Web, verison 0.1</dc:description>
     </owl:Ontology>
     
 
