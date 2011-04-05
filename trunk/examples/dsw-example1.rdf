@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- this file can also be found at:
      http://phylodiversity.net/dsw/examples/dsw-example1.rdf -->
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dsw="http://purl.org/dsw/0.1/" xmlns:mrtg="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dsw="http://purl.org/dsw/" xmlns:mrtg="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
   <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/uncg/966">
-    <rdf:type rdf:resource="http://purl.org/dsw/0.1/IndividualOrganism"/>
-    <rdf:type rdf:resource="http://purl.org/dsw/0.1/LivingSpecimen"/>
+    <rdf:type rdf:resource="http://purl.org/dsw/IndividualOrganism"/>
+    <rdf:type rdf:resource="http://purl.org/dsw/LivingSpecimen"/>
     <mrtg:metadataLanguage>en</mrtg:metadataLanguage>
 
     <!--Basic information about the individual-->
@@ -77,7 +77,7 @@
     <dsw:hasOccurrence>
       <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/specimen/ncu592745#occ">
         <rdfs:label>Specimen record for University of North Carolina herbarium accession 592745</rdfs:label>
-        <rdf:type rdf:resource="http://purl.org/dsw/0.1/PreservedSpecimen"/>
+        <rdf:type rdf:resource="http://purl.org/dsw/PreservedSpecimen"/>
       </rdf:Description>
     </dsw:hasOccurrence>
 
