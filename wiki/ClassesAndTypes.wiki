@@ -8,12 +8,67 @@ In the Darwin Core standard as ratified in 2009 (see http://rs.tdwg.org/dwc/term
 
 DwC has a type vocabulary (http://rs.tdwg.org/dwc/terms/type-vocabulary/index.htm) which provides terms that can be used to describe the nature of resources used in the biodiversity informatics community.  These types can be represented by URIs in the namespace http://rs.tdwg.org/dwc/dwctype/ which may be abbreviated as the qualified namespace dwctype: .  An exception is http://purl.org/dc/dcmitype/Event (dctype:Event) which is imported from the DCMI type vocabulary.  To some extent, the DwC types reflect the DwC classes.  Most (but not all) DwC classes have a corresponding DwC type.  However, there are additional DwC types that describe resources that are not represented by classes in DwC, e.g. PreservedSpecimen .  Another important distinction between the DwC classes and types is that the RDF descriptions of some DwC types express formal relationships with other DwC types.  In particular, PreservedSpecimen is declared to be a subclass of Occurrence, Occurrence is declared to be a subclass of Event.  Thus use of the DwC type URIs in RDF may carry semantic meaning that the user may not intend.  
 
-The DwC term dwc:basisOfRecord has a special purpose in the standard.  It is defined as "The specific nature of the data record - a subtype of the dcterms:type. Recommended best practice is to use a controlled vocabulary such as the Darwin Core Type Vocabulary (http://rs.tdwg.org/dwc/terms/type-vocabulary/index.htm)."  It should be noted that despite this definition, basisOfRecord does not have a formal relationship with dcterms:type .  Because the DwC standard does not have any particular representation, 
+The DwC term dwc:basisOfRecord has a special purpose in the standard.  It is defined as "The specific nature of the data record - a subtype of the dcterms:type. Recommended best practice is to use a controlled vocabulary such as the Darwin Core Type Vocabulary (http://rs.tdwg.org/dwc/terms/type-vocabulary/index.htm)."  It should be noted that despite this definition, basisOfRecord does not have a formal relationship with dcterms:type .  Because the DwC standard does not have any particular representation, values of basisOfRecord are generally text strings and in that form they are not linked semantically to the DwC type vocabulary.  So although it is recommended to use the DwC type vocabulary as the controlled vocabulary of basisOfRecord, there is no formal requirement that it be used, nor does use of the string values necessarily imply the subclassing relationships expressed in the RDF definition of the DwC types.
 
+It should also be noted that classes are also defined in the TDWG Ontology (put URI here).  There is a great deal of similarity between these classes and the DwC classes.  However, there is no formal relationship between DwC and the TDWG Ontology, so it cannot necessarily be assumed that a DwC class of a certain name corresponds to a class of the same name in the TDWG ontology.  The TDWG ontology has the additional problem that it has never been completed and that the formally defined relationships among the classes do not necessarily represent the consensus view of the  community of DwC users.
 
-= Details =
+== Classes and Types in RDFS ==
+In the RDF Schema (RDFS, namespace http://www.w3.org/2000/01/rdf-schema# which is abbreviated rdfs:), there is a direct, formal relationship between class membership and type declaration.  If a resource is declared to have a rdf:type C, then that resource is an instance of class C.  The reverse reverse is true: if a resource is described as an instance of class C, then it has type C even if there is no explicit type declaration.   Consider the following example where dctype: = http://purl.org/dc/dcmitype/
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+{{{
+Example 1
+<rdf:Description about="http://my.org/Thing">
+	<rdf:type resource="http://purl.org/dc/dcmitype/StillImage" />
+	... other properties of Thing...
+</rdf:Description>
+
+Example 2
+<dctype:StillImage about="http://my.org/Thing">
+	...properties of Thing ...
+</dctype:StillImage>
+}}}
+
+In Example 1, Thing is explicitly described as being of type dctype:StillImage .  In the Example 2, the XML container element name describes Thing as being an instance of the class dctype:StillImage.  Despite the difference in syntax, both of these examples make exactly the same assertions about Thing.  Thing is an instance of the class dctype:StillImage and it has the type dctype:StillImage .  
+
+In RDF, there is no restriction that a resource must be a member of only a single class.  Thus in the following example
+
+{{{
+Example 3
+<dctype:StillImage about="http://my.org/Thing">
+	<rdf:type resource="http://xmlns.com/foaf/0.1/Image" />
+	...other properties of Thing ...
+</dctype:StillImage>
+}}}
+
+(where the namespace http://xmlns.com/foaf/0.1/ is abbreviated foaf:) Thing is an instance of both the foaf:Image and dctype:StillImage classes and has two declared types,foaf:Image and dctype:StillImage .  
+
+== Domains and Ranges ==
+In RDFS, the assignment of domains and ranges to a property has an effect which may not be intuitive.  It might seem logical that if a property P is declared to have rdfs:domain C, then P could only be applied to resources that are instances of class C.  This is NOT the case.  Rather, if P has rdfs:domain C, then applying P to a subject resource asserts that P is in instance of C.  
+
+For example, the property foaf:depicts has domain foaf:Image .  Thus if you make the statement 
+{{{
+http://my.org/Thing foaf:depicts http://my.org/fred_smith
+}}}
+then in addition to asserting that Thing is a depiction of Fred Smith, you are also declaring Thing to be a foaf:Image, even if you make no explicit type declaration in your RDF.  For example
+{{{
+Example 4
+<dctype:StillImage about="http://my.org/Thing">
+	<foaf:depicts resource="http://my.org/fred_smith" />
+	... other properties of Thing...
+</dctype:StillImage>
+}}}
+declares Thing to be of both type dctype:StillImage and foaf:Image just as was the case in Example 3.
+
+The same type of thing happens with range declarations.  The term foaf:depiction (which is the inverse property of foaf:depicts) has the rdfs:range of foaf:Image .  Thus any object of the property foaf:depiction is implicitly declared to be a foaf:Image .  In the example 
+{{{
+Example 5
+<rdf:Description about="http://my.org/fred_smith">
+	<foaf:depiction resource="http://my.org/Thing" />
+	... other properties of fred_smith...
+</rdf:Description>
+}}}
+not only does the Description say that Fred Smith has the depiction Thing, but the range specification of foaf:depiction also means that Thing is being declared to be a foaf:Image .
+
+Because the Darwin Core standard was intended for the broadest possible use, a conscious decision was made to avoid assigning domains and ranges to DwC terms.  This decision provided considerable flexibility in using terms that may actually apply to several DwC classes and prevented problems when it was not entirely clear to which class a term actually belonged.
+
+==Typing and GUIDs==
