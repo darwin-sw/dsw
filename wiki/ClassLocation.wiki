@@ -4,6 +4,21 @@
 
 The dcterms:Location class is imported directly into darwin-sw (DSW).
 
+==Vocabularies suitable for use with the location class==
+By design, it is intended that resources described by darwin-sw have properties that are terms in the DwC standard.  It seems clear that the terms listed under the dcterms:Location class in the DwC standard^1^ are all appropriate for use as properties of resources typed as Locations in darwin-sw.  
+
+However, many of the DwC terms are not in widespread use.  Because of the widespread use of GPS technology (which uses the WGS 84 geodetic datum), the terms geo:lat and geo:long (namespace http://www.w3.org/2003/01/geo/wgs84_pos# abbreviated geo:)^2^ have recently come into widespread use.  Applications outside of the biodiversity informatics community are more likely to "understand" these terms than the corresponding DwC terms.  In recognition of this there is currently (April 2011) a proposal to add these terms to the DwC standard.  Thus it seems appropriate that these terms be used to describe resources in the Location class.
+
+
+
+^1^ http://rs.tdwg.org/dwc/terms/index.htm
+
+^2^ http://www.w3.org/2003/01/geo/
+
+^3^ http://code.google.com/p/darwincore/issues/detail?id=82
+
+^4^
+
 ==DwC terms suitable for use as properties in DSW (not a complete list)==
 
 ===Data properties===
