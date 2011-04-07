@@ -1,0 +1,19 @@
+#summary Description of the significance and roles of classes and types in darwin-sw
+
+= Classes and Types in darwin-sw =
+
+== Role of classes and types in the Darwin Core standard (DwC) ==
+
+In the Darwin Core standard as ratified in 2009 (see http://rs.tdwg.org/dwc/terms/ which also represents the namespace abbreviated here as dwc:), classes are simply a means to group similar terms.  The class definitions in RDF do not describe any formal relationship to other terms in the standard.  Rather, the DwC classes suggest the kinds of things that might be described by the terms that are grouped within the class.  
+
+DwC has a type vocabulary (http://rs.tdwg.org/dwc/terms/type-vocabulary/index.htm) which provides terms that can be used to describe the nature of resources used in the biodiversity informatics community.  These types can be represented by URIs in the namespace http://rs.tdwg.org/dwc/dwctype/ which may be abbreviated as the qualified namespace dwctype: .  An exception is http://purl.org/dc/dcmitype/Event (dctype:Event) which is imported from the DCMI type vocabulary.  To some extent, the DwC types reflect the DwC classes.  Most (but not all) DwC classes have a corresponding DwC type.  However, there are additional DwC types that describe resources that are not represented by classes in DwC, e.g. PreservedSpecimen .  Another important distinction between the DwC classes and types is that the RDF descriptions of some DwC types express formal relationships with other DwC types.  In particular, PreservedSpecimen is declared to be a subclass of Occurrence, Occurrence is declared to be a subclass of Event.  Thus use of the DwC type URIs in RDF may carry semantic meaning that the user may not intend.  
+
+The DwC term dwc:basisOfRecord has a special purpose in the standard.  It is defined as "The specific nature of the data record - a subtype of the dcterms:type. Recommended best practice is to use a controlled vocabulary such as the Darwin Core Type Vocabulary (http://rs.tdwg.org/dwc/terms/type-vocabulary/index.htm)."  It should be noted that despite this definition, basisOfRecord does not have a formal relationship with dcterms:type .  Because the DwC standard does not have any particular representation, 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
