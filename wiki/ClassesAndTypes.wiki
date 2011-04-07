@@ -12,6 +12,8 @@ The DwC term dwc:basisOfRecord has a special purpose in the standard.  It is def
 
 It should also be noted that classes are also defined in the TDWG Ontology (http://code.google.com/p/tdwg-ontology/).  There is a great deal of similarity between these classes and the DwC classes.  However, there is no formal relationship between DwC and the TDWG Ontology, so it cannot necessarily be assumed that a DwC class of a certain name corresponds to a class of the same name in the TDWG ontology.  The TDWG ontology has the additional problem that it has never been completed and that the formally defined relationships among the classes do not necessarily represent the consensus view of the  community of DwC users.
 
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000286.html
+
 == Classes and Types in RDFS ==
 In the RDF Schema (RDFS, namespace http://www.w3.org/2000/01/rdf-schema# which is abbreviated rdfs:), there is a direct, formal relationship between class membership and type declaration.  If a resource is declared to have a rdf:type C, then that resource is an instance of class C.  The reverse reverse is true: if a resource is described as an instance of class C, then it has type C even if there is no explicit type declaration.   Consider the following example where dctype: = http://purl.org/dc/dcmitype/
 
