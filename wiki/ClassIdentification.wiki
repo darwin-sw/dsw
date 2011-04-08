@@ -4,6 +4,21 @@
 
 The dwc:Identification class connects an [ClassIndividual individual organism] to a [ClassTaxon Taxon].  Taxon is understood to be an instance of a taxon concept or taxon name usage (see the discussion of the [ClassTaxon Taxon class]).  A particular individual organism may be assigned several identifications.  Each identification should be a separate instance of Identification.  
 
+== Notes on the Identification class==
+No distinction is made between the initial identification and subsequent identifications made by persons who "annotate" evidence (e.g. specimens) at a later time.  "Identification" in this case is synonymous with "determination"; therefore the person doing the identifying could be referred to as the "determiner" rather than the "identifier" (to avoid confusion with use of "identifier" as in "globally unique identifier").^1^ ^2^ ^3^
+
+The term identificationReferences is "a list of references
+used in the assessment to make the determination. The dwc:identificationReferences might include taxonomic treatments, but they might also include something such as an expert range map or a field guide".^4^  identificationReferences is a string literal property populated with a concatenated text list of sources that were consulted.  dwc:identificationReferences is distinguished from dwc:nameAccordingTo which is a property of Taxon.  nameAccordingTo is intended to convey the publication which establishes the concept by circumscription or description of the characters which delineate the taxon.^4^ ^2^   (See the [ClassTaxon Taxon class] for more on this.)
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001694.html
+
+^2^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001703.html
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001708.html
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001704.html
+
+
 ==Properties suitable for use in DSW (not a complete list)==
 
 ===Data properties from DwC===
