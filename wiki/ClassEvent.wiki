@@ -1,16 +1,38 @@
 #summary The Event class
 
 = The Event class =
-The Event class functions primarily as a node to connect one or  more Occurrences to a Location.  There can be multiple Events at a Location.
+Although it is possible to assign separate space/time coordinates (i.e. time, latitude, and longitude) to each Occurrence, some users may prefer to group multiple Occurrences within a single Event.^1^  Likewise, several Events can occur at one defined Location at different times.  Thus the Event class functions primarily as a node to connect one or  more Occurrences to a Location and one or more Events at a Location.^2^  
+
+Because the Event class represents a "join" between other classes, it is difficult to define exactly what it represents conceptually.^3^ At a minimum, an Event represents time and Location information, but it also implies some act (e.g. collecting, photographing, etc.) so metadata related to the methodology (e.g. sampling method, effort, etc.) can be included as properties of the event.^4^ ^5^  The origin of the concept of Event as embodied in DwC can probably be traced back to the Association of Systematics Collections (ASC) model.^6^ ^7^
+
+Although time could be described as an explicit class with its own terms^8^, in the current model time properties are included within the Event class (as is the case with DwC).  
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001685.html
+
+^2^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001703.html
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001797.html and subsequent posts.
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001801.html 
+
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001804.html
+
+^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001799.html
+
+^7^ http://wiki.tdwg.org/twiki/bin/viewfile/TAG/HistoricalDocuments?rev=1;filename=Ascmodrpt.pdf
+
+^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001771.html
 
 ==Properties suitable for use in DSW (not a complete list)==
 ===Data properties from DwC===
- * *eventDate* Use ISO 8601 dates (see http://en.wikipedia.org/wiki/ISO_8601).  Note: follow the convention of DwC where eventDate includes either the date only or the date+time.  dwc:eventTime is only appropriate when the time is atomized separately from the date.
+ * *eventDate* Use ISO 8601 dates (see http://en.wikipedia.org/wiki/ISO_8601).  Note: follow the convention of DwC where eventDate includes either the date only or the date+time.  dwc:eventTime is only appropriate when the time is atomized separately from the date.  It should also be noted that ISO 8601 dates can also express date ranges.^1^
  * *eventRemarks* string literal
  * *samplingProtocol* string literal
  * *samplingEffort* string literal
  * *fieldNotes* string literal
  * *fieldNumber* string literal
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001827.html
 
 ===Object properties defined in the darwin-sw ontology===
  * *eventOf* range Occurrence
