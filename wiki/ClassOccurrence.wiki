@@ -73,6 +73,26 @@ At the present time, darwin-sw does not take a position on defining such a class
 
 ^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001736.html
 
+==Separating the use of Occurrences in documenting species distributions from the declaration of a resource as an instance of the class Occurrence==
+
+The use of the term "occurrence" to describe the kinds of things included in the dsw:Occurrence (==dwc:Occurrence) class may lead to the misconception that all instances of the class must serve the purpose of documenting a "valid" occurrence of a taxon in its "natural" environment.^1^  However, it has been made clear that there is no expectation that an instance of the Occurrence class must be suitable for modeling species distributions, only that it represent the presence of a particular taxon representative at a particular time and location.  It is not necessary that the location, time, or taxon necessarily be known^2^ but the Occurrence cannot refer to a generic representation of a taxon such as a diagram or generic illustration.^3^  In DwC, the appropriate term for describing whether an Occurrence is a "natural occurrence" (i.e. indicating that the Occurrence is suitable for modeling a taxon's distribution excluding captive or cultivated Occurrences) is dwc:establishmentMeans^4^.  However, extensive discussion^5^ of the use of dwc:establishmentMeans revealed that there was substantial disagreement about what should be permissible as the controlled vocabulary for that term and even the DwC class under which the term should be listed^6^.  The conclusion (if there actually was one!) was that the term dwc:establishmentMeans implied a property that was associated by complex relationships with several existing DwC classes^7^ ^8^.  Thus it is probably impossible to assign a domain to dwc:establishmentMeans which is any existing DwC or darwin-sw class.
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000282.html
+
+^2^ http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000280.html
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000289.html
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001612.html
+
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001611.html and many subsequent posts in that thread.
+
+^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001629.html
+
+^7^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001644.html
+
+^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001646.html
+
 ==Properties suitable for use in DSW (not a complete list)==
 
 ===Data properties from DwC===
