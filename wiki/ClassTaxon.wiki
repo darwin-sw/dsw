@@ -3,12 +3,11 @@
 = dwc:Taxon =
 
 == What is a Taxon? ==
-(The following information is summarized from a number of documents and threads from the tdwg-content email list as documented below.)
 
 A taxon is a unit of biodiversity (Hyam and Kennedy,2006) e.g. species, genus, family, etc.  However, taxonomists consider a particular taxon to be defined not only by a name, but also by an understanding of what organisms should be included in the taxon under that name.  Taxa can be referenced in varying degrees of detail:  
- # *Nominal Concept* - reference is made to a taxon name but no information is available about how the user intends for that name to be applied.
- # *Taxon Name Usage (TNU)* (synonym: *assertion*, defined in Pyle,2004,p.20) - reference is made to a taxon name with some indication of what the author intends the name to mean.  This may or may not include published details about how the author intends to define the taxon.  See http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001831.html 
- # *Taxon Concept* - reference is made to a taxon name along with a publication which explains how the author intends for the name to be applied (Kennedy et al.2005, p.81).  The name used is followed by "_sec._" (_secundum_) or "_sensu_", then a citation for the reference which explains the author's intention.  A taxon concept is a more rigorously defined TNU.  See http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001820.html
+ # *Nominal Taxon Concept* (a.k.a."nominal taxon" and "nominal concept") - reference is made to a taxon name but no information is available about how the user intends for that name to be applied.  Such instances could be referenced by "placeholder" Taxon instances which contained with no nameAccordingTo, and no other metadata besides the scientificName.^1^ ^2^
+ # *Taxon Name Usage (TNU)* (synonym: *assertion*, defined in Pyle,2004,p.20) - reference is made to a taxon name with some indication of what the author intends the name to mean.  This may or may not include published details about how the author intends to define the taxon.^3^ ^4^
+ # *Taxon Concept* - reference is made to a taxon name along with a publication which explains how the author intends for the name to be applied (Kennedy et al.2005, p.81).  The name used is followed by "_sec._" (_secundum_) or "_sensu_", then a citation for the reference which explains the author's intention.  A taxon concept may be considered to be a more rigorously defined TNU^5^ ^6^; a "defined" taxon concept rather than an "implied" taxon concept (i.e. TNU). ^7^ 
 
 A taxon concept can be defined by a *circumscription* which refers to a collection of specimens that represent the concept.  Alternatively, a taxon concept can defined by describing the characters that define the concept (Kennedy et al., 2005, p.84).  
 
@@ -20,9 +19,39 @@ for example:
 
 _Aus bus_ L. 1758 _sec._ Archer 1965
 
-where the species name was published by Linnaeus in 1758 and the taxon concept describing _Aus bus_ was published by Archer in 1965.  The Darwin Core term nameAccordingTo is for the concept publication, whereas the namePublishedIn term is for the name publication.  
+where the species name was published by Linnaeus in 1758 and the taxon concept describing _Aus bus_ was published by Archer in 1965.  The Darwin Core term nameAccordingTo is for the concept publication, whereas the namePublishedIn term is for the name publication. 
 
-*Note:* I recall that somewhere in a tdwg-content post (which I have not yet located) that Rich Pyle stated and Markus Döring verified that it was intended that the Darwin Core Taxon class represent TNUs (or taxon concepts - a term used broadly by people who don't make a distinction between taxon concepts and TNUs).  Thus one can infer that terms in the dwc:Taxon class may be properties of taxon concepts.  However, because terms in the Darwin Core standard do not have strictly defined domains, there are also some terms listed under the Taxon class that may apply specifically to names rather than concepts.  (Note: in the TDWG Ontology [see below], Taxon and !TaxonConcept are defined to be equivalent classes, according to their definitions under the URI http://rs.tdwg.org/ontology/voc/TaxonConcept.owl which is hosted and can be viewed at http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl .)
+*Note* If no nameAccordingTo or nameAccordingToID is given explicitly given for a Taxon record, the nominal concept as defined by TCS should be assumed - so the Taxon could be a taxon concept *OR* a nominal concept.  This goes against the increased clarity we hope for from the SW. One possible solution would be a literal value for nameAccordingTo which stated "nominal concept" or some other controlled value.  This should be the subject of further discussion.
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001703.html
+
+^2^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001814.html
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2009-November/000268.html
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001831.html
+
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001820.html
+
+^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001835.html
+
+^7^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001840.html
+
+Note: there are numerous threads on the tdwg-content mailing list about the subject of taxa and taxon concepts.  I do not have the stamina to summarize them all here, but some entry points to several threads are:
+
+http://lists.tdwg.org/pipermail/tdwg-content/2010-June/000188.html
+
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001585.html
+
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001819.html
+
+
+== Equivalence of "Taxon" and "TaxonConcept" in the TDWG Ontology and the Darwin Core standard==
+In the TDWG Ontology (see below), Taxon and !TaxonConcept are defined to be equivalent classes, according to their definitions under the URI http://rs.tdwg.org/ontology/voc/TaxonConcept.owl which is hosted and can be viewed at http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl .  The intended meaning of the Taxon class in the Darwin Core standard is less well-defined.  Because of this lack of clarity, in darwin-sw we did not follow our usual practice (importing a class from DwC to serve as the corresponding darwin-sw class) but rather imported the Taxon class from the TDWG Ontology.  We justify this action based on our observations that: the Taxon component of the TDWG Ontology seems to be the part of the Ontology that is the most well-supported by other standards (e.g. TCS; see below), it is the part of the Ontology to which the most effort seems to have been applied, and it also seems to be the only part of the Ontology that has (to our knowledge) actually been implemented by anyone (see examples below).
+
+It has been noted by some of the architects of the DwC standard that the term dwc:taxonID is intended to represent a "nameUsageID"^1^ and thus instances of TNUs could be described using the vocabulary of the dwc:Taxon class.  Since taxon concepts are a more narrowly defined subset of TNUs, by extension terms in the dwc:Taxon class could apply to them as well.  However, because terms in the Darwin Core standard do not have strictly defined domains and because the DwC standard does not explicitly define a class for names or sensu/secundum references, there are also some terms listed under the Taxon class that may apply specifically to names or sensu/secundum references rather than TNUs/taxon concepts.
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001814.html
 
 == TCS model ==
 
@@ -72,16 +101,33 @@ provided by Pete DeVries.  Note: rdf:type and other properties not defined in te
 == Strategy for darwin-sw suggested by the TCS model ==
 The description of a TaxonConcept on p. 89 of Kennedy et al., 2005 provides ideas on how the Taxon class could be represented in darwin-sw.  In each of the two required components of a taxon concept, Name and AccordingTo, the TCS model contains a simple string representation ("NameSimple" and "AccordingToSimple") as well as an optional NameDetailed and AccordingToDetailed which are references to other resources that describe the Name and AccordingTo resources more thoroughly.  In our model, the "simple" representations could be made using string literal properties that are already terms in Darwin Core (in keeping with the general strategy outlined for darwin-sw).  There are also specific predicates within tc: for string representations of the "simple" properties: tc:nameString and tc:accordingToString although these don't have the capability for "atomizing" the parts (vs. Darwin Core which could express the name as dwc:genus, dwc:specificEpithet, and dwc:scientificNameAuthorship).
 
-The "detailed" representations could be URI references to resources that are not defined by darwin-sw, but rather by the functioning parts of the TDWG ontology.  In particular, tc:hasName and tc:accordingTo properties of the TaxonConcept part of the TDWG ontology could be made properties of the darwin-sw Taxon class which refer to resources that are defined outside darwin-sw (i.e. by the TDWG ontology).  That would get us out of the business of trying to define relationships that have already been defined and are functional.  It would also avoid embroiling our effort to represent Darwin Core terms in RDF in the endless debate about the minutiae of things taxonomic.  
+The "detailed" representations could be URI references to resources that are not defined by darwin-sw, but rather by the functioning parts of the TDWG ontology.  In particular, tc:hasName and tc:accordingTo properties of the TaxonConcept part of the TDWG ontology could be made properties of the darwin-sw Taxon class which refer to resources that are defined outside darwin-sw (i.e. by the TDWG ontology).  That would get us out of the business of trying to define relationships that have already been defined and are functional.  It would also avoid embroiling our effort to represent Darwin Core terms in RDF in the endless debate about the minutiae of things taxonomic.   
 
-*Note:* in revision 54 I deleted the TaxonName class and declared dsw:Taxon to be equivalent to tc:TaxonConcept which is declared to be equivalent to tc:Taxon .  
+Under darwin-sw, the assertion has been made that the class Taxon (i.e. corresponding to the Darwin Core class Taxon) is equivalent to the class Taxon in the TDWG Ontology.  Thus any properties established in darwin-sw and related to the dsw:Taxon class would also be related to the Taxon class (== the TaxonConcept class) of the TDWG Ontology.  Essentially, darwin-sw would be "connected" to the taxonomy components of the TDWG Ontology by declaring this equivalence.
 
-Under darwin-sw, the assertion has been made that the class Taxon (i.e. corresponding to the Darwin Core class Taxon) would be equivalent to the class Taxon in the TDWG Ontology.  Thus the properties established in darwin-sw and related to the dsw:Taxon class would also be related to the Taxon class (== the TaxonConcept class) of the TDWG Ontology.  Essentially, darwin-sw would be "connected" to the taxonomy components of the TDWG Ontology by declaring this equivalence.
+Although the design of darwin-sw is intended to encourage and facilitate the use of object properties and URIs to refer to resources (as opposed to string literal references) which might be widely used by the Linked Data community, as a practical matter consensus, resolvable URIs for taxa, names, and sensu/secundum references are not currently (as of Jan 2011) available.^1^ ^2^  Hopefully, consensus URIs for taxa will be available when the Global Name Usage Bank (GNUB)^3^ becomes functional.  The only large, currently functional^4^ source of resolvable URIs for both plants and animals that produces RDF is uBio^5^, which uses HTTP proxied LSIDs.  These URIs could be used as the objects of the tc:hasName property of a Taxon instance.  Hopefully the Global Names Architecture (GNA)^6^ will eventually provide resolvable URIs.  Currently uBio is the largest source of names to the GNA^7^ so all names currently assigned identifiers by uBio should eventually turn up in the GNA.  
 
+A system for providing sensu/secundum reference URIs is not well developed.  In some cases, literature references have been assigned DOIs, which can be used in LOD as HTTP proxied GUIDs.  However, much of the older literature does not have assigned DOIs and there are often not the necessary URIs to refer to sections of articles.^8^  Older literature is being databased by the Biodiversity Heritage Library (BHL)^9^ which provides stable URIs^10^ (but which apparently are not capable of resolving to RDF representations), but much literature still is not scanned and databased.  So for the immediate future, many sensu/sec references will have to be referred to in only text form as literal objects of tc:accordingToString.  
 
-_Issue raised by Cam_
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002202.html and subsequent posts in that thread
 
-From the wiki (http://code.google.com/p/darwincore/wiki/Taxon): &ldquo;If no nameAccordingTo or nameAccordingToID is given explicitly given for a Taxon record, the &ldquo;nominal concept&rdquo; as defined by TCS should be assumed.&rdquo; - so the Taxon could be a taxon concept or a nominal concept.  This goes against the increased clarity we hope for from the SW.  
+^2^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002231.html and subsequent posts in that thread
+
+^3^ http://www.globalnames.org/GNUB
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002231.html
+
+^5^ http://www.ubio.org/
+
+^6^ http://www.globalnames.org/
+
+^7^ http://gni.globalnames.org/data_sources
+
+^8^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002213.html
+
+^9^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002206.html
+
+^10^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002238.html  
 
 
 ==Properties suitable for use in DSW (not a complete list)==
@@ -97,7 +143,7 @@ From the wiki (http://code.google.com/p/darwincore/wiki/Taxon): &ldquo;If no nam
  * *tc:accordingTo * range a reference to the publication that makes the assertion (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
 
 
-== References: ==
+== General References: ==
 
 Hyam, R. and J. Kennedy. 2006. Taxon Concept Schema - User Guide.  http://www.tdwg.org/standards/117/
 
