@@ -1,0 +1,834 @@
+#summary Summary of some of the posts to the tdwg-content email list between October 2009 and February 2011
+
+= Summary of some posts to the tdwg-content email list (October 2009 - February 2011) =
+
+This is a "raw" summary of posts to the tdwg-content email list in approximately chronological order, but with some thread posts grouped for clarity.  The list is not exhaustive, but includes threads that I thought were relevant to the development of darwin-sw.  It was intended to be used as a tool to "find" posts on the list, particularly during the period of Oct-Nov 2010 when a flood of emails having similar subject lines made it virtually impossible to find any particular post via the list archives index.  Take it for what it's worth - no guarantees of usefulness implied nor guaranteed.  Creation of this summary could be described as passing through TDWG purgatory! :-) If anybody ever changes the URIs of these posts I'm going to be very upset.
+
+= The summaries =
+
+Beginning of thread discussing the relationship between dcterms:type, dwc:basisOfRecord, the DCMI type vocabulary, and the controlled values for dwc:basisOfRecord:
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000301.html
+This discussion is relevant to the typing and subtyping of classes.
+
+(Bob Morris) Underlying problem of typing by intended fitness of use: what is a potted tomato picture for?  If typed as an Occurrence, what if used as CharacterIllustration? 
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000292.html
+
+(Rich Pyle) We need to separate records that document an Occurrence from those that provide the evidence for the Occurrence
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000291.html
+
+(John Wieczorek) Separation of "RecordClass" from dcterms:type and dwc:basisOfRecord.  Explains how media items could (or could not) be descirbed by DwC types.  Expression of the opinion that the image evidence for an Occurrence would be typed dwc:recordClass="Occurrence" http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000289.html
+
+(Baskauf) Response to Rich suggesting separation of "type" (what something IS) from intended use (the PURPOSE).  First laying out of deficiencies in DwC standard for expressing more complex relationships.  I ask for "the best way" to express relationships beyond "Simple Darwin Core" (but no answer, apparently there is none).
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000287.html
+
+(John Wieczorek) Response about DwC decision not to have formal class/subclass vocabularly.
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000286.html
+
+(Baskauf) Objection to using Occurrence for stuff that doesn't directly document time and place (i.e. photos of specimens whose creation time and place doesn't document the presence of an organism).
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000282.html
+
+(John Wieczorek) Response to my email where he describes what he considers an Occurrence to be.
+http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000280.html
+
+(Rich Pyle) describes Taxon Name Usages.
+http://lists.tdwg.org/pipermail/tdwg-content/2009-November/000268.html
+
+(Rich Pyle) uses basisOfRecord to represent rdf:type (but not explicitly) and separates NomenclaturalAct and TaxonomicAct.
+http://lists.tdwg.org/pipermail/tdwg-content/2009-November/000265.html
+
+(Baskauf) expresses opinion that an Observation is not an Event.
+http://lists.tdwg.org/pipermail/tdwg-content/2009-November/000263.html
+
+(Baskauf) difference between dcterms:creator and dwc:recordedBy
+http://lists.tdwg.org/pipermail/tdwg-content/2009-December/000253.html
+
+(John Wieczorek) clarification of recordedBy
+http://lists.tdwg.org/pipermail/tdwg-content/2010-January/000235.html
+
+(Pete DeVries) rdf example for beetle occurrence (and following thread)
+http://lists.tdwg.org/pipermail/tdwg-content/2009-December/000240.html
+
+(Paul Alexander) suggests that dcterms:identifier is not appropriate for the resource described by rdf:Description (I don't entirely understand this post).  However, MRTG seems to use dcterms:identifier the way Pete did.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-January/000228.html
+
+(John Wieczorek) Explanation for why DwC does not have ranges and domains
+http://lists.tdwg.org/pipermail/tdwg-content/2010-January/000225.html
+
+(Baskauf) Proposal for Individual Class
+http://lists.tdwg.org/pipermail/tdwg-content/2010-January/000224.html
+
+(Baskauf) Indicating which Occurrence resources are useful for documenting distributions.  Note: this describes the view of Occurrences described by John in October.  This also brings up the issue of how establishmentMeans should be used (Occurrences vs. Individuals).  I request comment on how establishmentMeans should be applied, but basically got no response.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-February/000214.html
+
+(Baskauf) Problems with applying recordedBy to derivative occurrences.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-February/000213.html
+
+(Baskauf) Request for clarification about what an Occurrence represents
+http://lists.tdwg.org/pipermail/tdwg-content/2010-May/000194.html which refers to the comment posted at:
+http://code.google.com/p/darwincore/issues/detail?id=70
+where I outline the various ways that Occurrence has been used.
+
+(Pete DeVries) Name is species concept thinking.  This is the starting post of a long thread about species concepts.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-June/000188.html
+
+(Rich Pyle) In his response, he says that he doesn't think that names should be equated to concepts.  He also raises the question as to whether a parent taxon is a property of a concept or a property of a classification.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-June/000187.html
+
+There are many more posts here that are to some extent summarized on the Taxon page of darwin-sw.  One could go through them again and cross-reference.
+
+There is also another huge bunch in the July 2010 list: http://lists.tdwg.org/pipermail/tdwg-content/2010-July/date.html
+
+(Bob Morris) starts a thread on "associatedOccurrences":  Are there community-defined values that can be used by machines to infer duplicates?
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000094.html
+
+(Baskauf) My reply that individualID can be used to infer duplicates.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000093.html
+
+(Bob Morris) raises issues with the applicability of this, and I respond, explaining that Individuals can be from a small population and that determinations should be applied to Individuals, not Occurrences
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000090.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000089.html
+
+(John Wieczorek) resourceRelationship is intended for "flat" databases.  ResourceRelationship class terms can be used for more complex things (but no example of how)
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000088.html
+
+(Baskauf) Is there a functioning example of resource relationship?  I suggest a made up one for RDF.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000065.html
+
+(Markus Doring) Gives an opinion on resource relationship in RDF (his triples same as mine, but more straightforward presentation).  Comments that it seems strange to use the xxxID terms for RDF resources rather than literals. 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000064.html
+
+(Baskauf) I explain why I think inferring duplicates as having the same individualID is the "semantically correct" way of doing it and that that method should be used rather than inventing new terms when an existing one will do the job.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000075.html
+
+(Bob Morris) cautions that owl:sameAs is more complicated than it seems and that few people are doing reasoning with Linked Data.  He points out that DwC does not have formal semantics which would allow for the building of various OWL profiles on the same core terms.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000074.html
+
+(Baskauf) Request for opinions on the use of xxxxID terms: should they refer to the ID of the subject itself (ID) or as the ID of an object that is related through the class present in the term (IDref=foreign keys).  I suggest that IDref is more appropriate.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000061.html
+
+(Baskauf) I express discomfort with using terms in a way that perhaps was not intended (xxxxID terms).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000051.html
+
+(Markus Doring) Suggests that we need an RDF guide for Darwin Core.  He also thinks that the xxxxxID terms can be used both ways.  He thinks that when they are used as foreign keys they should not actually be part of any class.  In the XML schema, all ID terms can be in all classes.  He suggests moving all xxxxxID terms to the Record Level Terms section rather than having them be listed under classes.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000050.html
+
+(Pete DeVries) Suggests that there should be a form of DwC more suitable for LOD.  Also suggests that Individuals NOT include more than a single organism and that a "family" ontology be created (subproperties of dc:relation).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000058.html
+
+(Bob Morris) Says he has a "limping" RDF version of DwC
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000048.html
+
+(Baskauf) Response that definition is based on practicality where it is impossible or inconvenient to actually separate out biological individuals.  I raise the issue of how to handle mixed collections of individuals.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000056.html
+
+(Mark Wilden) Suggests that the Composite design pattern might work for heterogeneous collections of individuals. 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000055.html
+
+(Baskauf) Requests discussion of how to handle terms that could have both literal and URI objects.  I suggest URI with rdfs:label descriptions.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000057.html
+
+(Pete DeVries) suggests replacing terms that specify literals with those that specify URIs.  He provides an estimate of the cost per triple with reference.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html
+
+(Pete DeVries) created some URIs for taxon/name relationships.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000026.html
+
+(Pete DeVries) suggests using hasTerm, hasTermURI, and hasTermLSID for the various string and RDF versions of terms.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000022.html
+
+(Baskauf) I agree and think it should be used with recordedBy and xxxxID terms.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000020.html
+There are various other questions and comments later in the thread.
+
+(Markus Doring) He says that we need an RDF guide.  He also thinks that the variations are straying from the generic nature of DwC.  He says that the xxxxxID terms were intended to be used with local identifiers that couldn't be understood by breaking down their prefix (urn:lsid: ... or doi: ...).  He raises some other important issues like using hasTerm as the URI equivalent "term", whether new terms should be defined in OWL or RDFS according to the relationship to the original term, and whether they should be in the same or a different namespace.  He suggest sticking with the non-ID terms and use them with either literals or with URIs.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000013.html
+
+(Baskauf) I respond to say that LOD/HTTP URI is a special case because of the requirement for resolution of GUIDs.  I suggest we try to create examples and find out what new terms we actually need.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001584.html
+
+(Hilmer Lapp) Does not think special terms are necessary, but rather that social conventions should be used do indicate what the appropriate values are for terms (as in Dublin Core).  A validator tool could let people know whether they have followed the conventions.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000011.html
+
+(Pete DeVries) says that if there are expected states for URIs which have associated labels, then clients know to substitute the label for the URI 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000010.html
+
+(Pete DeVries) suggest DBpedia entries for authors, can be created if necessary.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000019.html
+
+(Roger Hyam) suggests using SKOS to render taxonomic classifications.  A number of people in subsequent posts liked that.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001585.html
+
+(Bob Morris) Differentates between LOD and the "semantic web" and warns that some LOD stuff is not amenable to tractable reasoning.  Haphazard development may result in a requirement for retrofitting in the future.  FOAF given as an example.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001707.html
+
+(Stan Blum) There may be a need for an applicability statement to make DwC work with SW/LOD while keeping DwC itself technology-independent.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001589.html
+This goes along with an earlier email indicating how an Task Group could be chartered:
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001591.html
+see also
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001653.html
+
+(Joel Sachs) Beginning of the "What I learned at the TechnoBioBlitz" thread.  Some points: used geo:lat and geo:long .  They had boilerplate rdf and text files.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001595.html
+
+(Markus Doring) suggests dwc:recordedBy for the primary recorder and dcterms:creator for the person who keyed it in.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001602.html
+This suggestion got John Wieczorek's blessing in
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001607.html
+
+(Bryan Heidorn) says images and sounds are "independent of the main observation".  They should be linked to the observation through an "event identifier".  [Note: not consistent with later dfn of Event and Occurrence]
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001603.html
+
+(Joel Sachs) Mentions the creation of an "Evidence" field in the bioblitz table (as an afterthought).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001600.html
+
+(Donald Hobern) Brings up the issue of a "natural occurrence".
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001611.html
+(John Wieczorek) replies that is the use of establishmentMeans
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001612.html
+subsequent discussion involved whether a controlled vocabulary is possible and whether there could be a simple flag to indicate if the occurrence should be used for modeling distributions.
+(Jerry Cooper) makes comment that some suggested terms apply to taxon concepts whereas an observer is only going to be able to assess the status of a particular individual based on a judgement made at the time.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001620.html
+and following emails discuss this.
+(Rich Pyle) asserts that an Occurrence could represent a population and as such "if we agree that 'Nativeness' is a property of a taxon at a
+particular locality, the way that this intersection is usually manifest in DwC is via Occurrence and Event instances"
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001627.html
+
+(David Remsen) GBIF uses establishmentMeans as a property of a Taxon as it exists in a certain geospatial area
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001628.html
+
+(Kevin Richards) Nativeness is a property of both a Taxon and an Occurrence and both are different perspectives of the same thing
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001629.html
+
+(Roger Hyam) Makes the important distinction between two ways that Occurrence is used: as a primary unit of data gathering (an individual of a taxon occurred at a particular time and place) and as the result of modeling (we know from aggregate records that a taxon occurs or even occurred, in a particular geographic area).  The way we think of "nativeness" depends on which way we are thinking.  He suggest a simple flag that says "exclude this record from modeling" (i.e. artificial records)
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001631.html
+
+(Rich Pyle) Further discussion of "nativeness" which also touches on the nature of what an Occurrence is.  He says that the scope of Occurrence is records of individuals or groups of individuals at a particular time and place, but maybe not simply stating that a taxon occurs at a particular place.  Whether "nativeness" is a property of Occurrence depends on how restrictive one is about what constitutes an Occurrence.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001635.html
+Other responses follow.
+
+(Hilmar Lapp) says that "dwc:establishmentMeans is a) not meaningful for a point or region in space, or a point in time, or a taxon concept, but only for a taxon concept at a spatial location at a point in time, and b) is a judgment made by someone on the basis of certain evidence" and that it "needs to be applied to a tuple of (taxon concept, location, time), and needs to be linked to a source and at least the kind of evidence"
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001644.html
+
+(Rich Pyle) responds that establishmentMeans may be appropriate for a point if people are able to make inferences about its origin and the role that humans have in that origin.  He also makes the statement that "an 'Occurrence' ultimately represents 'a tuple of (taxon concept, location, time)', where location and time are generally properties of Events, and an Occurrence is essentially the intersection of a Taxon Concept and an Event."
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001646.html
+
+(Marcus Doring) Describes the GBIF Distribution "class" which is used to describe Occurrences of the type which describes the presence/absence of a species in a location (as opposed to the documentation of a particular taxon representative at a particular Event).  establishmentMeans is used as a property of instances of this class.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001650.html
+
+(Gail Kampmeier) describes the circumstance of "accidental" bird Occurrences that are not related to human interference but which do not represent the "normal" range of the species.  They are also important to document and could be covered by establishmentMeans.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001621.html
+
+(Rich Pyle) notes that there are two aspects of establishmentMeans: whether humans were responsible for the Occurrence, and the extent to which the Occurrence is anomolous or whether it represents a self-sustaining population.  He questions whether one term is sufficient for describing both things.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001624.html
+
+(David Remsen) notes that GBIF has a draft "nativeness" vocabulary at http://vocabularies.gbif.org/vocabularies/nativeness
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001622.html
+
+(Marcus Doring) Information about setting up content-negotiation using Apache.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001664.html
+
+(Pete DeVries) suggests a way to use the geo: vocabulary to define spatial extent.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001609.html
+
+(Bob Morris) explains the difference between "resolve" and "dereference".  He cites an RFC which defines: 
+"URI 'resolution' is the process of determining an access mechanism and the appropriate parameters necessary to dereference a URI; this resolution may require several iterations.  To use that access mechanism to perform an action on the URI's resource is to 'dereference' the URI."
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001670.html
+
+(Baskauf) I object to the posting of RDF examples which would give the impression of community consensis where there is actually none.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001658.html
+
+(Baskauf) "Wrong" RDF as in statements should say what people actually mean.  I give examples where identifications are applied to specimens, images, and observations where the identification is actually of the individual.  I assert that we need classes for all of the types of things we want to describe.  There needs to be a discussion of the model before people start writing RDF.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001663.html
+
+(Pete DeVries) Gives his examples on how Individuals should be modeled (as individuals of a species concept).  Also mentions that one thing can have many types.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001665.html  and
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001735.html
+
+(Rich Pyle) responds saying that he always thought that the "thing" on which an Occurrence was based was the organism (or set of organisms, or impression of the organism).  He asserts that if the organism is collected, it is a specimen, but otherwise it's just layers of evidence.  He also says that the specimen in the jar is also just evidence that the organism occurred.  He says it's an observation if a specimen wasn't collected.  "scientificName is really a property of the Taxon Concept, and the Taxon Concept is the subject of an identification event, and the identification event was applied to the organism, which itself represents the basis of an Occurrence"  We run into trouble when people forget that collapsing the chain is a shortcut for the actual relationships.  Other things in this post lay out the structure that we pretty much followed in darwin-sw.  He also raises the question that if there is an Individual class, what properties would go into it?  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001666.html
+
+(Baskauf) Three reasons for why the Individual class is necessary: 1. To provide a means to type the object of individualID, 2. To allow "dots" on a distribution map to reflect individual organisms, not multiple observations of the same organism at the same spot (facilitate resampling).  3. To allow multiple determinations (possibly based on evidence collected in separate Occurrences) to be associated with the same individual.  I also note that there are few terms that would actually need to go into this class: individualRemarks and establishmentMeans.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001675.html
+
+(Pete DeVries) Notes that the existing DwC has most of the terms necessary to function in the database world, with the exception of not supporting the geo: terms and the Individual class.  He suggests that there needs to be another form of DwC that will work in the semantic web world and suggests that a group should develop it and create use cases (sample data sets and SPARQL queries).  He says that there will need to be discussion about potentially several types of taxon concepts.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001678.html
+
+(John Wieczorek) What's wrong with an Occurrence-centric view where we let the Occurrence stand as "evidence that a taxon occurred at a place and time"?  The Occurrence remains the central concept, and the rest of the data highlights the evidence. "The Occurrence O gives evidence that Taxon T determined based on Identification criteria I occurred at Location L within GeologicalContext G during the Event E based on evidence captured in properties of the Occurrence and distinguishable in the type of evidence as recorded in the dcterms:type and or the dwc:basisOfRecord".
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001671.html
+
+(Baskauf) I summarize the two uses of "Occurrence": the "checklist" use (a taxon occurs generically at a location) and the use that describes the presence of a particular taxon representative at a particular location at a particular time.  I assert that the former really should be called something else and the latter is the entity of primary interest in describing the relationship among the DwC classes (Event, Location, Identification, etc.).  I also lay out the various aspects of Occurrences that may or may not be included within someone's idea of "occurrence": the Event at which the Occurrence was noted, the evidence which serves to document the Occurrence ("token"), and the metadata describing the Occurrence (the actual Occurrence resource itself).  In this post, I assert that an occurrence includes the Event, the Occurrence, and the token (but now I don't - I separate them).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001633.html
+
+(Rich Pyle) points out that the "checklist" use of Occurrence is really related to the "specific presence" use, i.e. 
+TaxonConcept<-->Location
+is a compressed version of
+TaxonConcept<-->Occurrence<-->Event<-->Location
+
+He also points out that there is a continuum of
+IndividualOrganism<-->Event
+GroupOfIndividualOrganisms<-->Event
+PopulationOfIndividualOrganisms<-->Event
+TaxonConcept<-->Event
+where the the adjacent categories overlap.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001638.html
+
+(John Wieczorek) points out that the components of Occurrence (time, location, and taxon) can each span any scale from small to large.  He therefore doesn't see the point in making distinctions based on scale.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001642.html
+
+(Rich Pyle) sets the temporal limits to the entire history of the earth, spacial limits to the entire earth.  But he questions whether the taxonomic limits should extend beyond populations.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001643.html
+
+(Nicolas Bailly) suggests separating Occurrences from their uses and defining Occurrence as "at least a triplet (a taxon name, a location, a time);  whatever the
+precision of each member of the triplet is."  Comments that describing nativeness suffers from the problem of assigning discrete categories to a continuum and suggests "fuzzy logic" as a possible solution.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001645.html
+
+(Baskauf) Attempt to summarize what has been said with a diagram.  I assert that there seems to be a consensus about what an Occurrence is and how various entities are connected.  Also, I note that different users will want to "flatten" the relationships by dropping out ones for which they have no interest. I assert the presence and position of the proposed Individual class.  I state reasonable ranges for the scope of instances of the various classes.  I state the boxes and lines can represent an RDF graph and therefore this diagram could be converted to RDF if there is agreement on its structure.  I assert that a GUID is needed for every node on the graph.  The issue of the token is deferred for the moment.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001680.html
+
+(Baskauf) Attempt to summarize the issue of what exactly should be included in the concept of Occurrence: 1. the metadata and the token, 2. just the metadata with the token considered a separate entity, 3. the metadata, the token, and the associated Event/Location.  I note that basisOfRecord describes the nature of the token and that this is used inconsistently.  I ask for a consensus and consistency on this point and note that the basis of my request to add DigitalStillImage as a type/basisOfRecord value is based on the need for consistency in the way that tokens are handled and the need to type them.  In this message, I advocate the assumption that every Occurrence be assumed to have a one-to-one relationship with a token (people later objected to this idea and I dropped it).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001681.html
+
+(Pete DeVries) Species concept may have many names associated with it.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001684.html
+
+(Rich Pyle)  [message seems to be out of order, should be somewhere else, tried to move it to the right spot]  Describes how my examples of separate Events for each Occurrence could be collapsed within just a few Events.  He makes the case that much of what I suggest could be achieved using existing DwC terms such as individualID.  DwC is a practical vehicle for information exchange and not really an ontological model.  So although he doesn't necessarily disagree with my arguments, he's not sure it's necessary for DwC at this time.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001685.html
+
+(Rich Pyle) Most important thing is to get people to record the field guide they consulted when they assigned a name.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001688.html
+
+(Pete DeVries)  [message also out of order, tried to put it in right place]  LOD example of Occurrence and Individual records along with SPARQL query examples.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001689.html
+
+(Baskauf) Practical details of recording a determination.  Using an herbarium sheet as an example, I ask: 1. What do you do if the original collector isn't known?  Use the first name on the label?  2. Is there any distinction in the metadata between the initial identification and subsequent determinations?  3. What do you do if there is no indication of the concept that the person had in mind when the name was assigned? 4. Is there any way to flag determinations as to their reason (e.g. now considered to be incorrect, determination to a lower taxon, multiple concepts possible)?
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001694.html
+
+Various people respond with comments and questions about nameAccordingTo, nameAccordingToID, and identificationReferences.  
+
+[John Wieczorek) identificationReferences could be anything used in the identification (range map, field guides, or taxonomic treatment).  nameAccordingTo is limited to the source that assigned the name to the taxon (?) which Markus Doring said was the sensu/sec reference.  (http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001695.html)
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001704.html
+
+(Rich Pyle) *** This is the message where Rich lays out how the relationships among classes in a fashion similar to the ASC and ABCD models.  He comments: 
+- "Occurrence is the intersection of an Individual and an Event.  An Event is a Location+Time[+other metadata]".  
+- The "crow's feet" in his diagram indicate that there are on-to-many relationships between the node classes.  
+- (question 2) no distinction between first and subsequent IDs.  
+- One-to-one relationship betwen an Individual, an Identification, and a TNU
+- TNU correspondes to the Taxon class.
+- He considers it unwise to connect a scientific name directly to an Identification instance.  
+- (question 1) Make no assumptions about initial identification, maybe Museum Staff or something, but not a person.  
+
+He then goes on to describe how he would create TNUs from the annotation labels on the specimen.  (question 3) If it is not possible to know the "sensu", then he would apply a "placeholder" Taxon instance with no "accordingTo" (a nominal taxon).  
+(question 4) does not see a need for machine-processing of reason for determination.  It might not even be known.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001703.html
+
+(Baskauf) I suggest "flattening" the left side of the diagram to simplify it and relate= that lat, long, and uncertainty are essentially a GUID for Location.  But I don't object to the more normalized model.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001708.html
+
+(Rich Pyle) Responds that many people don't flatten their events and that one could take the same approach with flattening Individual into Occurrence.  There are many old records that don't have lat/long and there are many Locations that are reused for many years or Events that involve the recording of many (even thousands of) Occurrences.   He also makes the point that it is easier to flatten more normalized databases than to go the other way.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001710.html
+
+(Baskauf) I respond that one could use hash URIs to create identifiers for any of the classes for which one does not care to maintain as separate records in a flattened database.  I argue that all possible classes should be there, including Individuals, for users who need to have a more normalized model.  I note that when "collapsing" is taken into consideration, there seems to be consistency in the way that people are describing the relationships among the DwC classes.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001722.html
+
+(Bob Morris) Warns about the dangers of asserting domains and how that may cause reasoning that does not make sense.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001726.html
+
+(John Wieczorek) He sees establishment means as a "relationship between the Individual and an Event happening at a Location"
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001730.html
+
+(Rich Pyle) By John's dfn, establishmentMeans isn't exactly a property of Occurrence since an Occurrence is "Individual At Event[=Place+Time]", although if time is also a component then it would be.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001731.html
+
+(John Wieczorek) provides links to georeferencing references.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001728.html and
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001729.html
+
+(Greg Whitbread) comments that Rich's diagrams are similar to the ASC model and the ABCD model.  He notes that people can have more specific data descriptions and then broaden it for output to GBIF etc. using systems like Darwin Core for integration with the wider community.  He notes that Occurrence is difficult to define and it's hard for them to know what to "omit" to submit Occurrence records.  In RDF, one can express more exact content while also using broader community vocabulary like DwC.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001718.html
+-----
+(Cam Webb) provides an RDF example to raise some questions, particularly ones about which terms to use for classes.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001720.html
+
+(Baskauf) Note that undesirable blank nodes can be avoided by hash URIs and facilitate reuse and linking by others.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001721.html
+
+(Markus Doring) comments that the TDWG ontology and DwC weren't intended to be mixed.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001723.html
+
+(Baskauf) I respond to Cam's questions in his example.  I note typing options (TDWG ontology, DwC type vocabulary, and DwC classes themselves).  I note that I'm moving toward separating tokens from their Occurrences and thus my Biodiversity Informatics examples aren't my preferred approach any more.  Issues raised: use of the xxxxxID terms to connect classes, use of ServiceAccessPoint class to link images rather than direct URLs, lack of property inverses for xxxxxxID terms and whether clients would be "smart" enough to infer them. 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001786.html
+
+(Cam Webb) recommends serialization tools for RDF and suggests that it is better to make up new terms rather than using the xxxxxxID ones which are ambiguous.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001788.html
+
+(Paul Murray) suggests leveraging the FOAF vocabulary for use with recordedBy.  foaf:Project is an interesting possibility for collection activities
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001845.html
+
+(Bob Morris) notes that there are some OWL reasoning problems with FOAF
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001854.html
+
+(Rich Pyle) asks whether the absence of terms for agents in DwC indicates a lack of need for reasoning about them.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001855.html
+
+(Bob Morris) provides some references about OWL reasoning.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001889.html
+
+(Paul Murray) discusses some of the problems with FOAF and how they may be avoided.  He notes that  "You can use the FOAF properties and classes without explicitly importing FOAF - you can just declare them."
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001891.html
+----
+(Pete DeVries) fwd: URL for stats on the status of the LOD cloud.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001713.html
+
+(Cam Webb) Info on OBOE ontologies
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001736.html
+
+(Baskauf) Treatise on Occurrence, tokens, and basisOfRecord.  An attempt to summarize some principles that arose from the previous discussions.  Among these points, I assert that the "right" relationship diagram is the one that allows the DwC constituency to describe the relationships they need to describe; therefore a more broadly applicable model is better than a narrow one (e.g. one that "collapses" some classes).  I also state explicitly that an undercurrent seems to be that it is better to classify things by what they are (their type) than by what we want to use them for (their fitness for use) and that the failure to do this is the cause of some of the confusion about Occurrences and the evidence that supports them. 
+In the second part of the post, I discuss the two options of including the evidence for an Occurrence ("token") as part of it (the "assumed token model"), and separating the two (the "explicit token" model).  Combining the two creates problems, particularly by confusing a use of a  token (as an Occurrence) with the type of the token itself.  Combining an Occurrence with its token requires akward assertions that tokens not directly derived from Individuals be construed to be some second-rate type of Occurrence, and it also requires each Occurrence to have only a single token.  The existing use of basisOfRecord presupposes this outlook.  These problems can be solved by separating tokens and Occurrences as entities, but it requires the creation of additional terms that describe how the tokens are related to Occurrences and other biodiversity-related resources.  Using the explicit token model allows us to make statements in RDF that make  more sense that the corresponding statements made using the assumed token model.  I then discuss issues of how resources should be typed.  I suggest that a choice should be made between the two models.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001742.html
+
+(Rich Pyle) says he always has considered "everything" (i.e. Occurrences) to be observations with evidence to vouch for them.  He points out that the "incorrect" statement are really just collapsed versions of the correct ones.  He basically agrees with the explicit token model, but questions whether this degree of normalization is appropriate for DwC.  He suggests that maybe we need v2.0, v2.1, v3.0, etc. each of which is backwards-compatable to a more "collapsed" model.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001743.html
+
+(Baskauf) response to Rich's issues: it would be good to have this stuff archived so that it won't have to be re-discovered later.  I recap Pete's suggestion that we may need a version 2.0 with additional terms to make DwC work in the LOD world, but that existing terms need to maintain their meaning.  " describing a fully normalized model that can be translated into RDF can be achieved with only a few minor additions to the existing terms as opposed to requiring a complete new version"
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001744.html
+
+(Rich Pyle) In this message, Rich broaches the idea that specimens may deserve special status because they actually "are" a part of the individual rather than being "of" the individual.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001748.html
+
+(Jim Croft) Disagrees with Rich that specimens are different than other tokens.  Somewhat in jest he states: "If a museum or herbarium agrees to accept and
+curate it, then 'stuff' becomes a specimen" which really is the essence of the distinction that allows an Individual to also become a Specimen.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001752.html
+
+(Stan Blum) has posted documents related to the ASC model and gives the URLs.  He outlines a brief history.  He notes that with RDF there is the potential to break the binding between a consuming application and a single source schema (e.g. XML schemas).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001764.html
+
+(Paul Murray) is marking up taxa and names in the APNI (provides links to examples).  However, some of the terms he needs are not available in DwC.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001751.html
+
+(Bob Morris) clarifies Baskauf's statement about the dangers of assigning domains:
+WRONG: assigning a domain implies that a term always applies to a certain type of resource
+RIGHT: assigning a domain implies that the term ONLY applies to a certain type of resource
+It closes the open world assumption.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001753.html
+Example (by me): if isEvidenceFor is assigned the domain Token, then Token instances don't always have to have a value of isEvidenceFor.  But isEvidenceFor can only apply to members of the Token class and not any other type of resource.  
+
+(Paul Murray) responds with further comments and cautions:
+Asserting P has domain D does NOT:
+- force every instance of D have a value of the P property
+- force people to declare that resorces having property P to have type D.
+- prevent resources having property P from having types other than D. 
+What it does is to assert that if P has domain D, then a resource having property P is of type D.  (The resource may also have other types.)
+
+By applying other restrictions to the ontology, such as 	
+that every instance x of T *must* have a value for property P: SubclassOf(T ObjectMinimumCardinality(1 P))
+that any x having property P *must not* be declared as some other type T2: SubclassOf(ObjectMinimumCardinality(1 P) ObjectComplementOf(T2))
+one can force a resoner to conclude that some other ontology using your terms is "inconsistent" if the terms are not used correctly.  So domain properties must be used with care.  People who don't like how your domain properties are assigned should not use your ontology.  They should make their own that says what they want.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001766.html
+Example (by me): if isEvidenceFor is assigned the domain Token, then:
+-every instance of the Token class doen't have to have a isEvidenceFor property.
+-people assigning isEvidenceFor to a resource don't have to declare that the resource is a Token instance.
+-people assigning isEvidenceFor to a resource are not prohibited from declaring that the resource has a type other than Token (i.e. the resource can be an instance of other classes)
+-people assigning isEvidenceFor to a resource are implicitly declaring that the resource has type Token.
+
+(Cam Webb) response to "treatise", posing questions: How are the bounds of Occurrence defined? Can space/time bounds of Occurrence be expressed as properties of the Occurrence itself rather than as properties of an associated Event?  If a human observation is a tokenless Occurrence, can a Token class be created explicitly for observations and linked to OBOE?  He suggests a deep fork to create a Darwin SW specifically for the semantic web.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001755.html
+
+(Rich Pyle) prefers explicit Event instances and discusses the terms used to define and bound time and space.  He favors at least a placeholder class for Observations as Tokens.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001758.html
+
+(Paul Murray) brings up a not-fully-developed OWL time ontology and mentions other models of time.  Mentions the importance of distinguishing between times specified by time intervals (the starting and stopping instants of their range) vs. time blocks specified by calendar units (e.g. 2010-2011 including all of the calendar days in those years).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001771.html
+
+(John Wieczorek) notes that ISO 8601 which is specified for eventDate can express date ranges.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001827.html
+
+(Baskauf) I describe the approach of looking at what we what the classes to "do" rather than what we think they should "be", i.e. an Individual connects multiple Occurrences with multiple Identifications (i.e. allows for resampling) rather than worrying about exactly what the essence of an Individual is.  On this basis, I propose a functional definition that an Occurrence serves as a node that connects an Individual to an Event and zero to many Tokens.  The properties of classes are ones that need to be connected via those nodes (e.g. Occurrence properties have a one-to-one relationship to Occurrences).  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001760.html
+
+(Hilmar Lapp) Some technical details about the terminology used to describe Occurrences and how machines would understand them.  In particular, he notes that the term "intersection" has a technical meaning in OWL different than the way it was used here and should thus be avoided in technical discussions
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001765.html and
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001779.html
+
+(Pete DeVries) Illustration of RDF where tags created by attaching fragment identifiers to a base URI for a species are used to indicate the "type" of a resource (vs. an rdf:type statement).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001768.html
+
+(Stan Blum) response to Hilmar's post.  Notes that records at GBIF are organism occurrence records, not species occurrence records.  The organisms can then be identified as members of a species.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001774.html
+
+(Hilmar Lapp) Provides a technical definition for Occurrence: "formally, an Occurrence would be a  tuple of (Individual, Event), and has properties for referring to the  
+Individual and the Event."  N.B. "tuple" is defined as an ordered list of elements and has a specific meaning in programming.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001782.html
+
+(Rich Pyle) states that in the database world, an occurrence would be a "a many-to-many join between Events and Individuals, with a few additional properties"
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001785.html
+
+(Joel Sachs) in response to Roger Hyam's question, he noted that if Occurrences can be the output of an analysis, then an absence of Occurrences for a taxon in an area along with a term for sampling effort could assert an "absence".
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001796.html
+
+(Joel Sachs) discussion of the meaning of Event; whether it is intuitive and if you can have two Events over the same space/time if they use different survey methodologies.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001797.html
+
+(Hilmar Lapp) further discussion about Event and whether it also includes action taken at a place and time (sampling/collecting, how, who, etc.)
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001801.html
+
+(Rich Pyle) on Event: not clear whether "who, how" are intrinsic properties of the Event or if the Event is just the time/location and the other stuff are associated with the Occurrence.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001804.html
+
+(Stan Blum) historical background on Event from the ASC model.  It included 0-many collecting units (i.e. what we are now calling tokens), so would say something about absences.  He noted that there needs to be other metadata that tells you why the interval of space/time is of interest, such as number of items observed and number collected.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001799.html
+
+(Paul Murray) Provides examples of how he used the TDWG rdf vocabulary to describe names and TaxonConcepts.  He discusses terms in the DwC Taxon class part of the vocabulary and how they might or might not be applied to names and taxa.  Issues he raises are discussed in Rich's following post.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001810.html
+
+(Rich Pyle) *** This response to Paul's questions is where he confirms with Markus Doring the intended application of DwC Taxon class terms.  Here he makes the statement that "TaxonID to effectively be nameUsageID" (i.e. an identifier for a TNU, making the DwC Taxon class the class that represents TNUs.  He discusses what a "name" might be (a text string vs. a nomenclatural object).  The question of how to handle nominal taxa (those without a "sensu" reference) is raised and the comment made that all taxon concepts assert to be congruent to the nominal taxon.  He says that the various levels "family" "genus" etc. are "pre-parsed name elements of a compond name represented in scientificName" (i.e. the name record).  The relationships among the taxa would be represented by populating the parentNameUsageID terms to point to the parent taxon.  The issue of language-independent rank names (vs. text controlled vocabulary) was raised (var. vs. variety vs. varietas).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001814.html
+
+(Bob Morris) Comments about intellectual property markup related to data (e.g. can they be copyrighted).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001745.html
+
+(Todd Vision) Use of Creative Commons 0 license to waive right to copyright.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001746.html
+
+(Bob Morris) More on intellectual property and Plazi Verein with URL references.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001750.html
+
+(Baskauf) What is basisOfRecord for?  "There seems to be ambiguity as to whether we intend for basisOfRecord to represent the type of the record (which in this case I would say is Occurrence) or the type of the token on which the record is based (which in this case is PreservedSpecimen)".  Is it only for Occurrences?  What if the Occurrence had two tokens?  How is it supposed to be used?
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001761.html and
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001778.html
+
+(Stan Blum) The intention is to "support discovery, assessment, and reuse of data for purposes that weren't anticipated" .  It may not be suitable for strict typing.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001781.html
+
+(John Wieczorek)  basisOfRecord is to "classify the content of the resource (record)as specifically as possible, in the sense of how the contributor of the resource intended for it to be used. The value of the basisOfRecord should be based on the most specific Class (a DwCtype) of information the resource (record) represents." Also, "Nothing in Darwin Core says that you can't create a schema in which an Occurrence is supported by multiple 'tokens', each with its own basisOfRecord." 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001823.html
+
+(Steve Baskauf)  complains:
+1. If one considers the Occurrence to also be a PreservedSpecimen, and if the Occurrence is also supported by a StillImage (as suggested by saying that an Occurrence can be supported by multiple tokens) then a single resource has three types and one makes odd conclusions like "occurrences have copyrights, images have preparations".  
+2. The rdf definitions of the DwC types (which also function as the controlled values for basisOfRecord) say that an Occurrence is a subclass of Event.  So in the previous example, by inference the resource is also type Event.  "it's overloading the dwctypes to say that they should both serve as the way to define they type of a thing (i.e. the class to which the thing belongs) and to indicate the relationship that some thing has to something else (i.e. hasASpecimen, hasAnImage, hasAnObservation, etc.) as one is apparently doing with basisOfRecord".
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001828.html
+
+(John Wieczorek) *** "Encoded there is the view at the time the standard was ratified that specimens and observations "are" Occurrences."  and "I think we have a lot of work to go the next step, to get the semantics right, for which choices have to be considered more carefully than has been done in the past. Thankfully, it seems we have reached a critical mass to try to meet the challenge."
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001836.html
+
+(Steve Baskauf) *** Overloading of basisOfRecord.  It seems like basisOfRecord is intended to do up to three different things:
+1. indicate the type of the record
+2. indicate the purpose of the record (fitness of use) e.g. to act as supporting evidence for an Occurrence
+3. carry connotations that indicate the ontological relationships among classes (e.g. PreservedSpecimen is a subclass of Occurrence which is a subclass of Event).  
+It would be best to separate these uses, remove all ontological references from the defining RDF, and create a type for all of the classes that are represented as classes which are currently used to categorize DwC terms.  I also suggest that there is a need for a PhysicalSpecimen class that is separate from the Occurrence class.  [note: these recommendations are the basis of the approach we took with darwin-sw]
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001859.html
+
+(Baskauf) I withdraw my proposal to move establishmentMeans to the proposed Individual class and explain why.  I assert that there is a consensus that tokens are separate from Occurrences and that establishmentMeans is a complex thing.  It may not really be a member of any existing class.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001811.html
+
+(Baskauf)  Since I don't really believe there is a use for basisOfRecord, I no longer care about DigitalStillImage as a controlled value for it.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001812.html
+
+(Baskauf) Request for a vote on Individual proposal.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001813.html
+
+(Kevin Richards) notes that if Individual is accepted then we need terms to relate them to other things, like "partOfIndividual" and "derivedFromIndividual".
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001816.html
+
+(Bob Morris) Cautions to go slowly on Ontology development: "develop use cases; develop competency questions; develop tools".  Notes that classes can unintentionally be created by type assignments. 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001817.html
+
+(Paul Murray) describes the approach they are taking on the Australian Plant Name Index (APNI).  
+1. They type their names as both APNI and TDWG names so that the APNI vocabulary can be ignored if desired.
+2. Their types, properties, and named individuals are identified with URIs.  
+3. They don't really intend for people to use the APNI terms - they are basically for their internal use.  So  they aren't intending to create a community vocabulary and therefore aren't so concerned about their declarations of domains causing unintended inferences.
+4. Because all of their resources are defined by URIs and other GUIDs, they can persist even if the way they are described changes to clarify, enrich, or correct what they have said about the resources.
+5. The problem of "provenance" and "data ageing" is raised.  How does one deal with systems holding and perhaps passing on copies of data that are out of date?  He suggests some kind of "certificate" that indicates that they are a TDWG-approved source of data.
+6. Their work provides an example to discuss and he hopes that DwC properties and types will be functional in the timeframe of weeks, not years.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001825.html
+
+(Baskauf) agrees that stable URIs are a good thing and asks what we do when "bad" information gets in the cloud (either through sloppy translation of not RDF info into triples or nefariously).   Also, I suggest that a second DwC that would allow deep reasoning might take years, but that a DwC RDF "lite" could be created in weeks, not years.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001917.html
+
+(Paul Murray) thinks that it is possible to tell a SPARQL reasoned to use a certain set of reasoning rules on triples served from other locations.  He says that what is needed is an auxiliary document with OWL rules about the DwC predicates which one can choose to import and reason over.  This would NOT be a document defining the vocabulary.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001925.html
+(Pete DeVries) provides examples on which reasoning may be done and offers a link to Sindice's inferencing tool.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001929.html
+
+(Baskauf) Careful thought needed on the domains of some terms, e.g. individualCount and catalogNumber.  Why haven't the xxxxxxxID terms been moved to the Record-level section in the documentation of DwC?
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001818.html
+
+(John Wieczorek) posted the exchange of Rich Pyle and Steve Baskauf that was posted on the DwC issues tracker after Baskauf revised the definition of Individual to: "The category of information pertaining to an individual organism or a group of individual organisms that can reliably be known to represent a single species (or lower taxonomic rank if it exists)."  Rich's points: he prefers the term Organism to Individual since Individual may collide with meanings in other related domains.  He also thinks it is too restrictive to require it to apply only to a single species.  Baskauf replies that he intended taxonomic homogeneity and that a different vocabulary would be needed to describe a "mixed bag" of multiple taxa.  John notes that "species" is too restrictive as it would prohibit identifications that were less definite than the species level.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001856.html
+
+(Baskauf) replies that the intention was that instances of Individual be believed to be a single species (or lowest possible taxonomic level) but not that the identification was required to be made to species.  The intention was that instances of Individual not contain aggregates of multiple taxa as that would defeat the original purpose of the proposal (not stated here, but to allow for the inference of "duplicates").  But the wording could be changed to "...a single taxon" if that's what the community wanted as long as it was understood not to be taxonomically heterogeneous.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001857.html
+
+(Stan Bloom) what happened to using the term Organism instead of Individual?
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001860.html
+
+(John Wieczorek) replied that Individual corresponds to individualID and individualCount and wouldn't "break" existing applications as would if those terms were changed to "organismID" and "organismCount".
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001861.html
+
+(Pete DeVries) suggests that it be noted that Individual is short for IndividualOrganism.  He suggests the use of hasPart and isPartOf to relate Individual to its parts that become specimens.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001870.html
+
+(Rich Pyle) notes that having a sample identified to a higher rank than species could mean either that it's taxonomically homogeneous but the lower rank is unknown or that it's known to be taxonomically heterogeneous but the lower ranks of the individual organisms isn't yet known.  He advocates avoiding the term "species" since it there is no consensus that the rank "species" is anything special.  He also questions why taxonomic homogeneity is necessary in the definition.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001865.html
+
+(Bob Morris) notes that attitudes about aggregates of organisms may depend partly on the reason for them, e.g. sampling methodology vs. ecological proximity.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001883.html
+
+(Baskauf) Start of "Taxon and Name" thread.  I summarize my understanding about how taxon names, concepts and TNUs are related in a diagram (which in retrospect is not really correct) in an attempt to get clarification.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001819.html
+
+(Nico Franz) describes a taxon concept. The concept is described by a name plus reference (indicated by secundum or sec.).  The concept is a perspective of what the taxon is or might be according to the author.  The names are labels to be used with the sec. reference.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001820.html 
+(Rich Pyle) says that what I called taxonName corresponds to protonym (the naxonNameUsage instance that established the name).  He says that he thinks a taxon concept includes circumscribed sets of individuals that don't yet have an assigned name and may not yet have a publication.  He says that a "taxonNameUsage" (TNU) is approximately a taxon concept but is broader because it doesn’t have to come with an implied concept (could just be a "raw name usage" such as a list of specimens).  TNUs are the broadest thing to which an identification can be tied.  He also explains the use of acceptedName, originalName, and parentName.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001831.html
+
+(Nico Franz followed by Rich Pyle)  The distinction is made between "defined" and "implied" taxon concepts.  In the future, it would be best to move towards defined taxon concepts whose boundaries are specified (through ("mateial examined" or "robust descriptions of morphological and/or genetic characters") to facilitate the mapping of those concepts to others which may be congruent or have some sort of overlap.  taxonConceptID apparently represents a composite unit that "would represent an array or set
+of TNUs with congruent taxon concept definitions" [Note: this sounds like it is related to the LDTU concept mapping units of Weakley 2009 http://www.sernec.org/files/A%20practitioner%27s%20guide%20to%20concept-mapping.doc).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001835.html and
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001840.html
+
+Note: there are further posts in this thread that go into the minutiae of  taxon definitions, clades, etc. which are beyond the scope of Darwin-sw
+
+(Paul Murray) considers a name to be an abstract thing that comes into existence with a nomenclatural act [=Protonym according to Rich Pyle] and that name strings refer to that abstract thing [Rich Pyle links orthographic variations to the Protonym].  This makes the distinction that the name string is a label for the thing being described, rather than the thing itself.  "the strings representing the parts of the name (including its author and year) are a key - the combination of those parts uniquely identify the name. A taxon has-a set of name parts, by virtue of it having a name and some supertaxa, whereas a name is-a particular combination of name parts. It seems I'm rather more wedded to this "a name is a set of part tuples" than I thought."
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001826.html and
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001834.html
+
+--------
+(Nate Flesness) comments that there is a great need to be able to track groups of individuals (fish in a tank, etc.)
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001821.html
+
+(Dean Pentcheff) notes that there is an important use case where unsorted jars arrive and are sorted into jars that become child jars that are narrowed to lower taxonomic groups.  These jars may or may not ever be sorted to taxonomic homogeneity nor to individual organisms.  There is a need to be able to track these things.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001822.html
+
+(Rich Pyle) extends this post to the question of whether an individual is assumed to be an individual taxon.  He believes that the Individual class could extend all the way up to the domain class.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001833.html
+
+(Pete DeVries) some suggestions about terms to use with sets and their counts during Occurrences
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001841.html
+
+(Nico Cellinese) objects to using "species" in the definition of Individual.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001863.html
+
+(Baskauf) responds that "taxon" was substituted with the understanding that it would not include aggregates containing representatives of different taxa.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001864.html
+
+(Rich Pyle) says that the use of taxon in the definition should allow application of the term Individual to collections that are taxonomically heterogeneous as long as they are homogeneous to the taxonomic level at which the identification is applied.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001866.html
+
+(Baskauf) I object to this because that would not allow for the distinction to be made between cases where the Individual represents a mixture that is homogeneous at a higher taxonomic level from a single organism that has only been identified to a higher taxonomic level.  I don't support the inclusion of aggregates within the class Individual.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001869.html
+
+(Dean Pentcheff) says that there is a need to have a way to deal with unsorted lots that subsequently get sorted into multiple lots that have better defined identities.  But he doesn't suggest that is possible within the Individual definition.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001868.html
+
+(Rich Pyle) "I think what we're circling around is something to the effect of: "An individual should be circumscibed/scoped in such a way that it can be Identified to a single Taxon".  I'm just saying there should be no constraints on the scope of that taxon."
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001871.html
+
+(Baskauf) notes that doing what Rich suggests is de facto creation of the "aggregation" unit that had been mentioned previously.  If that were done, then there would need to be a term (perhaps individualCount) that would allow for determining whether the Individual was a single organism, or an aggregate.  This would complicate matters and would have to be described carefully in the term definition.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001881.html
+
+(Rich Pyle) suggests the term individualScope with controlled vocabulary such as "Single",
+"Group", "Aggregate" "Absent".  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001895.html
+
+(Baskauf) response to Rich's comments, mostly agreeing.  I question whether it is a good idea to identify dead things or pieces of organisms as Individuals.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001899.html
+
+(Rich Pyle) disagrees.  He feels that the use of Individual to track organisms over time is only part of the reason to create the class.  He feels that the main reason is to separate a resource that represents and actual part of the organism from the Occurrence.  Thus he would also include tissue samples within the definition.  He says that in the spirit of DwC, term definitions should provide for the maximum flexibility of use.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001906.html
+
+(Baskauf) "Although I agree with some of Rich's points, I think that the suggestion that parts of Individuals should be classified as Individuals does not fit the definition that is on the table for the proposed class dwc:Individual.  I argue that allowing pieces of organisms to be called Individuals defeats the purpose of having the Individual class.  I suggest an alternative approach that I think is the most straightforward method of separating tokens from the occurrences they document.  The acceptance or rejection of Individual as a new class 
+does not hinge on my suggested approach.  Development of a system to handle more complicated resource relationships can take place independently of the proposal for the Individual class."  [The suggested approach, which is to describe the relationships of tokens using isPartOf, derivedFrom, and isEvidenceFor is the approach used in darwin-sw]
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001912.html
+
+[there is a series of posts clarifying what was meant when it was proposed that an Individual could be a mixture of organisms identified to some taxonomic level that included all organisms in the collection]
+
+(Dusty McDonald) brings up some problematic cases: uncertain IDs, composite specimens, hybrids, and things that aren't actually organisms.  [comments follow in that thread]
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001892.html
+
+(Baskauf)  I lay out the three purposes of having the Individual class: 1. resampling, 2. multiple identifications being applied to all derivative Occurrences, 3. inferring duplicates.  I argue that if one broadens the definition of Individual too much, it becomes useless because these three purposes cannot be achieved.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001915.html
+
+(Rich Pyle) replies to various Baskauf points.  A major concern is to separate metadata terms out of Occurrence if they don't belong there.  He would prefer not to create several terms when one would work (i.e. don't have both PreservedSpecimen and Individual if they have the same properties and a single class would handle both).  He points out that unlike Individual, most DwC classes do not overlap with others (e.g. Taxon and Location).  He believes that with appropriate inferencing and use of partOf, inferences made about organism parts could be applied to the whole organism.  He notes "Maybe the appropriate course of action here as well is to let people try different approaches out and if they turn out to work and be needed, then we talk about applying them to Darwin Core."  [I think that's pretty much where things were left and why the Individual class proposal stalled out.  Thus the imperative for creating darwin-sw and showing how it works with actual examples.]
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001918.html
+
+(Rich Pyle) "I guess part of the passion of my fight stems from my hope that the pendulum doesn't swing so far that biological collections objects can no longer be represented as records unto themselves through DwC (as opposed to only represented as attributes of some sort of semi-abstract unit of "Individual" or "Occurrence" that isn't directly represented in many/most real-world databases)."  [note: perhaps this is an indication that Individual isn't relevant in the basic DwC vocabulary which is primarily designed for markup of database records, but rather is important mainly in contexts like RDF where the semantic relationships among resources are critical.]  He also argues that Individuals that are related by partOf properties can share Identifications through inheritance (although I don't know on a technical level how one makes this happen).
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001921.html
+
+(Bob Morris) asks how the Global Names Architecture (GNA) will be related to the TDWG ontology as it relates to names.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001933.html
+
+(Rich Pyle) is writing GNA documentation but isn't familiar with the ontology development.  He hopes others will respond.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001934.html
+
+(Stan Blum) progress on the ontology requires 1. people who know what can be done with ontologies, 2. understanding how information is partitioned and organized in the domain.  He notes that there is seed money to connect 1 and 2.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001937.html
+
+(Lee Belbin) also notes 3. that vocabulary/ontology management tools are necessary.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001938.html
+
+[subsequent posts in the thread suggest possible tools.]
+
+(Roger Hyam) adds "0. Clearly defined use-cases/scenarios/competency questions that have enough detail to act as tests of any proposed solutions"
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001942.html
+
+(Arlin Stoltzfus) advocates "test-driven" ontology development rather than assuming that there is a consensus on classes and properties.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001965.html
+
+(Nico Franz) provides some examples, but they seem mostly to be focused on names, taxa, and concepts.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001966.html
+
+(Bob Morris) provides some links on the subject of "competency questions" including one to: "Ontology Development 101: A Guide to Creating Your First Ontology":
+http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001967.html
+
+(Baskauf) Background for the Individual Class 1. Denormalization of models and correspondence to the ASC model.  Includes summary diagrams.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001944.html
+
+(Baskauf) Background for the Individual Class 2.  Classes and types.  Description of how classes and types have been seen in DwC and how they are dealt with in RDF.   Notes that to some extent, several classes (Event, Occurrence, and proposed Individual) are primarily nodes that connect other classes and don't really have many properties of their own.  Suggests several strategies for achieving the typing required for GUIDs.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001945.html
+
+(Baskauf) Background for the Individual Class 3. Should an Individual also be a Collecting Unit?  I argue that CollectingUnit (of the ASC model) does not have the same use and properties as the proposed Individual class, which for the purpose of discussion I call ResamplingUnitHavingDetermination.  I suggest that AccessionedUnit might be more appropriate since things like living specimens may never actually be "collected".  I argue that AccessionedUnit and ResamplingUnitHavingDetermination are fundamentally two different things.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001946.html
+
+(Rich Pyle) questions whether the definition of Individual as a node connecting Occurrences to Identifications needs to be a separate thing from "Biological Object".  He thinks that there isn't a compelling reason for them to be two separate classes.  I disagree.  He suggests that perhaps there needs to be a more general class called BiologicalObject of which Individual is a subset. I disagree and say that he wants to apply properties of a subset of individuals to a larger set.  I assert that we should look at what properties belong with each thing.  He replies that he is less concerned with that than the logical limits of what an Individual can be and that he sees no reason why parts of an Individual can't be Individuals.  He doesn't see a need to restrict Individuals to things that can be resampled.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001949.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001959.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001961.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001963.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001964.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001950.html
+
+(Bob Morris) notes that if two classes share some but not all properties, they can be made children of a common parent class that holds the common properties.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001951.html
+
+(Baskauf, Pyle) Some discussion about where to "hang" the evidence: from the Occurrence or from the Individual.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001960.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001962.html
+
+(Kevin Richards)  Notes that Baskauf is talking more about Individual as a one-to-many join and Pyle is talking more about trying to describe how real-life objects are connected to each other.  He also suggests having the simple DwC as it is, as terms with no domains and relationships not specified.  Then a "full" DwC model that defines the classes and their properties.  There would not necessarily have to be a single implementation.  He also suggested putting some of the longer posts into a blog where they wouldn't disappear into the mailing list.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001956.html
+
+(Paul Murray)  There could be a lax and strict form with same term names but different namespaces.  
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001957.html
+
+(Baskauf) I suggest that there is an up or down vote by the TAG.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001958.html
+
+(Bob Morris) forward from Jonathan Reese.  1. subclassing could be used to relate more specific and less specific incarnations of terms.  2. axioms (rules) can be used for consistency checking.    He notes that Linked Open Data (LOD) wants lots of links with few semantics because they drive up cost.  The Semantic Web wants to accurately represent things despite the Open World assumption.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001968.html
+
+(Baskauf) I agree with the point that use-cases should come before nailing down the "essence" of things.  I would like to see how Rich's proposal would actually work without breaking the uses I need.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001969.html
+
+(Paul Murray) suggests these use-cases for Individuals:
+"* An individual is a thing that may have several specimens (tokens) taken from it, potentially from several different CollectionEvents.
+* Individuals may be identified (Actually ... it's the tokens that are identified.)
+* Some kinds of individuals are "monogenetic" (or whatever the correct term is) and can be identified as belonging to a taxon (clade?) with a scientific name"
+He considers heterogeneous Individuals illegitimate.  In a followup post I basically agree but note that the definition as it stands allows for heterogeneous Individuals. 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001971.html
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001972.html
+
+(Baskauf) I mention Bruce's examples as a use case.
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001975.html
+
+(Pete DeVries) thread about Geospatial "area"
+http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001982.html
+
+(Baskauf) asks whether there is a place that compiles literature references and assigns them URIs in the same way that the Global Names Index (GNI) compiles name usages?
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002202.html
+
+(Dean Pentcheff) says that needs to happen but hasn't yet.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002203.html
+
+(Paul Murray) biodiversity.org.au does that.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002204.html
+
+(Pete DeVries) many references that are out of copyright have been scanned by Google Books and can be referenced in pdf form.  He also creates URIs for taxonomic authors by creating Wikipedia entries, which then get ported over to DBpedia.  
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002205.html
+
+(Chris Freeland) Biodiversity Heritage Library had an OpenURL resolver that allows queries.  [but no URIs]  They have launched citebank.org but don't have funding.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002206.html
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002207.html
+
+There are other responses that follow.
+
+(Baskauf) notes: 1. Mostly I want a URI GUID for "sensu" references.  2. How do you find DOIs?  Who pays for them?  3. We need to separate the GUID from representations [in the content negotiation context]
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002215.html
+
+(Rod Page) searches of CrossRef can be made at http://bioguid.info/openurl.  He also references his paper on discovering and minting identifiers.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002216.html
+
+(Rich Pyle) we need article-level references (which DOIs don't do).
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002219.html
+
+(Paul Murray)  notes issues with DOIs and provides links to rfcs about various URNs such as ISSN, ISBN, and NBN.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002213.html
+
+(Paul Murray) notes the problem of fetching a URI that links to a large pdf and discusses several solutions.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002225.html
+
+(Pete DeVries) notes that many groups make data available as an RDF dump rather than requiring crawling.  He also notes that the generic seeAlso is often followed, potentially leading to failure.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002227.html
+
+(subsequent posts in the thread discuss solutions to this problem)
+
+(Pete DeVries) clarifies the intention and best practices for using rdfs:seeAlso.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002245.html
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002246.html
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002255.html (from Tim B-L)
+
+(Joel Sachs) starts the thread "Can all DwC be Simple DwC" where he discusses the use of subscripting.  Responses bring up issues of polymorphic states, croswalking with observation models,
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002220.html
+
+(Baskauf) start of "most GUIDs/URIs for names/taxon stuff not ready for prime time" thread.  I comment on the difficulty of knowing whether a DOI does not exist when a search fails to find one for a publication.  I also note which purported GUID services for scientific names and found ubio.org to be the only one that really worked as advertised.  (Pete DeVries says zoobank works).
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002231.html
+
+(Paul Murray) explains the distinction between data and metadata and how that plays out with LSID versioning.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002247.html
+
+(Rod Page) discusses why LSIDs failed.  He says that the data/metadata distinction is a red herring.  "In summary, we're in a mess, and I don't think this is really down to  technology. It's a failure of our community to create the appropriate  resources (e.g., centralised, curated resources of identifiers and  associated metadata for names, publications, and specimens)."
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002233.html
+
+(Baskauf)  Notes that the critical thing are persistent, globally unique identifiers.  Resolution to RDF is a bonus.  A value of URIs is that people can get a web page out of them.  People shouldn't be looking at a GUID to find out the version (thus LSIDs with version are bad).  I implore BHL to create simple unchanging ("cool") URIs.  
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002234.html
+
+(Joel Sachs) notes that the rules of RDF allow any kind of URI reference, not just http URIs, but comments that isn't necessarily a good idea.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002236.html
+
+(Rod Page) various comments, including "Furthermore, any recent discussion of good URL structure pretty much  converges on making them clean, human-readable, and hackable." [which I take to be an argument against creating URIs from UUIDs].  He also notes that Biodiversity Heritage Library does have simple, clean, and stable URIs.  
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002238.html
+
+(Paul Murray) comments on the reasons why LSIDs failed, mostly: too complicated to implement vs. HTTP which is ubiquitous.  Notes even though scientific name strings can't be interpreted without a context, it is hard for people to accept that they need to be "fixed" with a complicated identifier.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002248.html
+
+(Tony Rees) points out the problem of uncontrolled "minting" of GUIDs for names and questions why in that context URIs are an improvement.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002253.html
+
+(Baskauf) asks why ITIS TSNs can't be made into URIs and questions the wisdom of creating UUIDs from name strings.  I note that UUIDs suffer from some of the same problems that caused LSIDs to fail.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002256.html
+
+(Pete DeVries) notes that ITIS TSNs include only a small subset of the names in the GNI.  
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002258.html
+
+(Rod Page) notes that uBio nameBankIDs get used because there are a lot of names and uBio provides services for discovering the names in text.  He notes that UUIDs are best if hidden from users.  He also notes that if we don't come up with a single, simple service for handling names which hides the complexity of concepts, etc. then most users who don't care about the distinctions will just ignore taxonomists.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002259.html
+
+(Peter Stevens) notes that much of the floundering is caused by the inability to link to specimens and literature.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002263.html
+
+(Joel Sachs) provides RDF examples based on BioBlitz data.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002265.html
+
+Responses follow in the thread.
+
+(Hannu Saarenmaa) asks why dcterms:creator wasn't imported into DwC
+http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002268.html
+
+Responses regarding separation of resources, recordedBy, and use in RDF follow in the thread.
+
+(Joel Sachs) the thread "Schema-last and crazy: correlated?" along with messages before and after it discuss approaches for developing schemas/ontologies/vocabularies.  This is just too much and too far above my head for me to summarize the thread at the moment.
+http://lists.tdwg.org/pipermail/tdwg-content/2011-February/002305.html
+
+
+
