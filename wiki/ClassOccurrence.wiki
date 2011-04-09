@@ -4,6 +4,40 @@
 
 The Occurrence class represents instances where the presence of an organism at a location is documented.  It functions primarily as a node that connects !IndividualOrganisms to Events as well as to evidence that supports the record.  In DSW, the Occurrence class differs somewhat from DwC because some terms in the DwC Occurrence class are placed within the Specimen class of DSW.
 
+==Definitions of Occurrence==
+
+The Occurrence class is perhaps the most difficult to define of any of the classes included in darwin-sw.  Occurrence resources are at the intersection of several other classes and depending on where the boundaries occur, various components may or may not be included in the definition.^1^  There is a general consensus that an Occurrence is related to the events, individual organisms, and the evidence used to support the Occurrence.  This relationship has resulted in several definitions of Occurrence.  An Occurrence can be formally defined as "a tuple of (Individual, Event), and has properties for referring to the Individual and the Event." ^1^ (A tuple is defined as an ordered list of elements and has a technical meaning in the programming community.)  An alternative way of expressing this using terminology of the database world would be to say that an Occurrence is a "a many-to-many join between Events and Individuals, with a few additional properties".^2^  Since darwin-sw is an RDF representation of these relationships, in RDF terminology an Occurrence is a node that is connected by object properties to instances of the Event and IndividualOrganism classes.  
+
+^1^ http://code.google.com/p/darwincore/issues/detail?id=70
+
+^2^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001782.html
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001785.html
+
+==Scope of Occurrence==
+Part of the confusion about the meaning of "an occurrence" stems from the historical use of the term to refer both to a primary unit of data gathering (i.e. that an individual of a taxon occurred at a particular time and place) and also to the result of modeling (i.e. we know from aggregate records that a taxon occurs or even occurred, in a particular geographic area).^1^  This second use has been referred to as the "checklist" use of occurrence^2^ (i.e. indicating the presence of a taxon in an area on a list of taxa present) and is different enough from the first type of use that it has actually been described as a separate class: "Distribution".^3^  However, it has been pointed out^4^ that the "checklist" use of Occurrence is actually related to the first use if the relationship
+{{{
+TaxonConcept <--> Occurrence <--> Event <--> Location
+}}}
+is collapsed to 
+{{{
+TaxonConcept <--> Location
+}}}
+The argument has also been made^4^ that the difference between these two views is simply a matter of scale and on that basis it may not make sense to create a distinction between the two.^5^  As a practical matter, there seems to be a fairly clear distinction between properties that should be applied to the first type of use (e.g. dwc:recordedBy) and those that should be applied to the second type (e.g. dwc:occurrenceStatus).  For that reason, in darwin-sw instances of the Occurrence class are considered to fall within the first type of use (which is consistent with the definitions provided above), while the second type of use is not included in the current model.  
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001631.html
+
+^2^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001633.html
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001650.html
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001638.html
+
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001642.html
+
+==What is included within the boundaries of the Occurrence class==
+(still under construction)
+
 ==Properties suitable for use in DSW (not a complete list)==
 
 ===Data properties from DwC===
