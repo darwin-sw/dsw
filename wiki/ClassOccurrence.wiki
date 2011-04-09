@@ -58,8 +58,20 @@ More widely held is the understanding that an occurrence resource also includes 
 
 ^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001742.html
 
-== Relationship of observations to Occurrences==
-In earlier drafts of Darwin Core, separate terms were defined for properties of observations and properties of specimens.  The creation of the Occurrence class was in part a recognition that there was a fundamental similarity in metadata which described specimens and metadata which described specimens.  In the DwC standard, a single term in the Occurrence class, such as dwc:recordedBy, replaces separate terms (e.g. collectedBy and observedBy) that apply to specimens and observations but which fundamentally represent the same thing.  Taking the approach that a Token is separate from an Occurrence leads to the question of the nature of the Token that supports an Occurrence.  One approach is to define observations as Occurrences that do not have tokens.  Another is to define a class of "token" called Observation.  
+== Relationship of "observations" to Occurrences==
+In earlier drafts of Darwin Core, separate terms were defined for properties of observations and properties of specimens.  The creation of the Occurrence class was in part a recognition that there was a fundamental similarity in metadata which described observations and metadata which described specimens.  In the DwC standard, a single term in the Occurrence class, such as dwc:recordedBy, replaces separate terms (e.g. collector^1^ or observer) that apply to specimens and observations but which fundamentally represent the same thing.  Taking the approach that a Token is separate from an Occurrence leads to the question of the nature of the Token that supports an "observation"^2^.  One approach is to define observations as Occurrences that do not have tokens.^3^  Another is to define a class of Token called something like "Observation" in recognition that even observations have evidence, although that evidence may not be as accessible as an image or a specimen.^4^  An advantage of this approach is that it would allow Observation class Tokens to be assigned identifiers and described using existing vocabularies for Observations.^5^
+
+At the present time, darwin-sw does not take a position on defining such a class but simply assumes that a Token be some kind of resource that can be identified by an URI and assigned an rdf:type that is well-known.  For example, an observation could be supported by a foaf:Document or dctype:Dataset that is accessible via an HTTP URI.  
+
+^1^ http://rs.tdwg.org/dwc/terms/history/versions/index.htm
+
+^2^ "Observation" suffers from the same problem as "occurrence" in the sense that it is vague in the absence of a clear definition.  In fact, one could take the position that "observations" are essentially what darwin-sw asserts Occurrences to be, i.e. the record that a taxon representative was present at a certain time and place apart from the evidence (Token) that supports that record.  See http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001743.html for a historical reference to this outlook.
+
+^3^ _Biodiversity Informatics_ 7:17-44.  https://journals.ku.edu/index.php/jbi/article/view/3664
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001743.html
+
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001736.html
 
 ==Properties suitable for use in DSW (not a complete list)==
 
