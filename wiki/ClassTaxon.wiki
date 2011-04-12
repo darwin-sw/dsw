@@ -143,6 +143,7 @@ A system for providing sensu/secundum reference URIs is not well developed.  In 
 ===Object properties defined in the darwin-sw ontology===
 
  * *dsw:taxonOfId* range Identification
+ * (*dsw:sensu*, see below under tc:accordingTo)
 
 ===Data properties defined outside the darwin-sw ontology===
  * *tc:nameString * string literal of scientific name plus author  (see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
