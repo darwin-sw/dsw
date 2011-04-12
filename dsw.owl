@@ -417,10 +417,7 @@
 
     <!-- http://purl.org/dsw/Specimen -->
 
-    <owl:Class rdf:about="http://purl.org/dsw/Specimen">
-        <rdfs:subClassOf rdf:resource="http://purl.org/dsw/Token"/>
-    </owl:Class>
-    
+    <owl:Class rdf:about="http://purl.org/dsw/Specimen"/>
 
 
     <!-- http://purl.org/dsw/SpecimenInAlcohol -->
