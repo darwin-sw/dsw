@@ -150,7 +150,7 @@ A system for providing sensu/secundum reference URIs is not well developed.  In 
 
 ===Object properties defined outside the darwin-sw ontology===
  * *tc:hasName * range tn:TaxonName of the TDWG ontology (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
- * *tc:accordingTo * range a reference to the publication that makes the assertion (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
+ * *tc:accordingTo * range a reference to the publication that makes the assertion (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl). We thus propose an additional term, *dsw:sensu*,which has explicit range as a URI of class foaf:Document.
 
 
 == General References: ==
