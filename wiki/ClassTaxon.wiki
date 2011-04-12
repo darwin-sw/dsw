@@ -143,7 +143,6 @@ A system for providing sensu/secundum reference URIs is not well developed.  In 
 ===Object properties defined in the darwin-sw ontology===
 
  * *dsw:taxonOfId* range Identification
- * (*dsw:sensu*, see below under tc:accordingTo)
 
 ===Data properties defined outside the darwin-sw ontology===
  * *tc:nameString * string literal of scientific name plus author  (see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
@@ -151,9 +150,7 @@ A system for providing sensu/secundum reference URIs is not well developed.  In 
 
 ===Object properties defined outside the darwin-sw ontology===
  * *tc:hasName * range tn:TaxonName of the TDWG ontology (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl)
- * *tc:accordingTo * range a reference to the publication that makes the assertion (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl). We thus propose an additional term, *dsw:sensu*,which has explicit range as a URI of class foaf:Document.
-
-
+ * *tc:accordingTo * range a reference to the publication that makes the assertion (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl).
 == General References: ==
 
 Hyam, R. and J. Kennedy. 2006. Taxon Concept Schema - User Guide.  http://www.tdwg.org/standards/117/
