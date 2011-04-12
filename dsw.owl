@@ -282,19 +282,6 @@
     
 
 
-    <!-- http://purl.org/dsw/sensu -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dsw/sensu">
-        <dc:date rdf:datatype="&xsd;date">2011-03-05</dc:date>
-        <rdfs:comment>A DSW alternative to http://rs.tdwg.org/ontology/voc/TaxonConcept.rdf#accordingTo (range may be either string or URI).  The range of dsw:sensu is a URI for a publication.</rdfs:comment>
-        <dc:creator>Cam Webb</dc:creator>
-        <rdfs:domain rdf:resource="&dwc;Taxon"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:range rdf:resource="&foaf;Document"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/dsw/taxonOfId -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/taxonOfId">
