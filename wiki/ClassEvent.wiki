@@ -24,16 +24,19 @@ Although time could be described as an explicit class with its own terms^8^, in 
 ^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001771.html
 
 ==Properties suitable for use in DSW (not a complete list)==
+
 ===Data properties from DwC===
- * *eventDate* Use ISO 8601 dates (see http://en.wikipedia.org/wiki/ISO_8601).  Note: follow the convention of DwC where eventDate includes either the date only or the date+time.  dwc:eventTime is only appropriate when the time is atomized separately from the date.  It should also be noted that ISO 8601 dates can also express date ranges.^1^
- * *eventRemarks* string literal
- * *samplingProtocol* string literal
- * *samplingEffort* string literal
- * *fieldNotes* string literal
- * *fieldNumber* string literal
+
+ * *dwc:eventDate* Use ISO 8601 dates (see http://en.wikipedia.org/wiki/ISO_8601).  Note: follow the convention of DwC where eventDate includes either the date only or the date+time.  dwc:eventTime is only appropriate when the time is atomized separately from the date.  It should also be noted that ISO 8601 dates can also express date ranges.^1^
+ * *dwc:eventRemarks* string literal
+ * *dwc:samplingProtocol* string literal
+ * *dwc:samplingEffort* string literal
+ * *dwc:fieldNotes* string literal
+ * *dwc:fieldNumber* string literal
 
 ^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001827.html
 
 ===Object properties defined in the darwin-sw ontology===
- * *eventOf* range Occurrence
- * *locatedAt* range Location
+
+ * *dsw:eventOf* range Occurrence
+ * *dsw:locatedAt* range Location

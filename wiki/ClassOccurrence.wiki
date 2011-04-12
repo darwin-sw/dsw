@@ -15,6 +15,7 @@ The Occurrence class is perhaps the most difficult to define of any of the class
 ^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001785.html
 
 ==Scope of Occurrence==
+
 Part of the confusion about the meaning of "an occurrence" stems from the historical use of the term to refer both to a primary unit of data gathering (i.e. that an individual of a taxon occurred at a particular time and place) and also to the result of modeling (i.e. we know from aggregate records that a taxon occurs or even occurred, in a particular geographic area).^1^  This second use has been referred to as the "checklist" use of occurrence^2^ (i.e. indicating the presence of a taxon in an area on a list of taxa present) and is different enough from the first type of use that it has actually been described as a separate class: "Distribution".^3^  However, it has been pointed out^4^ that the "checklist" use of Occurrence is actually related to the first use if the relationship
 {{{
 TaxonConcept <--> Occurrence <--> Event <--> Location
@@ -36,11 +37,12 @@ The argument has also been made^4^ that the difference between these two views i
 ^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001642.html
 
 ==What is included within the boundaries of the Occurrence class?==
+
 Although most references to occurrences carry the connotation of a taxon representative documented by evidence at a place and time, there has been considerable variation in which of these aspects of an occurrence are assumed to be included as a part of the Occurrence resource itself.  
 
 The definition of Occurrence as a subclass of dctype:Event (http://purl.org/dc/dcmitype/Event) in the Darwin Core type vocabulary^1^ carries the connotation that an occurrence resource includes the event at which the resource was recorded/observed/collected.^2^  However, this understanding does not seem to be widely held and in darwin-sw we make a clear distinction between Events and Occurrences, declaring them to be disjoint classes (i.e. a reasoner would detect an error if a resource were typed as both an Event and an Occurrence).  
 
-More widely held is the understanding that an occurrence resource also includes the evidence which serves as the documentation that the occurrence happened.^3^ In particular, at the time that the Darwin Core standard was ratified specimens were considered to "be" Occurrences, not just to serve as evidence for Occurrences.^4^  This view is reflected by the inclusion of terms which refer to specimens (e.g. dwc:preparations^5^) within the Occurrence class of DwC^6^ and the definition of the Darwin Core type PreservedSpecimen as a subclass of Occurrence.^1^  However, this view was not universally held.^7^  Considering Occurrence resources to include the evidence that supports them introduces serious difficulties when one tries to describe them in RDF,^8^ so in darwin-sw we separate resources that represent the record of the presence of an organism at a certain time and place (instances of the dsw:Occurrence class) from the evidence (instances of the dsw:Token class) that supports that record.  
+More widely held is the understanding that an occurrence resource also includes the evidence which serves as the documentation that the occurrence happened.^3^ In particular, at the time that the Darwin Core standard was ratified specimens were considered to "be" Occurrences, not just to serve as evidence for Occurrences.^4^  This view is reflected by the inclusion of terms which refer to specimens (e.g. dwc:preparations^5^) within the Occurrence class of DwC^6^ and the definition of the Darwin Core type !PreservedSpecimen as a subclass of Occurrence.^1^  However, this view was not universally held.^7^  Considering Occurrence resources to include the evidence that supports them introduces serious difficulties when one tries to describe them in RDF,^8^ so in darwin-sw we separate resources that represent the record of the presence of an organism at a certain time and place (instances of the dsw:Occurrence class) from the evidence (instances of the dsw:Token class) that supports that record.  
 
 ^1^ http://code.google.com/p/darwincore/source/browse/trunk/rdf/dwctype.rdf
 
@@ -59,6 +61,7 @@ More widely held is the understanding that an occurrence resource also includes 
 ^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001742.html
 
 == Relationship of "observations" to Occurrences==
+
 In earlier drafts of Darwin Core, separate terms were defined for properties of observations and properties of specimens.  The creation of the Occurrence class was in part a recognition that there was a fundamental similarity in metadata which described observations and metadata which described specimens.  In the DwC standard, a single term in the Occurrence class, such as dwc:recordedBy, replaces separate terms (e.g. collector^1^ or observer) that apply to specimens and observations but which fundamentally represent the same thing.  Taking the approach that a Token is separate from an Occurrence leads to the question of the nature of the Token that supports an "observation"^2^.  One approach is to define observations as Occurrences that do not have tokens.^3^  Another is to define a class of Token called something like "Observation" in recognition that even observations have evidence, although that evidence may not be as accessible as an image or a specimen.^4^ ^5^  An advantage of this approach is that it would allow Observation class Tokens to be assigned identifiers and described using existing vocabularies for Observations.^6^
 
 At the present time, darwin-sw does not take a position on defining such a class but simply assumes that a Token be some kind of resource that can be identified by an URI and assigned an rdf:type that is well-known.  For example, an observation could be supported by a foaf:Document or dctype:Dataset that is accessible via an HTTP URI.  
@@ -100,13 +103,15 @@ The use of the term "occurrence" to describe the kinds of things included in the
 ==Properties suitable for use in DSW (not a complete list)==
 
 ===Data properties from DwC===
- * *occurrenceRemarks* Text literal
- * *recordedBy* Text literal form, use dsw:recBy for an object property
- * *recordNumber* text literal
- * *individualCount* literal
+
+ * *dwc:occurrenceRemarks* Text literal
+ * *dwc:recordedBy* Text literal form, use dsw:recBy for an object property
+ * *dwc:recordNumber* text literal
+ * *dwc:individualCount* literal
 
 ===Object properties defined in the darwin-sw ontology===
- * *atEvent* range [ClassEvent dwc:Event]
- * *hasEvidence* range [ClassToken dsw:Token]
- * *occurrenceOf* range [ClassIndividual dsw:IndividualOrganism]
- * *recBy* range foaf:Person
+
+ * *dsw:atEvent* range [ClassEvent dwc:Event]
+ * *dsw:hasEvidence* range [ClassToken dsw:Token]
+ * *dsw:occurrenceOf* range [ClassIndividual dsw:IndividualOrganism]
+ * *dsw:recBy* range foaf:Person
