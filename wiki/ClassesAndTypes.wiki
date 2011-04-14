@@ -24,8 +24,8 @@ It should also be noted that classes are also defined in the TDWG Ontology (http
 
 ^6^ http://lists.tdwg.org/pipermail/tdwg-content/2009-October/000286.html
 
-== Classes and Types in RDFS ==
-In the RDF Schema (RDFS, namespace http://www.w3.org/2000/01/rdf-schema# which is abbreviated rdfs:), there is a direct, formal relationship between class membership and type declaration.^1^  If a resource is declared to have a rdf:type C, then that resource is an instance of class C.^2^  The reverse is true: if a resource is described as an instance of class C, then it has type C even if there is no explicit type declaration.   Consider the following example where dctype: = http://purl.org/dc/dcmitype/
+== Classes and Types in RDFS^1^ ==
+In the RDF Schema (RDFS, namespace http://www.w3.org/2000/01/rdf-schema# which is abbreviated rdfs:), there is a direct, formal relationship between class membership and type declaration.^2^  If a resource is declared to have a rdf:type C, then that resource is an instance of class C.^3^  The reverse is true: if a resource is described as an instance of class C, then it has type C even if there is no explicit type declaration.   Consider the following example where dctype: = http://purl.org/dc/dcmitype/
 
 {{{
 Example 1
@@ -40,7 +40,7 @@ Example 2
 </dctype:StillImage>
 }}}
 
-In Example 1, Thing is explicitly described as being of type dctype:StillImage .  In the Example 2, the XML container element (a "typed node element"^3^) name characterizes Thing as an instance of the class dctype:StillImage.  Despite the difference in syntax, both of these examples make exactly the same assertions about Thing.  Thing is an instance of the class dctype:StillImage and it has the type dctype:StillImage .  
+In Example 1, Thing is explicitly described as being of type dctype:StillImage .  In the Example 2, the XML container element (a "typed node element"^4^) name characterizes Thing as an instance of the class dctype:StillImage.  Despite the difference in syntax, both of these examples make exactly the same assertions about Thing.  Thing is an instance of the class dctype:StillImage and it has the type dctype:StillImage .  
 
 In RDF, there is no restriction that a resource must be a member of only a single class.  Thus in the following example
 
@@ -54,11 +54,13 @@ Example 3
 
 (where the namespace http://xmlns.com/foaf/0.1/ is abbreviated foaf:) Thing is an instance of both the foaf:Image and dctype:StillImage classes and has two declared types,foaf:Image and dctype:StillImage .  
 
-^1^ http://www.w3.org/TR/rdf-schema/#ch_type
+^1^ For more discussion on this topic, see http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001945.html
 
-^2^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001817.html
+^2^ http://www.w3.org/TR/rdf-schema/#ch_type
 
-^3^ http://www.w3.org/TR/2004/REC-rdf-primer-20040210/#example13
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001817.html
+
+^4^ http://www.w3.org/TR/2004/REC-rdf-primer-20040210/#example13
 
 == Domains and Ranges ==
 In RDFS, the assignment of domains and ranges to a property has an effect which may not be intuitive.^1^ ^2^  It might seem logical that if a property P is declared to have rdfs:domain C, then P could only be applied to resources that are instances of class C.  This is NOT the case.  Rather, if P has rdfs:domain C, then applying P to a subject resource asserts that P is in instance of C.^3^  
