@@ -2,6 +2,15 @@
 
 = The dsw:Token Class =
 
+== Origin of the concept of a Token==
+See ClassIndividualOrganism for ...
+
+still under construction
+
+==Relationship of the Token class to other classes in darwin-sw==
+http://bioimages.vanderbilt.edu/pages/token-relationships.jpg
+
+
 *See [TokenIssues this page] for discussion of issues relating to tokens.*
 
 ==Object properties defined in the darwin-sw ontology==
