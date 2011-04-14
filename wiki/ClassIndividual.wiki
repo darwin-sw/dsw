@@ -2,13 +2,40 @@
 
 = The !IndividualOrganism class =
 
-This class does not exist in the current Darwin Core (DwC) standard.  There is a pending proposal (currently stalled) to add a class to DwC called Individual which would be the object of the existing term dwc:individualID (http://rs.tdwg.org/dwc/terms/index.htm#individualID) and which would accommodate resampling of the same individual or group over time.  In this ontology, we have called this class IndividualOrganism to prevent confusion with an "individual" in the sense of an OWL ontology (i.e. "objects in the domain in which we are interested"; see p. 10 of A Practical Guide to Building OWL Ontologies Using Protege 4 and CO-ODE Tools, Edition 1.2).  
+This class does not exist in the current Darwin Core (DwC) standard.  There is a pending proposal (currently stalled) to add a class to DwC called Individual which would be the object of the existing term dwc:individualID (http://rs.tdwg.org/dwc/terms/index.htm#individualID), would accommodate resampling of the same individual or group over time, and would facilitate linking multiple determinations to be associated with the same Individual.^1^  In this ontology, we have called this class IndividualOrganism to prevent confusion with an "individual" in the sense of an OWL ontology (i.e. "objects in the domain in which we are interested"; see p. 10 of A Practical Guide to Building OWL Ontologies Using Protege 4 and CO-ODE Tools^2^, Edition 1.2).  
 
-Mirroring the use in dwc:individualID, an instance of the IndividualOrganism class could be a biological individual or a small population of the same kind organism.  Allowing IndividualOrganism instances to include small populations is a concession to the fact that it is sometimes inconvenient or not possible to tell where one biological individual ends and another begins (e.g. clones, colonial organisms, densely packed populations).  It also mirrors the common practice of collecting several biological individuals in the same sample (e.g. several grass plants in the same bundle or a clump of moss).  
+Mirroring the use in dwc:individualID, an instance of the IndividualOrganism class could be a biological individual or a small population of the same kind organism.  Allowing IndividualOrganism instances to include small populations is a concession to the fact that it is sometimes inconvenient or not possible to tell where one biological individual ends and another begins (e.g. clones, colonial organisms, densely packed populations).  It also mirrors the common practice of collecting several biological individuals in the same sample (e.g. several grass plants in the same bundle or a clump of moss) or collecting individuals from the same small population and calling them "duplicates".^3^  
 
 The original intent when the DwC class was proposed was for a dwc:Individual to represent a particular taxon at the lowest level (i.e. having a homogeneous taxonomic identity).  In the discussion that took place on the tdwg-content email list from Oct-Nov 2010, it was suggested that the class be more broadly defined to allow heterogeneous mixtures of biological individuals that would be identified to the lowest shared taxonomic identity.  We do not model that here, primarily because we don't know how. 
 
-(add summary of the tdwg-content mailing list discussion)
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001675.html
+
+^2^ http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000089.html , 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000075.html , 
+and 
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000056.html
+
+== Origins of the concept of IndividualOrganism ==
+
+The class IndividualOrganism has its origin in the need to facilitate the resampling of organisms.  In traditional museum-based biodiversity informatics, sampling was accomplished through the collection of preserved specimens.  Since the entire organism was often collected, resampling was usually not an issue.  For this reason, data models were centered around collection objects (i.e. specimens). ^1^  When the Darwin Core standard was developed, one objective was to facilitate the integration of observations with specimens.  Since resampling of the same organism over time was relatively common, the DwC standard included the term dwc:individualID^2^ which was intended to facilitate resampling by providing a means to refer to an identifier for an individual organism or small population of organisms.  
+
+At the same time, the Global Bioidiversity Information Facility (GBIF) stated the goal of capturing the potentially large pool of biodiversity information contained in records other than specimens.  In this context, the potential existed for multiple types of evidence (e.g. specimens, images, and tissue samples, perhaps collected from the same organism at different times and places) to be associated with a particular individual organism.  
+
+This rationale (articulated in Baskauf 2010^3^) for including the individual organism as a resource class resulted in a proposal to add Individual as a class to the Darwin Core standard.^4^  The discussion which ensued on the tdwg-content email list following this proposal clarified the position of the proposed class in a broad data model, but also raised additional questions about the scope and use cases of the proposed class.
+
+^1^ See the ASC model at http://wiki.tdwg.org/twiki/bin/view/TAG/HistoricalDocuments
+
+^2^ http://rs.tdwg.org/dwc/terms/index.htm#individualID
+
+^3^ https://journals.ku.edu/index.php/jbi/article/view/3664
+
+^4^ http://code.google.com/p/darwincore/issues/detail?id=69
+
+== Views regarding the definition of an "Individual" ==
+
+
 
 ==Properties suitable for use in DSW (not a complete list)==
 ===Data properties defined in the darwin-sw ontology===
