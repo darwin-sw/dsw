@@ -3,15 +3,66 @@
 = The dsw:Token Class =
 
 == Origin of the concept of a Token==
-See ClassIndividualOrganism for ...
+In the biodiversity community, organisms have traditionally been documented by collecting all or part of the organism as a "specimen".  A specimen of that sort actually serves several purposes: 
+ # To document that the organism was present at a particular time and place (as an Occurrence)
+ # To serve as evidence for an assertion that the organism represents a particular Taxon (and possible to typify a name as well)
+ # To serve as a physical record of the organism itself (a "voucher")
+To further complicate matters, since the entire organism was often collected and preserved, the specimen might also be considered to actually "be" the organism.  
 
-still under construction
+At the present time, the biodiversity informatics community has a broader view of the documentation process which can include observations that do not include the collection of physical parts of the organism, or evidence that consists of non-physical representations of the organism, such as images, sounds, or DNA sequences.  The Darwin Core (DwC) standard recognizes (to some extent) this broader context and provides terms that are not strictly limited to specimens.  DwC explicitly recognizes Occurrence and Identification as discrete classes of resources that document components enumerated above.  It is a goal of darwin-sw (DSW) to create a model that can encompass the broadest array of sources of biodiversity information.  To accomplish this, DSW defines separate classes for each definable kind of biodiversity resource and creates object properties to describe how they are related.  
+
+A part of this process is to separate the evidence itself from the resource that it is documenting.  (Conceptually, Token can be considered synonymous to "evidence".)  In particular, in contrast to DwC, DSW separates the Occurrence record from the Token that documents it.  In part, that is because an Occurrence may be documented by several Tokens, each of which may have a different rdf:type .  In DSW, we also separate the Token from the IndivdiualOrganism itself.  A Token may be the IndividualOrganism, but it may also be a part of it (dcterms:isPartOf), a depiction of it (foaf:depiction), or related in some other way.  (See ClassIndividual for more on the subject of the relationship between IndividualOrganism and Token.)  
+
 
 ==Relationship of the Token class to other classes in darwin-sw==
 http://bioimages.vanderbilt.edu/pages/token-relationships.jpg
 
+The diagram above illustrates the relationship between Token instances and instances of classes for which the Token can serve as evidence.  Each relationship is described by pairs of inverse properties.  
 
-*See [TokenIssues this page] for discussion of issues relating to tokens.*
+The relationship of the Token to an IndividualOrganism is perhaps the most fundamental one.  Every token is either dsw:derivedFrom an IndividualOrganism, or another token.  However, dsw:derivedFrom is a transitive property.  So if 
+{{{
+Token1 dsw:derivedFrom IndividualOrganism
+}}}
+and
+{{{
+Token2 dsw:derivedFrom Token1
+}}}
+then it can be reasoned that
+{{{
+Token2 dsw:derivedFrom IndividualOrganism
+}}}
+In this sense, dsw:derivedFrom provides a means for tracking the "provenance" of a Token.  
+
+A Token is likely to be dsw:evidenceFor an Occurrence if the time and place of the Token's creation represents the time and place where the IndividualOrganism was when the Token was created.  Thus a Token that is a PreservedSpecimen can be dsw:evidenceFor an Occurrence if it was collected directly from the IndividualOrganism.  However, an image of that specimen, or a specimen that is derivedFrom the original specimen would not be dsw:evidenceFor the Occurrence.  In contrast, a direct image of the IndividualOrganism taken in the field would serve as dsw:evidenceFor an Occurrence of the IndividualOrganism.  
+
+Any Token dsw:derivedFrom an IndividualOrganism can serve as dsw:isBasisForIdentification of an Identification, whether it is directly derived from the IndividualOrganism or not.  dsw:isBasisForIdentification is a property of any token that was consulted by the determiner when the Identification was made.  Thus a particular Identification could have one or more dsw:identificationBasedOn properties.  
+
+*See [TokenIssues this page] for discussion of issues relating to tokens and for illustrations of more complex applications of the properties described above.*
+
+
+==Relationship between the Token class and other classes that describe the "kind" of thing that the Token is==
+
+In RDF, a resource can be an instance of more than one class, i.e. it can have more than one rdf:type property - see the ClassesAndTypes wiki page for more on this.  Thus it is allowable and likely that Tokens will be instances of other classes, often defined outside of DSW.  For example, if a token is a digital image, it may be defined as having rdf:type dctype:StillImage .  This type declaration would alert a consumer that the resource is not only evidence of some sort, but that it would be expected to have properties that are normally associated with StillImages, such as resolution, file format, and intellectual rights properties.  At the present, we are not aware of any well-known type for specimens outside of the TDWG community.  Therefore we have defined the class dsw:Specimen and various subclasses of it to be used for typing specimen records that are described by darwin-sw.  
+
+The exception to multiple rdf:type declarations is types that represent classes which have been declared as disjoint.  The Token class is disjoint with all other classes except IndividualOrganism. Thus an error would be generated if a Token were also declared to be a Location or Occurrence.  However, nothing would prohibit a LivingSpecimen to be declared both a dsw:Token and dsw:IndividualOrganism.  In that case the LivingSpecimen would serve as the evidence for its own existence.  One would not declare IndividualOrganisms in the wild to be their own Tokens because status as a Token implies that the Token is evidence that is available for examination (as would be the case in a zoo, greenhouse, botanical garden, or culture vial).  
+
+== Lack of subclassing and Tokens as the range and domain of object properties==
+
+Because specimens are usually used as evidence for something, it would be tempting to declare the dsw:Specimen class to be a subclass of dsw:Token .  However, in the RDF Vocabulary Description Language (RDFS), declaring 
+{{{
+R1 rdfs:subClassOf R2 
+}}}
+means that all instances of R1 are instances of R2.  If 
+{{{
+dsw:Specimen rdfs:subclass dsw:Token
+}}}
+then anything that is typed as a dsw:Specimen IS (i.e. "must be" rather than "could be") a dsw:Token whether it is evidence for anything or not.  This doesn't sound so bad, but if one applied the same statement to images:
+{{{
+dctype:StillImage rdfs:subclass dsw:Token
+}}}
+then EVERY image would be a Token (evidence in a biodiversity context) even if the image had nothing to do whatsoever with a biological topic (e.g. an image that is an abstract art piece).  
+
+An alternative approach (taken by DSW) is to consider Token as a class separate from other descriptive classes such as Specimen or StillImage.  Resources that are instances of those classes can be declared to be Tokens explicitly through an rdf:type property of the resource.  However, DSW declares dsw:Token to be the range of hasEvidence,hasDerivative, and identifiedBasedOn (and as the domain of their inverses).  Thus if an identification is based on a resource outside of the control of the person making the identification, the determiner can still assert that the resource is a Token by making that resource the object of the identifiedBasedOn property of the Identification.  That resource would still have any type declaration made by the person controlling its record.  (See the ClassesAndTypes wiki page for more information about range and domain declarations and their relationship to typing.)
 
 ==Object properties defined in the darwin-sw ontology==
 
