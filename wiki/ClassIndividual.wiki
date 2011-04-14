@@ -35,6 +35,25 @@ This rationale (articulated in Baskauf 2010^3^) for including the individual org
 
 == Views regarding the definition of an "Individual" ==
 
+An extensive discussion of what the proposed Individual class should include^1^ was focused on the taxonomic scope of an Individual and the conceptual nature of what an Individual represents.  Initially, an Individual was described as consisting of a single "species or lower taxonomic level"^2^, but that was considered problematic because an Identification might be less definite than at the level of species ^3^ and because of issues related to the status of "a species"^4^.  The definition was amended to indicate that an Individual represented a single Taxon.  Subsequent discussion focused on the meaning of Identifications that were less precise than the lowest possible taxonomic level.  If an Identification were made at a higher level, it could indicate that either: there was taxonomic homogeneity but the Identification could not (yet) be made to a lower level, or that the Individual was taxonomically heterogeneous and that the level indicated the lowest level of classification that applied to all organisms present in this "composite" individual.^5^  The issue of how to represent "composite" resources had been raised previously^6^ and broadening the definition to include them would potentially solve this problem.^7^  In the event that an Individual were allowed to be taxonomically heterogeneous, a term such as individualScope would be needed to distinguish between the two cases (indefinite identification vs. inclusion of multiple taxa determined to lowest common taxon).^8^
+
+^1^ Thread begins with http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001856.html and continues for at least 50 messages.
+
+^2^ http://code.google.com/p/darwincore/issues/detail?id=69
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001856.html
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001863.html
+
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001865.html
+
+^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000056.html and
+
+http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000055.html
+
+^7^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001821.html and subsequent posts of that thread
+
+^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001895.html
 
 
 ==Properties suitable for use in DSW (not a complete list)==
