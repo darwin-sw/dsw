@@ -14,7 +14,7 @@ Note in this example:
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:dcterms="http://purl.org/dc/terms/"
 	xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
-	xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+	xmlns:dsw="http://purl.org/dsw/"
 	xmlns:mrtg="http://xxx.org/XXX/"
 	xmlns:xmp="http://ns.adobe.com/xap/1.0/"
 	xmlns:bibo="http://purl.org/ontology/bibo/"
@@ -22,8 +22,8 @@ Note in this example:
 >
 
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126">
-	<rdf:type rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#IndividualOrganism" />
-	<rdf:type rdf:resource="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#LivingSpecimen" />
+	<rdf:type rdf:resource="http://purl.org/dsw/IndividualOrganism" />
+	<rdf:type rdf:resource="http://purl.org/dsw/LivingSpecimen" />
 	<mrtg:MetadataLanguage>en</mrtg:MetadataLanguage>
 	
 	<!--Basic information about the individual organism-->
@@ -63,7 +63,7 @@ Note in this example:
 			<dsw:toTaxon rdf:resource="http://bioimages.vanderbilt.edu/taxonConcepts#183269-fna1993" />
 			
 			<dwc:identifiedBy>Steven J. Baskauf</dwc:identifiedBy>
-			<dsw:hasIdentificationByURI rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
+			<dsw:idBy rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 			<dwc:dateIdentified>2002-04-10</dwc:dateIdentified>
 		
 			<!-- Relationship of the identification to other resources -->
@@ -159,7 +159,7 @@ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 xmlns:dcterms="http://purl.org/dc/terms/"
 xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
 xmlns:owl="http://www.w3.org/2002/07/owl#"
-xmlns:dsw="http://darwin-sw.googlecode.com/svn/trunk/dsw.owl#"
+xmlns:dsw="http://purl.org/dsw/"
 xmlns:mrtg="http://xxx.org/XXX/"
 xmlns:xmp="http://ns.adobe.com/xap/1.0/"
 xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
@@ -221,7 +221,7 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	<rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence" />
 	<dsw:occurrenceOf rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126" />
 	<dwc:recordedBy>Steven J. Baskauf</dwc:recordedBy>
-	<dsw:recordedByURI rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
+	<dsw:recBy rdf:resource="http://bioimages.vanderbilt.edu/contact/baskauf" />
 	<dsw:atEvent>
 		<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554#eve">
 			<rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Event" />
