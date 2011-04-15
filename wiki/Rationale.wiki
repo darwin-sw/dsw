@@ -1,0 +1,68 @@
+#summary Rationale for the creation of an Semantic Web/RDF implementation of Darwin Core.
+
+= Rational for a Semantic Web implementation of Darwin Core=
+
+==Background and definitions==
+The DwC standard itself is a general-use^1^ vocabulary that defines terms which can be used to facilitate the sharing of information about biological diversity.^2^  As such, it does not have any prescribed methods of implementation.  At the present time, there are guides for implementing DwC in text files^3^ and in XML^4^. Since September 2010, there has been significant discussion about how terms in the Darwin Core (DwC) standard could be used as properties to describe resources using Resource Description Framework (RDF).^5^  
+
+RDF differs from other methods of information transfer in that it does not assume that there is a designated recipient of the information, nor does it assume that the recipient has preexisting knowledge of how the information should be understood.  RDF is designed to permit the "discovery" of information by an undetermined recipient, and as such it is necessary to provide the recipient with all of the information that they would need to understand the information received.  This is different from a text transfer in which the sender and receiver would agree in advance what fields would be included and the format of the file that contains them or an XML transfer where a schema may be used to spell out the number,types, and permitted order of fields in the XML document used to transfer the information.  The other assumption is that the recipient will be a computer (or perhaps more accurately a computer program, known as "the consuming application" or "client") that is not necessarily under the guidance of a human.  
+
+RDF itself does not have a single method of representation ("serialization").  It can be represented by diagrams ("graphs") or text formats such as N3 ^6^.  However, the default serialization when a URI is "looked up" (dereferenced) by a computer is XML.  
+
+RDF itself is simply a way to describe the properties of "things" (resources).  RDF can be "used" by different communities to serve various purposes.  One such community is "Linked Data" or "Linked Open Data" (LOD). Linked Data "a recommended best practice for exposing, sharing, and connecting pieces of data, information, and knowledge on the Semantic Web using URIs and RDF."^7^ Some draw a distinction between the goals of LOD and "the Semantic Web"^8^.  Whereas LOD is focused on exposing and collecting large amounts of information with minimal effort, the Semantic Web is more restrictive because it focuses effort on only asserting things that are true and subject to tractable reasoning.^9^
+
+^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000013.html
+
+^2^ http://rs.tdwg.org/dwc/index.htm
+
+^3^ http://rs.tdwg.org/dwc/terms/guides/text/index.htm
+
+^4^ http://rs.tdwg.org/dwc/terms/guides/xml/index.htm
+
+^5^ http://www.w3.org/RDF/
+
+^6^ http://www.w3.org/DesignIssues/Notation3
+
+^7^ http://linkeddata.org/
+
+^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001707.html
+
+^9^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001968.html
+
+== Properties in RDF==
+
+Because of the "self-explanatory" nature of RDF, general guidelines^1^ must be followed in constructing it to permit a non-human client to "understand" what it means without help other than what the client can discover on its own.  Each unit of information (known as a "triple") is like a sentence consisting of a subject, a predicate, and an object.  The subject is represented by a URI (Uniform Resource Identifier) which in the context of the biodiversity domain would be a globally unique identifier (GUID) for the "thing" (known as a *resource*) being described.  The predicate designates the relationship between the subject and the object.  The predicate is a generally a property of the thing that is being described (i.e. the subject).  If the property is described by text, it is called a *data property* and the object is called a "literal".  If the property is a relationship with another resource, the object is the URI of another resource and the property is called an *object property*. 
+
+Predicates are actually URIs themselves. For example 
+{{{
+http://purl.org/dc/terms/title
+}}}
+is the Dublin Core (DCMI) term^2^ for the title of a resource.  The first part of the URI (the *namespace*)is often abbreviated.  "http://purl.org/dc/terms/" may be abbreviated "dcterms:" which would make the abbreviated URI of the predicate "dcterms:title". Although in theory a client can figure out what a predicate "means" by looking up (dereferencing^3^) its URI, some URIs won't actually dereference and as a practical matter the information provided doesn't really tell the client much.  In the case of dcterms:title,^4^ a client could learn that it is a property whose object is a literal and that its label is "Title".  That's not really very informative for a computer.  What makes dcterms:title useful is that it is "well-known", i.e. a lot of people who are writing client applications know what dcterms:title is intended to mean and they can therefore do something useful with it.  
+
+What this means is that unless predicates describe properties using well-known terms, the information that they impart is close to useless.  For that reason, it is most practical to describe the properties of a resource using a vocabulary that is well-known to the community that is likely to be creating applications that will make use of the information.  In the case of the biodiversity community, Darwin Core terms are probably the best known and therefore would be the best candidates to serve as descriptive properties.  
+
+There are many DwC terms^5^ that are suitable for use as data properties having literal objects.  Unfortunately, there are either few or no DwC terms that are suitable for use as object properties having URI objects.  DwC defines a number of terms whose names end in "ID", e.g. occurrenceID, eventID, taxonID, etc.  It is not clear whether these terms should refer to the identifier of the subject itself, or whether they should refer to the identifier of the object of a property.^6^  They are used both ways in examples given for XML^7^, and apparently they can be used however the user prefers.^8^  The lack of clarity about the DwC "ID" terms make them unsuitable for use as object properties.  There have been several suggested solutions for the lack of object properties in DwC, including developing social conventions^9^, using existing terms to refer to URIs and applying rdfs:label properties to identify the string versions^10^, using the same term names but putting them in different namespaces^11^, and creating new terms specifically designed to be object properties^12^.
+
+^1^ http://www.w3.org/TR/rdf-primer/
+
+^2^ http://dublincore.org/documents/dcmi-terms/
+
+^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001670.html
+
+^4^ http://purl.org/dc/terms/title
+
+^5^ http://rs.tdwg.org/dwc/terms/index.htm
+
+^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-August/000061.html
+
+^7^ http://rs.tdwg.org/dwc/terms/guides/xml/index.htm
+
+^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000050.html
+
+^9^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000011.html
+
+^10^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000057.html and http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000010.html
+
+^11^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000013.html
+
+^12^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html
