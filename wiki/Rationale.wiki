@@ -9,7 +9,7 @@ RDF differs from other methods of information transfer in that it does not assum
 
 RDF itself does not have a single method of representation ("serialization").  It can be represented by diagrams ("graphs") or text formats such as N3 ^6^.  However, the default serialization when a URI is "looked up" (dereferenced) by a computer is XML.  
 
-RDF itself is simply a way to describe the properties of "things" (resources).  RDF can be "used" by different communities to serve various purposes.  One such community is "Linked Data" or "Linked Open Data" (LOD). Linked Data "a recommended best practice for exposing, sharing, and connecting pieces of data, information, and knowledge on the Semantic Web using URIs and RDF."^7^ Some draw a distinction between the goals of LOD and "the Semantic Web"^8^.  Whereas LOD is focused on exposing and collecting large amounts of information with minimal effort, the Semantic Web is more restrictive because it focuses effort on only asserting things that are true and subject to tractable reasoning.^9^
+RDF itself is simply a way to describe the properties of "things" (resources).  RDF can be "used" by different communities to serve various purposes.  One such community is "Linked Data" or "Linked Open Data" (LOD). Linked Data "a recommended best practice for exposing, sharing, and connecting pieces of data, information, and knowledge on the Semantic Web using URIs and RDF."^7^ Some draw a distinction between the goals of LOD and "the Semantic Web"^8^.  Whereas LOD is focused on exposing and collecting large amounts of information with minimal effort, the Semantic Web is more restrictive because it focuses effort on only asserting things that are true and subject to tractable reasoning.^9^  If the primary purpose of terms used in RDF is to link one resource to another, those terms can be defined simply using the RDF Vocabulary Description Language (RDFS)^10^.  However, if terms are intended to convey more meaning and be used to enable reasoning, they may be given more complex definitions using the Web Ontology Language (OWL).^11^
 
 ^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000013.html
 
@@ -29,6 +29,10 @@ RDF itself is simply a way to describe the properties of "things" (resources).  
 
 ^9^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001968.html
 
+^10^ http://www.w3.org/TR/rdf-schema/
+
+^11^ http://www.w3.org/TR/owl2-overview/
+
 == Properties in RDF==
 
 Because of the "self-explanatory" nature of RDF, general guidelines^1^ must be followed in constructing it to permit a non-human client to "understand" what it means without help other than what the client can discover on its own.  Each unit of information (known as a "triple") is like a sentence consisting of a subject, a predicate, and an object.  The subject is represented by a URI (Uniform Resource Identifier) which in the context of the biodiversity domain would be a globally unique identifier (GUID) for the "thing" (known as a *resource*) being described.  The predicate designates the relationship between the subject and the object.  The predicate is a generally a property of the thing that is being described (i.e. the subject).  If the property is described by text, it is called a *data property* and the object is called a "literal".  If the property is a relationship with another resource, the object is the URI of another resource and the property is called an *object property*. 
@@ -41,7 +45,7 @@ is the Dublin Core (DCMI) term^2^ for the title of a resource.  The first part o
 
 What this means is that unless predicates describe properties using well-known terms, the information that they impart is close to useless.  For that reason, it is most practical to describe the properties of a resource using a vocabulary that is well-known to the community that is likely to be creating applications that will make use of the information.  In the case of the biodiversity community, Darwin Core terms are probably the best known and therefore would be the best candidates to serve as descriptive properties.  
 
-There are many DwC terms^5^ that are suitable for use as data properties having literal objects.  Unfortunately, there are either few or no DwC terms that are suitable for use as object properties having URI objects.  DwC defines a number of terms whose names end in "ID", e.g. occurrenceID, eventID, taxonID, etc.  It is not clear whether these terms should refer to the identifier of the subject itself, or whether they should refer to the identifier of the object of a property.^6^  They are used both ways in examples given for XML^7^, and apparently they can be used however the user prefers.^8^  The lack of clarity about the DwC "ID" terms make them unsuitable for use as object properties.  There have been several suggested solutions for the lack of object properties in DwC, including developing social conventions^9^, using existing terms to refer to URIs and applying rdfs:label properties to identify the string versions^10^, using the same term names but putting them in different namespaces^11^, and creating new terms specifically designed to be object properties^12^.
+There are many DwC terms^5^ that are suitable for use as data properties having literal objects.  Unfortunately, there are either few or no DwC terms that are suitable for use as object properties having URI objects.  These properties are needed to describe how a resource in one class is related to a resource in another class.  DwC defines a number of terms whose names end in "ID", e.g. occurrenceID, eventID, taxonID, etc.  It is not clear whether these terms should refer to the identifier of the subject itself, or whether they should refer to the identifier of the object of a property.^6^  They are used both ways in examples given for XML^7^, and apparently they can be used however the user prefers.^8^  The lack of clarity about the DwC "ID" terms make them unsuitable for use as object properties.  There have been several suggested solutions for the lack of object properties in DwC, including developing social conventions^9^, using existing terms to refer to URIs and applying rdfs:label properties to identify the string versions^10^, using the same term names but putting them in different namespaces^11^, and creating new terms specifically designed to be object properties^12^.
 
 ^1^ http://www.w3.org/TR/rdf-primer/
 
@@ -65,4 +69,26 @@ There are many DwC terms^5^ that are suitable for use as data properties having 
 
 ^11^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000013.html
 
-^12^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html
+^12^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html and http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001788.html
+
+==Why do we need an "RDF version" of DwC?==
+
+A major imperative is that the best practices for implementing globally unique identifiers (GUIDs) requires that GUIDs in the biodiversity informatics community be in the form of URIs. Those URIs should be resolvable and the default metadata response format should be RDF serialized as XML.^1^  The Global Biodiversity Information Facility (GBIF) encourages the use of URIs and encourages data providers to deploy RDF services.^2^  Major efforts such as BiSciCol^3^ are designing their implementations around HTTP URI GUIDs with the assumption that they will dereference to produce RDF.  
+
+Exposing metadata as Linked Data makes it possible for small institutions to participate in large-scale "cloud computing" efforts to aggregate metadata.
+
+Referring to resources as URIs provides a stable point of reference despite changes of name or changing metadata.^4^
+
+Aggregated RDF metadata can be stored efficiently in the form of triples^5^ and queried using SPARQL to discover relationships that might not have otherwise been discovered.^6^  
+
+^1^ TDWG GUID Applicability Statement, recommendations 2, 7, and 10. http://www.tdwg.org/standards/150
+
+^2^ Adoption of Persistent Identifiers for Biodiversity Informatics, recommendations 4 and 9.  http://www2.gbif.org/Persistent-Identifiers.pdf
+
+^3^ http://biscicol.blogspot.com/
+
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001825.html
+
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html
+
+^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001929.html
