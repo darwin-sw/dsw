@@ -58,3 +58,38 @@ If we were to treat time in the same way we are treating Locations and other ent
 Time can be a complicated thing that one might want to model in a more sophisticated way than a single string.  At this point, there does not seem to be a demand for time as a separate class, so DSW does not represent it as a separate entity.  
 
 The original ASC model itself is more complex and more "normalized" than the last model shown here.  However, this level of complexity does not seem to be in demand currently and is not represented in the class structure of DwC.  So DSW does not include the additional level of complexity represented in the full ASC model.  
+
+== Comparison to DeVries (lod.taxonconcept.org) model==
+
+Note: this analysis is based on the RDF contained in http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.rdf which was provided as an example in http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001735.html .  The RDF can be viewed as a graph (i.e. diagram) by going to http://www.w3.org/RDF/Validator/ and pasting the URI in the "Check by URI" box.  
+
+The namespace http://lod.taxonconcept.org/ontology/txn.owl# is abbreviated txn:
+
+The namespace http://lod.taxonconcept.org/ontology/dwc_area.owl# is abbreviated dwc_area:
+
+=== Approximate class correspondence===
+
+||*darwin-sw*||*lod.taxonconcept.org*||
+||dwc:Occurrence||txn:Occurrence||
+||dwc:Identification||txn:Identification||
+||dcterms:Location||dwc_area:Area||
+||dsw:IndividualOrganism||txn:SpeciesIndividual||
+||dsw:Token||not modeled||
+||dwc:Event||not modeled as a separate class, included in Occurrence||
+||dwc:Taxon||txn:SpeciesConcept||
+
+=== Approximate object property correspondence===
+||*darwin-sw*||*lod.taxonconcept.org*||
+||occurrenceOf/hasOccurrence||occurrenceHasIndividual/individualHasOccurrence||
+||identifies/hasIdentification||identificationOfIndividual/individualHasCurrrentIdentificationAssertion||
+||toTaxon/taxonOfID||identificationHasSpeciesConcept/?||
+
+Note: txn:occurrenceHasArea and txn:areaHasOccurrence don't correspond to DSW terms because dwc:Event is collapsed into txn:Occurrence.  In DSW, a dwc:Occurrence would be connected to a  dcterms:Location through dsw:atEvent and dsw:locatedAt rather than directly as done with txn:occurrenceHasArea .  The same applies to the inverse properties.
+
+===Analysis===
+The approach of darwin-sw is not fundamentally different conceptually from that which was demonstrated at lod.taxonconcept.org .  The differences are to some extent in style:
+ * darwin-sw imports classes from DwC and DCMI where they exist while txn:classes are minted.
+ * darwin-sw generally connects classes through a network that has only one path of pairs of inverse object properties.  txn: classes may also be connected by object properties that "collapse" the model by directly connecting classes that are more distantly related in DSW (e.g. Occurrences related directly to Identifications by the property txn:identificationHasOccurrence, Occurrence related directly to Taxon/SpeciesConcept by the property occurrenceHasSpeciesConcept).  This results in a much more reticulated RDF graph than is seen with DSW.
+ * the same data properties may be repeated in several txn: classes (e.g. geo:lat in txn:Occurrence and dwc_area:Area).  This is neither encouraged nor prohibited in DSW, but we suggest placing data properties in a single class that is their probable domain. 
+ * the dwc_area:Area makes use of the geo: URI scheme defined in http://tools.ietf.org/html/rfc5870 the use of which Pete described in http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001982.html and other posts that followed in that thread.  DWC neither endorses nor discourages this, although the best practice at the moment may be to stick with HTTP URIs for describing dcterms:Location class instances until it becomes clear how widely RFC 5870 will be accepted.
+ * the txn:SpeciesConcept class doesn't correspond exactly with dwc:Taxon which DSW defines to be equivalent to http://rs.tdwg.org/ontology/voc/TaxonConcept#Taxon (Taxon/TaxonConcept in the TDWG ontology). txn:SpeciesConcept defines relationships among names using terms like skos:closeMatch, but as far as I can tell it does not include the secundum/sensu component which seems to be an integral part of Taxon/TaxonConcept/TaxonNameUsages as it is described by the TDWG community (see the ClassTaxon wiki page for more on this).  This is probably the most significant conceptual difference between the models.
