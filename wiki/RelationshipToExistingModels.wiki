@@ -1,8 +1,8 @@
 #summary Compares darwin-sw to previous models.
 
-= Relationship of darwin-sw to earlier models =
+= Relationship of darwin-sw to earlier models and DeVries LOD model =
 
-Note: this page is a modification of a post by Steve Baskauf to the tdwg-content list on 2010-11-13 (http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001944.html)
+Note: the first part of this page is a modification of a post by Steve Baskauf to the tdwg-content list on 2010-11-13 (http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001944.html)
 
 The Association of Systematics Collections 
 (ASC)report on an Information Model for Biological Collections, posted at 
