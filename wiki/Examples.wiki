@@ -150,7 +150,7 @@ Information about the metadata document itself
 
 = An image of part of the tree = 
 == URI: http://bioimages.vanderbilt.edu/baskauf/10554 ==
-Note: the image is typed as a mrtg:MultiMediaObject.  It's properties are primarily described using terms from the MRTG (Audubon Core) vocabulary.  The Occurrence which is documented by the image is considered a separate resource.  It's properties are described by terms in the DwC class Occurrence.  The image and the Occurrence resource are related by the dsw:evidenceFor property of the image.  The dsw:hasEvidence property is not stated explicitly for the Occurrence but could be inferred by the inverse property relationship between evidenceFor and hasEvidence defined in dsw.
+Note: the image is typed as a mrtg:MultiMediaObject.  It's properties are primarily described using terms from the MRTG (Audubon Core) vocabulary.  The Occurrence which is documented by the image is considered a separate resource.  It's properties are described by terms in the DwC class Occurrence.  The image and the Occurrence resource are related by the dsw:evidenceFor property of the image.  The dsw:hasEvidence property is not stated explicitly for the Occurrence but could be inferred by the inverse property relationship between evidenceFor and hasEvidence defined in dsw.  Note: because this image is a foaf:depiction of the tree, the range of foaf:depiction, which is foaf:Image asserts that the image is also rdf:type foaf:Image .
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
