@@ -81,7 +81,7 @@ Referring to resources as URIs provides a stable point of reference despite chan
 
 Aggregated RDF metadata can be stored efficiently in the form of triples^5^ and queried using SPARQL to discover relationships that might not have otherwise been discovered.^6^  
 
-Metadata from our biodiversity informatics community can be integrated with metadata provided by other communities who are already adopting the Linked Data/Semantic Web approach.
+Metadata from our biodiversity informatics community can be integrated with metadata provided by other communities who are already adopting the Linked Data/Semantic Web approach.^7^
 
 ^1^ TDWG GUID Applicability Statement, recommendations 2, 7, and 10. http://www.tdwg.org/standards/150
 
@@ -94,6 +94,8 @@ Metadata from our biodiversity informatics community can be integrated with meta
 ^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html
 
 ^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001929.html
+
+^7^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001736.html
 
 ==Do we need an RDF version/guide/representation of Darwin Core?==
 
@@ -116,4 +118,3 @@ Judge for yourself:
 8. http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001956.html
 
 9. http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002265.html
-
