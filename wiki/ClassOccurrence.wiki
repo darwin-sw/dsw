@@ -50,7 +50,7 @@ More widely held is the understanding that an occurrence resource also includes 
 
 ^3^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001681.html
 
-^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001836.html
+^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001836.html and http://lists.tdwg.org/pipermail/tdwg-content/2009-June/000441.html
 
 ^5^ http://rs.tdwg.org/dwc/terms/index.htm#preparations
 
