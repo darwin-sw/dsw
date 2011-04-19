@@ -38,9 +38,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.org/dsw/">
-        <owl:versionInfo>0.1</owl:versionInfo>
+        <owl:versionInfo>0.2</owl:versionInfo>
+        <dc:description>Darwin Semantic Web, verison 0.2</dc:description>
         <dc:creator>Steve Baskauf &amp; Cam Webb</dc:creator>
-        <dc:description>Darwin Semantic Web, verison 0.1</dc:description>
     </owl:Ontology>
     
 
