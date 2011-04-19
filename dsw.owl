@@ -38,8 +38,8 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.org/dsw/">
+        <dc:description>Darwin Semantic Web, verison 0.2. Please see http://code.google.com/p/darwin-sw/ for full details</dc:description>
         <owl:versionInfo>0.2</owl:versionInfo>
-        <dc:description>Darwin Semantic Web, verison 0.2</dc:description>
         <dc:creator>Steve Baskauf &amp; Cam Webb</dc:creator>
     </owl:Ontology>
     
