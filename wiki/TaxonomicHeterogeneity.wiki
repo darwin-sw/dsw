@@ -1,0 +1,36 @@
+#summary A class to describe taxonomically heterogeneous entities
+
+= LivingObject, TaxonomicallyHeterogeneousObject, and IndividualOrganism=
+
+*under construction, still considering class names*
+
+== Background ==
+In the discussion of October/November 2010 regarding the proposal to add the class Individual to the Darwin Core standard, there was substantial discussion of the scope of an Individual and whether an Individual should be defined in such a way that it was limited to resources that were taxonomically homogeneous.  Certain constituencies of the TDWG community (notably the marine and aquatic museum community) routinely collect samples which contain a wide variety of types of organisms.  These samples are considered specimens, are assigned identifiers, and may be identified to the lowest taxonomic level shared by the taxonomically heterogeneous organisms represented in the sample.  It was felt by some that the proposed class should describe samples of this kind.  However, others felt that this would introduce unwanted complexity and make it difficult to infer "duplicates".  
+
+It is not clear to us how to define the properties necessary to fully describe a class that would include taxonomically heterogeneous entities.  However, we also do not want to define the structure of DSW in such a way that it would be impossible to define these properties at some point in the future.  We have chosen an approach which creates a class that serves the role originally envisioned for the proposed dwc:Individual class (dsw:IndividualOrganism), while also allowing for future refinement of a class to describe taxonomically heterogeneous entities.  
+
+==The superclass dsw:LivingObject and its subclasses==
+*diagram to go here when we settle on class names*
+
+An instance of the superclass dsw:LivingObject is a resource that can be assigned to a Taxon at any level.  If the LivingObject is taxonomically heterogeneous, the Taxon assigned by a determination would be the lowest level that was common to all individual organisms present in the LivingObject.  The Occurrence record would document the time and place where the LivingObject was observed.  
+
+The class dsw:LivingObject has two subclasses, dsw:TaxonomicallyHeterogeneousObject and dsw:IndividualOrganism .  As subclasses of dsw:LivingObject, they share all of the properties of that class, namely they can be related to Occurrence via dsw:occurrenceOf/dsw:hasOccurrence and to Identification via dsw:idBasedOn/dsw:isBasisForId .  These two subclasses differ in that instances of TaxonomicallyHeterogeneousObject (_THeO_) are known to be taxonomically heterogeneous (i.e. the entity contains two or more kinds of organisms) while instances of IndividualOrganism are believed to be taxonomically homogeneous (e.g. single biological individuals, clones, colonial organisms, small populations of the same kind of organism).  If it is discovered that a resource which was thought to be taxonomically homogeneous is actually taxonomically heterogeneous, it can simply be re-typed from IndividualOrganism to _TheO_.  We do not formally define taxonomic homogeneity or heterogeneity in the OWL ontology, although that might be done at some future time.  
+
+
+==Relationships among instances of TaxonomicallyHeterogeneousObject and IndividualOrganism==
+
+*diagram to go here when we settle on the names*
+
+_THeO_ instances can be subdivided into two or more other child _THeO_ instances that each have a narrower taxonomic scope than the parent.  A _THeO_ can also be subdivided into two or more IndividualOrganism instances that have a narrower taxonomic scope than their parent _THeO_.  But an IndividualOrganism cannot be further subdivided.  Note: we do not specify what kind of things _THeO_ and IndividualOrganism can or cannot be.  They just must connect one or more Identifications to one or more Occurrences.  
+
+LivingObject instances can be documented by any kind of Token without restriction.  The token can be considered to be a part of the LivingObject, a representation of the LivingObject, or the entire LivingObject itself.  The only restriction is that the same level of taxonomic uncertainty apply to the Token as to the LivingObject.  For example, if a clump of grass which is believed to be taxonomically homogeneous (i.e. an IndividualOrganism) exists in a botanical garden, a stem of the grass removed and pressed (a PreservedSpecimen), an image of the clump of grass or any part of it (e.g. a leaf), a tissue sample from the clump, a DNA sequence from the clump, and the entire clump itself (as a LivingSpecimen) can be considered to be derived from the IndividualOrganism.  It does not matter if the clump consists of several individuals or a single clonal individual as long as all parts of the clump are taxonomically homogeneous.  The token can be subdivided into pieces or extracts which are assigned their own GUIDs but they would still be represented by the same IndividualOrganism.
+
+A Token which documents a _THeO_ can be subdivided into pieces or extracts.  If the pieces have the same level of taxonomic uniformity, they can be represented by the same _THeO_.  However, if the pieces (a new Token) are sorted in such a way that they are represented by a common taxon at a lower level than the original _THeO_, then the new Token should be assigned to a child THeO whose taxon is a child of the parent _THeO_.  If the child Token is believed to be taxonomically homogeneous, then it should be assigned to a child IndividualOrganism whose taxon is a child of the parent Taxon.  At this point, no further subdivision of the LivingObject is possible.  
+
+==Additional comments==
+
+*diagram here when term names are settled*
+
+Although DSW defines the general terms dsw:derivedFrom and dsw:hasDerivative, DSW does not generally define terms to describe the specific relationship among Tokens and their pieces, extracts, or representations.  Terms from other vocabularies, such as dcterms:partOf and foaf:depiction can be used to describe the relationships among Tokens and their derivatives.  
+
+There is no requirement that any resource be described as a _THeO_ - any dataset may be limited exclusively to resources that are described as instances of IndividualOrganism.  DSW does not define the properties that would be necessary to describe the behavior of a _THeO_ and its relationship to Identifications, the Taxon class, and other _THeO_ instances.  In fact, introduction of _THeO_ creates a level of complexity significantly greater than that which would exist if DSW were restricted to IndividualOrganisms exclusively.  However, DSW includes the LivingObject and TaxonomicallyHeterogeneousObject classes in the model at the present time to make their further development possible.  
