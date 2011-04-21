@@ -46,7 +46,7 @@ then
         exit
 else
     # insert dsw:IndividualOrganism
-    sed -i 's|// Resources|"Rdsw:IndividualOrganism" -> "Rdsw:LivingObject" [ label="rdfs:subClassOf" ]; "Rdsw:IndividualOrganism" [ label="dsw:IndividualOrganism", shape=ellipse, color=blue ];|g' $TMP3
+    # sed -i 's|// Resources|"Rdsw:IndividualOrganism" -> "Rdsw:LivingObject" [ label="rdfs:subClassOf" ]; "Rdsw:IndividualOrganism" [ label="dsw:IndividualOrganism", shape=ellipse, color=blue ];|g' $TMP3
 
     dot -T jpg $TMP3 > ../img/dsw.jpg
 fi
