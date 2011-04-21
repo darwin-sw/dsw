@@ -33,5 +33,5 @@ used in the assessment to make the determination. The dwc:identificationReferenc
 
  * *dsw:identifies* range [ClassIndividual dsw:IndividualOrganism]
  * *dsw:toTaxon* range [ClassTaxon dwc:Taxon]
- * *dsw:idBasedOn* range [ClassToken dsw:Token] (or subclass: specimen, image, DNA sample, etc.)
+ * *dsw:idBasedOn* range [ClassToken dsw:Token] (which also may be typed as specimen, image, DNA sample, etc.)
  * *dsw:idBy* range foaf:Person
