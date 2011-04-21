@@ -2,9 +2,7 @@
 
 = !LivingEntity, !TaxonomicallyHeterogeneousEntity, and !IndividualOrganism=
 
-[http://code.google.com/p/darwin-sw/source/browse/trunk/dsw_alt.owl Link to alt version]
-
-*under construction, still considering class names*
+[http://code.google.com/p/darwin-sw/source/browse/trunk/dsw_alt.owl Link to alt version of ontology which includes heterogeneous entities]
 
 == Background ==
 In the discussion of October/November 2010 regarding the proposal to add the class Individual to the Darwin Core standard, there was substantial discussion of the scope of an Individual and whether an Individual should be defined in such a way that it was limited to resources that were taxonomically homogeneous.  Certain constituencies of the TDWG community (notably the marine and aquatic museum community) routinely collect samples which contain a wide variety of types of organisms.  These samples are considered specimens, are assigned identifiers, and may be identified to the lowest taxonomic level shared by the taxonomically heterogeneous organisms represented in the sample.  It was felt by some that the proposed class should describe samples of this kind.  However, others felt that this would introduce unwanted complexity and make it difficult to infer "duplicates".  (See the wiki page ClassIndividual for references on this discussion.)
@@ -12,7 +10,7 @@ In the discussion of October/November 2010 regarding the proposal to add the cla
 It is not clear to us how to define the properties necessary to fully describe a class that would include taxonomically heterogeneous entities.  However, we also do not want to create the structure of DSW in such a way that it would be impossible to define these properties at some point in the future.  We have chosen an approach which creates a class that serves the role originally envisioned for the proposed dwc:Individual class (dsw:IndividualOrganism), while also allowing for future refinement of a class to describe taxonomically heterogeneous entities.  The basic dsw.owl ontology considers only taxonomically homogeneous entities.  However, we have created an alternative ontology ([http://code.google.com/p/darwin-sw/source/browse/trunk/dsw_alt.owl dsw_alt.owl]) which adds two classes and allows for the inclusion of taxonomically heterogeneous entities.
 
 ==The superclass dsw:!LivingEntity and its subclasses as described in the alternative ontology==
-*diagram to go here when we settle on class names*
+http://bioimages.vanderbilt.edu/pages/taxonomic-unit.gif
 
 An instance of the superclass dsw:LivingEntity is a resource that can be assigned to a Taxon at any level.  If the LivingEntity is taxonomically heterogeneous, the Taxon assigned by a determination would be the lowest level that was common to all individual organisms present in the LivingEntity.  The Occurrence record would document the time and place where the LivingEntity was observed.  
 
@@ -21,7 +19,7 @@ The class dsw:LivingEntity has two subclasses, dsw:TaxonomicallyHeterogeneousEnt
 
 ==Relationships among instances of !TaxonomicallyHeterogeneousEntity and IndividualOrganism==
 
-*diagram to go here when we settle on the names*
+http://bioimages.vanderbilt.edu/pages/theu-indorg-relationships.gif
 
 _THeE_ instances can be subdivided into two or more other child _THeE_ instances that each have a narrower taxonomic scope than the parent.  A _THeE_ can also be subdivided into two or more IndividualOrganism instances that have a narrower taxonomic scope than their parent _THeE_.  But an IndividualOrganism cannot be further subdivided.  Note: we do not specify what kind of things _THeE_ and IndividualOrganism can or cannot be.  They just must connect one or more Identifications to one or more Occurrences.  
 
@@ -31,10 +29,10 @@ A Token which documents a _THeE_ can be subdivided into pieces or extracts.  If 
 
 ==Additional comments==
 
-*diagram here when term names are settled*
+http://bioimages.vanderbilt.edu/pages/tu-token-relationships.gif
 
-Although DSW and dsw_alt.owl define the general terms dsw:derivedFrom and dsw:hasDerivative, neither ontology defines terms to describe the specific relationship among Tokens and their pieces, extracts, or representations.  Terms from other vocabularies, such as dcterms:partOf and foaf:depiction can be used to describe the relationships among Tokens and their derivatives.  
+Although DSW and dsw_alt.owl define the general terms dsw:derivedFrom and dsw:hasDerivative, neither ontology defines terms to describe the specific relationship among Tokens and their pieces, extracts, or representations.  Terms from other vocabularies, such as dcterms:hasPart and foaf:depiction can be used to describe the relationships among Tokens and their derivatives.  
 
-dsw_alt.owl does not define the properties that would be necessary to describe the behavior of a _THeE_ and its relationship to Identifications, the Taxon class, and other _THeE_ instances.  In fact, introduction of _THeE_ creates a level of complexity significantly greater than that which would exist if DSW were restricted to IndividualOrganisms exclusively.  However, dsw_alt.owl includes the LivingEntity and TaxonomicallyHeterogeneousEntity classes in its model to make their further development possible.  
+dsw_alt.owl does not define the properties that would be necessary to describe the behavior of a _THeE_ and its relationship to Identifications, the Taxon class, and other _THeE_ instances.  In fact, introduction of _THeE_ creates a level of complexity significantly greater than that which would exist if DSW were restricted to IndividualOrganisms exclusively (as can be seen from the diagram above).  However, dsw_alt.owl includes the LivingEntity and TaxonomicallyHeterogeneousEntity classes in its model to make their further development possible.  
 
 There is no requirement in dsw_alt.owl that any resource be described as a _THeE_ - any dataset may be limited exclusively to resources that are described as instances of IndividualOrganism.  If there is significant demand for inclusion of _THeE_ resources, then the dsw_alt.owl ontology could be used in lieu to the basic dsw.owl ontology.  Since in dsw_alt.owl IndividualOrganism inherits the same properties from LivingEntity that are declared explicitly for IndividualOrgansim in dsw.owl, implementations based on dsw.owl should not be "broken"if the alternative ontology is accepted.
