@@ -420,9 +420,9 @@
     
 
 
-    <!-- http://purl.org/dsw/TaxonomicallyHeterogeneousObject -->
+    <!-- http://purl.org/dsw/TaxonomicallyHeterogeneousEntity -->
 
-    <owl:Class rdf:about="http://purl.org/dsw/TaxonomicallyHeterogeneousObject">
+    <owl:Class rdf:about="http://purl.org/dsw/TaxonomicallyHeterogeneousEntity">
         <rdfs:subClassOf rdf:resource="http://purl.org/dsw/LivingEntity"/>
     </owl:Class>
     
