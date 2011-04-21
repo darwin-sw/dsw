@@ -11,7 +11,7 @@ In the discussion of October/November 2010 regarding the proposal to add the cla
 
 It is not clear to us how to define the properties necessary to fully describe a class that would include taxonomically heterogeneous entities.  However, we also do not want to create the structure of DSW in such a way that it would be impossible to define these properties at some point in the future.  We have chosen an approach which creates a class that serves the role originally envisioned for the proposed dwc:Individual class (dsw:IndividualOrganism), while also allowing for future refinement of a class to describe taxonomically heterogeneous entities.  The basic dsw.owl ontology considers only taxonomically homogeneous entities.  However, we have created an alternative ontology ([http://code.google.com/p/darwin-sw/source/browse/trunk/dsw_alt.owl dsw_alt.owl]) which adds two classes and allows for the inclusion of taxonomically heterogeneous entities.
 
-==The superclass dsw:LivingEntity and its subclasses as described in the alternative ontology==
+==The superclass dsw:!LivingEntity and its subclasses as described in the alternative ontology==
 *diagram to go here when we settle on class names*
 
 An instance of the superclass dsw:LivingEntity is a resource that can be assigned to a Taxon at any level.  If the LivingEntity is taxonomically heterogeneous, the Taxon assigned by a determination would be the lowest level that was common to all individual organisms present in the LivingEntity.  The Occurrence record would document the time and place where the LivingEntity was observed.  
@@ -19,7 +19,7 @@ An instance of the superclass dsw:LivingEntity is a resource that can be assigne
 The class dsw:LivingEntity has two subclasses, dsw:TaxonomicallyHeterogeneousEntity and dsw:IndividualOrganism .  As subclasses of dsw:LivingEntity, they share all of the properties of that class, namely they can be related to Occurrence via dsw:occurrenceOf/dsw:hasOccurrence and to Identification via dsw:idBasedOn/dsw:isBasisForId .  These two subclasses differ in that instances of TaxonomicallyHeterogeneousEntity (_THeE_) are known to be taxonomically heterogeneous (i.e. the entity contains two or more kinds of organisms) while instances of IndividualOrganism are believed to be taxonomically homogeneous (e.g. single biological individuals, clones, colonial organisms, small populations of the same kind of organism).  If it is discovered that a resource which was thought to be taxonomically homogeneous is actually taxonomically heterogeneous, it can simply be re-typed from IndividualOrganism to _TheE_.  We do not formally define taxonomic homogeneity or heterogeneity in the alternative OWL ontology, although that might be done at some future time.  
 
 
-==Relationships among instances of TaxonomicallyHeterogeneousEntity and IndividualOrganism==
+==Relationships among instances of !TaxonomicallyHeterogeneousEntity and IndividualOrganism==
 
 *diagram to go here when we settle on the names*
 
