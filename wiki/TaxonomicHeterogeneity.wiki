@@ -1,6 +1,8 @@
 #summary A class to describe taxonomically heterogeneous entities
 
-= LivingObject, TaxonomicallyHeterogeneousObject, and IndividualOrganism=
+= LivingEntity, TaxonomicallyHeterogeneousEntity, and IndividualOrganism=
+
+[http://code.google.com/p/darwin-sw/source/browse/trunk/dsw_alt.owl Link to alt verion]
 
 *under construction, still considering class names*
 
