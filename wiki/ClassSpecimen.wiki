@@ -4,11 +4,12 @@
 
 The Specimen class has been added because there is no existing class within Darwin Core or well-known outside of TDWG that can serve as the rdf:type for specimens.  When the existing Darwin Core (DwC) standard was adopted, there was an implicit understanding that an Occurrence also included the evidence that supported it.  In DSW, we separate the evidence (Token) from the Occurrence and have therefore created this class to represent the object itself that serves as the evidence for the Occurrence.  (For more details on this topic, see the [ClassToken Token] and [ClassOccurrence Occurrence] pages.)
 
-Properties that might apply to this Specimen class are found listed in DwC under the Occurrence class.  In DSW, the Specimen class has subclasses LivingSpecimen and PreservedSpecimen.  However, these classes exist primarily for typing and therefore do not have properties defined for them in DSW.
+Properties that might apply to this Specimen class are found listed in DwC under the Occurrence class.  In DSW, the Specimen class has subclasses !LivingSpecimen and !PreservedSpecimen.  However, these classes exist primarily for typing and therefore do not have properties defined for them in DSW.
 
 ==Properties suitable for use in DSW (not a complete list)==
 
 ===Data properties from DwC===
+
  * *catalogNumber* string literal
  * *preparations* string literal
  * *disposition* string literal
