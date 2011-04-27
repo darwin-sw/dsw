@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+        xmlns:mrtg="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#"
+        xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+        xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
+		xmlns:foaf="http://xmlns.com/foaf/0.1/"
+>
+
+<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/taxonConcepts#183269-fna1993">
+        <mrtg:metadataLanguage>en</mrtg:metadataLanguage>
+        <rdf:type rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonConcept#TaxonConcept" />
+        <rdfs:label>Ginkgo biloba L. sensu Flora of North America</rdfs:label>
+        <dcterms:description>Taxon concept of Ginkgo biloba L. sensu Flora of North America</dcterms:description>
+        
+        <tc:nameString>Ginkgo biloba L.</tc:nameString>
+        <tc:hasName rdf:resource="http://www.ubio.org/authority/metadata.php?lsid=urn:lsid:ubio.org:namebank:468858" />
+        <tc:accordingToString>Flora of North America; http://www.efloras.org/florataxon.aspx?flora_id=1&amp;taxon_id=200005235</tc:accordingToString>
+        <!-- Note: URIs for accordingTo are not well developed.  At some point in the future, one would hope for an ISBN or doi link that 
+        returns RDF
+        <tc:accordingTo rdf:resource="http://someplace.org/reference/12345" />
+        -->
+        
+        <!-- Note: the following properties are based on terms listed within the Taxon class of 
+        the DwC standard.  Whether they are appropriately applied as properties of instances of the 
+        Taxon class of DSW (vs. the tn:TaxonName class) remains to be see.  They are used as properties
+        here because they are a convenient way to provide "atomized" parts of the name without requiring 
+        the resolution of an external URI
+        -->     
+        <dwc:class>Ginkgoopsida</dwc:class>
+        <dwc:order>Ginkgoales</dwc:order>
+        <dwc:family>Ginkgoaceae</dwc:family>
+        <dwc:genus>Ginkgo</dwc:genus>
+        <dwc:specificEpithet>biloba</dwc:specificEpithet>
+        <dwc:taxonRank>species</dwc:taxonRank>
+        <dwc:vernacularName>maidenhair tree</dwc:vernacularName>
+        <dwc:scientificNameAuthorship>L.</dwc:scientificNameAuthorship>
+</rdf:Description>
+
+<!--
+Information about the metadata document itself
+-->
+<rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/taxonConcepts.rdf">
+        <dcterms:identifier>http://bioimages.vanderbilt.edu/vanderbilt/taxonConcepts.rdf</dcterms:identifier>
+        <dcterms:description>RDF formatted description of taxon concepts used in the Bioimages website</dcterms:description>
+        <dcterms:creator>Bioimages http://bioimages.vanderbilt.edu/</dcterms:creator>
+        <foaf:maker rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115" />
+        <dcterms:language>en</dcterms:language>
+        <dcterms:modified>2011-02-03</dcterms:modified>
+        <xmp:MetadataDate>2011-02-03</xmp:MetadataDate>
+</rdf:Description>
+</rdf:RDF>
