@@ -19,7 +19,6 @@ Note in this example:
 		 xmlns:dsw="http://purl.org/dsw/"
 		 xmlns:mrtg="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#"
 		 xmlns:xmp="http://ns.adobe.com/xap/1.0/"
-		 xmlns:bibo="http://purl.org/ontology/bibo/"
 		 xmlns:foaf="http://xmlns.com/foaf/0.1/"
 		 >
 
@@ -90,9 +89,6 @@ Note in this example:
 	<foaf:primaryTopic rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126"/>
   </rdf:Description>
 
-  <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/vanderbilt/12-126.htm">
-  <rdf:type rdf:resource="http://purl.org/ontology/bibo/Webpage"/>
-</rdf:Description>
 </rdf:RDF>
 }}}
 
@@ -109,7 +105,7 @@ Note in this example:
         xmlns:mrtg="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#"
         xmlns:xmp="http://ns.adobe.com/xap/1.0/"
         xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
-		xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
 >
 
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/taxonConcepts#183269-fna1993">
@@ -175,14 +171,13 @@ xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
 xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/"
 xmlns:mbank="http://www.morphbank.net/schema/morphbank#"
 xmlns:mix="http://www.loc.gov/mix/v20"
-xmlns:bibo="http://purl.org/ontology/bibo/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/"
 xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 >
 
 <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/baskauf/10554">
 
-	<mrtg:MetadataLanguage>en</mrtg:MetadataLanguage>
+	<mrtg:metadataLanguage>en</mrtg:metadataLanguage>
 	<!--Basic information about the image-->
 	<rdf:type rdf:resource="http://xxx.org/XXX/MultiMediaObject" />
 	<dcterms:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
@@ -211,7 +206,6 @@ xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	<!-- Relationships of the image to other resources.  -->
 	<foaf:isPrimaryTopicOf rdf:resource="http://bioimages.vanderbilt.edu/baskauf/10554.htm" />
 	<foaf:isPrimaryTopicOf rdf:resource="http://bioimages.vanderbilt.edu/baskauf/10554.rdf" />
-	<bibo:Webpage rdf:resource="http://bioimages.vanderbilt.edu/baskauf/10554.htm" />
 	<!-- <dcterms:isPartOf rdf:resource="http://bioimages.vanderbilt.edu" /> -->
 	<dsw:derivedFrom rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126" />
 	<foaf:depicts rdf:resource="http://bioimages.vanderbilt.edu/vanderbilt/12-126" />
@@ -328,12 +322,11 @@ xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
 xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/"
 xmlns:mbank="http://www.morphbank.net/schema/morphbank#"
 xmlns:mix="http://www.loc.gov/mix/v20"
-xmlns:bibo="http://purl.org/ontology/bibo/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/"
 xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 >
 <rdf:Description rdf:about="http://www.vanderbilt.edu/specimen/ncu592808">
-     <mrtg:MetadataLanguage>en</mrtg:MetadataLanguage>
+     <mrtg:metadataLanguage>en</mrtg:metadataLanguage>
      <!--Basic information about the specimen-->
      <dcterms:description>Preserved specimen from the individual organism http://bioimages.vanderbilt.edu/ind-kirchoff/mason09
 </dcterms:description>
