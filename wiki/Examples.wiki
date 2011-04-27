@@ -3,6 +3,8 @@
 = An individual tree =
 == URI: http://bioimages.vanderbilt.edu/vanderbilt/12-126 ==
 
+(also available [http://phylodiversity.net/dsw/examples/dsw-example2.rdf here])
+
 Note in this example: 
  * the rdf:type is explicitly declared as a property.
  * the tree is both type LivingSpecimen (in an arboretum) and an IndividualOrganism.  
@@ -95,6 +97,8 @@ Note in this example:
 }}}
 
 = Taxon concept (used in identification of tree) =
+
+(also available [http://phylodiversity.net/dsw/examples/dsw-example3.rdf here])
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
