@@ -96,7 +96,7 @@ provided by Hannu Saarenmaa (personal communication).  For comparison purposes
 
 http://lod.taxonconcept.org/ses/v6n7p
 
-provided by Pete !DeVries.  Note: rdf:type and other properties not defined in terms of the TDWG ontology.  Also, I can't find any "_sec._" (accordingTo) type properties.
+provided by Pete !DeVries.  Note: rdf:type and other properties not defined in terms of the TDWG ontology.  Also, I can't find any "_sec._" (accordingTo) type properties.  See http://lists.tdwg.org/pipermail/tdwg-content/2011-May/002405.html , http://lists.tdwg.org/pipermail/tdwg-content/2011-May/002390.html and subsequent posts for an explanation by Pete of what he intends txn:SpeciesConcept to mean.  
 
 == Strategy for darwin-sw suggested by the TCS model ==
 The darwin-sw ontology does not define any properties for the Taxon class except for dsw:taxonOfId which links a Taxon to an Identification which refers to it.  This was a conscious decision which recognizes:
