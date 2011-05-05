@@ -151,8 +151,16 @@ A system for providing sensu/secundum reference URIs is not well developed.  In 
  * *tc:accordingTo * range a reference to the publication that makes the assertion (but no formal range declared, see http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/TaxonConcept.owl).
 == General References: ==
 
+Note: this is by no means a comprehensive list.  We will add to it as we discover or remember additional references.
+
+Franz, N.M., R.K. Peet and A.S. Weakley. 2008. On the use of taxonomic concepts in support of biodiversity research and taxonomy; pp. 63-86. In Wheeler, Q.D. (Ed.): The New Taxonomy, Systematics Association Special Volume Series 74. Taylor & Francis, Boca Raton, FL  http://www.bio.unc.edu/faculty/peet/pubs/cardiff.pdf  doi:10.1.1.103.7001 (maybe)
+
+Franz, N.M and D. Thau. 2010. Biological taxonomy and ontological development: scope and limitations. Biodiversity Informatics 7:45-66.  https://journals.ku.edu/index.php/jbi/article/view/3927
+
 Hyam, R. and J. Kennedy. 2006. Taxon Concept Schema - User Guide.  http://www.tdwg.org/standards/117/
 
 Kennedy, J.B., R. Kukla, and T. Paterson. 2005. Scientific names are ambiguous as identifiers for biological taxa: their context and definition are required for accurate data integration.  Data Integration in the Life Sciences 2005, LNBI 3615, 80-95.  http://www.springerlink.com/content/7bv5pa3falxwrrvx/
+
+Page, R.D.M. 2006. Taxonomic names, metadata, and the semantic web. Biodiversity Informatics 3:1-15. https://journals.ku.edu/index.php/jbi/article/view/25
 
 Pyle, R.L. 2004. Taxonomer: a relational data model for managing information relevant to taxonomic research.  PhyloInformatics 1:1-54.  http://systbio.org/files/phyloinformatics/1.pdf
