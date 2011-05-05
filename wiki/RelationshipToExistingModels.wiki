@@ -63,6 +63,8 @@ The original ASC model itself is more complex and more "normalized" than the las
 
 Note: this analysis is based on the RDF contained in http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.rdf which was provided as an example in http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001735.html .  The RDF can be viewed as a graph (i.e. diagram) by going to http://www.w3.org/RDF/Validator/ and pasting the URI in the "Check by URI" box.  
 
+There is extensive discussion of the taxonconcept.org model including questions about it and answers from Pete, starting with http://lists.tdwg.org/pipermail/tdwg-content/2011-May/002385.html and including many responses that followed it.
+
 The namespace http://lod.taxonconcept.org/ontology/txn.owl# is abbreviated txn:
 
 The namespace http://lod.taxonconcept.org/ontology/dwc_area.owl# is abbreviated dwc_area:
