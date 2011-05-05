@@ -113,7 +113,7 @@ The "detailed" representations can be URI references to resources that are not d
 
 Although the design of darwin-sw is intended to encourage and facilitate the use of object properties and URIs to refer to resources (as opposed to string literal references) which might be widely used by the Linked Data community, as a practical matter consensus, resolvable URIs for taxa, names, and sensu/secundum references are not currently (as of Jan 2011) available.^1^ ^2^  Hopefully, consensus URIs for taxa will be available when the Global Name Usage Bank (GNUB)^3^ becomes functional.  The only large, currently functional^4^ source of resolvable URIs for both plants and animals that produces RDF is uBio^5^, which uses HTTP proxied LSIDs.  These URIs could be used as the objects of the tc:hasName property of a Taxon instance.  Hopefully the Global Names Architecture (GNA)^6^ will eventually provide resolvable URIs.  Currently uBio is the largest source of names to the GNA^7^ so all names currently assigned identifiers by uBio should eventually turn up in the GNA.  
 
-A system for providing sensu/secundum reference URIs is not well developed.  In some cases, literature references have been assigned DOIs, which can be used in LOD as HTTP proxied GUIDs.  However, much of the older literature does not have assigned DOIs and there are often not the necessary URIs to refer to sections of articles.^8^  Older literature is being databased by the Biodiversity Heritage Library (BHL)^9^ which provides stable URIs^10^ (but which apparently are not capable of resolving to RDF representations), but much literature still is not scanned and databased.  So for the immediate future, many sensu/sec references will have to be referred to in only text form as literal objects of tc:accordingToString.  
+A system for providing sensu/secundum reference URIs is not well developed.  In some cases, literature references have been assigned DOIs, which can be used in LOD as HTTP proxied GUIDs.^8^  However, much of the older literature does not have assigned DOIs and there are often not the necessary URIs to refer to sections of articles.^9^  Older literature is being databased by the Biodiversity Heritage Library (BHL)^10^ which provides stable URIs^11^ (but which apparently are not capable of resolving to RDF representations), but much literature still is not scanned and databased.  So for the immediate future, many sensu/sec references will have to be referred to in only text form as literal objects of tc:accordingToString.  
 
 ^1^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002202.html and subsequent posts in that thread
 
@@ -129,11 +129,13 @@ A system for providing sensu/secundum reference URIs is not well developed.  In 
 
 ^7^ http://gni.globalnames.org/data_sources
 
-^8^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002213.html
+^8^ http://www.crossref.org/CrossTech/2011/04/content_negotiation_for_crossr.html  See also: http://odontomachus.wordpress.com/2011/05/04/crossrefs-gift-of-metadata/ for commentary on this.
 
-^9^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002206.html
+^9^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002213.html
 
-^10^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002238.html  
+^10^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002206.html
+
+^11^ http://lists.tdwg.org/pipermail/tdwg-content/2011-January/002238.html  
 
 
 ==Properties suitable for use in DSW (not a complete list)==
