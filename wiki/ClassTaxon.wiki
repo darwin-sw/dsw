@@ -84,7 +84,19 @@ which can be viewed at
 
 http://code.google.com/p/tdwg-ontology/source/browse/trunk/ontology/voc/Common.rdf
 
-The TDWG Ontology describes many kinds of resources relevant to biodiversity informatics.  However, most cases where it is actually being referenced in RDF seem to be descriptions of taxa (i.e. taxon concepts), taxon names, and "according to" references, with the latter two being components of taxa.  To some extent, the structure of the TDWG Ontology follows the TCS model.  However, since the TCS model is an XML schema and not defined in RDF, the TDWG Ontology makes reference to it through the property tcom:tcsEquivalence whose object is a string literal references to part of TCS. RDF examples of taxa described by the TDWG Ontology:
+*What is the TDWG Ontology?*
+
+The historical background of the TDWG Ontology can be constructed by reading the TDWG Technical Architecture Group (TAG) "Technical Roadmaps" published from 2006 to 2008. 
+
+http://www.tdwg.org/uploads/media/TAG_Roadmap_01.doc (2006)
+
+http://www.tdwg.org/fileadmin/subgroups/tag/TAG_Roadmap_2007_final.pdf (2007)
+
+http://www.tdwg.org/fileadmin/subgroups/tag/TAG_Roadmap_2008.pdf (2008)
+
+They do not seem to have been published since then.  The TDWG Ontology was intended to be a technology-independent mechanism for typing objects in the biodiversity domain.  It was written in Web Ontology Language (OWL),in the form of RDF.  The TDWG Ontology describes many kinds of resources was intended at the time to facilitate LSID resolution. The structure of the Ontology is significantly more complex than Darwin Core and includes types of resources beyond those represented in the DwC classes.  Development of the Ontology seems to have been abandoned in about 2008 at around the same time that efforts to adopt LSIDs also stalled.  Lack of sustained support and funding seems to have been a factor in its abandonment (http://www.hyam.net/blog/archives/643#more-643).
+
+Although the TDWG Ontology is the only vocabulary that is specifically mentioned in the TDWG GUID Applicability Statement (now a TDWG standard) as an appropriate typing mechanism (http://www.tdwg.org/standards/150 Recommendation 11) it has not been widely used for typing in RDF.  Cases where it is actually being referenced in RDF seem to be descriptions of taxa (i.e. taxon concepts), taxon names, and "according to" references, with the latter two being components of taxa.  To some extent, the structure of the TDWG Ontology follows the TCS model.  However, since the TCS model is an XML schema and not defined in RDF, the TDWG Ontology makes reference to it through the property tcom:tcsEquivalence whose object is a string literal references to part of TCS. RDF examples of taxa described by the TDWG Ontology:
 
 http://biodiversity.org.au/apni.taxon/118883.rdf
 
