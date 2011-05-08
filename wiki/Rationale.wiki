@@ -5,11 +5,11 @@
 ==Background and definitions==
 The DwC standard itself is a general-use^1^ vocabulary that defines terms which can be used to facilitate the sharing of information about biological diversity.^2^  As such, it does not have any prescribed methods of implementation.  At the present time, there are guides for implementing DwC in text files^3^ and in XML^4^. Since September 2010, there has been significant discussion about how terms in the Darwin Core (DwC) standard could be used as properties to describe resources using Resource Description Framework (RDF).^5^  
 
-RDF differs from other methods of information transfer in that it does not assume that there is a designated recipient of the information, nor does it assume that the recipient has preexisting knowledge of how the information should be understood.  RDF is designed to permit the "discovery" of information by an undetermined recipient, and as such it is necessary to provide the recipient with all of the information that they would need to understand the information received.  This is different from a text transfer in which the sender and receiver would agree in advance what fields would be included and the format of the file that contains them or an XML transfer where a schema may be used to spell out the number,types, and permitted order of fields in the XML document used to transfer the information.  The other assumption is that the recipient will be a computer (or perhaps more accurately a computer program, known as "the consuming application" or "client") that is not necessarily under the guidance of a human.  
+RDF differs from other methods of information transfer in that it does not assume that there is a designated recipient of the information, nor does it assume that the recipient has preexisting knowledge of how the information should be understood.  RDF is designed to permit the "discovery" of information by an undetermined recipient, and as such it is necessary to provide the recipient with all of the information that they would need to understand the information received.  This is different from a text transfer in which the sender and receiver would agree in advance what fields would be included and the format of the file that contains them or an XML transfer where a schema may be used to spell out the number,types, and permitted order of fields in the XML document used to transfer the information.  The other assumption is that the recipient will be a computer (or perhaps more accurately a computer program, known as "the consuming application" or "client") that is not necessarily under the guidance of a human.  The relevance of the lack of preexisting knowledge about a resource in the biodiversity informatics community is summed up thus: "Biodiversity research is typically carried out by combining data of different kinds from multiple sources.  The providers of data do not know who will use their data or how it will be combined with data from other sources.  The consumer needs some level of commonality across all the data received so that it can be combined for analysis without the need to write computer software for every new combination."^6^
 
-RDF itself does not have a single method of representation ("serialization").  It can be represented by diagrams ("graphs") or text formats such as N3 ^6^.  However, the default serialization when a URI is "looked up" (dereferenced) by a computer is XML.  
+RDF itself does not have a single method of representation ("serialization").  It can be represented by diagrams ("graphs") or text formats such as N3 ^7^.  However, the default serialization when a URI is "looked up" (dereferenced) by a computer is XML.  
 
-RDF itself is simply a way to describe the properties of "things" (resources).  RDF can be "used" by different communities to serve various purposes.  One such community is "Linked Data" or "Linked Open Data" (LOD). Linked Data "a recommended best practice for exposing, sharing, and connecting pieces of data, information, and knowledge on the Semantic Web using URIs and RDF."^7^ Some draw a distinction between the goals of LOD and "the Semantic Web"^8^.  Whereas LOD is focused on exposing and collecting large amounts of information with minimal effort, the Semantic Web is more restrictive because it focuses effort on only asserting things that are true and subject to tractable reasoning.^9^  If the primary purpose of terms used in RDF is to link one resource to another, those terms can be defined simply using the RDF Vocabulary Description Language (RDFS)^10^.  However, if terms are intended to convey more meaning and be used to enable reasoning, they may be given more complex definitions using the Web Ontology Language (OWL).^11^
+RDF itself is simply a way to describe the properties of "things" (resources).  RDF can be "used" by different communities to serve various purposes.  One such community is "Linked Data" or "Linked Open Data" (LOD). Linked Data "a recommended best practice for exposing, sharing, and connecting pieces of data, information, and knowledge on the Semantic Web using URIs and RDF."^8^ Some draw a distinction between the goals of LOD and "the Semantic Web"^9^.  Whereas LOD is focused on exposing and collecting large amounts of information with minimal effort, the Semantic Web is more restrictive because it focuses effort on only asserting things that are true and subject to tractable reasoning.^10^  If the primary purpose of terms used in RDF is to link one resource to another, those terms can be defined simply using the RDF Vocabulary Description Language (RDFS)^11^.  However, if terms are intended to convey more meaning and be used to enable reasoning, they may be given more complex definitions using the Web Ontology Language (OWL).^12^
 
 ^1^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/000013.html
 
@@ -21,17 +21,19 @@ RDF itself is simply a way to describe the properties of "things" (resources).  
 
 ^5^ http://www.w3.org/RDF/
 
-^6^ http://www.w3.org/DesignIssues/Notation3
+^6^ TDWG Technical Roadmap 2007. http://wiki.tdwg.org/twiki/pub/TAG/RoadMap2007/TAG_Roadmap_2007_final.pdf
 
-^7^ http://linkeddata.org/
+^7^ http://www.w3.org/DesignIssues/Notation3
 
-^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001707.html
+^8^ http://linkeddata.org/
 
-^9^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001968.html
+^9^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001707.html
 
-^10^ http://www.w3.org/TR/rdf-schema/
+^10^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001968.html
 
-^11^ http://www.w3.org/TR/owl2-overview/
+^11^ http://www.w3.org/TR/rdf-schema/
+
+^12^ http://www.w3.org/TR/owl2-overview/
 
 == Properties in RDF==
 
@@ -73,15 +75,15 @@ There are many DwC terms^5^ that are suitable for use as data properties having 
 
 ==Why do we need an "RDF version" of DwC?==
 
-A major imperative is that the best practices for implementing globally unique identifiers (GUIDs) requires that GUIDs in the biodiversity informatics community be in the form of URIs. Those URIs should be resolvable and the default metadata response format should be RDF serialized as XML.^1^  The Global Biodiversity Information Facility (GBIF) encourages the use of URIs and encourages data providers to deploy RDF services.^2^  Major efforts such as BiSciCol^3^ are designing their implementations around HTTP URI GUIDs with the assumption that they will dereference to produce RDF.  
+A major imperative is that the best practices for implementing globally unique identifiers (GUIDs) requires that GUIDs in the biodiversity informatics community be in the form of URIs. Those URIs should be resolvable and the default metadata response format should be RDF serialized as XML.^1^  The Global Biodiversity Information Facility (GBIF) encourages the use of URIs and encourages data providers to deploy RDF services.^2^  Major efforts such as BiSciCol^3^ are designing their implementations around HTTP URI GUIDs with the assumption that they will dereference to produce RDF.  "If GUIDs are used to uniquely identify 'pieces' of data we need to have a shared understanding of what we mean by a 'piece of data' i.e. what kind [of] thing is it that a particular id applies to, a specimen, a person, an observation, a complete data set.  We also need to have a shared understanding of at least some of the properties we use to describe these things. ... HTTP should be thought of as the universal syntax for addressable resources."^4^
 
 Exposing metadata as Linked Data makes it possible for small institutions to participate in large-scale "cloud computing" efforts to aggregate metadata.
 
-Referring to resources as URIs provides a stable point of reference despite changes of name or changing metadata.^4^
+Referring to resources as URIs provides a stable point of reference despite changes of name or changing metadata.^5^
 
-Aggregated RDF metadata can be stored efficiently in the form of triples^5^ and queried using SPARQL to discover relationships that might not have otherwise been discovered.^6^  
+Aggregated RDF metadata can be stored efficiently in the form of triples^6^ and queried using SPARQL to discover relationships that might not have otherwise been discovered.^7^  
 
-Metadata from our biodiversity informatics community can be integrated with metadata provided by other communities who are already adopting the Linked Data/Semantic Web approach.^7^
+Metadata from our biodiversity informatics community can be integrated with metadata provided by other communities who are already adopting the Linked Data/Semantic Web approach.^8^
 
 ^1^ TDWG GUID Applicability Statement, recommendations 2, 7, and 10. http://www.tdwg.org/standards/150
 
@@ -89,13 +91,15 @@ Metadata from our biodiversity informatics community can be integrated with meta
 
 ^3^ http://biscicol.blogspot.com/
 
-^4^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001825.html
+^4^ TDWG Technical Roadmap 2008. http://www.tdwg.org/fileadmin/subgroups/tag/TAG_Roadmap_2008.pdf
 
-^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html
+^5^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001825.html
 
-^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001929.html
+^6^ http://lists.tdwg.org/pipermail/tdwg-content/2010-September/000054.html
 
-^7^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001736.html
+^7^ http://lists.tdwg.org/pipermail/tdwg-content/2010-November/001929.html
+
+^8^ http://lists.tdwg.org/pipermail/tdwg-content/2010-October/001736.html
 
 ==Do we need an RDF version/guide/representation of Darwin Core?==
 
