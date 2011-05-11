@@ -1,0 +1,1562 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY tbase "http://rs.tdwg.org/ontology/Base#" >
+    <!ENTITY Team "http://rs.tdwg.org/ontology/voc/Team#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY tcom "http://rs.tdwg.org/ontology/voc/Common#" >
+    <!ENTITY Specimen "http://rs.tdwg.org/ontology/voc/Specimen#" >
+    <!ENTITY tn "http://rs.tdwg.org/ontology/voc/TaxonName#" >
+    <!ENTITY TaxonRank "http://rs.tdwg.org/ontology/voc/TaxonRank#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://rs.tdwg.org/ontology/voc/TaxonName#"
+     xml:base="http://rs.tdwg.org/ontology/voc/TaxonName"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:tn="http://rs.tdwg.org/ontology/voc/TaxonName#"
+     xmlns:TaxonRank="http://rs.tdwg.org/ontology/voc/TaxonRank#"
+     xmlns:Team="http://rs.tdwg.org/ontology/voc/Team#"
+     xmlns:tcom="http://rs.tdwg.org/ontology/voc/Common#"
+     xmlns:tbase="http://rs.tdwg.org/ontology/Base#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Specimen="http://rs.tdwg.org/ontology/voc/Specimen#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://rs.tdwg.org/ontology/voc/TaxonName">
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"> This vocabulary closely follows the structure of the ScientificName complex type that is part of the TDWG standard Taxon Concept Schema. The TCS structure was based
+         on the name structures suggested by the LinneanCore and those found in schemas such as ABCD. 
+         It reflects the contributions of many authors over a number of years.</rdfs:comment>
+        <dc:description>Ontology describing the metadata returned for LSIDs that are used for Taxon Names. </dc:description>
+        <dc:publisher>TDWG Biodiversity Information Standards</dc:publisher>
+        <dc:creator>Roger Hyam</dc:creator>
+        <owl:versionInfo>0.2 - [SVN $Rev: 1065 $]</owl:versionInfo>
+        <dc:title>TDWG Taxon Name LSID Ontology</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
+    <owl:AnnotationProperty rdf:about="&dc;publisher"/>
+    <owl:AnnotationProperty rdf:about="&dc;relation"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;isDefinedBy"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#authorTeam -->
+
+    <owl:ObjectProperty rdf:about="&tn;authorTeam">
+        <rdfs:label>Author Team</rdfs:label>
+        <rdfs:comment>A breakdown of the authors who published this name including both basionym and combination authors (if any).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="http://rs.tdwg.org/ontology/voc/authorship"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;basionymAuthorship"/>
+        <dc:relation rdf:resource="&tn;combinationAuthorship"/>
+        <rdfs:range rdf:resource="&Team;Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#basionymFor -->
+
+    <owl:ObjectProperty rdf:about="&tn;basionymFor">
+        <rdfs:label>Basionym For</rdfs:label>
+        <rdfs:comment> Relationship between a basionym and a new combination of the name. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&tn;TaxonName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#code -->
+
+    <owl:ObjectProperty rdf:about="&tn;code">
+        <rdfs:label>Code</rdfs:label>
+        <rdfs:comment> The nomenclatural code under which this note should be interpreted.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:range rdf:resource="&tn;NomenclaturalCodeTerm"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalNote"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#hasAnnotation -->
+
+    <owl:ObjectProperty rdf:about="&tn;hasAnnotation">
+        <rdfs:label>Has Annotation</rdfs:label>
+        <rdfs:comment> Association between a name and the notes that it may have. Often notes relate to other names such as replacement names.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:range rdf:resource="&tn;NomenclaturalNote"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#hasBasionym -->
+
+    <owl:ObjectProperty rdf:about="&tn;hasBasionym">
+        <rdfs:label>Has Basionym</rdfs:label>
+        <rdfs:comment> The basionym of this name if it is a new combination. The current name is a recombination (comb. nov.) of the name pointed to and the name pointed to is not, itself, a
+         recombination.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:range rdf:resource="&tn;TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <owl:inverseOf rdf:resource="&tn;basionymFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#nomenclaturalCode -->
+
+    <owl:ObjectProperty rdf:about="&tn;nomenclaturalCode">
+        <rdfs:label>Nomenclatural Code</rdfs:label>
+        <rdfs:comment> The nomenclatural code that governs this name. By definition all taxon names are governed by one of the codes of nomenclature. These include ICBN, ICZN, ICNCP and others.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:range rdf:resource="&tn;NomenclaturalCodeTerm"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#objectTaxonName -->
+
+    <owl:ObjectProperty rdf:about="&tn;objectTaxonName">
+        <rdfs:label>Object Taxon Name</rdfs:label>
+        <rdfs:comment> The Taxon Name that is the target for this note. The TO side of the note relationship. The Taxon Name that this note refers to.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalNote"/>
+        <rdfs:range rdf:resource="&tn;TaxonName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#rank -->
+
+    <owl:ObjectProperty rdf:about="&tn;rank">
+        <rdfs:label>Rank</rdfs:label>
+        <rdfs:comment>The taxonomic rank of this name. This is a link to an instance of TaxonomicRank. Compare with the rankString property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;rankString"/>
+        <rdfs:range rdf:resource="&TaxonRank;TaxonRankTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#subjectTaxonName -->
+
+    <owl:ObjectProperty rdf:about="&tn;subjectTaxonName">
+        <rdfs:label>Subject Taxon Name</rdfs:label>
+        <rdfs:comment> The Taxon Name that is the subject of this note. The FROM side of the note relationship. The Taxon Name that this note is qualifying.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalNote"/>
+        <rdfs:range rdf:resource="&tn;TaxonName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#type -->
+
+    <owl:ObjectProperty rdf:about="&tn;type">
+        <rdfs:label>Type</rdfs:label>
+        <rdfs:comment> The kind of nomenclatural note this is, e.g. sanctioning of name. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalNote"/>
+        <rdfs:range rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#typeName -->
+
+    <owl:ObjectProperty rdf:about="&tn;typeName">
+        <rdfs:label>Type Name</rdfs:label>
+        <rdfs:comment>The name that is the type. TaxonNames at ranks above species level are typified by the NAME of a lower taxon. Ultimately, by following the chain of type names, all names resolve to
+         a type species and so a type specimen. This property is mutually exclusive with typeSpecimen. A name can&#39;t have both. Equivalent to TCS ScientificName/Typification/TypeName. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalType"/>
+        <rdfs:range rdf:resource="&tn;TaxonName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#typeOfType -->
+
+    <owl:ObjectProperty rdf:about="&tn;typeOfType">
+        <rdfs:label>Type of Type</rdfs:label>
+        <rdfs:comment>The kind of type this specimen is e.g. paratype, isotype, holotype etc. Types can be of different kinds. Equivalent to TCS
+         ScientificName/Typification/TypeVouchers/TypeVoucher@typeOfType </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:range rdf:resource="&tn;NomencalturalTypeTypeTerm"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#typeSpecimen -->
+
+    <owl:ObjectProperty rdf:about="&tn;typeSpecimen">
+        <rdfs:label>Type Specimen</rdfs:label>
+        <rdfs:comment>The specimen that is the type. TaxonNames at ranks of family and below are typified by a specimen. This property is mutually exclusive with typeName. Equivalent to TCS
+         ScientificName/Typification/TypeVouchers/TypeVoucher </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:range rdf:resource="&Specimen;Specimen"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#typifiedBy -->
+
+    <owl:ObjectProperty rdf:about="&tn;typifiedBy">
+        <rdfs:label>Typified By</rdfs:label>
+        <rdfs:comment>A NomenclaturalType that typifies this name. An instance of NomenclaturalType that contains a type specimen or name for this name. See also note with NomenclaturalType class. See
+         also the typificationString property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:range rdf:resource="&tn;NomenclaturalType"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;typificationString"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/Base#definition -->
+
+    <owl:DatatypeProperty rdf:about="&tbase;definition"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/Common#abcdEquivalence -->
+
+    <owl:DatatypeProperty rdf:about="&tcom;abcdEquivalence"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/Common#berlinModelEquivalence -->
+
+    <owl:DatatypeProperty rdf:about="&tcom;berlinModelEquivalence"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/Common#darwinCoreEquivalence -->
+
+    <owl:DatatypeProperty rdf:about="&tcom;darwinCoreEquivalence"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/Common#tcsEquivalence -->
+
+    <owl:DatatypeProperty rdf:about="&tcom;tcsEquivalence"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#authorship -->
+
+    <owl:DatatypeProperty rdf:about="&tn;authorship">
+        <rdfs:label>Authorship</rdfs:label>
+        <rdfs:comment> The full author string used for this name. The full code-appropriate author team string for this name at this rank. Use this property for all names including both original
+         combinations and new combinations of bi and trinomial names (where some of the authors may be in brackets). If the TaxonName instance contains any details about authorship a representation of
+         them should be included in this property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;authorTeam"/>
+        <dc:relation rdf:resource="&tn;basionymAuthorship"/>
+        <dc:relation rdf:resource="&tn;combinationAuthorship"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#basionymAuthorship -->
+
+    <owl:DatatypeProperty rdf:about="&tn;basionymAuthorship">
+        <rdfs:label>Basionym Authorship</rdfs:label>
+        <rdfs:comment> A string representing the authors of the basionym of this name. This represents the authors of the basionym. It is the part of authorship that is typically included in brackets.
+         The brackets should be omitted. A year may be included as is common in citing names governed by the ICZN. This property is only used for names that are new combinations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="http://rs.tdwg.org/ontology/voc/authorship"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;authorTeam"/>
+        <dc:relation rdf:resource="&tn;combinationAuthorship"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#combinationAuthorship -->
+
+    <owl:DatatypeProperty rdf:about="&tn;combinationAuthorship">
+        <rdfs:label>Combination Authorship</rdfs:label>
+        <rdfs:comment> A string representing the authors of this combination of the name. This represents the authors of the new combination of this name. The authors who come after the brackets in the
+         traditional way of citing botanical names. These authors are not usually cited in zoology though the ICZN recommends that they should be included (Art.51G). A year may be included. See also
+         note under year property. This property is only used for names that are new combinations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="http://rs.tdwg.org/ontology/voc/authorship"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;authorTeam"/>
+        <dc:relation rdf:resource="&tn;basionymAuthorship"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#cultivarNameGroup -->
+
+    <owl:DatatypeProperty rdf:about="&tn;cultivarNameGroup">
+        <rdfs:label>Cultivar Name or Cultivar Group Name</rdfs:label>
+        <rdfs:comment> The cultivar or related name governed by ICNCP. The name of the Cultivar, Cultivar Group, grex, convar or graft chimera under the International Code for the Nomenclature of
+         Cultivated Plants. Only include here the string of the name. i.e. omit the single quotes around cultivar names, the word Group that denotes cultivar group and the + sign used in chimeras.
+         These symbols can be added in later on the basis of the rank of the name. For example the use of the word &#39;Group&#39; is language dependent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#genusPart -->
+
+    <owl:DatatypeProperty rdf:about="&tn;genusPart">
+        <rdfs:label>Genus Part</rdfs:label>
+        <rdfs:comment> The genus part of a bi or trinomial name. The name of the genus for names below the rank of genus. This property should not be used for names at and above the rank of genus. For
+         names at and above genus rank the uninomial property should be used.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#infragenericEpithet -->
+
+    <owl:DatatypeProperty rdf:about="&tn;infragenericEpithet">
+        <rdfs:label>Infrageneric Epithet</rdfs:label>
+        <rdfs:comment> The infrageneric part of a binomial name at ranks above species but below genus. Names at ranks between species and genus are composed of two words; the genus and this
+         infrageneric epithet. This property should therefore always be accompanied by the genusPart property. If the infragenericEpithet property is present the uninomial, infraspecificEpithet,
+         specificEpithet and subspecificEpithet properties should be absent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#infraspecificEpithet -->
+
+    <owl:DatatypeProperty rdf:about="&tn;infraspecificEpithet">
+        <rdfs:label>Infraspecific Epithet</rdfs:label>
+        <rdfs:comment> The infraspecific epithet part of a trinomial name below the rank of species. Names at ranks below species are composed of three words; the genus epithet, the specific epithet and
+         an infraspecific epithet. This property should therefore always be accompanied by the genusPart property and a specificEpithet property. If the specificEpithet property is present the
+         uninomial and infragenusPart properties should be absent. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#nameComplete -->
+
+    <owl:DatatypeProperty rdf:about="&tn;nameComplete">
+        <rdfs:label>Name Complete</rdfs:label>
+        <rdfs:comment> The complete uninomial, binomial or trinomial name without any authority or year components. Every TaxonName should have a DublinCore:title property that contains the complete
+         name string including authors and year (where appropriate).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#note -->
+
+    <owl:DatatypeProperty rdf:about="&tn;note">
+        <rdfs:label>Note</rdfs:label>
+        <rdfs:comment> The text of the nomenclatural note. Text describing the nomenclatural event/fact that is represented by this Nomenclatural Note. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalNote"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#rankString -->
+
+    <owl:DatatypeProperty rdf:about="&tn;rankString">
+        <rdfs:label>Rank String</rdfs:label>
+        <rdfs:comment>The taxonomic rank of this name as a string. A string representation of the rank of this name. It is highly recommended that the rank property be used along with this one unless
+         the correct rank is not available in the rank vocabulary.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;rank"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ruleConsidered -->
+
+    <owl:DatatypeProperty rdf:about="&tn;ruleConsidered">
+        <rdfs:label>Rule Considered</rdfs:label>
+        <rdfs:comment> The nomenclatural code rule considered. The article/note/recommendation in the code in question that is commented on in the note property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;NomenclaturalNote"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#specificEpithet -->
+
+    <owl:DatatypeProperty rdf:about="&tn;specificEpithet">
+        <rdfs:label>Specific Epithet</rdfs:label>
+        <rdfs:comment> The specific epithet part of a binomial or trinomial name at or below the rank of species. Names at ranks of species and below are composed of two or three words; the genus
+         epithet, the specific epithet and possibly an infraspecific epithet. This property should therefore always be accompanied by the genusPart property. If the specificEpithet property is present
+         the uninomial and infragenericEpithet properties should be absent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#typificationString -->
+
+    <owl:DatatypeProperty rdf:about="&tn;typificationString">
+        <rdfs:label>Typified String</rdfs:label>
+        <rdfs:comment>A string representing the typification of this name. See also the typifiedBy property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <dc:relation rdf:resource="&tn;typifiedBy"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#uninomial -->
+
+    <owl:DatatypeProperty rdf:about="&tn;uninomial">
+        <rdfs:label>Uninomial</rdfs:label>
+        <rdfs:comment> Family, genus, infrafamilial, suprafamilial or other uninomial name. This property should be used for any &#39;single word&#39; names. These include Family, genus, infrafamilial, and
+         suprafamilial names. Note that this property should be used for Genus names. The genus field should only be used for names below rank of genus. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#year -->
+
+    <owl:DatatypeProperty rdf:about="&tn;year">
+        <rdfs:label>Publication Year</rdfs:label>
+        <rdfs:comment> The year of publication of this name. This is the year this name was published. If it is a new combination of the name then it is the year of publication of the combination not
+         the basionym. It should be the same as the year given in the publishedIn property. In zoology the place of first publication of a new combination is rarely given as it is not considered a
+         nomenclatural act unless it leads to homonymy. For new combinations of names in zoology it may therefore be inappropriate to supply this property or the publishedIn, combintationAuthorship or
+         combintationAuthorTeam properties. The main role of this property is to aid disambiguation where author strings may be confusing. This property is not restricted to a date type as feedback
+         from TCS suggested that this restriction was inappropriate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <rdfs:domain rdf:resource="&tn;TaxonName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/Base#BaseThing -->
+
+    <owl:Class rdf:about="&tbase;BaseThing"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/Base#DefinedTerm -->
+
+    <owl:Class rdf:about="&tbase;DefinedTerm"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/Base#Name -->
+
+    <owl:Class rdf:about="&tbase;Name"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/Specimen#Specimen -->
+
+    <owl:Class rdf:about="&Specimen;Specimen"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#NomencalturalTypeTypeTerm -->
+
+    <owl:Class rdf:about="&tn;NomencalturalTypeTypeTerm"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#NomenclaturalCodeTerm -->
+
+    <owl:Class rdf:about="&tn;NomenclaturalCodeTerm">
+        <rdfs:label>Nomenclatural Code Term</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tbase;DefinedTerm"/>
+        <rdfs:comment> A class for which instances can be defined to create a controlled vocabulary for the nomenclatural codes. Equivalent to TCS NomenclaturalCodesEnum </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#NomenclaturalNote -->
+
+    <owl:Class rdf:about="&tn;NomenclaturalNote">
+        <rdfs:label>Nomenclatural Note</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tbase;BaseThing"/>
+        <rdfs:comment> A note on a Taxon Name. An object representing a comment or addition to a Taxon Name beyond it&#39;s original publication. Equivalent to TCS NomenclaturalNoteType </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#NomenclaturalNoteTypeTerm -->
+
+    <owl:Class rdf:about="&tn;NomenclaturalNoteTypeTerm">
+        <rdfs:label>Nomenclatural Note Type Term</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tbase;DefinedTerm"/>
+        <rdfs:comment> The different types of Nomenclatural Note. An object used to represent the different types of Nomenclatural Note. No direct equivalent in TCS but used to represents different
+         elements of type NomenclaturalNoteType. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#NomenclaturalType -->
+
+    <owl:Class rdf:about="&tn;NomenclaturalType">
+        <rdfs:label>Nomenclatural Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tbase;BaseThing"/>
+        <rdfs:comment>A type name or specimen. Typification can be complex to represent. On the one hand a type is a property of a TaxonName that is created at the time the name is published. But it
+         needs to exist as a structure so that the type of type can be indicated. On the other hand a type can be the result of a later typification event - almost like a nomenclatural note. This
+         object can therefore be used in two ways. It can be the target of the &#39;type&#39; property in a TaxonName object (in which case the typeOf property may be ommitted) or it can be used as a free
+         standing object with its own ID and the typeOf property used to indicate which TaxonName this is a type of - this is more likely scenario in a the case of a leptotypification event.
+         Equivalent to TCS ScientificName/Typification </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#NomenclaturalTypeTypeTerm -->
+
+    <owl:Class rdf:about="&tn;NomenclaturalTypeTypeTerm">
+        <rdfs:label>Nomenclatural Type Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tbase;DefinedTerm"/>
+        <rdfs:comment> A kind of nomenclatural type. Nomenclatural types can be of different kinds (or types) to indicate whether they are duplicates, replacements, related specimens etc. Instances of
+         this class describe kinds of nomenclatural types. Equivalent to TCS NomenclaturalTypeStatusOfUnitsEnum </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#TaxonName -->
+
+    <owl:Class rdf:about="&tn;TaxonName">
+        <rdfs:label>Taxon Name</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tbase;Name"/>
+        <rdfs:comment> A scientific biological name. An object that represents a single scientific biological name that either is governed by or appears to be governed by one of the biological codes of
+         nomenclature. These are not taxa. Taxa, whether accepted or not, are represented by TaxonConcept objects. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonRank#TaxonRankTerm -->
+
+    <owl:Class rdf:about="&TaxonRank;TaxonRankTerm"/>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/Team#Team -->
+
+    <owl:Class rdf:about="&Team;Team"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Allolectotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Allolectotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Allolectotype</rdfs:label>
+        <tbase:definition>A paralectotype specimen that is the opposite sex of the lectotype. The term is not regulated by the ICZN. [Zoo.]</tbase:definition>
+        <dc:title>Allolectotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Alloneotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Alloneotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Alloneotype</rdfs:label>
+        <dc:title>Alloneotype</dc:title>
+        <tbase:definition>A paraneotype specimen that is the opposite sex of the neotype. The term is not regulated by the ICZN. [Zoo.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Allotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Allotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Allotype</rdfs:label>
+        <dc:title>Allotype</dc:title>
+        <tbase:definition>A paratype specimen designated from the type series by the original author that is the opposite sex of the holotype. The term is not regulated by the ICZN.
+      [Zoo.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Bacteriological -->
+
+    <owl:NamedIndividual rdf:about="&tn;Bacteriological">
+        <rdf:type rdf:resource="&tn;NomenclaturalCodeTerm"/>
+        <rdfs:label>Bacteriological</rdfs:label>
+        <dc:title>Bacteriological</dc:title>
+        <tbase:definition>Rules that govern the naming of bacteria species</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#BasedOn -->
+
+    <owl:NamedIndividual rdf:about="&tn;BasedOn">
+        <rdf:type rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+        <rdfs:label>based on</rdfs:label>
+        <dc:title>based on</dc:title>
+        <tbase:definition> The current or subject name is the validation of a name that was not fully published before. Covers the use of ex in botanical author strings. ICBN Art. 46.4: e.g. if this
+         name object represents G. tomentosum Nutt. ex Seem. then the pointer should point to G. tomentosum Nutt. </tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ConservedAgainst -->
+
+    <owl:NamedIndividual rdf:about="&tn;ConservedAgainst">
+        <rdf:type rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+        <rdfs:label>conserved against</rdfs:label>
+        <tbase:definition> The current or subject name is conserved against the name pointed to. ICBN: Conservation is covered under Article 14 and Appendix II and Appendix III (this name is nomina
+         conservanda). ICZN: Conservation is covered under Article 23.9 (this name is nomen protectum and the target name is nomen oblitum) </tbase:definition>
+        <dc:title>conserved against</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Cotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Cotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Cotype</rdfs:label>
+        <tbase:definition>A deprecated term no longer recognized in the ICZN; formerly used for either syntype or paratype [see ICZN Recommendation 73E]. [Zoo.]</tbase:definition>
+        <dc:title>Cotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Epitype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Epitype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Epitype</rdfs:label>
+        <dc:title>Epitype</dc:title>
+        <tbase:definition>An epitype is a specimen or illustration selected to serve as an interpretative type when any kind of holotype, lectotype, etc. is demonstrably ambiguous and cannot be
+         critically identified for purposes of the precise application of the name of a taxon (see Art. ICBN 9.7, 9.18). An epitype supplements, rather than replaces existing types.
+      [Bot./Bio.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExEpitype -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExEpitype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Epitype</rdfs:label>
+        <dc:title>Ex-Epitype</dc:title>
+        <tbase:definition>A strain or cultivation derived from epitype material. Ex-types are not regulated by the botanical or zoological code. [Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExHolotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExHolotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Holotype</rdfs:label>
+        <dc:title>Ex-Holotype</dc:title>
+        <tbase:definition>A strain or cultivation derived from holotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExIsotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExIsotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Isotype</rdfs:label>
+        <dc:title>Ex-Isotype</dc:title>
+        <tbase:definition>A strain or cultivation derived from isotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExLectotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExLectotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Lectotype</rdfs:label>
+        <tbase:definition>A strain or cultivation derived from lectotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]</tbase:definition>
+        <dc:title>Ex-Lectotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExNeotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExNeotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Neotype</rdfs:label>
+        <tbase:definition>A strain or cultivation derived from neotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]</tbase:definition>
+        <dc:title>Ex-Neotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExParatype -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExParatype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Paratype</rdfs:label>
+        <dc:title>Ex-Paratype</dc:title>
+        <tbase:definition>A strain or cultivation derived from paratype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExSyntype -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExSyntype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Syntype</rdfs:label>
+        <dc:title>Ex-Syntype</dc:title>
+        <tbase:definition>A strain or cultivation derived from neotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ExType -->
+
+    <owl:NamedIndividual rdf:about="&tn;ExType">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Ex-Type</rdfs:label>
+        <dc:title>Ex-Type</dc:title>
+        <tbase:definition>A strain or cultivation derived from some kind of type material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Hapantotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Hapantotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Hapantotype</rdfs:label>
+        <tbase:definition>One or more preparations of directly related individuals representing distinct stages in the life cycle, which together form the type in an extant species of protistan [ICZN
+         Article 72.5.4]. A hapantotype, while a series of individuals, is a holotype that must not be restricted by lectotype selection. If an hapantotype is found to contain individuals of more than
+         one species, however, components may be excluded until it contains individuals of only one species [ICZN Article 73.3.2]. [Zoo.]</tbase:definition>
+        <dc:title>Hapantotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Holotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Holotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Holotype</rdfs:label>
+        <dc:title>Holotype</dc:title>
+        <tbase:definition>The one specimen or other element used or designated by the original author at the time of publication of the original description as the nomenclatural type of a species or
+         infraspecific taxon. A holotype may be &#39;explicit&#39; if it is clearly stated in the originating publication or &#39;implicit&#39; if it is the single specimen proved to have been in the hands of the
+         originating author when the description was published. [Zoo./Bot./Bio.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ICBN -->
+
+    <owl:NamedIndividual rdf:about="&tn;ICBN">
+        <rdf:type rdf:resource="&tn;NomenclaturalCodeTerm"/>
+        <rdfs:label>ICBN</rdfs:label>
+        <tbase:definition>International Code of Botanical Nomenclature</tbase:definition>
+        <dc:title>ICBN</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ICNCP -->
+
+    <owl:NamedIndividual rdf:about="&tn;ICNCP">
+        <rdf:type rdf:resource="&tn;NomenclaturalCodeTerm"/>
+        <rdfs:label>ICNCP</rdfs:label>
+        <tbase:definition>International Code of Cultivated Plants</tbase:definition>
+        <dc:title>ICNCP</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ICZN -->
+
+    <owl:NamedIndividual rdf:about="&tn;ICZN">
+        <rdf:type rdf:resource="&tn;NomenclaturalCodeTerm"/>
+        <rdfs:label>ICZN</rdfs:label>
+        <tbase:definition>International Code of Zoological Nomenclature</tbase:definition>
+        <dc:title>ICZN</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Iconotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Iconotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Iconotype</rdfs:label>
+        <dc:title>Iconotype</dc:title>
+        <tbase:definition>A drawing or photograph (also called &#39;phototype&#39;) of a type specimen. Note: the term &quot;iconotype&quot; is not used in the ICBN, but implicit in, e. g., ICBN Art. 7 and 38.
+         [Zoo./Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Isolectotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Isolectotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Isolectotype</rdfs:label>
+        <tbase:definition>A duplicate of a lectotype, compare lectotype. [Bot.]</tbase:definition>
+        <dc:title>Isolectotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Isoneotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Isoneotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Isoneotype</rdfs:label>
+        <dc:title>Isoneotype</dc:title>
+        <tbase:definition>A duplicate of a neotype, compare neotype. [Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Isosyntype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Isosyntype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Isosyntype</rdfs:label>
+        <dc:title>Isosyntype</dc:title>
+        <tbase:definition>A duplicate of a syntype, compare isotype = duplicate of holotype. [Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Isotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Isotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Isotype</rdfs:label>
+        <dc:title>Isotype</dc:title>
+        <tbase:definition>An isotype is any duplicate of the holotype (i. e. part of a single gathering made by a collector at one time, from which the holotype was derived); it is always a specimen
+         (ICBN Art. 7). [Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#LaterHomonymOf -->
+
+    <owl:NamedIndividual rdf:about="&tn;LaterHomonymOf">
+        <rdf:type rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+        <rdfs:label>later homonym of</rdfs:label>
+        <tbase:definition> Current or subject name has the same spelling as target name but was published later and has priority over it (unless conserved or sanctioned). See ICBN: Article 53, ICZN:
+         Chapter 12, Article 52. </tbase:definition>
+        <dc:title>later homonym of</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Lectotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Lectotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Lectotype</rdfs:label>
+        <tbase:definition>A specimen or other element designated subsequent to the publication of the original description from the original material (syntypes or paratypes) to serve as nomenclatural
+         type. Lectotype designation can occur only where no holotype was designated at the time of publication or if it is missing (ICBN Art. 7, ICZN Art. 74). [Zoo./Bot.] -- Note: the BioCode
+         defines lectotype as selection from holotype material in cases where the holotype material contains more than one taxon [Bio.].</tbase:definition>
+        <dc:title>Lectotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Neotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Neotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Neotype</rdfs:label>
+        <tbase:definition>A specimen designated as nomenclatural type subsequent to the publication of the original description in cases where the original holotype, lectotype, all paratypes and
+         syntypes are lost or destroyed, or suppressed by the (botanical or zoological) commission on nomenclature. In zoology also called &quot;Standard specimen&quot; or &quot;Representative specimen&quot;.
+         [Zoo./Bot./Bio.]</tbase:definition>
+        <dc:title>Neotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#NotAType -->
+
+    <owl:NamedIndividual rdf:about="&tn;NotAType">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>NotAType</rdfs:label>
+        <dc:title>NotAType</dc:title>
+        <tbase:definition>For specimens erroneously labelled as types an explicit negative statement may be desirable. [General]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Paralectotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Paralectotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Paralectotype</rdfs:label>
+        <tbase:definition>All of the specimens in the syntype series of a species or infraspecific taxon other than the lectotype itself. Also called &quot;lectoparatype&quot;. [Zoo.]</tbase:definition>
+        <dc:title>Paralectotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Paraneotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Paraneotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Paraneotype</rdfs:label>
+        <tbase:definition>All of the specimens in the syntype series of a species or infraspecific taxon other than the neotype itself. Also called &quot;neoparatype&quot;. [Zoo.]</tbase:definition>
+        <dc:title>Paraneotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Paratype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Paratype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Paratype</rdfs:label>
+        <tbase:definition>All of the specimens in the type series of a species or infraspecific taxon other than the holotype (and, in botany, isotypes). Paratypes must have been at the disposition of
+         the author at the time when the original description was created and must have been designated and indicated in the publication. Judgment must be exercised on paratype status, for only rarely
+         are specimens explicitly cited as paratypes, but usually as &quot;specimens examined,&quot; &quot;other material seen&quot;, etc. [Zoo./Bot.]</tbase:definition>
+        <dc:title>Paratype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Plastoholotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Plastoholotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Plastoholotype</rdfs:label>
+        <tbase:definition>A copy or cast of holotype material (compare Plastotype).</tbase:definition>
+        <dc:title>Plastoholotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Plastoisotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Plastoisotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Plastoisotype</rdfs:label>
+        <dc:title>Plastoisotype</dc:title>
+        <tbase:definition>A copy or cast of isotype material (compare Plastotype).</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Plastolectotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Plastolectotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Plastolectotype</rdfs:label>
+        <tbase:definition>A copy or cast of lectotype material (compare Plastotype).</tbase:definition>
+        <dc:title>Plastolectotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Plastoneotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Plastoneotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Plastoneotype</rdfs:label>
+        <tbase:definition>A copy or cast of neotype material (compare Plastotype).</tbase:definition>
+        <dc:title>Plastoneotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Plastoparatype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Plastoparatype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Plastoparatype</rdfs:label>
+        <tbase:definition>A copy or cast of paratype material (compare Plastotype).</tbase:definition>
+        <dc:title>Plastoparatype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Plastosyntype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Plastosyntype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Plastosyntype</rdfs:label>
+        <tbase:definition>A copy or cast of syntype material (compare Plastotype).</tbase:definition>
+        <dc:title>Plastosyntype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Plastotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Plastotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Plastotype</rdfs:label>
+        <tbase:definition>A copy or cast of type material, esp. relevant for fossil types. Not regulated by the botanical or zoological code (?). [Zoo./Bot.]</tbase:definition>
+        <dc:title>Plastotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#PublicationStatus -->
+
+    <owl:NamedIndividual rdf:about="&tn;PublicationStatus">
+        <rdf:type rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+        <rdfs:label>publication status</rdfs:label>
+        <dc:title>publication status</dc:title>
+        <tbase:definition> Note concerning the nomenclatural status of the name. e.g. whether it is validly published or not. THIS SHOULD NOT BE USED TO IMPLY WHETHER THE NAME IS CONSIDERED TO REPRESENT
+         AN ACCEPTED TAXON. An accepted taxon can only be represented as a TaxonConcept. </tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#ReplacementNameFor -->
+
+    <owl:NamedIndividual rdf:about="&tn;ReplacementNameFor">
+        <rdf:type rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+        <rdfs:label>replacement name for</rdfs:label>
+        <dc:title>replacement name for</dc:title>
+        <tbase:definition> Current or subject name is replacement for target name. Also called &#39;Nomen Novum&#39; or &#39;avowed substitute&#39; ICBN: Article 7.3 ICZN: Article
+         60.3. </tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Sanctioned -->
+
+    <owl:NamedIndividual rdf:about="&tn;Sanctioned">
+        <rdf:type rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+        <rdfs:label>sanctioned</rdfs:label>
+        <tbase:definition> With reference to fungi. ICBN: Articles 13.1d and 15. ICZN: No equivalent term for animals </tbase:definition>
+        <dc:title>sanctioned</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#SecondaryType -->
+
+    <owl:NamedIndividual rdf:about="&tn;SecondaryType">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Secondary Type</rdfs:label>
+        <dc:title>Secondary Type</dc:title>
+        <tbase:definition>A referred, described, measured or figured specimen in the original publication (including a neo/lectotypification publication) that is not a primary type. [Zoo.]
+      </tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#SpellingCorrection -->
+
+    <owl:NamedIndividual rdf:about="&tn;SpellingCorrection">
+        <rdf:type rdf:resource="&tn;NomenclaturalNoteTypeTerm"/>
+        <rdfs:label>spelling correction</rdfs:label>
+        <dc:title>spelling correction</dc:title>
+        <tbase:definition> The current or subject name is a spelling correction of the name that is pointed to. </tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#SupplementaryType -->
+
+    <owl:NamedIndividual rdf:about="&tn;SupplementaryType">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Supplementary Type</rdfs:label>
+        <tbase:definition>A referred, described, measured or figured specimen in a revision of a previously described taxon. [Zoo.]</tbase:definition>
+        <dc:title>Supplementary Type</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Syntype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Syntype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Syntype</rdfs:label>
+        <dc:title>Syntype</dc:title>
+        <tbase:definition>One of the series of specimens used to describe a species or infraspecific taxon when neither a single holotype nor a lectotype has been designated. The syntypes collectively
+         constitute the name-bearing type. [Zoo./Bot.]</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#TaxonName -->
+
+    <owl:NamedIndividual rdf:about="&tn;TaxonName">
+        <rdfs:label>Taxon Name</rdfs:label>
+        <tcom:darwinCoreEquivalence>ScientificName (as string only)</tcom:darwinCoreEquivalence>
+        <tcom:berlinModelEquivalence>Name table</tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence>ScientificName complexType</tcom:abcdEquivalence>
+        <tcom:tcsEquivalence>ScientificName complexType</tcom:tcsEquivalence>
+        <rdfs:comment> A scientific biological name. An object that represents a single scientific biological name that either is governed by or appears to be governed by one of the biological codes of
+         nomenclature. These are not taxa. Taxa, whether accepted or not, are represented by TaxonConcept objects. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Topotype -->
+
+    <owl:NamedIndividual rdf:about="&tn;Topotype">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Topotype</rdfs:label>
+        <tbase:definition>One or more specimens collected at the same location as the type series (type locality), regardless of whether they are part of the type series. Topotypes are not regulated by
+         the botanical or zoological code. Also called &quot;locotype&quot;. [Zoo./Bot.]</tbase:definition>
+        <dc:title>Topotype</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Type -->
+
+    <owl:NamedIndividual rdf:about="&tn;Type">
+        <rdf:type rdf:resource="&tn;NomenclaturalTypeTypeTerm"/>
+        <rdfs:label>Type</rdfs:label>
+        <tbase:definition>a) A specimen designated or indicated any kind of type of a species or infraspecific taxon. If possible more specific type terms (holotype, syntype, etc.) should be applied. b)
+         the type name of a name of higher rank for taxa above the species rank. [General]</tbase:definition>
+        <dc:title>Type</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#Viral -->
+
+    <owl:NamedIndividual rdf:about="&tn;Viral">
+        <rdf:type rdf:resource="&tn;NomenclaturalCodeTerm"/>
+        <rdfs:label>Viral</rdfs:label>
+        <dc:title>Viral</dc:title>
+        <tbase:definition>Rules that govern the names of viral species</tbase:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#authorTeam -->
+
+    <owl:NamedIndividual rdf:about="&tn;authorTeam">
+        <rdfs:label>Author Team</rdfs:label>
+        <tcom:berlinModelEquivalence>Name:AuthorTeamFk and Name:BasAuthorTeamFk </tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence> No equivalent of an author team break down. </tcom:abcdEquivalence>
+        <rdfs:comment>A breakdown of the authors who published this name including both basionym and combination authors (if any).</rdfs:comment>
+        <tcom:tcsEquivalence>ScientificName/CanonicalAuthorship/</tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="http://rs.tdwg.org/ontology/voc/authorship"/>
+        <dc:relation rdf:resource="&tn;basionymAuthorship"/>
+        <dc:relation rdf:resource="&tn;combinationAuthorship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#authorship -->
+
+    <owl:NamedIndividual rdf:about="&tn;authorship">
+        <rdfs:label>Authorship</rdfs:label>
+        <tcom:berlinModelEquivalence>Name:AuthorTeamFk -&gt; AuthorTeam::AuthorTeamCache</tcom:berlinModelEquivalence>
+        <rdfs:comment> The full author string used for this name. The full code-appropriate author team string for this name at this rank. Use this property for all names including both original
+         combinations and new combinations of bi and trinomial names (where some of the authors may be in brackets). If the TaxonName instance contains any details about authorship a representation of
+         them should be included in this property.</rdfs:comment>
+        <tcom:darwinCoreEquivalence>AuthorYearOfScientificName</tcom:darwinCoreEquivalence>
+        <tcom:abcdEquivalence> ScientificName/NameAtomised/Bacterial/AuthorTeamAndYear or ScientificName/NameAtomised/Botanical/AuthorTeam (FIXME: Does this include the AuthorTeamParenthesis?) or
+         [ScientificName/NameAtomised/Zoological/AuthorTeamOriginalAndYear and ScientificName/NameAtomised/Zoological/AuthorTeamParenthesisAndYear and
+         ScientificName/NameAtomised/Zoological/CombinationAuthorTeamAndYear (FIXME: need clarification as to which of these occur))] </tcom:abcdEquivalence>
+        <tcom:tcsEquivalence>ScientificName/CanonicalAuthorship/Simple</tcom:tcsEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="&tn;authorTeam"/>
+        <dc:relation rdf:resource="&tn;basionymAuthorship"/>
+        <dc:relation rdf:resource="&tn;combinationAuthorship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#basionymAuthorship -->
+
+    <owl:NamedIndividual rdf:about="&tn;basionymAuthorship">
+        <rdfs:label>Basionym Authorship</rdfs:label>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <rdfs:comment> A string representing the authors of the basionym of this name. This represents the authors of the basionym. It is the part of authorship that is typically included in brackets.
+         The brackets should be omitted. A year may be included as is common in citing names governed by the ICZN. This property is only used for names that are new combinations.</rdfs:comment>
+        <tcom:berlinModelEquivalence>Name:BasAuthorTeamFk -&gt; AuthorTeam::AuthorTeamCache</tcom:berlinModelEquivalence>
+        <tcom:tcsEquivalence>ScientificName/CanonicalAuthorship/BasionymAuthorship/Simple</tcom:tcsEquivalence>
+        <tcom:abcdEquivalence> ScientificName/NameAtomised/Botanical/AuthorTeamParenthesis or ScientificName/NameAtomised/Zoological/AuthorTeamParenthesisAndYear </tcom:abcdEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="http://rs.tdwg.org/ontology/voc/authorship"/>
+        <dc:relation rdf:resource="&tn;authorTeam"/>
+        <dc:relation rdf:resource="&tn;combinationAuthorship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#basionymFor -->
+
+    <owl:NamedIndividual rdf:about="&tn;basionymFor">
+        <rdfs:label>Basionym For</rdfs:label>
+        <tcom:berlinModelEquivalence>No direct equivalent. May be indicated in RelName table.</tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence>No equivalent</tcom:abcdEquivalence>
+        <tcom:tcsEquivalence>No equivalent in TCS but is inverse of ScientificName/Basionym </tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <rdfs:comment> Relationship between a basionym and a new combination of the name. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#combinationAuthorship -->
+
+    <owl:NamedIndividual rdf:about="&tn;combinationAuthorship">
+        <rdfs:label>Combination Authorship</rdfs:label>
+        <rdfs:comment> A string representing the authors of this combination of the name. This represents the authors of the new combination of this name. The authors who come after the brackets in the
+         traditional way of citing botanical names. These authors are not usually cited in zoology though the ICZN recommends that they should be included (Art.51G). A year may be included. See also
+         note under year property. This property is only used for names that are new combinations.</rdfs:comment>
+        <tcom:tcsEquivalence>ScientificName/CanonicalAuthorship/CombinationAuthorship/Simple</tcom:tcsEquivalence>
+        <tcom:berlinModelEquivalence>Name:AuthorTeamFk -&gt; AuthorTeam::AuthorTeamCache (only when Name:BasAuthorTeamFk is present?)</tcom:berlinModelEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <tcom:abcdEquivalence> ScientificName/NameAtomised/Botanical/AuthorTeam (when AuthorTeamParenthesis present?) ScientificName/NameAtomised/Zoological/CombinationAuthorTeamAndYear </tcom:abcdEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="http://rs.tdwg.org/ontology/voc/authorship"/>
+        <dc:relation rdf:resource="&tn;authorTeam"/>
+        <dc:relation rdf:resource="&tn;basionymAuthorship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#cultivarNameGroup -->
+
+    <owl:NamedIndividual rdf:about="&tn;cultivarNameGroup">
+        <rdfs:label>Cultivar Name or Cultivar Group Name</rdfs:label>
+        <rdfs:comment> The cultivar or related name governed by ICNCP. The name of the Cultivar, Cultivar Group, grex, convar or graft chimera under the International Code for the Nomenclature of
+         Cultivated Plants. Only include here the string of the name. i.e. omit the single quotes around cultivar names, the word Group that denotes cultivar group and the + sign used in chimeras.
+         These symbols can be added in later on the basis of the rank of the name. For example the use of the word &#39;Group&#39; is language dependent.</rdfs:comment>
+        <tcom:berlinModelEquivalence>Name::CultivarGroupName and Name::CultivarName</tcom:berlinModelEquivalence>
+        <tcom:tcsEquivalence>ScientificName/CanonicalName/CultivarNameGroup</tcom:tcsEquivalence>
+        <tcom:abcdEquivalence> ScientificName/NameAtomised/Botanical/CultivarGroupName and ScientificName/NameAtomised/Botanical/CultivarName </tcom:abcdEquivalence>
+        <tcom:darwinCoreEquivalence>InfraspecificEpithet</tcom:darwinCoreEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#genusPart -->
+
+    <owl:NamedIndividual rdf:about="&tn;genusPart">
+        <rdfs:label>Genus Part</rdfs:label>
+        <tcom:berlinModelEquivalence>Name::Genus</tcom:berlinModelEquivalence>
+        <rdfs:comment> The genus part of a bi or trinomial name. The name of the genus for names below the rank of genus. This property should not be used for names at and above the rank of genus. For
+         names at and above genus rank the uninomial property should be used.</rdfs:comment>
+        <tcom:tcsEquivalence>ScientificName/CanonicalName/Genus</tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>Genus (though this is used of taxonomic placement in DwC)</tcom:darwinCoreEquivalence>
+        <tcom:abcdEquivalence>ScientificName/NameAtomised/*/GenusOrMonomial (but only when representing a genus name) </tcom:abcdEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#hasAnnotation -->
+
+    <owl:NamedIndividual rdf:about="&tn;hasAnnotation">
+        <rdfs:label>Has Annotation</rdfs:label>
+        <tcom:berlinModelEquivalence>RelName, NomStatus and NomStatusRel tables</tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence>No equivalent</tcom:abcdEquivalence>
+        <tcom:tcsEquivalence>complexType NomenclaturalNoteType</tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <rdfs:comment> Association between a name and the notes that it may have. Often notes relate to other names such as replacement names.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#hasBasionym -->
+
+    <owl:NamedIndividual rdf:about="&tn;hasBasionym">
+        <rdfs:label>Has Basionym</rdfs:label>
+        <tcom:abcdEquivalence>No equivalent</tcom:abcdEquivalence>
+        <tcom:berlinModelEquivalence>No direct equivalent. May be indicated in RelName table.</tcom:berlinModelEquivalence>
+        <tcom:tcsEquivalence>ScientificName/Basionym</tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <rdfs:comment> The basionym of this name if it is a new combination. The current name is a recombination (comb. nov.) of the name pointed to and the name pointed to is not, itself, a
+         recombination.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#infragenericEpithet -->
+
+    <owl:NamedIndividual rdf:about="&tn;infragenericEpithet">
+        <rdfs:label>Infrageneric Epithet</rdfs:label>
+        <tcom:abcdEquivalence>ScientificName/NameAtomised/botanical/FirstEpithet (but not in names at rank of species and below) or ScientificName/NameAtomised/Zoological/Subgenus or
+         ScientificName/NameAtomised/Bacterial/Subgenus </tcom:abcdEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <tcom:tcsEquivalence>ScientificName/CanonicalName/InfragenericEpithet</tcom:tcsEquivalence>
+        <tcom:berlinModelEquivalence>Name::GenusSubdivisionEpi</tcom:berlinModelEquivalence>
+        <rdfs:comment> The infrageneric part of a binomial name at ranks above species but below genus. Names at ranks between species and genus are composed of two words; the genus and this
+         infrageneric epithet. This property should therefore always be accompanied by the genusPart property. If the infragenericEpithet property is present the uninomial, infraspecificEpithet,
+         specificEpithet and subspecificEpithet properties should be absent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#infraspecificEpithet -->
+
+    <owl:NamedIndividual rdf:about="&tn;infraspecificEpithet">
+        <rdfs:label>Infraspecific Epithet</rdfs:label>
+        <tcom:berlinModelEquivalence>Name::InfraSpeciesEpi</tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence> ScientificName/NameAtomised/Bacterial/SubspeciesEpithet or ScientificName/NameAtomised/Botanical/InfraspecificEpithet or
+         ScientificName/NameAtomised/Zoological/SubSpeciesEpithet</tcom:abcdEquivalence>
+        <tcom:darwinCoreEquivalence>InfraspecificEpithet</tcom:darwinCoreEquivalence>
+        <rdfs:comment> The infraspecific epithet part of a trinomial name below the rank of species. Names at ranks below species are composed of three words; the genus epithet, the specific epithet and
+         an infraspecific epithet. This property should therefore always be accompanied by the genusPart property and a specificEpithet property. If the specificEpithet property is present the
+         uninomial and infragenusPart properties should be absent. </rdfs:comment>
+        <tcom:tcsEquivalence>ScientificName/CanonicalName/InfraspecificEpithet</tcom:tcsEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#nameComplete -->
+
+    <owl:NamedIndividual rdf:about="&tn;nameComplete">
+        <rdfs:label>Name Complete</rdfs:label>
+        <rdfs:comment> The complete uninomial, binomial or trinomial name without any authority or year components. Every TaxonName should have a DublinCore:title property that contains the complete
+         name string including authors and year (where appropriate).</rdfs:comment>
+        <tcom:berlinModelEquivalence>Name::FullNameCache</tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence>ScientificName/FullScientificNameString</tcom:abcdEquivalence>
+        <tcom:tcsEquivalence>ScientificName/CanonicalName/Simple</tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>ScientificName</tcom:darwinCoreEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#nomenclaturalCode -->
+
+    <owl:NamedIndividual rdf:about="&tn;nomenclaturalCode">
+        <rdfs:label>Nomenclatural Code</rdfs:label>
+        <rdfs:comment> The nomenclatural code that governs this name. By definition all taxon names are governed by one of the codes of nomenclature. These include ICBN, ICZN, ICNCP and others.</rdfs:comment>
+        <tcom:darwinCoreEquivalence>Indicated by Kingdom field</tcom:darwinCoreEquivalence>
+        <tcom:tcsEquivalence>ScientificName@nomenclaturalCode</tcom:tcsEquivalence>
+        <tcom:berlinModelEquivalence>No equivalent</tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence>Indicated by whether bacterial, botanical, zoological or viral name constructs are used.</tcom:abcdEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#rank -->
+
+    <owl:NamedIndividual rdf:about="&tn;rank">
+        <rdfs:label>Rank</rdfs:label>
+        <tcom:abcdEquivalence>No equivalent??</tcom:abcdEquivalence>
+        <tcom:tcsEquivalence>ScientificName/Rank/@code</tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>No direct equivalent but see rankString</tcom:darwinCoreEquivalence>
+        <rdfs:comment>The taxonomic rank of this name. This is a link to an instance of TaxonomicRank. Compare with the rankString property.</rdfs:comment>
+        <tcom:berlinModelEquivalence>Name::RankFk</tcom:berlinModelEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="&tn;rankString"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#rankString -->
+
+    <owl:NamedIndividual rdf:about="&tn;rankString">
+        <rdfs:label>Rank String</rdfs:label>
+        <tcom:tcsEquivalence>ScientificName/Rank</tcom:tcsEquivalence>
+        <tcom:berlinModelEquivalence>Name::RankFk -&gt; Rank::Rank</tcom:berlinModelEquivalence>
+        <tcom:darwinCoreEquivalence>Only below species with InfraspecificRank</tcom:darwinCoreEquivalence>
+        <tcom:abcdEquivalence>No equivalent??</tcom:abcdEquivalence>
+        <rdfs:comment>The taxonomic rank of this name as a string. A string representation of the rank of this name. It is highly recommended that the rank property be used along with this one unless
+         the correct rank is not available in the rank vocabulary.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="&tn;rank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#specificEpithet -->
+
+    <owl:NamedIndividual rdf:about="&tn;specificEpithet">
+        <rdfs:label>Specific Epithet</rdfs:label>
+        <tcom:tcsEquivalence>ScientificName/CanonicalName/SpecificEpithet</tcom:tcsEquivalence>
+        <tcom:berlinModelEquivalence>Name::SpeciesEpi</tcom:berlinModelEquivalence>
+        <tcom:darwinCoreEquivalence>SpecificEpithet</tcom:darwinCoreEquivalence>
+        <tcom:abcdEquivalence>ScientificName/NameAtomised/botanical/FirstEpithet (but not in names above the rank of species) or ScientificName/NameAtomised/Zoological/SpeciesEpithet or
+         ScientificName/NameAtomised/Bacterial/SpeciesEpithet or ScientificName/NameAtomised/Viral/ViralSpeciesDesignation </tcom:abcdEquivalence>
+        <rdfs:comment> The specific epithet part of a binomial or trinomial name at or below the rank of species. Names at ranks of species and below are composed of two or three words; the genus
+         epithet, the specific epithet and possibly an infraspecific epithet. This property should therefore always be accompanied by the genusPart property. If the specificEpithet property is present
+         the uninomial and infragenericEpithet properties should be absent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#typificationString -->
+
+    <owl:NamedIndividual rdf:about="&tn;typificationString">
+        <rdfs:label>Typified String</rdfs:label>
+        <tcom:tcsEquivalence>ScientificName/Typification/Simple</tcom:tcsEquivalence>
+        <tcom:abcdEquivalence>NomenclaturalTypeDesignations/NomenclaturalTypeDesignation/TypeStatus</tcom:abcdEquivalence>
+        <rdfs:comment>A string representing the typification of this name. See also the typifiedBy property.</rdfs:comment>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <tcom:berlinModelEquivalence>No equivalent other than through Facts tables?</tcom:berlinModelEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="&tn;typifiedBy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#typifiedBy -->
+
+    <owl:NamedIndividual rdf:about="&tn;typifiedBy">
+        <rdfs:label>Typified By</rdfs:label>
+        <tcom:abcdEquivalence>NomenclaturalTypeDesignations/NomenclaturalTypeDesignation</tcom:abcdEquivalence>
+        <tcom:berlinModelEquivalence>No equivalent other than through Facts tables?</tcom:berlinModelEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent</tcom:darwinCoreEquivalence>
+        <tcom:tcsEquivalence>ScientificName/Typification</tcom:tcsEquivalence>
+        <rdfs:comment>A NomenclaturalType that typifies this name. An instance of NomenclaturalType that contains a type specimen or name for this name. See also note with NomenclaturalType class. See
+         also the typificationString property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+        <dc:relation rdf:resource="&tn;typificationString"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#uninomial -->
+
+    <owl:NamedIndividual rdf:about="&tn;uninomial">
+        <rdfs:label>Uninomial</rdfs:label>
+        <rdfs:comment> Family, genus, infrafamilial, suprafamilial or other uninomial name. This property should be used for any &#39;single word&#39; names. These include Family, genus, infrafamilial, and
+         suprafamilial names. Note that this property should be used for Genus names. The genus field should only be used for names below rank of genus. </rdfs:comment>
+        <tcom:tcsEquivalence>ScientificName/CanonicalName/Uninomial</tcom:tcsEquivalence>
+        <tcom:berlinModelEquivalence>Name::SupragenericName (but not used for names at the rank of Genus)</tcom:berlinModelEquivalence>
+        <tcom:darwinCoreEquivalence>ScientificName</tcom:darwinCoreEquivalence>
+        <tcom:abcdEquivalence>ScientificName/NameAtomised/*/GenusOrMonomial (but only when NOT representing a genus name)</tcom:abcdEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rs.tdwg.org/ontology/voc/TaxonName#year -->
+
+    <owl:NamedIndividual rdf:about="&tn;year">
+        <rdfs:label>Publication Year</rdfs:label>
+        <tcom:berlinModelEquivalence>No equivalent other than through publication.</tcom:berlinModelEquivalence>
+        <tcom:abcdEquivalence>No equivalent.</tcom:abcdEquivalence>
+        <rdfs:comment> The year of publication of this name. This is the year this name was published. If it is a new combination of the name then it is the year of publication of the combination not
+         the basionym. It should be the same as the year given in the publishedIn property. In zoology the place of first publication of a new combination is rarely given as it is not considered a
+         nomenclatural act unless it leads to homonymy. For new combinations of names in zoology it may therefore be inappropriate to supply this property or the publishedIn, combintationAuthorship or
+         combintationAuthorTeam properties. The main role of this property is to aid disambiguation where author strings may be confusing. This property is not restricted to a date type as feedback
+         from TCS suggested that this restriction was inappropriate.</rdfs:comment>
+        <tcom:tcsEquivalence>ScientificName/Year</tcom:tcsEquivalence>
+        <tcom:darwinCoreEquivalence>No equivalent.</tcom:darwinCoreEquivalence>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonName"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+
