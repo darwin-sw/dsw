@@ -141,7 +141,7 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:comment>Was georeferenceByURI; suggested domain: </rdfs:comment>
         <rdfs:domain rdf:resource="&dcterms;Location"/>
-        <rdfs:range rdf:resource="&foaf;0.1/Person"/>
+        <rdfs:range rdf:resource="&foaf;0.1/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -210,7 +210,7 @@
         <rdfs:comment>was dsw:identificationByURI</rdfs:comment>
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
-        <rdfs:range rdf:resource="&foaf;0.1/Person"/>
+        <rdfs:range rdf:resource="&foaf;0.1/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -279,7 +279,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/recBy">
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
-        <rdfs:range rdf:resource="&foaf;0.1/Person"/>
+        <rdfs:range rdf:resource="&foaf;0.1/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -363,7 +363,7 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
     </owl:Class>
     
 
@@ -385,7 +385,7 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
     </owl:Class>
     
 
@@ -414,7 +414,7 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
     </owl:Class>
     
 
@@ -435,7 +435,7 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
     </owl:Class>
     
 
@@ -447,7 +447,7 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
     </owl:Class>
     
 
@@ -458,7 +458,7 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
     </owl:Class>
     
 
@@ -468,7 +468,7 @@
     <owl:Class rdf:about="&dwc;Occurrence">
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
     </owl:Class>
     
 
@@ -478,7 +478,7 @@
     <owl:Class rdf:about="&dwc;Taxon">
         <owl:equivalentClass rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;0.1/Document"/>
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
         <rdfs:comment>A taxon concept class (name plus accordingTo), declared equivalent to: http://rs.tdwg.org/ontology/voc/TaxonConcept#Taxon, and equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/)</rdfs:comment>
     </owl:Class>
     
@@ -499,15 +499,15 @@
     <!-- http://xmlns.com/foaf/0.1/Document -->
 
     <owl:Class rdf:about="&foaf;0.1/Document">
-        <owl:disjointWith rdf:resource="&foaf;0.1/Person"/>
+        <owl:disjointWith rdf:resource="&foaf;0.1/Agent"/>
         <rdfs:comment>See also http://purl.org/ontology/bibo/Document</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://xmlns.com/foaf/0.1/Person -->
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
 
-    <owl:Class rdf:about="&foaf;0.1/Person"/>
+    <owl:Class rdf:about="&foaf;0.1/Agent"/>
 </rdf:RDF>
 
 
