@@ -16,7 +16,7 @@ The Occurrence class is perhaps the most difficult to define of any of the class
 
 ==Scope of Occurrence==
 
-Part of the confusion about the meaning of "an occurrence" stems from the historical use of the term to refer both to a primary unit of data gathering (i.e. that an individual of a taxon occurred at a particular time and place) and also to the result of modeling (i.e. we know from aggregate records that a taxon occurs or even occurred, in a particular geographic area).^1^  This second use has been referred to as the "checklist" use of occurrence^2^ (i.e. indicating the presence of a taxon in an area on a list of taxa present) and is different enough from the first type of use that it has actually been described as a separate class: "Distribution".^3^  However, it has been pointed out^4^ that the "checklist" use of Occurrence is actually related to the first use if the relationship
+Part of the confusion about the meaning of "an occurrence" stems from the historical use of the term to refer both to a primary unit of data gathering (i.e. that an individual of a taxon occurred at a particular time and place) and also to the result of modeling (i.e. we know from aggregate records that a taxon occurs or ever occurred, in a particular geographic area).^1^  This second use has been referred to as the "checklist" use of occurrence^2^ (i.e. indicating the presence of a taxon in an area on a list of taxa present) and is different enough from the first type of use that it has actually been described as a separate class: "Distribution".^3^  However, it has been pointed out^4^ that the "checklist" use of Occurrence is actually related to the first use if the relationship
 {{{
 TaxonConcept <--> Occurrence <--> Event <--> Location
 }}}
