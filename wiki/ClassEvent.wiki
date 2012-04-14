@@ -1,7 +1,7 @@
 #summary The Event class
 
 = The Event class =
-Although it is possible to assign separate space/time coordinates (i.e. time, latitude, and longitude) to each Occurrence, some users may prefer to group multiple Occurrences within a single Event.^1^  Likewise, several Events can occur at one defined Location at different times.  Thus the Event class functions primarily as a node to connect one or  more Occurrences to a Location and one or more Events at a Location.^2^  
+Although it is possible to assign separate space/time coordinates (i.e. time, latitude, and longitude) to each Occurrence, some users may prefer to group multiple Occurrences within a single Event.^1^  Likewise, several Events can occur at one defined Location at different times.  Thus the Event class functions primarily as a node to connect one or  more Occurrences to an Event, and one or more Events at a Location.^2^  
 
 Because the Event class represents a "join" between other classes, it is difficult to define exactly what it represents conceptually.^3^ At a minimum, an Event represents time and Location information, but it also implies some act (e.g. collecting, photographing, etc.) so metadata related to the methodology (e.g. sampling method, effort, etc.) can be included as properties of the event.^4^ ^5^  The origin of the concept of Event as embodied in DwC can probably be traced back to the Association of Systematics Collections (ASC) model.^6^ ^7^
 
