@@ -23,7 +23,7 @@
         <tc:accordingTo rdf:resource="http://someplace.org/reference/12345" />
         -->
         
-        <!-- Note: the following properties are based on terms listed within the Taxon class of 
+        <!--  Note: the following properties are based on terms listed within the Taxon class of 
         the DwC standard.  Whether they are appropriately applied as properties of instances of the 
         Taxon class of DSW (vs. the tn:TaxonName class) remains to be see.  They are used as properties
         here because they are a convenient way to provide "atomized" parts of the name without requiring 
