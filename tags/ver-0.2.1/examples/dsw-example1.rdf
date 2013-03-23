@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this file can also be found at:
+     http://phylodiversity.net/dsw/examples/dsw-example1.rdf -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dsw="http://purl.org/dsw/" xmlns:mrtg="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+  <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/uncg/966">
+    <rdf:type rdf:resource="http://purl.org/dsw/IndividualOrganism"/>
+    <rdf:type rdf:resource="http://purl.org/dsw/LivingSpecimen"/>
+    <mrtg:metadataLanguage>en</mrtg:metadataLanguage>
+
+    <!--Basic information about the individual-->
+    <dcterms:identifier>http://bioimages.vanderbilt.edu/uncg/966</dcterms:identifier>
+    <dcterms:description>Field individual of Quercus falcata Michx. with GUID: http://bioimages.vanderbilt.edu/uncg/966</dcterms:description>
+    <dsw:individualOrganismRemarks>Tag #966.</dsw:individualOrganismRemarks>
+    <!-- It is not clear exactly what establishmentMeans should be a property of.  Some say dwc:Occurrence rather than an IndividualOrganism -->
+    <dwc:establishmentMeans>native</dwc:establishmentMeans>
+
+    <!-- Properties that the tree has by virtue of being a LivingSpecimen at University of North Carolina at Greensboro Arboretum  -->
+    <dwc:collectionID rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35269"/>
+    <dwc:collectionCode>uncg</dwc:collectionCode>
+    <dwc:catalogNumber>966</dwc:catalogNumber>
+
+    <!-- Relationships of the individual to other resources.  -->
+    <foaf:isPrimaryTopicOf rdf:resource="http://bioimages.vanderbilt.edu/uncg/966.rdf"/>
+    <foaf:isPrimaryTopicOf rdf:resource="http://bioimages.vanderbilt.edu/uncg/966.htm"/>
+    <!-- Images that are derived from the individual -->
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2447"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2450"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2451"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2456"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2457"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2458"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2459"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2461"/>
+    <foaf:depiction rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2463"/>
+
+    <!-- Documented Occurrences of the individual -->
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2447#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2450#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2451#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2456#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2457#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2458#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2459#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2461#occ"/>
+    <dsw:hasOccurrence rdf:resource="http://bioimages.vanderbilt.edu/kirchoff/em2463#occ"/>
+
+    <!-- Identifications applied to the individual-->
+    <dsw:hasIdentification>
+      <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/uncg/966#2010-11-19weakleya">
+        <dcterms:description>Determination of Quercus falcata Michx. sensu Weakley 2010 for the individual http://bioimages.vanderbilt.edu/uncg/966</dcterms:description>
+        <rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Identification"/>
+        <!-- In lieu of stable external identifiers for taxon concepts, I'm defining some onsite -->
+        <dsw:toTaxon rdf:resource="http://bioimages.vanderbilt.edu/taxonconcepts#19277-weakley2010"/>
+
+        <dwc:identifiedBy>Alan S. Weakley</dwc:identifiedBy>
+        <dsw:idBy rdf:resource="http://bioimages.vanderbilt.edu/contact/uri#weakleya"/>
+        <dwc:dateIdentified>2010-11-19</dwc:dateIdentified>
+
+        <!-- These terms probably aren't really properties of dwc:Identification, but it's convenient to put them here -->
+        <dwc:class>Magnoliopsida</dwc:class>
+        <dwc:order>Fagales</dwc:order>
+        <dwc:family>Fagaceae</dwc:family>
+        <dwc:genus>Quercus</dwc:genus>
+        <dwc:specificEpithet>falcata</dwc:specificEpithet>
+        <dwc:taxonRank>species</dwc:taxonRank>
+        <dwc:vernacularName>southern red oak</dwc:vernacularName>
+        <dwc:scientificNameAuthorship>Michx.</dwc:scientificNameAuthorship>
+        <dwc:nameAccordingTo>Weakley 2010</dwc:nameAccordingTo>
+
+        <!-- Relationship of the determination to other resources [not yet implemented]-->
+        <!-- e.g. <dsw:identifiedBasedOn rdf:resource="http://bioimages.vanderbilt.edu/baskauf/10554"/> -->
+      </rdf:Description>
+    </dsw:hasIdentification>
+
+    <!-- for generating Web page hyperlinks and clickable logos -->
+    <dsw:hasOccurrence>
+      <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/specimen/ncu592745#occ">
+        <rdfs:label>Specimen record for University of North Carolina herbarium accession 592745</rdfs:label>
+        <rdf:type rdf:resource="http://purl.org/dsw/PreservedSpecimen"/>
+      </rdf:Description>
+    </dsw:hasOccurrence>
+
+  </rdf:Description>
+
+  <!--
+      Information about the metadata document itself
+  -->
+  <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/uncg/966.rdf">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <dcterms:identifier>http://bioimages.vanderbilt.edu/uncg/966.rdf</dcterms:identifier>
+    <dcterms:description>RDF formatted description of the living organism http://bioimages.vanderbilt.edu/uncg/966</dcterms:description>
+    <dcterms:creator>Bioimages http://bioimages.vanderbilt.edu/</dcterms:creator>
+    <foaf:maker rdf:resource="http://biocol.org/urn:lsid:biocol.org:col:35115"/>
+    <dcterms:language>en</dcterms:language>
+    <dcterms:modified>2011-03-03T08:55:54</dcterms:modified>
+    <xmp:MetadataDate>2011-03-03T08:55:54</xmp:MetadataDate>
+    <dcterms:references rdf:resource="http://bioimages.vanderbilt.edu/uncg/966"/>
+    <foaf:primaryTopic rdf:resource="http://bioimages.vanderbilt.edu/uncg/966"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioimages.vanderbilt.edu/uncg/966.htm">
+    <rdf:type rdf:resource="http://purl.org/ontology/bibo/Webpage"/>
+  </rdf:Description>
+</rdf:RDF>
