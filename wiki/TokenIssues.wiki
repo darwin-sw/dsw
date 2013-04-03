@@ -119,3 +119,8 @@ Although not shown in any of these examples, derivedFrom could be used to track 
 
 = dsw:idBasedOn/dsw:isBasisForId =
 This pair of inverse properties is used to connect a token with a dwc:Identification when the token was examined and used as the basis for identifying the IndividualOrganism.  In simple cases, such as a single specimen per IndividualOrganism, the benefit of this term is not so clear.  But in more complex situations, such as duplicate specimens from the same individual organism which end up in different institutional collections, it would be important to know the basis by which the determiner decided to assign that individual organism to a particular taxon.  Another useful situation would be where a specimen is used as a voucher for a set of live organism images.  One might place greater weight on the Identification if it were based on the specimen, the specimen and live organism images, or many live organism images, than on a single live organism image that does not convey much information.
+
+== A reference related to a philosophical discussion about the nature of a "document" ==
+Note the section entitled "The antelope as document" where the nature of a document is similar to what we might call a token or specimen.  It's a document in the sense that it documents something.
+
+[http://people.ischool.berkeley.edu/~buckland/whatdoc.html What is a "Document"? Journal of the American Society of Information Science 48, no. 9 (Sept 1997): 804-809]
