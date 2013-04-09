@@ -1,0 +1,50 @@
+#summary Summary of an email discussion about the nature of specimens, documents, and individuals
+
+=Introduction=
+Beginning on 2013-04-03, there was an off-list email discussion about the nature of specimens.  Most of the participants in the discussion were present at the RCN4GSC planning meeting in Seattle from 2013-03-26 through 2013-03-29, although several were not.  This page was created with the implied consent of the participants to archive that conversation.  The discussion was not directly related to Darwin-SW and was placed in this wiki simply as a matter of convenience.
+
+=Email thread=
+
+==2013-04-03T13:04:17-0500 Initial Post: What is a specimen/What is a document? (Steve Baskauf)==
+
+-------- Original Message --------
+Subject: 	What is a specimen/What is a document?
+Date: 	Wed, 03 Apr 2013 13:04:17 -0500
+From: 	Steve Baskauf <steve.baskauf@vanderbilt.edu>
+Organization: 	Vanderbilt University Dept. of Biological Sciences
+To: 	John Deck <jdeck@berkeley.edu>, Ramona Walls <rwalls@iplantcollaborative.org>, Robert Robbins <rjr8222@gmail.com>, Leonard Krishtalka <krishtalka@ku.edu>, Pelin Yilmaz <pyilmaz@mpi-bremen.de>, John Wieczorek <tuco@berkeley.edu>, Stan Blum <sblum@calacademy.org>, Rob Guralnick <robert.guralnick@colorado.edu>, John Deck <jdeck88@gmail.com>, mschneid@mpi-bremen.de
+CC: 	Cam Webb <cwebb@oeb.harvard.edu>
+References: 	<CAH_VTFUzwMjXNmhQefbPBBUHhkbOp20iGv9607-s-LDL78deRA@mail.gmail.com>
+
+
+At the RCN4GSC meeting, there was an informal discussion that started with a discussion of the sampling process and drifted to the topic of "what is a living specimen?".  The Darwin Core type vocabulary includes dwctype:LivingSpecimen as a term theoretically suitable for use as an object of dwc:basisOfRecord .  In that discussion, I brought up the case of the Bicentennial Oak which is part of the Vanderbilt Arboretum.  The Vanderbilt Arboretum is a collection (having URI http://biocol.org/urn:lsid:biocol.org:col:35259 ) which contains living specimens in the form of trees.  Most of these trees were planted intentionally and that planting could be broadly construed to be part of a material sampling process.  However, the Bicentennial Oak (having URI http://bioimages.vanderbilt.edu/vanderbilt/7-314 ) predates the university.  I believe that it is a dwctype:LivingSpecimen even though nobody actually did anything to cause it to be there in the arboretum.  I asserted that it was different than a tree in a forest (e.g. http://bioimages.vanderbilt.edu/ind-baskauf/51010 ) which is an organism we could document but which I would not call a dwctype:LivingSpecimen.  I said that there was something about the process of accessioning the tree, asserting that it was part of the arboretum, and making some kind of commitment that it would remain available for examination in the future that made it a dwctype:LivingSpecimen , things that don't apply to a tree that we just find in the forest.  That was about all the further we got in the discussion before we moved on to other things.
+
+I've had this kind of discussion before about what makes a starfish in a jar on a museum collection different from a starfish on a beach.  Aside from deadness (which isn't really relevant because the starfish could be alive in a tank), what makes the two different?  I usually come across as a nutcase after such discussions.  However, I coincidentally was made aware of http://people.ischool.berkeley.edu/~buckland/whatdoc.html in the context of a discussion about "documents" in the context of Audubon Core.  The section "The antelope as document" on that webpage gets at exactly the issue I was discussing above.  In the case of that section, the term "document" is used rather than "specimen" but I would assert that they are functionally the same.  In this section Briet's rules for determining when an object has become a document (think specimen) involve:
+
+1. intentionality
+
+2. processing
+
+3. perceived to be a document (specimen)
+
+Applying these rules to the Bicentennial Oak and the tree in the forest, the Bicentennial Oak is a document/specimen because we intend for it to be one, we have processed it (e.g. it has been included in the records of the arboretum), and we perceive it to be one (we advertise it as part of the arboretum, a thing we don't do for the tree in the forest). 
+
+With reference to the Darwin-SW viewpoint, we have invented a class we call dsw:Token .  There is no requirement for class membership other than that the dsw:Token should be used as some kind of evidence:
+1.  evidence that an organism was at a place at a certain time (i.e. "organism at a place and time" is what DSW considers to be an Occurrence; the evidence is the object of the dsw:hasEvidence property with the Occurrence as the subject)
+2.  a physical or information-resource voucher of the organism (the object of dcterms:hasPart or foaf:depiction with the organism as the subject)
+3.  evidence for an identification instance (the object of dsw:idBasedOn with the Identification instance as the subject)
+This is very similar to Briet's concept of a "document".  She considers that the antelope in a zoo is a document because "it has become physical evidence being used by those who study it" in a way that it was not when it was running wild on the plains of Africa.  If you drill down and look at the RDF of the Bicentennial Oak  and the tree in the forest (http://bioimages.vanderbilt.edu/vanderbilt/7-314.rdf and http://bioimages.vanderbilt.edu/ind-baskauf/51010.rdf respectively), you'll notice that the Oak serves as the evidence for the Occurrence of itself:
+
+http://bioimages.vanderbilt.edu/vanderbilt/7-314#occ dsw:hasEvidence http://bioimages.vanderbilt.edu/vanderbilt/7-314
+
+while the tree in the forest does not have itself as the evidence for it's own occurrence.  That's because the Bicentennial Oak meets the requirements of Briet while the tree in the forest doesn't.
+
+I realize this is a rather esoteric point, but if we are getting serious about ontology development and thinking about how we intend to use dwc:basisOfRecord with the Darwin Core type vocabulary, we should consider these points.  It seems to me that dwc:basisOfRecord has (or should have) a lot in common with dsw:hasEvidence.  The object of dwc:basisOfRecord is the evidence upon which the record is based and could be a dwctype:PreservedSpecimen, dwctype:LivingSpecimen, dwctype:MachineObservation, dwctype:MaterialSample, etc. 
+
+Steve
+==2013-04-03T12:15:38-0600 The difference is a set of material processing steps (Rob Guralnick)==
+
+  Steve --- This is my failure of imagination or cogency, but the difference between a starfish in a jar on a museum collection and a starfish on a beach is a set of material processing steps that happen during collection and curation.  That simple, really. 
+
+Best, Rob
+
