@@ -50,3 +50,81 @@ Steve
   Steve --- This is my failure of imagination or cogency, but the difference between a starfish in a jar on a museum collection and a starfish on a beach is a set of material processing steps that happen during collection and curation.  That simple, really. 
 
 Best, Rob
+
+==2013-04-03T18:28:03+0000 Agrees with Rob (Kris Krishtalka)==
+
+And Rob beat me to this comment.  Agreed.
+
+Kris
+
+==2013-04-03T15:34:03-0300 basisOfRecord is the type of evidence (John Wieczorek)==
+Right, 2 in Briet's Rules. But 2 carries along 1 and 3 anyway, so I fail to see a lack of simplicity.
+
+Key in Steve's assessment, for me, is the realization that basisOfRecord is really the type of evidence.
+
+==2013-04-03T13:30:50-0500 A car isn't a specimen (Steve Baskauf)==
+
+Rob,
+Well, it is true that the starfish is a product of material processing steps.  But I would say that is not what makes it a specimen.  My car is the product of material processing steps when it goes from iron ore to a car.  But that doesn't make it a specimen. 
+
+I'm interested in what makes something a specimen in the broadest sense.  Your material processing steps definition doesn't work for a specimen which has no material processing steps, like the Bicentennial Oak.  You could argue that you don't consider the Bicentennial Oak to be a specimen for that reason, but then the Arboretum would have to distinguish between it's accessioned objects that got planted by people and the ones that weren't.  I think they would be happier to think that all of the trees in their collection were specimens regardless of whether somebody planted them or not.
+
+Steve
+
+==2013-04-03T19:57:21+0000 A specimen is processed and accessioned (Kris Krishtalka)==
+
+The car-iron ore analogy is not fitting here, as it starts as iron ore, which through processing is manufactured into at least a car shell.  The starfish is not being manufactured into anything.  It is the same starfish on the beach as it is in the jar.  
+
+In practice of course, a specimen becomes one when it crosses the threshold of the repository.  On the highway, it's roadkill.  In the door of the museum, it's a specimen, because 1. between the door and the jar the material processing occurs; and (2) the repository, through that material processing, which includes accessioning, takes legal possession of the object.
+
+Kris
+
+==2013-04-03T17:13:54-0300 OK, complicated (John Wieczorek)==
+
+OK, so it's more complicated in (someone's) reality, not less. ;-)
+
+==2013-04-03T14:44:21-0700 Questions about many cases; the role of data collection; definitions according to biologists and computer scientists (Robert J Robbins)==
+
+Let's start with the Bicentennial Oak. It was there before the arboretum. The arboretum "grew up" around the oak. It seems to me that what makes it a "specimen" is that someone decided to start paying attention to it, either by labelling it in the field, or noting its existence in records, or in some other way.
+
+Chances are, there are also some fungal assemblages in the arboretum, that like the oak, were there before the arboretum, but which are not specimens because no one is paying attention to them.
+
+Let's jump over the starfish and consider some other organisms. We all seem to agree that a starfish becomes a specimen when I pick it up, take it back to the museum, and do whatever accessioning stuff needs to be done.
+
+What if I leave it in the field, but tag it or otherwise label it, then periodically collect data about it. Specimen or wild? Is the physical tagging somehow important?
+
+How about a bird that I have banded and released? Specimen, or not?
+
+Researchers who work on Orcas can identify individual whales by their markings. Often an individual whale is studied for years without ever being touched physically -- observations only. Are these observed Orcas specimens or not? Suppose we take a tissue sample from one observed whale. Does that have any effect on the specimen status of the tissue sample? What about of the whale?
+
+Suppose a whale dies and the carcass is recovered. Surely then it is a specimen. Does that retroactively affects its specimen status in any way?
+
+How about a bird that is observed and counted in a christmas bird count, but no other data are available. Specimen or not? Suppose during a christmas bird count a bird flies into a window, so I pick up the body and later turn it into a study skin. Specimen? What if I collect the body only verify the information on the bird count (it's some warbler and I can confirm the species only with the bird in hand) and then I discard the body. Specimen (deaccessioned?) or not?
+
+I get the feeling from what has been discussed earlier that specimenhood seems to lie in the relationship between an individual organism and the collection of data about that individual organism.
+
+But what if the organism is not an individual, such as a lichen. With some lichens, I can "capture an individual" (a composite with one fungal component and one algal component). Then I can treat it to kill off the algae and I can then induce the surviving fungal component to merge with a different algal component? Under this circumstance, how many specimens are involved?
+
+What about lichens that turn out to be more complex than just one fungus and one algae?
+
+What about a biofilm? I scrape it off the rock and put in a jar. Specimen?
+
+-----
+
+I think that Steve has raised some very subtle, yet very important ontological issues here -- some that cut to the heart of new thinking about biodiversity.
+
+If our very fundamental ontological concepts in biodiversity and collections management end up being anchored on the ontological concept of "individual organism" and if "individual organism" turns out to be a "useful approximation", not a "fundamental construct in objective reality", then there is some serious ontological work ahead of us...
+
+-----
+
+Years ago when I was involved in designing and deploying an institutional HR database, there was a lot of concern about defining an employee, vs a patient, vs a board member, vs a volunteer, vs ...
+
+As we looked at how other institutions had handled these distinctions, we found one place that just had a collection of "people of interest to our organization". That became (more or less) the root class for all classes of people. Then all of the classes that were actually more important to the functioning of the institution became daughter classes of this master class.
+
+-----
+
+One of the challenges here is that, speaking broadly, biologists tend to be interested in central tendencies whereas computer scientists are interested in boundary properties. An information system to support biological research must handle central tendencies (i.e., typical cases) well enough (and conceptually simply enough) to seem useful to a typical biologist. It must also handle boundary conditions (outliers, weird situations, special cases) with sufficient robustness to serve as a functioning information system.
+
+When the genome data base was built at Hopkins as part of the human genome project, to make it work like biologists we had to build in way more complexity and subtlety than any biologist thought necessary (or even reasonable). In some cases, we could never get enough complexity into it to make it generically useful. One would think that a database of human genes would need some good, comprehensive, exhaustive definition of "gene" in order to work.
+
+However, I consistently ran into situations where I would ask a biologist for a definition of a gene, then apply that definition to a complex region of some genome and say to the biologist that "according to your definition of gene, there are nine genes in that region." At this point the biologist might say, "No, there are only four genes there." Even if I showed that the definition REQUIRED that one say that there were nine genes present, I would still get a response to the effect that (a) there were only four genes present, (b) the definition was fine as is (meaning that it satisfied a central tendency definition of gene), and (c) I should quit being so obsessed over details that did not affect one's ability to do biology.
