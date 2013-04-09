@@ -3,6 +3,9 @@
 =Introduction=
 Beginning on 2013-04-03, there was an off-list email discussion about the nature of specimens.  Most of the participants in the discussion were present at the RCN4GSC planning meeting in Seattle from 2013-03-26 through 2013-03-29, although several were not.  This page was created with the implied consent of the participants to archive that conversation.  The discussion was not directly related to Darwin-SW and was placed in this wiki simply as a matter of convenience.
 
+=Contents=
+<wiki:toc max_depth="4" />
+
 =Email thread=
 
 ==2013-04-03T13:04:17-0500 Initial Post: What is a specimen/What is a document? (Steve Baskauf)==
@@ -47,4 +50,3 @@ Steve
   Steve --- This is my failure of imagination or cogency, but the difference between a starfish in a jar on a museum collection and a starfish on a beach is a set of material processing steps that happen during collection and curation.  That simple, really. 
 
 Best, Rob
-
