@@ -128,3 +128,12 @@ One of the challenges here is that, speaking broadly, biologists tend to be inte
 When the genome data base was built at Hopkins as part of the human genome project, to make it work like biologists we had to build in way more complexity and subtlety than any biologist thought necessary (or even reasonable). In some cases, we could never get enough complexity into it to make it generically useful. One would think that a database of human genes would need some good, comprehensive, exhaustive definition of "gene" in order to work.
 
 However, I consistently ran into situations where I would ask a biologist for a definition of a gene, then apply that definition to a complex region of some genome and say to the biologist that "according to your definition of gene, there are nine genes in that region." At this point the biologist might say, "No, there are only four genes there." Even if I showed that the definition REQUIRED that one say that there were nine genes present, I would still get a response to the effect that (a) there were only four genes present, (b) the definition was fine as is (meaning that it satisfied a central tendency definition of gene), and (c) I should quit being so obsessed over details that did not affect one's ability to do biology.
+
+
+==2013-04-03T15:14:38-0700 How we define classes (Ramona Walls)==
+
+It doesn't matter semantically what you call a class (although it does matter to the people using the ontology), but it matters a lot how you define it. If you want the class "specimen" to include live plants in an arboretum, then define it so it encompasses them. The key is to think of the characteristics that are necessary and sufficient for your class, then include them in the logical definition (as well as possible).  So far in the BCO, we have only defined a class "material sample", and it specifies that some material sampling process took part (which includes selection, extraction, and submission). Clearly this does not cover a tree in an arboretum. However, we could make a broader class called something like "institutional specimen" that would cover material samples plus live specimens. This is straightforward, once we agree on the criteria for an institutional specimen (and that doesn't seem very hard).
+
+We don't currently have any restrictions on what kind of material goes into a material sample, so it could be an organism, a collection of organisms, or a rock.
+
+Ramona
