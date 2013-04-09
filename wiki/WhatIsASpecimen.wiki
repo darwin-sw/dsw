@@ -137,3 +137,36 @@ It doesn't matter semantically what you call a class (although it does matter to
 We don't currently have any restrictions on what kind of material goes into a material sample, so it could be an organism, a collection of organisms, or a rock.
 
 Ramona
+
+==2013-04-03T15:15:52-0700 Roles, processes, and samples sensu BCO/OBI (John Deck)==
+
+Applying BCO/OBI to this issue.... 
+
+BCO/OBI (as subprojects of BFO) models material samples, processes, and roles somewhat separately from each other.  Each of these concepts live in different parts of the BFO hierarchy.  This gives some flexibility in assigning roles independent from sampling process or what type of entity it is.  Thus, the important distinction here is between "role" and "material sample".  The definition of "role" in OBI is: 
+
+"A realizable entity the manifestation of which brings about some result or end that is not essential to a continuant in virtue of the kind of thing that it is"
+
+E.g.  the tree in the arboretum can have multiple roles:  a "living specimen" (as Steve suggests), a "preserved specimen" (if a leaf was put in a herbarium back in 1900), and even a "cultural artifact" (e.g. suppose John Brown was hung on this particular tree as well), in addition to being just a tree.  I think separating "roles" and "processes" here is especially important in considering how we want to go about integrating MIxS and DwC as certainly the roles we think about in assigning to objects will vary depending on the type of investigation one is intending.  And the point being, the "objects" in question need to be able to have multiple "roles" as well as multiple types of sampling "processes".  Examples of processes that can act on this tree are: observation (information stored in someones head or written down), processes that yield an information artifact of the entity (e.g. photographs), and physical extraction (taking a leaf from the tree).  
+
+John
+
+==2013-04-04T06:34 +1 for Ramona's assessment (Stan Blum)==
+
++1 for Ramona's assessment.  I'm going to try to follow you down that road, John D.
+
+-Stan 
+
+From:  Ramona Walls <rwalls@iplantcollaborative.org>
+
+John, I think you are ready to take over editing of the BCO!
+
+Ramona
+
+==2013-04-04T09:15:57+0200 MIMARKS perspective (Pelin Yilmaz)==
+
+I wanted to share our take on specimen in MIxS, but reading through this whole thread I realized we haven't given as much thought into the description as we should have.
+
+Nevertheless, the MIMARKS checklist (the MIxS that covers single gene amplification metadata), distinguishes between two investigation types; survey and specimen. MIMARKS-survey is supposed to apply to bulk sampling and sequencing type studies of single genes (the usual study type in microbial ecology), while we defined MIMARKS-specimen for marker gene sequences obtained from any material identifiable by means of specimens. Here, I think the idea behind was to be apply the MIMARKS-specimen checklist to pure cultures of microbial organisms.
+
+I realize we are a bit vague, but I'm looking forward to this group resolving what a specimen is, so that we can apply the description to MIMARKS.
+Pelin
