@@ -62,9 +62,18 @@ Right, 2 in Briet's Rules. But 2 carries along 1 and 3 anyway, so I fail to see 
 
 Key in Steve's assessment, for me, is the realization that basisOfRecord is really the type of evidence.
 
+==2013-04-03T13:46:44-0500 Briet's actual rule (Steve Baskauf)==
+
+The actual rule as inferred on the webpage is:
+
+"The objects have to be processed: They have to be made into documents"
+
+It does not say that it is a material process nor does it say that it has to be a sampling process.  Maybe it can an  "accessioning" process.  The point is that people intend for it to be a "document" (a thing that documents, a.k.a. specimen) and take action accordingly.  
+
 ==2013-04-03T13:30:50-0500 A car isn't a specimen (Steve Baskauf)==
 
 Rob,
+
 Well, it is true that the starfish is a product of material processing steps.  But I would say that is not what makes it a specimen.  My car is the product of material processing steps when it goes from iron ore to a car.  But that doesn't make it a specimen. 
 
 I'm interested in what makes something a specimen in the broadest sense.  Your material processing steps definition doesn't work for a specimen which has no material processing steps, like the Bicentennial Oak.  You could argue that you don't consider the Bicentennial Oak to be a specimen for that reason, but then the Arboretum would have to distinguish between it's accessioned objects that got planted by people and the ones that weren't.  I think they would be happier to think that all of the trees in their collection were specimens regardless of whether somebody planted them or not.
@@ -169,4 +178,37 @@ I wanted to share our take on specimen in MIxS, but reading through this whole t
 Nevertheless, the MIMARKS checklist (the MIxS that covers single gene amplification metadata), distinguishes between two investigation types; survey and specimen. MIMARKS-survey is supposed to apply to bulk sampling and sequencing type studies of single genes (the usual study type in microbial ecology), while we defined MIMARKS-specimen for marker gene sequences obtained from any material identifiable by means of specimens. Here, I think the idea behind was to be apply the MIMARKS-specimen checklist to pure cultures of microbial organisms.
 
 I realize we are a bit vague, but I'm looking forward to this group resolving what a specimen is, so that we can apply the description to MIMARKS.
+
 Pelin
+
+==2013-04-04T15:56:20-0500 Process/resource creation event (Steve Baskauf)==
+
+John Deck wrote:
+
+  >  multiple types of sampling "processes".  Examples of processes that can act on this tree are: observation (information stored in someones head or written down), processes that yield an information artifact of the entity (e.g. photographs), and physical extraction (taking a leaf from the tree).  
+Ooo!  I'm loving this.  Replace "process" with "resource creation event" and you get Figs. 2 and 6 from Biodiversity Informatics, 7, 2010, pp. 17-44 (https://journals.ku.edu/index.php/jbi/article/view/3664 ). 
+
+However, I disagree when you say "the tree in the arboretum can have multiple roles:  a "living specimen" (as Steve suggests), a "preserved specimen" (if a leaf was put in a herbarium back in 1900)".  The leaf is NOT just the tree having a different role.  The leaf has a dcterms:hasPart relationship with the tree.  It isn't the tree. 
+
+Steve
+
+==2013-04-04T13:59:52-0700 Roles of the tree (Ramona Walls)==
+
+True, in that case, the role of the tree was as the source of the specimen rather than as a preserved specimen itself. However, John was right on when he said that a tree could have many roles.
+
+==2013-04-04T14:14:37-0700 Roles across transitive relationships (John Deck)==
+
+    >However, I disagree when you say "the tree in the arboretum can have multiple roles:  a "living specimen" (as Steve suggests), a "preserved specimen" (if a leaf was put in a herbarium back in 1900)".  The leaf is NOT just the tree having a different role.  The leaf has a dcterms:hasPart relationship with the tree.  It isn't the tree. 
+
+
+As Ramona indicated this wasn't necessarily the point of the statements (and maybe not the best example!).  However, another way to think about this... suppose we used ro:part_of to describe the relationship between tree and leaf here, ro:part_of being transitive (see http://obofoundry.org/ro/).  Seems to me that we can infer roles applying across transitive relationships.  Logically, this makes sense to me, and is the way BiSciCol would handle it.     OTOH, you indicated dcterms:hasPart, and this is NOT declared as transitive and hence the role would not apply as you suggested.  Perhaps the difference comes from the communities that created the relationship terms (biologists vs. librarians) and probably worth a separate thread to cover all the implications of the types of relationship operators applied in different situations.  
+
+==2013-04-04T14:14:37-0700 Biologists vs. librarians (Robert Robbins)==
+
+With regard to the librarian vs biologist distinction:
+
+Librarians deal with the defined attributes of human-created artifacts.
+
+Biologists (and scientists in general) deal with the discovered attributes of real-world (i.e., not human-created) objects.
+
+When it comes to building ontologies, this distinction is potentially very significant. 
