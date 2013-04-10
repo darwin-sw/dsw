@@ -189,7 +189,9 @@ John Deck wrote:
 Ooo!  I'm loving this.  Replace "process" with "resource creation event" and you get Figs. 2 and 6 from Biodiversity Informatics, 7, 2010, pp. 17-44 (https://journals.ku.edu/index.php/jbi/article/view/3664 ). 
 
 {{{
-Note that wasn't in original email: I've created another wiki page that displays the images that were figures in the paper so that they can be examined without having to download the paper.  They may be useful as starting points for further discussion.
+Note that wasn't in original email: I've created another wiki page that displays the images that 
+were figures in the paper so that they can be examined without having to download the paper.  
+They may be useful as starting points for further discussion.
 }}}
 http://code.google.com/p/darwin-sw/wiki/ProcessResourceDiagrams
 
