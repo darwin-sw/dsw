@@ -315,7 +315,10 @@ Anyway, my main reason for writing was to pass along the Darwin Core ticket for 
 
 Best, Rob
 
-{{{Included next was the proposal for DwC term additions, not pasted in here}}}
+{{{
+Included next was the proposal for DwC term additions, not pasted in here
+}}}
+The URL for the DwC term addition proposal is http://code.google.com/p/darwincore/issues/detail?id=167
 
 ==2013-04-08T12:47:43-0500 What things are/what things do and the dwc:Individual class proposal (Steve Baskauf)==
 
