@@ -1,0 +1,15 @@
+#summary Diagrams showing processes that create various types of resources
+
+= Introduction =
+
+Diagrams from Biodiversity Informatics, 7, 2010, pp. 17-44 (https://journals.ku.edu/index.php/jbi/article/view/3664 ) to facilitate thinking of the sort discussed on the WhatIsASpecimen page.
+
+=Diagrams=
+==Bird Observation==
+http://bioimages.vanderbilt.edu/pages/conceptual-scheme-bird.gif
+==Botanical Garden==
+http://bioimages.vanderbilt.edu/pages/conceptual-scheme-botanical.gif
+==Herbarium==
+http://bioimages.vanderbilt.edu/pages/conceptual-scheme-herbarium.gif
+==Insect in museum==
+http://bioimages.vanderbilt.edu/pages/conceptual-scheme-insect.gif
