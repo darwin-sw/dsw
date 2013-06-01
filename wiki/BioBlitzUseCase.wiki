@@ -97,9 +97,8 @@ SELECT DISTINCT ?Organism WHERE {
 ?Organism a dsw:IndividualOrganism.
 ?Resource a dwctype:MaterialSample.
 }
-}}}
-
 LIMIT 50
+}}}
 
 In the RDF I loaded, I directly asserted all of the chains of dsw:derivedFrom properties.  I also directly asserted both properties in each set of inverse object properties.  In real life, you would have software to infer those transitive and inverse properties and wouldn’t have to do it manually.
 
