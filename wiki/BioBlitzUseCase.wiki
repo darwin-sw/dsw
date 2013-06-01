@@ -29,6 +29,13 @@ mrc:= “http://mrc.mbl.edu/”
 si:= “http://www.mnh.si.edu/rc/biorepository/”
 ncbi:= “http://www.ncbi.nlm.nih.gov/gene/”
 }}}
+----
+http://darwin-sw.googlecode.com/svn/trunk/img/bird-bioblitz.png
+----
+http://darwin-sw.googlecode.com/svn/trunk/img/shell-bioblitz.png
+----
+http://darwin-sw.googlecode.com/svn/trunk/img/starfish-bioblitz.png
+----
 
 3. The triples from the RDF example have been loaded into the TDWG-RDF sandbox that Cam Webb set up for us to play in.  The sandbox is at http://tdwg-rdf.net/store2/ .  
 
