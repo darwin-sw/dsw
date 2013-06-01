@@ -78,7 +78,7 @@ LIMIT 50
 SELECT DISTINCT ?Specimen WHERE {
 ?Specimen a dsw:PreservedSpecimen.
 ?Image foaf:depicts ?Specimen.
-?Image a dcterms:StillImage.
+?Image a dcmitype:StillImage.
 }
 LIMIT 50
 }}}
