@@ -171,6 +171,10 @@ Franz, N.M., R.K. Peet and A.S. Weakley. 2008. On the use of taxonomic concepts 
 
 Franz, N.M and D. Thau. 2010. Biological taxonomy and ontological development: scope and limitations. Biodiversity Informatics 7:45-66.  https://journals.ku.edu/index.php/jbi/article/view/3927
 
+Franz, N.M. and J. Cardona-Duque. 2013 Description of two new species and phylogenetic
+reassessment of Perelleschus O'Brien & Wibmer, 1986 (Coleoptera: Curculionidae), with a complete
+taxonomic concept history of Perelleschus sec. Franz & Cardona-Duque, 2013.  Systematics and Biodiversity 11(2):209-236. http://dx.doi.org/10.1080/14772000.2013.806371
+
 Hyam, R. and J. Kennedy. 2006. Taxon Concept Schema - User Guide.  http://www.tdwg.org/standards/117/
 
 Kennedy, J.B., R. Kukla, and T. Paterson. 2005. Scientific names are ambiguous as identifiers for biological taxa: their context and definition are required for accurate data integration.  Data Integration in the Life Sciences 2005, LNBI 3615, 80-95.  http://www.springerlink.com/content/7bv5pa3falxwrrvx/
