@@ -1,5 +1,7 @@
 #summary SPARQL examples.
 
+Note: still under construction as of 2013-10-25
+
 = Introduction =
 
 The examples on this page illustrate how some simple SPARQL queries can be used to infer triples entailed by the {{{owl:inverseOf}}} and {{{owl:TransitiveProperty}}} declarations in Darwin-SW.  They also show how the range and domain declarations can be used together with the disjoint class declarations to reason whether triples in a graph are consistent.  Finally, examples are given which show how Darwin-SW relationships can address several competency questions of the sort that are important to the biodiversity informatics community.
