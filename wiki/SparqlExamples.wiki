@@ -6,9 +6,16 @@ Note: still under construction as of 2013-10-26
 
 <wiki:toc max_depth="4" />
 
-= Introduction =
+= Abstract =
 
 The examples on this page illustrate how some simple SPARQL queries can be used to infer triples entailed by the {{{owl:inverseOf}}} and {{{owl:TransitiveProperty}}} declarations in Darwin-SW.  They also show how the range and domain declarations can be used together with the disjoint class declarations to reason whether triples in a graph are consistent.  Finally, examples are given which show how Darwin-SW relationships can address several competency questions of the sort that are important to the biodiversity informatics community.
+
+=Rationale=
+It is not clear what advantage is gained if data in a single relational database are converted to RDF triples.  However, if data from multiple databases are combined into a single RDF triplestore, then the potential exists to discover information that would not be obvious from examining any single data source.
+
+The ability to make such discoveries depends on having a common vocabulary which can be used to express the properties of resources described in the database.  In these examples, terms from the TDWG Darwin and Audubon Core vocabularies are used to express these properties.  Object properties from the Darwin-SW ontology are used to express the relationships among resources of different classes. 
+
+The ability to make queries that can consistently find the desired information depends on consistent use of these vocabularies.  The Darwin Core RDF Guide describes practices that contribute to the consistent use of Darwin Core properties.  The Darwin-SW documentation specifies how its object properties should be used in a consistent way to link instances of different classes. Because of the Open World assumption, it is difficult to enforce consistent use of RDF vocabularies and to some extent achieving consistency is a social problem, not a technical one.  Nevertheless, the use of domain and range declarations in Darwin-SW, combined with disjoint class declarations makes it possible to detect some inconsistent uses of the Darwin-SW-defined properties as will be illustrated below.
 
 =Preliminaries=
 
