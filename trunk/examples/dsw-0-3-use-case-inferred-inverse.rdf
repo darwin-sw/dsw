@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/" xmlns:ac="http://rs.tdwg.org/ac/terms/" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dsw="http://purl.org/dsw/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwctype="http://rs.tdwg.org/dwc/dwctype/" xmlns:dwcuri="http://rs.tdwg.org/dwc/uri/" xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:local="http://bioimages.vanderbilt.edu/rdf/local#" xmlns:mbank="http://www.morphbank.net/schema/morphbank#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:stdview="http://bioimages.vanderbilt.edu/rdf/stdview#" xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#" xmlns:txn="http://lod.taxonconcept.org/ontology/txn.owl#" xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/" xml:base="local:local">
+  <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/gene/2690040">
+    <dcterms:isReferencedBy rdf:resource="http://www.ncbi.nlm.nih.gov/gene/2690040.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#loc">
+    <dsw:locates rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#eve"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498#loc">
+    <dsw:locates rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498#eve"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.mnh.si.edu/rc/biorepository/ac37-8898">
+    <dcterms:isReferencedBy rdf:resource="http://www.mnh.si.edu/rc/biorepository/ac37-8898.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dcterms:isPartOf rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dsw:derivedFrom rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dsw:isBasisForId rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#2014-03-29schildhauer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#occ">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#occ">
+    <dsw:hasEvidence rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497#eve">
+    <dsw:eventOf rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497#occ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#2014-03-29schildhauer">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465-2014-03-29schildhauer.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#eve">
+    <dsw:eventOf rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#occ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497#2013-03-28deck">
+    <dsw:identifies rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497#loc">
+    <dsw:locates rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497#eve"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465a">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465abc.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#ind">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#ind">
+    <dsw:isBasisForId rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#2013-03-28baskauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498#2013-03-28walls">
+    <dsw:identifies rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498#occ">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498#occ">
+    <dsw:hasEvidence rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498#ind">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497">
+    <dcterms:isPartOf rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497">
+    <dsw:derivedFrom rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497">
+    <dsw:isBasisForId rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497#2013-03-28deck"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465c">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465abc.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mrc.mbl.edu/255A4410-DF04-40D2-9977-0FF276AE5F3B">
+    <dcterms:isReferencedBy rdf:resource="http://mrc.mbl.edu/255A4410-DF04-40D2-9977-0FF276AE5F3B.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497#occ">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497#occ">
+    <dsw:hasEvidence rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497#ind">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465b">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465abc.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498">
+    <dcterms:isPartOf rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498">
+    <dcterms:isReferencedBy rdf:resource="http://arctos.database.museum/guid/metadata.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498">
+    <dsw:derivedFrom rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498">
+    <dsw:isBasisForId rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498#2013-03-28walls"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498#eve">
+    <dsw:eventOf rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498#occ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#2013-03-28baskauf">
+    <dsw:identifies rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.mnh.si.edu/rc/biorepository/ac37-8898">
+    <dsw:hasDerivative rdf:resource="http://www.ncbi.nlm.nih.gov/gene/2690040"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dsw:hasDerivative rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dsw:hasDerivative rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dsw:hasDerivative rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dcterms:hasPart rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dcterms:hasPart rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465">
+    <dcterms:hasPart rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#occ">
+    <dsw:occurrenceOf rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#ind">
+    <dsw:hasIdentification rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#2014-03-29schildhauer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5498#occ">
+    <dsw:occurrenceOf rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5498#ind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497">
+    <dsw:hasDerivative rdf:resource="http://www.mnh.si.edu/rc/biorepository/ac37-8898"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497">
+    <dcterms:hasPart rdf:resource="http://www.mnh.si.edu/rc/biorepository/ac37-8898"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465c">
+    <dsw:hasDerivative rdf:resource="http://mrc.mbl.edu/255A4410-DF04-40D2-9977-0FF276AE5F3B"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465c">
+    <dcterms:hasPart rdf:resource="http://mrc.mbl.edu/255A4410-DF04-40D2-9977-0FF276AE5F3B"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://arctos.database.museum/guid/UAM:Inv:5497#occ">
+    <dsw:occurrenceOf rdf:resource="http://arctos.database.museum/guid/UAM:Inv:5497#ind"/>
+  </rdf:Description>
+  </rdf:RDF>
+
