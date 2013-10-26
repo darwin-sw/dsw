@@ -66,7 +66,7 @@ PREFIX stdview: <http://bioimages.vanderbilt.edu/rdf/stdview#>
 }}}
 
 =Example scenario=
-The following diagrams illustrate graphically the triples that are included in the graphs which are queried in the SPARQL examples.  They represent a scenario in which specimens were collected during a bioblitz with subsequent identifications and creation of other resources derived from the original specimens.
+The following diagrams illustrate graphically some of the triples representing relationships between resources that are included in the graphs which are queried in the SPARQL examples.  They represent a scenario in which specimens were collected during a bioblitz with subsequent identifications and creation of other resources derived from the original specimens.
 
 http://darwin-sw.googlecode.com/svn/trunk/examples/bird-bioblitz.png
 
@@ -84,7 +84,11 @@ Each object property defined by Darwin-SW has a corresponding inverse property. 
 
 This query follows the rational explained at http://code.google.com/p/tdwg-rdf/wiki/SparqlReasoning .  If you are unfamiliar with SPARQL, you may want to review this example before proceeding.
 
+This query only finds missing inverse triples for properties that are directly asserted to have an _owl:inverseOf_ property:
+
 {{{
+[prefix list goes here]
+
 CONSTRUCT {?R1 ?Property2 ?R2}
 FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
 FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
@@ -107,3 +111,5 @@ WHERE
  }
 Limit 100
 }}}
+
+There is another set of missing inverse triples for properties *whose inverse property* is declared to have an _owl:inverseOf_ property:
