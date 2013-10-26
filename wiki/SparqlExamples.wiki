@@ -17,6 +17,11 @@ The ability to make such discoveries depends on having a common vocabulary which
 
 The ability to make queries that can consistently find the desired information depends on consistent use of these vocabularies.  The Darwin Core RDF Guide describes practices that contribute to the consistent use of Darwin Core properties.  The Darwin-SW documentation specifies how its object properties should be used in a consistent way to link instances of different classes. Because of the Open World assumption, it is difficult to enforce consistent use of RDF vocabularies and to some extent achieving consistency is a social problem, not a technical one.  Nevertheless, the use of domain and range declarations in Darwin-SW, combined with disjoint class declarations makes it possible to detect some inconsistent uses of the Darwin-SW-defined properties as will be illustrated below.
 
+==Processing protocol==
+The queries described below form part of a processing protocol that could be used to enhance the data contributed to a community triplestore.  The steps of that protocol are:
+  # Infer any triples that are entailed by use of the inverse Darwin-SW terms.  This allows queries to be formed using predicates that link the core classes in either direction.  This processing step need only be applied once to any graph that is added to the community triplestore.
+  # 
+
 =Preliminaries=
 
 ==SPARQL endpoint==
