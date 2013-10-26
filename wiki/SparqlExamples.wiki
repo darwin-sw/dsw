@@ -12,9 +12,12 @@ The examples on this page illustrate how some simple SPARQL queries can be used 
 
 =Preliminaries=
 
+==SPARQL endpoint==
+
 The examples shown here are currently (2013-10-25) loaded in the TDWG RDF Task Group triplestore/SPARQL endpoint sandbox at http://tdwg-rdf.net/store2/ .  
 
-The file https://dl.dropboxusercontent.com/u/24288409/inverse-assertions.rdf contains the following triples as RDF/XML (shown here as RDF/Turtle):
+==Inverse property assertions==
+The file http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf contains the following triples as RDF/XML (shown here as RDF/Turtle):
 {{{
 @prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
@@ -27,9 +30,11 @@ foaf:depiction owl:inverseOf foaf:depicts.
 
 Of these three inverse property declarations, only the {{{foaf:}}} properties are actually asserted to be inverse in their defining RDF.  Although the {{{dcterms:}}} terms are not declared to be inverse properties by DCMI, it is reasonable to consider them to be inverse properties so we assert that here for convenience.
 
+==Darwin-SW ontology document==
+
 The file http://darwin-sw.googlecode.com/svn/trunk/dsw.owl is also loaded in the triplestore.  It (currently) contains the draft Darwin-SW version 0.3 which is under development pending acceptance of the proposed [http://code.google.com/p/tdwg-rdf/wiki/DwcRdf Darwin Core RDF Guide] by TDWG.  This is not the version that is served from purl.org when the terms are dereferenced.
 
-= Namespaces =
+= Namespace abbreviations =
 The following namespaces are used in the examples.  The SPARQL examples omit them for brevity but they (or the necessary subset of them) must be included when actually running the queries on the endpoint.
 
 {{{
@@ -59,6 +64,15 @@ PREFIX tc: <http://rs.tdwg.org/ontology/voc/TaxonConcept#>
 PREFIX txn:  <http://lod.taxonconcept.org/ontology/txn.owl#>
 PREFIX stdview: <http://bioimages.vanderbilt.edu/rdf/stdview#>
 }}}
+
+=Example scenario=
+The following diagrams illustrate graphically the triples that are included in the graphs which are queried in the SPARQL examples.  They represent a scenario in which specimens were collected during a bioblitz with subsequent identifications and creation of other resources derived from the original specimens.
+
+http://darwin-sw.googlecode.com/svn/trunk/examples/bird-bioblitz.png
+
+http://darwin-sw.googlecode.com/svn/trunk/examples/shell-bioblitz.png
+
+http://darwin-sw.googlecode.com/svn/trunk/examples/starfish-bioblitz.png
 
 = Inverse relationships =
 
