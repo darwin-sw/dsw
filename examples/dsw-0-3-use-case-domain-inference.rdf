@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/" 
+xmlns:ac="http://rs.tdwg.org/ac/terms/" 
+xmlns:cc="http://creativecommons.org/ns#" 
+xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:dcmitype="http://purl.org/dc/dcmitype/" 
+xmlns:dcterms="http://purl.org/dc/terms/" 
+xmlns:dsw="http://purl.org/dsw/" 
+xmlns:dwc="http://rs.tdwg.org/dwc/terms/" 
+xmlns:dwctype="http://rs.tdwg.org/dwc/dwctype/" 
+xmlns:dwcuri="http://rs.tdwg.org/dwc/uri/" 
+xmlns:exif="http://ns.adobe.com/exif/1.0/" 
+xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" 
+xmlns:local="http://bioimages.vanderbilt.edu/rdf/local#" 
+xmlns:mbank="http://www.morphbank.net/schema/morphbank#" 
+xmlns:owl="http://www.w3.org/2002/07/owl#" 
+xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+xmlns:stdview="http://bioimages.vanderbilt.edu/rdf/stdview#" 
+xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#" 
+xmlns:txn="http://lod.taxonconcept.org/ontology/txn.owl#" 
+xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#" 
+xmlns:xmp="http://ns.adobe.com/xap/1.0/" 
+xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/" 
+xml:base="local:local">
+  <rdf:Description rdf:about="http://museum.org/occ/12345">
+    <rdf:type rdf:resource="http://purl.org/dsw/IndividualOrganism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://museum.org/locs/56788">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/Location"/>
+  </rdf:Description>
+ </rdf:RDF>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This RDF is structured as described at http://code.google.com/p/darwin-sw/ version 0.3 
+It was generated (partly) by Guid-O-Matic 2.1 (http://bioimages.vanderbilt.edu/guid-o-matic/index.htm)
+It was modified 2013-09-25 to conform with the draft Darwin Core RDF Guide
+-->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+xmlns:dwctype="http://rs.tdwg.org/dwc/dwctype/"
+xmlns:dwcuri="http://rs.tdwg.org/dwc/uri/"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:ac="http://rs.tdwg.org/ac/terms/"
+xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
+xmlns:dsw="http://purl.org/dsw/"
+xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
+xmlns:tn="http://rs.tdwg.org/ontology/voc/TaxonName#"
+xmlns:exif="http://ns.adobe.com/exif/1.0/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+>
+
+<rdf:Description rdf:about="http://calphotos.berkeley.edu/0000000005101862">
+     <ac:metadataLanguage>en</ac:metadataLanguage>
+     <rdf:type rdf:resource ="http://purl.org/dc/dcmitype/StillImage" />
+     <dcterms:identifier>0000 0000 0510 1862</dcterms:identifier>
+     <dc:creator>Roger G. Smith</dc:creator>
+     <dcterms:creator rdf:resource ="http://calphotos.berkeley.edu/staff/smithrg" />
+     <dcterms:created>2017-10-13T12:42:24</dcterms:created>
+     <dc:rights>(c) 2017 UC Regents. All rights reserved.</dc:rights>
+     <xmpRights:owner>CalPhotos, University of California, Berkeley</xmpRights:owner>
+     <dcterms:title>Study skin of Corvus brachyrhynchos</dcterms:title>
+     <xmpRights:UsageTerms>Available under Creative Commons Attribution-Noncommercial-Share Alike 3.0 license</xmpRights:UsageTerms>
+     <xmpRights:WebStatement>http://creativecommons.org/licenses/by-nc-sa/3.0/</xmpRights:WebStatement>
+     <dcterms:description>Image of the dorsal surface of a study skin of Corvus brachyrhynchos</dcterms:description>
+     <dwcuri:inCollection rdf:resource ="http://calphotos.berkeley.edu/void" />
+     <dsw:derivedFrom rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465a" />
+     <foaf:depicts rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465a" />
+<!--
+Links to ServiceAccessPoints
+-->
+<ac:hasServiceAccessPoint rdf:resource="http://calphotos.berkeley.edu/0000000005101862#tn" />
+<ac:hasServiceAccessPoint rdf:resource="http://calphotos.berkeley.edu/0000000005101862#lq" />
+<ac:hasServiceAccessPoint rdf:resource="http://calphotos.berkeley.edu/0000000005101862#gq" />
+</rdf:Description>
+<!--
+ServiceAccessPoints provide information about alternative versions of the image having different resolutions
+-->
+<rdf:Description rdf:about="http://calphotos.berkeley.edu/0000000005101862#gq">
+<rdf:type rdf:resource ="http://rs.tdwg.org/ac/terms/ServiceAccessPoint" />
+<ac:variantDescription>Best Quality</ac:variantDescription>
+<ac:accessURL rdf:resource="http://calphotos.berkeley.edu/imgs/512x768/0000_0000/0510/1862.jpeg"/>
+<dc:format rdf:datatype="http://purl.org/dc/terms/IMT">image/jpeg</dc:format>
+<exif:PixelXDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#int">512</exif:PixelXDimension>
+<exif:PixelYDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#int">768</exif:PixelYDimension>
+</rdf:Description>
+<rdf:Description rdf:about="http://calphotos.berkeley.edu/0000000005101862#tn">
+<rdf:type rdf:resource ="http://rs.tdwg.org/ac/terms/ServiceAccessPoint" />
+<ac:variantDescription>Thumbnail</ac:variantDescription>
+<ac:accessURL rdf:resource="http://calphotos.berkeley.edu/imgs/67x100/0000_0000/0510/1862.jpeg"/>
+<dc:format rdf:datatype="http://purl.org/dc/terms/IMT">image/jpeg</dc:format>
+<exif:PixelXDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#int">67</exif:PixelXDimension>
+<exif:PixelYDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</exif:PixelYDimension>
+</rdf:Description>
+<rdf:Description rdf:about="http://calphotos.berkeley.edu/0000000005101862#lq">
+<rdf:type rdf:resource ="http://rs.tdwg.org/ac/terms/ServiceAccessPoint" />
+<ac:variantDescription>Lower Quality</ac:variantDescription>
+<ac:accessURL rdf:resource="http://calphotos.berkeley.edu/imgs/320x480/0000_0000/0510/1862.jpeg"/>
+<dc:format rdf:datatype="http://purl.org/dc/terms/IMT">image/jpeg</dc:format>
+<exif:PixelXDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#int">320</exif:PixelXDimension>
+<exif:PixelYDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#int">480</exif:PixelYDimension>
+</rdf:Description>
+
+
+<!--
+Information about the metadata document itself
+-->
+<rdf:Description rdf:about="http://calphotos.berkeley.edu/0000000005101862.rdf">
+     <dcterms:description>RDF formatted descriptions</dcterms:description>
+     <rdf:type rdf:resource ="http://xmlns.com/foaf/0.1/Document" />
+     <dc:creator>CalPhotos, University of California, Berkeley</dc:creator>
+     <dc:language>en</dc:language>
+     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-13T14:35:05</dcterms:modified>
+     <dcterms:references rdf:resource="http://calphotos.berkeley.edu/0000000005101862"/>
+</rdf:Description>
+</rdf:RDF>
