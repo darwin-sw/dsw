@@ -56,7 +56,13 @@ PREFIX txn:  <http://lod.taxonconcept.org/ontology/txn.owl#>
 PREFIX stdview: <http://bioimages.vanderbilt.edu/rdf/stdview#>
 }}}
 
-= Inferring inverse relationships =
+= Inverse relationships =
+
+==Why have inverse relationships?==
+
+Each object property defined by Darwin-SW has a corresponding inverse property.  This allows any resource to be the subject a property that links it to an instance of another class that is adjacent in the Darwin-SW model.  Although it would be possible to have properties that only link in one direction, it would require more awkward structuring of the RDF if the focal resource were required to be the object of a triple rather than the subject.  By having an inverse of each object property, Darwin-SW supports the philosophy that resources are a connected network in which each component is important.  Any resource type of can be the "center of the universe" in Darwin-SW.
+
+==Query to infer inverse relationships==
 
 This query follows the rational explained at http://code.google.com/p/tdwg-rdf/wiki/SparqlReasoning .  If you are unfamiliar with SPARQL, you may want to review this example before proceeding.
 
