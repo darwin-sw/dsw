@@ -1,6 +1,10 @@
 #summary SPARQL examples.
 
-Note: still under construction as of 2013-10-25
+Note: still under construction as of 2013-10-26
+
+*Contents*
+
+<wiki:toc max_depth="4" />
 
 = Introduction =
 
