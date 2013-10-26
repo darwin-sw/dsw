@@ -69,13 +69,13 @@ This query follows the rational explained at http://code.google.com/p/tdwg-rdf/w
 {{{
 CONSTRUCT {?R1 ?Property2 ?R2}
 FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
-FROM <https://dl.dropboxusercontent.com/u/24288409/inverse-assertions.rdf>
-FROM <https://dl.dropboxusercontent.com/u/24288409/dsw-0-3-use-case-2013-03.rdf>
-FROM <https://dl.dropboxusercontent.com/u/24288409/dsw-0-3-use-case-2013-06.rdf>
-FROM <https://dl.dropboxusercontent.com/u/24288409/dsw-0-3-use-case-2018.rdf>
-FROM <https://dl.dropboxusercontent.com/u/24288409/dsw-0-3-use-case-2017-02.rdf>
-FROM <https://dl.dropboxusercontent.com/u/24288409/dsw-0-3-use-case-2017-04.rdf>
-FROM <https://dl.dropboxusercontent.com/u/24288409/dsw-0-3-use-case-2025.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-03.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-06.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2018.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-02.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-04.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.rdf>
 WHERE 
  {
  ?Property1 owl:inverseOf ?Property2.
