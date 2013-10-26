@@ -111,5 +111,40 @@ WHERE
  }
 Limit 100
 }}}
+This query finds approximately 38 triples from the example whose inverse relationship is not explicitly stated.
 
 There is another set of missing inverse triples for properties *whose inverse property* is declared to have an _owl:inverseOf_ property:
+
+{{{
+[prefix list goes here]
+
+CONSTRUCT {?R1 ?Property1 ?R2}
+
+FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-03.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-06.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2018.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-02.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-04.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.rdf>
+WHERE 
+ {
+ ?Property1 owl:inverseOf ?Property2.
+ ?R2 ?Property2 ?R1.
+ OPTIONAL 
+   {
+   ?R3 ?Property1 ?R2.
+   FILTER(?R3 = ?R1).
+   }
+ FILTER(!BOUND(?R3))
+ }
+Limit 100
+}}}
+This query finds the other approximately 15 missing inverse triples.
+
+Note that one could avoid having to run these two queries if the Darwin-SW ontology file were changed to assert the _owl:inverseOf_ relationships both ways.  That has not been done because it isn't normal practice for OWL ontologies.  But for the sake of reducing the number of processing steps it could be done for the version of Darwin-SW loaded in the triple store.
+
+The resulting triples have been included in the file http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-inverse.rdf .  This file will be included in subsequent examples so that the queries can be run using any of the paired inverse object properties.
+
+=Transitive properties=
