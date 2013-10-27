@@ -1,6 +1,5 @@
 #summary SPARQL examples.
 
-Note: still undergoing proofreading as of 2013-10-27
 
 *Contents*
 
