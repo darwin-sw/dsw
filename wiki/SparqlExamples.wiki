@@ -1,4 +1,5 @@
 #summary SPARQL examples.
+#labels mang
 
 Note: still undergoing proofreading as of 2013-10-27
 
@@ -261,7 +262,7 @@ FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-bad-ob
 }}}
 The resulting graph (in RDF/XML) is in the file http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-range-inference.rdf .  Note that this graph includes a triple that states that the bird is a dcmitype:Event (the result of the inconsistent use of the {{{dsw:locatedAt}}} property).  
 
-== Query to reason rdf:type from domaing declarations ==
+== Query to reason rdf:type from domain declarations ==
 {{{
 [prefix list goes here]
 CONSTRUCT {?resource a ?class}
@@ -323,7 +324,7 @@ The following queries search the simulated community triplestore for several kin
 
 The generic "dsw-0-3-use-case-XXXX-XX" files contain graphs which include triples that would be added to the database sequentially over time, with XXXX-XX indicating the date on which the new triples were generated.  This premits playing with the dataset to see how new resources might be discovered over time.  To be completely accurate, the transitive queries should be run after each addition of a new graph to the database with the inferred transitive relationships added to the database as well.  However, since you may not have upload privileges for the sandbox, you can just include the inferred transitive files for all of the dated graphs.  The queries will still generally fail to detect or detect the new resources based on which of the generic files you include.
 
-== New derived resources ==
+== Discovering new derived resources ==
 Competency question: Find all resources (derived from a particular IndividualOrganism) which have metadata dates after the last time the database was checked.
 
 {{{
@@ -358,7 +359,7 @@ FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.r
 }}}
 is added, the {{{dwctype:MaterialSample}}} instance will be detected.  Note that the filter requires that names bound to the ?date variable must be well-formed according to the {{{xsd:dateTime}}} datatype.  
 
-== New identifications ==
+== Discovering new identifications ==
 Competency question: A certain institution wants to know if any new identifications (since the last time they checked) have been applied to the source IndividualOrganism from which one of their collection items was derived.  Provide the URI of the item, its type, the person who made the determination and the scientific name of the new determination.
 
 {{{
@@ -395,5 +396,3 @@ FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.r
 a result will occur after the addition of the dsw-0-3-use-case-2018.rdf file which contains a new determination.  
 
 This query is more powerful than the previous one.  The previous query simply tested for new derivatives from a particular organism instance, whereas this query will locate new determinations related to ANY resources at CalPhotos.
-
-
