@@ -1,5 +1,4 @@
 #summary SPARQL examples.
-#labels mang
 
 Note: still undergoing proofreading as of 2013-10-27
 
@@ -164,7 +163,7 @@ The resulting triples have been included in the file http://darwin-sw.googlecode
 
 = The transitive properties dsw:derivedFrom and dsw:hasDerivative = 
 
-Two properties in Darwin-SW are declared to be of type owl:TransitiveProperty.  In Darwin-SW, resources can be related to a parent resource from which they are derived by the transitive property {{{dsw:derivedFrom}}}.  For example, in the first diagram, the bird specimen is {{{dsw:derived}}} from the parent bird organism.  The inverse relationship, {{{dsw:hasDerivative}}} relates a parent resource to a child recource that is derived from it.  A given resource can have any number of child derived resources.  For example, the bird specimen {{{dsw:hasDerivative}}} three bird part specimens.  
+Two properties in Darwin-SW are declared to be of type {{{owl:TransitiveProperty}}}.  In Darwin-SW, resources can be related to a parent resource from which they are derived by the transitive property {{{dsw:derivedFrom}}}.  For example, in the first diagram, the bird specimen is {{{dsw:derived}}} from the parent bird organism.  The inverse relationship, {{{dsw:hasDerivative}}} relates a parent resource to a child recource that is derived from it.  A given resource can have any number of child derived resources.  For example, the bird specimen {{{dsw:hasDerivative}}} three bird part specimens.  
 
 Any particular derived resource has a chain of resources which links it upward to an ultimate {{{dsw:IndividualOrganism}}} class instance.  Any resource having derivatives can form a tree of child resources linked downward indefinitely.  
 
@@ -207,7 +206,7 @@ In order to reason all the triples that are entailed by {{{dsw:derivedFrom}}} tr
 
 Because it is possible that triples in new graphs added to a community triplestore may assert {{{dsw:derivedFrom}}} relationships with other resources that already are present in the existing graph, the query must be done on the entire triplestore each time a new graph is added.  Thus it is likely to be more time-consuming than the inverse relationship query above (which only needs to be applied to the new graph being added).  However, this processing step is scalable as we attempt to show with the following rationale based on a worst-case scenario:
 
-Assume N triples.  If every triple were a {{{<R1> dsw:hasDerivative <R2>}}} relationship with no dsw:hasDerivative relationships asserted further than to a single parent resource, and if the chains were x resources long with no forks below the IndividualOrganism, there would be N/x chains each with x-1 steps in each chain.  In the first round of processing, there would be x-2 triples inferred for each chain, so the number of inferred triples would be [(x-2)/x]N.  In the next round, the triples inferred would be those that are three steps apart and the number would be [(x-3)/x]N.  The rounds would continue until with [(x-i)/x]N inferred triples until x=i and the process is complete.  So the worst number of triples would be 
+Assume N triples.  If every triple were a {{{<R1> dsw:hasDerivative <R2>}}} relationship with no {{{dsw:hasDerivative}}} relationships asserted further than to a single parent resource, and if the chains were x resources long with no forks below the IndividualOrganism, there would be N/x chains each with x-1 steps in each chain.  In the first round of processing, there would be x-2 triples inferred for each chain, so the number of inferred triples would be [(x-2)/x]N.  In the next round, the triples inferred would be those that are three steps apart and the number would be [(x-3)/x]N.  The rounds would continue until with [(x-i)/x]N inferred triples until x=i and the process is complete.  So the worst number of triples would be 
 
 (sum for i=2 to x) [(x-i)/x]N
 
