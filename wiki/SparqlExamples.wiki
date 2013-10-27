@@ -1,6 +1,6 @@
 #summary SPARQL examples.
 
-Note: still under construction as of 2013-10-26
+Note: still undergoing proofreading as of 2013-10-27
 
 *Contents*
 
@@ -159,4 +159,241 @@ Note that one could avoid having to run these two queries if the Darwin-SW ontol
 
 The resulting triples have been included in the file http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-inverse.rdf .  This file will be included in subsequent examples so that the queries can be run using any of the paired inverse object properties.
 
-=Transitive properties=
+= The transitive properties dsw:derivedFrom and dsw:hasDerivative = 
+
+Two properties in Darwin-SW are declared to be of type owl:TransitiveProperty.  In Darwin-SW, resources can be related to a parent resource from which they are derived by the transitive property {{{dsw:derivedFrom}}}.  For example, in the first diagram, the bird specimen is {{{dsw:derived}}} from the parent bird organism.  The inverse relationship, {{{dsw:hasDerivative}}} relates a parent resource to a child recource that is derived from it.  A given resource can have any number of child derived resources.  For example, the bird specimen {{{dsw:hasDerivative}}} three bird part specimens.  
+
+Any particular derived resource has a chain of resources which links it upward to an ultimate {{{dsw:IndividualOrganism}}} class instance.  Any resource having derivatives can form a tree of child resources linked downward indefinitely.  
+
+Because {{{dsw:derivedFrom}}} and {{{dsw:hasDerivative}}} are transitive, their use can imply additional triples that are not explicitly expressed.  An application can reason inferred triples which are entailed by a chain of one-step transitive properties.  After these inferred triples are added to the graph, there will exist triples that relate a parent organism to all of its derivatives through a single triple with a {{{dsw:hasDerivative}}} predicate.  There will also exist triples that relate every derived resource to its ultimate organism ancestor through a single triple with a {{{dsw:derivedFrom}}} predicate.  Since the parent organism serves as a node which connects the organism with all of its occurrences and all of its identifications (i.e. determinations), each derived resource is only a single step from those other connections (occurrences and identifications).  This greatly simplifies the query process.  It also makes it unnecessary to assert numerous triples that connect each derived resource to relevant determinations.  
+
+== SPARQL query to infer implied dsw:derivedFrom triples==
+The following query finds resources that are linked by two consecutive asserted {{{dsw:derivedFrom}}} triples and constructs a single inferred {{{dsw:derivedFrom}}} triple that relates the two resources that are two asserted steps apart.  
+{{{
+[prefix list goes here]
+CONSTRUCT {?R1 dsw:derivedFrom ?R3}
+FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-03.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-06.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2018.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-02.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-04.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-inverse.rdf>
+WHERE 
+ {
+ ?R1 dsw:derivedFrom ?R2.
+ ?R2 dsw:derivedFrom ?R3.
+ OPTIONAL
+        {
+        ?trash dsw:derivedFrom ?R3.
+        FILTER(?trash = ?R1)
+        }
+ FILTER(!bound(?trash))
+ }
+Limit 100
+}}}
+Note that again a filter has been applied which prevents the query from generating triples that already exist in the graph.  
+
+A similar query could be constructed to infer triples that are entailed by consecutive asserted {{{dsw:hasDerivative}}} triples.  The graph which results from this query has been saved in an RDF/XML file having the URI http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive1.rdf .  
+
+In order to reason all the triples that are entailed by {{{dsw:derivedFrom}}} triples, the resulting graph must be merged with the existing graph and the query repeated.  This time, the inferred triples will be resources that were three asserted steps apart in the original graph.  The process of querying and merging must be repeated until no new triples result from the query.  Because real derived resources are rarely more than four or five steps away from the parent organism, the number of iterations required is limited.  In this case, a second iteration (whose results are in the file having URI http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive2.rdf ) produces only 5 new triples.  Since the diagrams show that no derived resources are more than three asserted steps apart, there should be no additional inferred triples and a third iteration produces none.  
+
+== Use of the query in processing contributions to a community triplestore==
+
+Because it is possible that triples in new graphs added to a community triplestore may assert {{{dsw:derivedFrom}}} relationships with other resources that already are present in the existing graph, the query must be done on the entire triplestore each time a new graph is added.  Thus it is likely to be more time-consuming than the inverse relationship query above (which only needs to be applied to the new graph being added).  However, this processing step is scalable as we attempt to show with the following rationale based on a worst-case scenario:
+
+Assume N triples.  If every triple were a <R1> dsw:hasDerivative <R2> relationship with no dsw:hasDerivative relationships asserted further than to a single parent resource, and if the chains were x resources long with no forks below the IndividualOrganism, there would be N/x chains each with x-1 steps in each chain.  In the first round of processing, there would be x-2 triples inferred for each chain, so the number of inferred triples would be [(x-2)/x]N.  In the next round, the triples inferred would be those that are three steps apart and the number would be [(x-3)/x]N.  The rounds would continue until with [(x-i)/x]N inferred triples until x=i and the process is complete.  So the worst number of triples would be 
+
+(sum for i=2 to x) [(x-i)/x]N
+
+N can come out in front of the summation, producing
+
+N (sum for i=2 to x) (x-i)/x
+
+For any x, the sum has a constant value (call it k), so we can say that the number of inferred triples will be kN, i.e. linearly related to the size of N.  As I already said, as a practical matter, N is probably realistically 5 or less.  
+
+The situation will also much be better than the worst case scenario, because a lot of the triples won’t contain one of the transitive predicates.  There will also be forks below the IndividualOrganism, which will reduce the number of inferences required up towards the IndividualOrganism. 
+
+= Reasoning rdf:type from ranges and domains of Darwin-SW object properties =
+
+Many Darwin-SW defined object properties have range or domain declarations.  A reasoner can infer rdf:type triples that are entailed by these declarations.  Such reasoning can be done with simple SPARQL queries.
+
+Recall that the Open World assumption does not restrict what triples can be asserted.  If a provider asserts links between types of resources that are inconsistent with the model of relationships among classes that Darwin-SW follows, the range and domain declarations will entail rdf:type triples that do not make sense according to the way the classes are described.  The file having the URI http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-bad-object-properties.rdf contains two triples that assert relationships that are not in accordance with the Darwin-SW model.  A {{{dwctype:Occurrence}}} instance has a {{{dsw:hasIdentification}}} property (this should be a property of {{{dsw:IndividualOrganism}}} instances).  An {{{IndividualOrganism}}} instance serves as the object of a {{{dsw:locates}}} property (the object should be a {{{dwctype:Occurrence}}} instance).  This graph is included with the graphs used in the earlier examples to show what is entailed when Darwin-SW object properties are used inconsistently.
+
+== Query to reason rdf:type from range declarations ==
+
+[prefix list goes here]
+
+CONSTRUCT {?resource a ?class}
+FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
+[put FROM statements for graphs to be tested here]
+
+WHERE
+ {
+ ?property rdfs:range ?class.
+ ?subject ?property ?resource.
+ OPTIONAL
+    	{
+    	?trash  ?a ?class.
+    	FILTER(?trash = ?resource)
+    	}
+ FILTER(!bound(?trash))
+ }
+Limit 20
+
+This query has been run on all the complete set of asserted and inferred triples in the following graphs:
+{{{
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-03.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-06.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2018.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-02.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-04.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-inverse.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive1.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive2.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-bad-object-properties.rdf>
+}}}
+The resulting graph (in RDF/XML) is in the file http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-range-inference.rdf .  Note that this graph includes a triple that states that the bird is a dcmitype:Event (the result of the inconsistent use of the {{{dsw:locatedAt}}} property).  
+
+== Query to reason rdf:type from domaing declarations ==
+{{{
+[prefix list goes here]
+CONSTRUCT {?resource a ?class}
+FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
+[put FROM statements for graphs to be tested here]
+
+WHERE
+ {
+ ?property rdfs:domain ?class.
+ ?resource ?property ?object.
+ OPTIONAL
+    	{
+    	?trash  ?a ?class.
+    	FILTER(?trash = ?resource)
+    	}
+ FILTER(!bound(?trash))
+ }
+Limit 20
+}}}
+The inferred triples were saved in the file having the URI http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-domain-inference.rdf .  Note that this graph includes a triple that states that the occurrence http://museum.org/occ/12345 is an organism.  This is a consequence of the inconsistent use of the {{{dsw:locates}}} property.  
+
+= Consistency checking using owl:disjointWith declarations=
+
+Darwin-SW declares some (but not all) of its core classes to be disjoint.  If a particular instance has two rdf:type declarations whose objects are disjoint classes, no world exists that is consistent with that graph.  The graph is considered to be inconsistent.  Some OWL reasoners can perform reasoning to check for overall consistency of graphs.  Here we show how a SPARQL query can be used to test for the particular case of inconsistencies caused by resources that are instances of two disjoint classes.
+
+== Query to detect disjoint class inconsistencies==
+{{{
+SELECT DISTINCT ?resource ?class1 ?class2
+FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-03.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-06.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2018.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-02.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-04.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-10.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-inverse.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive1.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive2.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-bad-object-properties.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-range-inference.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-domain-inference.rdf>
+WHERE
+ {
+ ?resource a ?class1.
+ ?resource a ?class2.
+ ?class1 owl:disjointWith ?class2.
+ }
+Limit 100
+}}}
+
+The output of this query lists the URI of the resource which is an instance of two disjoint classes and also lists the URIs of those two classes.  When run on the graphs listed above, it finds the two inconsistent resources (bird declared both an organism and an event, and the occurrence <http://museum.org/occ/12345> declared both an occurrence and an organism).  
+
+If the range and domain queries were run each time a new graph were added to a community triplestore, the query to detect inconsistencies based on disjoint class declarations would detect that the new graph contains uses of properties that were not consistent with the model used by Darwin-SW.  This query would not detect every kind of inappropriate use of Darwin-SW property terms, but the discovery of any inconsistencies would alert the managers of the triplestore that the provider may not be following the model.  
+
+=Queries that address important competency questions=
+The following queries search the simulated community triplestore for several kinds of new resources which have been added to the database.  They illustrate the power of RDF and SPARQL to allow an institution to discover newly-created resources whose metadata may have been added to the database without the knowledge of the institution.  
+
+The generic "dsw-0-3-use-case-XXXX-XX" files contain graphs which include triples that would be added to the database sequentially over time, with XXXX-XX indicating the date on which the new triples were generated.  This premits playing with the dataset to see how new resources might be discovered over time.  To be completely accurate, the transitive queries should be run after each addition of a new graph to the database with the inferred transitive relationships added to the database as well.  However, since you may not have upload privileges for the sandbox, you can just include the inferred transitive files for all of the dated graphs.  The queries will still generally fail to detect or detect the new resources based on which of the generic files you include.
+
+== New derived resources ==
+Competency question: Find all resources (derived from a particular IndividualOrganism) which have metadata dates after the last time the database was checked.
+
+{{{
+SELECT DISTINCT ?resource ?type ?date
+
+FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-03.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-06.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2018.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-02.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-04.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-10.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-inverse.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive1.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive2.rdf>
+
+WHERE
+ {
+ ?resource dsw:derivedFrom <http://arctos.database.museum/guid/MVZ:Bird:21465#ind>.
+ ?record dcterms:references ?resource.
+ ?resource a ?type.
+ ?record dcterms:modified ?date.
+ FILTER( ?date >= xsd:dateTime("2015-01-01T00:00:00"))
+ }
+Limit 20
+}}}
+
+If the query is run on the files listed above, it will detect nothing.  However, if the graph 
+{{{
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.rdf>
+}}}
+is added, the {{{dwctype:MaterialSample}}} instance will be detected.  Note that the filter requires that names bound to the ?date variable must be well-formed according to the {{{xsd:dateTime}}} datatype.  
+
+== New identifications ==
+Competency question: A certain institution wants to know if any new identifications (since the last time they checked) have been applied to the source IndividualOrganism from which one of their collection items was derived.  Provide the URI of the item, its type, the person who made the determination and the scientific name of the new determination.
+
+{{{
+SELECT DISTINCT ?resource ?determiner ?sciName
+
+FROM <http://darwin-sw.googlecode.com/svn/trunk/dsw.owl>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-03.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2013-06.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-inverse.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive1.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-inferred-transitive2.rdf>
+
+WHERE
+ {
+ ?resource dwcuri:inCollection <http://calphotos.berkeley.edu/void>.
+ ?resource dsw:derivedFrom ?individual.
+ ?individual dsw:hasIdentification ?id.
+ ?id dwc:scientificName ?sciName.
+ ?id dwc:identifiedBy ?determiner.
+ ?id dwc:dateIdentified ?date.
+ FILTER( ?date >= "2014-01-01")
+ }
+Limit 20
+}}}
+If ran as listed above, the query produces no results.  However, if the graphs in the following list are added to the list one at a time in order of date:
+{{{
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-02.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-04.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2017-10.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2018.rdf>
+FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.rdf>
+}}}
+a result will occur after the addition of the dsw-0-3-use-case-2018.rdf file which contains a new determination.  
+
+This query is more powerful than the previous one.  The previous query simply tested for new derivatives from a particular organism instance, whereas this query will locate new determinations related to ANY resources at CalPhotos.
+
+
+
+
