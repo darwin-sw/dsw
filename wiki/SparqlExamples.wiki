@@ -84,14 +84,14 @@ PREFIX stdview: <http://bioimages.vanderbilt.edu/rdf/stdview#>
 The following diagrams illustrate graphically some of the triples representing relationships between resources that are included in the graphs which are queried in the SPARQL examples.  They represent a scenario in which specimens were collected during a bioblitz with subsequent identifications and creation of other resources derived from the original specimens.
 
 Order of events:
-A. In March of 2013, a starfish, shell, and bird were collected and identified.  
-B. The vertebrates went to the Berkeley Museum of Vertebrate Zoology.  The shell and starfish went to Alaska.
-C. In June 2013, the curators separated the bird into skin, skeleton, and stomach preps.
-D. In Feb 2017, a sample was taken from the starfish and was put in the Smithsonian.
-E. In April 2017, a DNA sequences was created from the starfish sample and was put in GenBank.
-e. In October 2017, CalPhotos decided to image all of the bird skins in MVZ.  
-H. In 2018, a new identification of the bird was made.  
-I. In 2025, somebody from Woods Hole was doing a study of what crows eat in the intertidal and took a sample from the stomach prep of the crow.  
+  # In March of 2013, a starfish, shell, and bird were collected and identified.  
+  # The vertebrates went to the Berkeley Museum of Vertebrate Zoology.  The shell and starfish went to Alaska.
+  # In June 2013, the curators separated the bird into skin, skeleton, and stomach preps.
+  # In Feb 2017, a sample was taken from the starfish and was put in the Smithsonian.
+  # In April 2017, a DNA sequences was created from the starfish sample and was put in GenBank.
+  # In October 2017, CalPhotos decided to image all of the bird skins in MVZ.  
+  # In 2018, a new identification of the bird was made.  
+  # In 2025, somebody from Woods Hole was doing a study of what crows eat in the intertidal and took a sample from the stomach prep of the crow.  
 
 http://darwin-sw.googlecode.com/svn/trunk/examples/bird-bioblitz.png
 
