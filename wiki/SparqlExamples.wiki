@@ -20,7 +20,9 @@ The ability to make queries that can consistently find the desired information d
 ==Processing protocol==
 The queries described below form part of a processing protocol that could be used to enhance the data contributed to a community triplestore.  The steps of that protocol are:
   # Infer any triples that are entailed by use of the inverse Darwin-SW terms.  This allows queries to be formed using predicates that link the core classes in either direction.  This processing step need only be applied once to any graph that is added to the community triplestore.
-  # 
+  # Infer triples based on transitive dsw:derivedFrom and dsw:hasDerivative triples.
+  # Infer rdf:type relationships of resources based on domain and range declarations of object properties.
+  # Check for consistency of newly added triples by searching for resources having rdf:type of two disjoint classes.  
 
 =Preliminaries=
 
@@ -204,7 +206,7 @@ In order to reason all the triples that are entailed by {{{dsw:derivedFrom}}} tr
 
 Because it is possible that triples in new graphs added to a community triplestore may assert {{{dsw:derivedFrom}}} relationships with other resources that already are present in the existing graph, the query must be done on the entire triplestore each time a new graph is added.  Thus it is likely to be more time-consuming than the inverse relationship query above (which only needs to be applied to the new graph being added).  However, this processing step is scalable as we attempt to show with the following rationale based on a worst-case scenario:
 
-Assume N triples.  If every triple were a <R1> dsw:hasDerivative <R2> relationship with no dsw:hasDerivative relationships asserted further than to a single parent resource, and if the chains were x resources long with no forks below the IndividualOrganism, there would be N/x chains each with x-1 steps in each chain.  In the first round of processing, there would be x-2 triples inferred for each chain, so the number of inferred triples would be [(x-2)/x]N.  In the next round, the triples inferred would be those that are three steps apart and the number would be [(x-3)/x]N.  The rounds would continue until with [(x-i)/x]N inferred triples until x=i and the process is complete.  So the worst number of triples would be 
+Assume N triples.  If every triple were a {{{<R1> dsw:hasDerivative <R2>}}} relationship with no dsw:hasDerivative relationships asserted further than to a single parent resource, and if the chains were x resources long with no forks below the IndividualOrganism, there would be N/x chains each with x-1 steps in each chain.  In the first round of processing, there would be x-2 triples inferred for each chain, so the number of inferred triples would be [(x-2)/x]N.  In the next round, the triples inferred would be those that are three steps apart and the number would be [(x-3)/x]N.  The rounds would continue until with [(x-i)/x]N inferred triples until x=i and the process is complete.  So the worst number of triples would be 
 
 (sum for i=2 to x) [(x-i)/x]N
 
@@ -212,7 +214,7 @@ N can come out in front of the summation, producing
 
 N (sum for i=2 to x) (x-i)/x
 
-For any x, the sum has a constant value (call it k), so we can say that the number of inferred triples will be kN, i.e. linearly related to the size of N.  As I already said, as a practical matter, N is probably realistically 5 or less.  
+For any x, the sum has a constant value (call it k), so we can say that the number of inferred triples will be kN, i.e. linearly related to the size of N.  As was said earlier, as a practical matter, N is probably realistically 5 or less.  
 
 The situation will also much be better than the worst case scenario, because a lot of the triples won’t contain one of the transitive predicates.  There will also be forks below the IndividualOrganism, which will reduce the number of inferences required up towards the IndividualOrganism. 
 
@@ -223,7 +225,7 @@ Many Darwin-SW defined object properties have range or domain declarations.  A r
 Recall that the Open World assumption does not restrict what triples can be asserted.  If a provider asserts links between types of resources that are inconsistent with the model of relationships among classes that Darwin-SW follows, the range and domain declarations will entail rdf:type triples that do not make sense according to the way the classes are described.  The file having the URI http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-bad-object-properties.rdf contains two triples that assert relationships that are not in accordance with the Darwin-SW model.  A {{{dwctype:Occurrence}}} instance has a {{{dsw:hasIdentification}}} property (this should be a property of {{{dsw:IndividualOrganism}}} instances).  An {{{IndividualOrganism}}} instance serves as the object of a {{{dsw:locates}}} property (the object should be a {{{dwctype:Occurrence}}} instance).  This graph is included with the graphs used in the earlier examples to show what is entailed when Darwin-SW object properties are used inconsistently.
 
 == Query to reason rdf:type from range declarations ==
-
+{{{
 [prefix list goes here]
 
 CONSTRUCT {?resource a ?class}
@@ -242,7 +244,7 @@ WHERE
  FILTER(!bound(?trash))
  }
 Limit 20
-
+}}}
 This query has been run on all the complete set of asserted and inferred triples in the following graphs:
 {{{
 FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/inverse-assertions.rdf>
@@ -393,7 +395,5 @@ FROM <http://darwin-sw.googlecode.com/svn/trunk/examples/dsw-0-3-use-case-2025.r
 a result will occur after the addition of the dsw-0-3-use-case-2018.rdf file which contains a new determination.  
 
 This query is more powerful than the previous one.  The previous query simply tested for new derivatives from a particular organism instance, whereas this query will locate new determinations related to ANY resources at CalPhotos.
-
-
 
 
