@@ -73,6 +73,7 @@ PREFIX mbank: <http://www.morphbank.net/schema/morphbank#>
 PREFIX exif: <http://ns.adobe.com/exif/1.0/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX local: <http://bioimages.vanderbilt.edu/rdf/local#>
 PREFIX tc: <http://rs.tdwg.org/ontology/voc/TaxonConcept#>
 PREFIX txn:  <http://lod.taxonconcept.org/ontology/txn.owl#>
