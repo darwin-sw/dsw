@@ -1,4 +1,4 @@
-#summary SPARQL examples.
+#summary SPARQL examples based on complex multi-institution data.
 
 
 *Contents*
