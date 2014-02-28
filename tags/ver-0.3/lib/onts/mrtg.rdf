@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://dublincore.org/documents/dcmi-terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:k2n="http://www.keytonature.eu/std/metadata/2009/xmlns/" xmlns:mrtg="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#" xmlns:ncd="http://rs.tdwg.org/ontology/voc/Collection#" xmlns:photoshop="http://ns.adobe.com/photonewshop/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#MultiMediaObject">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#MultiMediaObject">
+    <rdfs:label>Media</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#ServiceAccessPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#ServiceAccessPoint">
+    <rdfs:label>ServiceAccessPoint</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#MultiMediaObject">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#MultiMediaObject">
+    <rdfs:label>Media</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#ServiceAccessPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#ServiceAccessPoint">
+    <rdfs:label>ServiceAccessPoint</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/identifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/identifier">
+    <rdfs:label>Identifier</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/type">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/type">
+    <rdfs:label>Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subtype">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subtype">
+    <rdfs:label>Subtype</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/title">
+    <rdfs:label>Title</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/MetadataDate">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/MetadataDate">
+    <rdfs:label>Metadata Date</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#metadataLanguage">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#metadataLanguage">
+    <rdfs:label>Metadata Language</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#providerManagedID">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#providerManagedID">
+    <rdfs:label>Provider Managed ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/Rating">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/Rating">
+    <rdfs:label>Rating</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#commenter">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#commenter">
+    <rdfs:label>Commenter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#comments">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#comments">
+    <rdfs:label>Comments</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#reviewer">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#reviewer">
+    <rdfs:label>Reviewer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#reviewerComments">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#reviewerComments">
+    <rdfs:label>Reviewer Comments</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/modified">
+    <rdfs:label>Modified</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/available">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/available">
+    <rdfs:label>Date Available</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/accrualPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/accrualPolicy">
+    <rdfs:label>Accrual Policy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/rights/Owner">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/rights/Owner">
+    <rdfs:label>Copyright Owner</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/rights">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/rights">
+    <rdfs:label>Copyright Statement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/rights/UsageTerms">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/rights/UsageTerms">
+    <rdfs:label>License Statement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/rights/WebStatement">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/rights/WebStatement">
+    <rdfs:label>License URL</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#licenseLogoURL">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#licenseLogoURL">
+    <rdfs:label>License Logo URL</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CreditLine">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CreditLine">
+    <rdfs:label>Attribution Statement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#attributionLogoURL">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#attributionLogoURL">
+    <rdfs:label>Attribution Logo URL</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#attributionLinkURL">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#attributionLinkURL">
+    <rdfs:label>Attribution Link URL</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/source">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/source">
+    <rdfs:label>Published Source</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/creator">
+    <rdfs:label>Creator</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#provider">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#provider">
+    <rdfs:label>Provider</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#metadataProvider">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#metadataProvider">
+    <rdfs:label>Metadata Provider</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/description">
+    <rdfs:label>Description</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#caption">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#caption">
+    <rdfs:label>Caption</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/language">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/language">
+    <rdfs:label>Language</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationShown">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationShown">
+    <rdfs:label>Location Shown</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion">
+    <rdfs:label>World Region</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode">
+    <rdfs:label>Country Code</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName">
+    <rdfs:label>Country Name</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState">
+    <rdfs:label>Province or State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/City">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/City">
+    <rdfs:label>City or Place Name</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation">
+    <rdfs:label>Sublocation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/ontology/voc/Collection#temporalCoverage">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/ontology/voc/Collection#temporalCoverage">
+    <rdfs:label>Temporal Coverage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/CreateDate">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ns.adobe.com/xap/1.0/CreateDate">
+    <rdfs:label>Original Date and Time</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#timeOfDay">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#timeOfDay">
+    <rdfs:label>Time of Day</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#physicalSetting">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#physicalSetting">
+    <rdfs:label>Physical Setting</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CVterm">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/CVterm">
+    <rdfs:label>Subject Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subjectCategoryVocabulary">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subjectCategoryVocabulary">
+    <rdfs:label>Subject Category Vocabulary</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#tag">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#tag">
+    <rdfs:label>Tag</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/ontology/voc/Collection#taxonCoverage">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/ontology/voc/Collection#taxonCoverage">
+    <rdfs:label>Taxonomic Coverage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/scientificName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/scientificName">
+    <rdfs:label>Scientific Name</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/vernacularName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/vernacularName">
+    <rdfs:label>Common Name</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/taxonAccordingTo">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/taxonAccordingTo">
+    <rdfs:label>Taxon According To</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/taxonID">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/taxonID">
+    <rdfs:label>Scientific Name GUID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#scientificNameSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#scientificNameSynonym">
+    <rdfs:label>Scientific Name Synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/identifiedBy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/identifiedBy">
+    <rdfs:label>Identified By</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/dateIdentified">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/dateIdentified">
+    <rdfs:label>Date Identified</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#taxonCount">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#taxonCount">
+    <rdfs:label>Taxon Count</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subjectPart">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subjectPart">
+    <rdfs:label>Subject Part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/sex">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/sex">
+    <rdfs:label>Subject Sex</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/lifeStage">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/lifeStage">
+    <rdfs:label>Subject Life Stage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subjectOrientation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#subjectOrientation">
+    <rdfs:label>Subject Orientation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/preparations">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/dwc/terms/preparations">
+    <rdfs:label>Subject Preparation Technique</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationCreated">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationCreated">
+    <rdfs:label>Location Created</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.keytonature.eu/std/metadata/2009/xmlns/Digitization_Date">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.keytonature.eu/std/metadata/2009/xmlns/Digitization_Date">
+    <rdfs:label>Date and Time Digitized</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#captureDevice">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#captureDevice">
+    <rdfs:label>Capture Device</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#resourceCreationTechnique">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#resourceCreationTechnique">
+    <rdfs:label>Resource Creation Technique</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#hasServiceAccessPoint">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#hasServiceAccessPoint">
+    <rdfs:label>Access Point</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#accessURL">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#accessURL">
+    <rdfs:label>Access URL</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/format">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/format">
+    <rdfs:label>Format</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#variant">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#variant">
+    <rdfs:label>Variant</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/extent">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dublincore.org/documents/dcmi-terms/extent">
+    <rdfs:label>Extent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#furtherInformationURL">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#furtherInformationURL">
+    <rdfs:label>Further Information URL</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#licensingException">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#licensingException">
+    <rdfs:label>Licensing Exception Statement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#availabilityException">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#availabilityException">
+    <rdfs:label>Availability Exception (see Key2Nature)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#versionDescription">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#versionDescription">
+    <rdfs:label>Version Description</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#containingCollectionID">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#containingCollectionID">
+    <rdfs:label>Collection Reference By ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#memberIDinCollection">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#memberIDinCollection">
+    <rdfs:label>Collection Member By ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#relatedResourceID">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#relatedResourceID">
+    <rdfs:label>Related Resource By ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#providerID">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#providerID">
+    <rdfs:label>Provider By ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#derivedFrom">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#derivedFrom">
+    <rdfs:label>Derived From</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#associatedSpecimenReference">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#associatedSpecimenReference">
+    <rdfs:label>Associated Specimen Reference</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#associatedObservationReference">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#associatedObservationReference">
+    <rdfs:label>Associated Observation Reference</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

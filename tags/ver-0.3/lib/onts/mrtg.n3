@@ -1,0 +1,493 @@
+### $Id: mrtg.n3 1615 2010-11-14 02:30:43Z BobMorris $ ###
+### MRTG 1.0
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://dublincore.org/documents/dcmi-terms/> .
+@prefix ncd: <http://rs.tdwg.org/ontology/voc/Collection#> .
+@prefix xmp: <http://ns.adobe.com/xap/1.0/> .
+@prefix xmpRights: <http://ns.adobe.com/xap/1.0/rights/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix photoshop: <http://ns.adobe.com/photonewshop/1.0/> .
+@prefix mrtg: <http://rs.tdwg.org/mrtg/trunk/RDF/mrtg.n3#> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix Iptc4xmpExt: <http://iptc.org/std/Iptc4xmpExt/2008-02-29/> .
+@prefix k2n: <http://www.keytonature.eu/std/metadata/2009/xmlns/> .
+
+mrtg:MultiMediaObject
+    a rdfs:Class;
+    rdfs:label "Media" .
+
+mrtg:ServiceAccessPoint
+    a rdfs:Class;
+    rdfs:label "ServiceAccessPoint" .
+
+mrtg:MultiMediaObject
+    a rdfs:Class;
+    rdfs:label "Media" .
+
+mrtg:ServiceAccessPoint
+    a rdfs:Class;
+    rdfs:label "ServiceAccessPoint" .
+
+dcterms:identifier
+   a     rdf:Property;
+   rdfs:label "Identifier"  .
+
+dcterms:type
+   a     rdf:Property;
+   rdfs:label "Type"  .
+
+mrtg:subtype
+   a     rdf:Property;
+   rdfs:label "Subtype"  .
+
+dcterms:title
+   a     rdf:Property;
+   rdfs:label "Title"  .
+
+
+
+xmp:MetadataDate
+   a     rdf:Property;
+   rdfs:label "Metadata Date"  .
+
+
+
+mrtg:metadataLanguage
+   a     rdf:Property;
+   rdfs:label "Metadata Language"  .
+
+
+
+mrtg:providerManagedID
+   a     rdf:Property;
+   rdfs:label "Provider Managed ID"  .
+
+
+
+xmp:Rating
+   a     rdf:Property;
+   rdfs:label "Rating"  .
+
+
+
+mrtg:commenter
+   a     rdf:Property;
+   rdfs:label "Commenter"  .
+
+
+
+mrtg:comments
+   a     rdf:Property;
+   rdfs:label "Comments"  .
+
+
+
+mrtg:reviewer
+   a     rdf:Property;
+   rdfs:label "Reviewer"  .
+
+
+
+mrtg:reviewerComments
+   a     rdf:Property;
+   rdfs:label "Reviewer Comments"  .
+
+
+
+dcterms:modified
+   a     rdf:Property;
+   rdfs:label "Modified"  .
+
+
+
+dcterms:available
+   a     rdf:Property;
+   rdfs:label "Date Available"  .
+
+
+
+dcterms:accrualPolicy
+   a     rdf:Property;
+   rdfs:label "Accrual Policy"  .
+
+
+
+xmpRights:Owner
+   a     rdf:Property;
+   rdfs:label "Copyright Owner"  .
+
+
+
+dcterms:rights
+   a     rdf:Property;
+   rdfs:label "Copyright Statement"  .
+
+
+
+xmpRights:UsageTerms
+   a     rdf:Property;
+   rdfs:label "License Statement"  .
+
+
+
+xmpRights:WebStatement
+   a     rdf:Property;
+   rdfs:label "License URL"  .
+
+
+
+mrtg:licenseLogoURL
+   a     rdf:Property;
+   rdfs:label "License Logo URL"  .
+
+
+
+Iptc4xmpExt:CreditLine
+   a     rdf:Property;
+   rdfs:label "Attribution Statement"  .
+
+
+
+mrtg:attributionLogoURL
+   a     rdf:Property;
+   rdfs:label "Attribution Logo URL"  .
+
+
+
+mrtg:attributionLinkURL
+   a     rdf:Property;
+   rdfs:label "Attribution Link URL"  .
+
+
+
+dcterms:source
+   a     rdf:Property;
+   rdfs:label "Published Source"  .
+
+
+
+dcterms:creator
+   a     rdf:Property;
+   rdfs:label "Creator"  .
+
+
+
+mrtg:provider
+   a     rdf:Property;
+   rdfs:label "Provider"  .
+
+
+
+mrtg:metadataProvider
+   a     rdf:Property;
+   rdfs:label "Metadata Provider"  .
+
+
+
+dcterms:description
+   a     rdf:Property;
+   rdfs:label "Description"  .
+
+
+
+mrtg:caption
+   a     rdf:Property;
+   rdfs:label "Caption"  .
+
+
+
+dcterms:language
+   a     rdf:Property;
+   rdfs:label "Language"  .
+
+
+
+Iptc4xmpExt:LocationShown
+   a     rdf:Property;
+   rdfs:label "Location Shown"  .
+
+
+
+Iptc4xmpExt:WorldRegion
+   a     rdf:Property;
+   rdfs:label "World Region"  .
+
+
+
+Iptc4xmpExt:CountryCode
+   a     rdf:Property;
+   rdfs:label "Country Code"  .
+
+
+
+Iptc4xmpExt:CountryName
+   a     rdf:Property;
+   rdfs:label "Country Name"  .
+
+
+
+Iptc4xmpExt:ProvinceState
+   a     rdf:Property;
+   rdfs:label "Province or State"  .
+
+
+
+
+Iptc4xmpExt:City
+   a     rdf:Property;
+   rdfs:label "City or Place Name"  .
+
+
+
+Iptc4xmpExt:Sublocation
+   a     rdf:Property;
+   rdfs:label "Sublocation"  .
+
+
+
+
+ncd:temporalCoverage
+   a     rdf:Property;
+   rdfs:label "Temporal Coverage"  .
+
+
+
+xmp:CreateDate
+   a     rdf:Property;
+   rdfs:label "Original Date and Time"  .
+
+
+
+mrtg:timeOfDay
+   a     rdf:Property;
+   rdfs:label "Time of Day"  .
+
+
+
+mrtg:physicalSetting
+   a     rdf:Property;
+   rdfs:label "Physical Setting"  .
+
+
+
+Iptc4xmpExt:CVterm
+   a     rdf:Property;
+   rdfs:label "Subject Category"  .
+
+
+
+mrtg:subjectCategoryVocabulary
+   a     rdf:Property;
+   rdfs:label "Subject Category Vocabulary"  .
+
+
+
+mrtg:tag
+   a     rdf:Property;
+   rdfs:label "Tag"  .
+
+
+
+ncd:taxonCoverage
+   a     rdf:Property;
+   rdfs:label "Taxonomic Coverage"  .
+
+
+
+dwc:scientificName
+   a     rdf:Property;
+   rdfs:label "Scientific Name"  .
+
+
+
+dwc:vernacularName
+   a     rdf:Property;
+   rdfs:label "Common Name"  .
+
+
+
+dwc:taxonAccordingTo
+   a     rdf:Property;
+   rdfs:label "Taxon According To"  .
+
+
+
+dwc:taxonID
+   a     rdf:Property;
+   rdfs:label "Scientific Name GUID"  .
+
+
+
+mrtg:scientificNameSynonym
+   a     rdf:Property;
+   rdfs:label "Scientific Name Synonym"  .
+
+
+
+dwc:identifiedBy
+   a     rdf:Property;
+   rdfs:label "Identified By"  .
+
+
+
+dwc:dateIdentified
+   a     rdf:Property;
+   rdfs:label "Date Identified"  .
+
+
+
+mrtg:taxonCount
+   a     rdf:Property;
+   rdfs:label "Taxon Count"  .
+
+
+
+mrtg:subjectPart
+   a     rdf:Property;
+   rdfs:label "Subject Part"  .
+
+
+
+dwc:sex
+   a     rdf:Property;
+   rdfs:label "Subject Sex"  .
+
+
+
+dwc:lifeStage
+   a     rdf:Property;
+   rdfs:label "Subject Life Stage"  .
+
+
+
+mrtg:subjectOrientation
+   a     rdf:Property;
+   rdfs:label "Subject Orientation"  .
+
+
+
+dwc:preparations
+   a     rdf:Property;
+   rdfs:label "Subject Preparation Technique"  .
+
+
+
+Iptc4xmpExt:LocationCreated
+   a     rdf:Property;
+   rdfs:label "Location Created"  .
+
+
+
+k2n:Digitization_Date
+   a     rdf:Property;
+   rdfs:label "Date and Time Digitized"  .
+
+
+
+mrtg:captureDevice
+   a     rdf:Property;
+   rdfs:label "Capture Device"  .
+
+
+
+mrtg:resourceCreationTechnique
+   a     rdf:Property;
+   rdfs:label "Resource Creation Technique"  .
+
+
+
+mrtg:hasServiceAccessPoint
+   a     rdf:Property;
+   rdfs:label "Access Point"  .
+
+
+
+mrtg:accessURL
+   a     rdf:Property;
+   rdfs:label "Access URL"  .
+
+
+
+dcterms:format
+   a     rdf:Property;
+   rdfs:label "Format"  .
+
+
+
+mrtg:variant
+   a     rdf:Property;
+   rdfs:label "Variant"  .
+
+
+
+dcterms:extent
+   a     rdf:Property;
+   rdfs:label "Extent"  .
+
+
+
+mrtg:furtherInformationURL
+   a     rdf:Property;
+   rdfs:label "Further Information URL"  .
+
+
+
+mrtg:licensingException
+   a     rdf:Property;
+   rdfs:label "Licensing Exception Statement"  .
+
+
+
+mrtg:availabilityException
+   a     rdf:Property;
+   rdfs:label "Availability Exception (see Key2Nature)"  .
+
+
+
+mrtg:versionDescription
+   a     rdf:Property;
+   rdfs:label "Version Description"  .
+
+
+
+mrtg:containingCollectionID
+   a     rdf:Property;
+   rdfs:label "Collection Reference By ID"  .
+
+
+
+mrtg:memberIDinCollection
+   a     rdf:Property;
+   rdfs:label "Collection Member By ID"  .
+
+
+
+mrtg:relatedResourceID
+   a     rdf:Property;
+   rdfs:label "Related Resource By ID"  .
+
+
+
+mrtg:providerID
+   a     rdf:Property;
+   rdfs:label "Provider By ID"  .
+
+
+
+mrtg:derivedFrom
+   a     rdf:Property;
+   rdfs:label "Derived From"  .
+
+
+
+mrtg:associatedSpecimenReference
+   a     rdf:Property;
+   rdfs:label "Associated Specimen Reference"  .
+
+
+
+mrtg:associatedObservationReference
+   a     rdf:Property;
+   rdfs:label "Associated Observation Reference"  .

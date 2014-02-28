@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+	xmlns="http://bioimages.vanderbilt.edu/rdf/local#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3/org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/references">
+	 	<owl:inverseOf rdf:resource="http://purl.org/dc/terms/isReferencedBy"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://purl.org/dc/terms/hasPart">
+	 	<owl:inverseOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/depiction">
+	 	<owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/depicts"/>
+	</rdf:Description>
+</rdf:RDF>

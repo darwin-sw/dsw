@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This RDF is structured as described at http://code.google.com/p/darwin-sw/ version 0.3 
+It was generated (partly) by Guid-O-Matic 2.1 (http://bioimages.vanderbilt.edu/guid-o-matic/index.htm)
+It was modified 2013-09-25 to conform with the draft Darwin Core RDF Guide
+-->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+xmlns:dwctype="http://rs.tdwg.org/dwc/dwctype/"
+xmlns:dwcuri="http://rs.tdwg.org/dwc/uri/"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:ac="http://rs.tdwg.org/ac/terms/"
+xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
+xmlns:dsw="http://purl.org/dsw/"
+xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
+xmlns:tn="http://rs.tdwg.org/ontology/voc/TaxonName#"
+xmlns:exif="http://ns.adobe.com/exif/1.0/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+>
+<rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465#2014-03-29schildhauer">
+   <rdf:type rdf:resource ="http://rs.tdwg.org/dwc/dwctype/Identification" />
+   <dsw:identifies rdf:resource ="http://arctos.database.museum/guid/MVZ:Bird:21465#ind"/>
+   <dwc:identifiedBy>Mark Schildhauer</dwc:identifiedBy>
+   <dwc:dateIdentified>2018-03-29</dwc:dateIdentified>
+   <dsw:idBasedOn rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465"/>               
+   <dwc:scientificName>Corvus brachyrhynchos Brehm, 1822</dwc:scientificName>
+   <dwc:genus>Corvus</dwc:genus>
+   <dwc:specificEpithet>brachyrhynchos</dwc:specificEpithet>
+   <dwc:scientificNameAuthorship>Brehm</dwc:scientificNameAuthorship>
+   <dwc:namePublishedInYear>1822</dwc:namePublishedInYear>
+   <dwc:taxonRank>species</dwc:taxonRank>
+   <dwcuri:toTaxonConcept>
+        <tc:TaxonConcept>
+            <tc:accordingTo rdf:resource="urn:isbn:1582381283"/>
+       </tc:TaxonConcept>
+   </dwcuri:toTaxonConcept>
+</rdf:Description>
+
+<!--
+Information about the metadata document itself
+-->
+<rdf:Description rdf:about="http://arctos.database.museum/guid/MVZ:Bird:21465-2014-03-29schildhauer.rdf">
+     <dcterms:description>RDF formatted descriptions</dcterms:description>
+     <rdf:type rdf:resource ="http://xmlns.com/foaf/0.1/Document" />
+     <dc:creator>Mark Schildhauer</dc:creator>
+     <dc:language>en</dc:language>
+     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-03-29T11:07:19</dcterms:modified>
+     <dcterms:references rdf:resource="http://arctos.database.museum/guid/MVZ:Bird:21465#2014-03-29schildhauer"/>
+</rdf:Description>
+</rdf:RDF>
