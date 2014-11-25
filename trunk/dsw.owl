@@ -511,7 +511,7 @@
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
         <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
-        <dc:description>A form of evidence derived from an IndividualOrganism.</dc:description>
+        <dc:description>A form of evidence derived from a dwc:Organism.</dc:description>
     </owl:Class>
     
 
