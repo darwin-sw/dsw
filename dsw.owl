@@ -40,10 +40,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.org/dsw/">
-        <rdfs:comment>Changes from version 0.2.1 to version 0.3: removal of all functional and inverse function properties of object property terms, use of dwctype classes, deprecation of terms replaced by dwciri: terms, removal of references to TDWG Ontology. Version 0.3 to 0.4 change DwC class namespace from dwctype: to dwc: to follow class proposal, removed references to TDWG TaxonConcept ontology; deprecated terms that now have equivalent terms in Darwin Core.</rdfs:comment>
-        <owl:versionInfo>0.4</owl:versionInfo>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <dc:description>Darwin Semantic Web, version 1.0 . Please see https://github.com/darwin-sw/ for full details</dc:description>
         <dc:creator>Steve Baskauf &amp; Cam Webb</dc:creator>
-        <dc:description>Darwin Semantic Web, version 0.4. Please see http://code.google.com/p/darwin-sw/ for full details</dc:description>
+        <rdfs:comment>Changes from version 0.2.1 to version 0.3: removal of all functional and inverse function properties of object property terms, use of dwctype classes, deprecation of terms replaced by dwciri: terms, removal of references to TDWG Ontology. Version 0.3 to 0.4 change DwC class namespace from dwctype: to dwc: to follow class proposal, removed references to TDWG TaxonConcept ontology; deprecated terms that now have equivalent terms in Darwin Core. Version 1.0 to be released after testing.</rdfs:comment>
     </owl:Ontology>
     
 
