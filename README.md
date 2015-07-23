@@ -7,4 +7,4 @@ The Darwin-SW documentation is located in the dsw repository wiki, which can be 
 
 Read the Semantic Web Journal submission about Darwin-SW by [clicking here](http://www.semantic-web-journal.net/content/darwin-sw-darwin-core-based-terms-expressing-biodiversity-data-rdf-0). 
 
-![](https://github.com/darwin-sw/dsw/img/dsw-0-4-graph-model.png)
+![](https://raw.githubusercontent.com/darwin-sw/dsw/master/img/dsw-0-4-graph-model.png)
