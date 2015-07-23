@@ -6,3 +6,5 @@ The current version under development (1.0) is [here](https://github.com/darwin-
 The Darwin-SW documentation is located in the dsw repository wiki, which can be accessed by [clicking here](https://github.com/darwin-sw/dsw/wiki). 
 
 Read the Semantic Web Journal submission about Darwin-SW by [clicking here](http://www.semantic-web-journal.net/content/darwin-sw-darwin-core-based-terms-expressing-biodiversity-data-rdf-0). 
+
+![](https://github.com/darwin-sw/dsw/img/dsw-0-4-graph-model.png)
