@@ -281,7 +281,7 @@
     <!-- http://purl.org/dsw/locatedAt -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/locatedAt">
-        <dc:description>Links a subject Location instance to an object Event instance.</dc:description>
+        <dc:description>Links a subject Event instance to an object Location instance.</dc:description>
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:comment>The locatedAt relationship is many-to-one (many events at one location)</rdfs:comment>
         <rdfs:range rdf:resource="&dcterms;Location"/>
