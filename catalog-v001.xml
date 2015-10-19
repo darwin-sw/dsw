@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="http://darwin-sw.googlecode.com/svn/trunk/lib/dwc.owl" uri="lib/onts/dwc.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="http://purl.org/dsw/" uri="dsw.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="http://purl.org/ontology/bibo/" uri="lib/onts/bibo.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="http://rs.tdwg.org/ontology/voc/TaxonConcept" uri="lib/onts/TaxonConcept.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="http://rs.tdwg.org/ontology/voc/TaxonName" uri="lib/onts/TaxonName.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="http://www.w3.org/2002/07/owl" uri="lib/onts/owl.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="http://xmlns.com/foaf/0.1/" uri="lib/onts/foaf.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-bad-object-properties.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-domain-inference.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-inferred-inverse.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-inferred-transitive2.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1433006209641" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-range-inference.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="http://darwin-sw.googlecode.com/svn/trunk/lib/dwc.owl" uri="lib/onts/dwc.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="http://purl.org/dsw/" uri="dsw.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="http://purl.org/ontology/bibo/" uri="lib/onts/bibo.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="http://rs.tdwg.org/ontology/voc/TaxonConcept" uri="lib/onts/TaxonConcept.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="http://rs.tdwg.org/ontology/voc/TaxonName" uri="lib/onts/TaxonName.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="http://www.w3.org/2002/07/owl" uri="lib/onts/owl.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="http://xmlns.com/foaf/0.1/" uri="lib/onts/foaf.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-bad-object-properties.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-domain-inference.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-inferred-inverse.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-inferred-transitive2.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1445226134479" name="duplicate:local:local" uri="examples/dsw-0-3-use-case-range-inference.rdf"/>
     </group>
 </catalog>

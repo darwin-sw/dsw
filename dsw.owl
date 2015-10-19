@@ -451,7 +451,6 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Organism"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
-        <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
         <rdfs:comment>Definition taken from Dublin Core vocabulary 2014-11-21.</rdfs:comment>
@@ -486,7 +485,7 @@
         <owl:equivalentClass rdf:resource="&dwc;LivingSpecimen"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/dsw/Specimen"/>
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
-        <rdfs:comment>Deprecated in favor of the Darwin Core class dwc:PreservedSpecimen.</rdfs:comment>
+        <rdfs:comment>Deprecated in favor of the Darwin Core class dwc:LivingSpecimen.</rdfs:comment>
     </owl:Class>
     
 
@@ -508,7 +507,6 @@
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
-        <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
     </owl:Class>
@@ -531,7 +529,6 @@
         <owl:disjointWith rdf:resource="&dwc;Identification"/>
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
-        <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <dc:description>A form of evidence derived from a dwc:Organism.</dc:description>
     </owl:Class>
@@ -545,7 +542,6 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Organism"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
-        <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
         <dc:description>An action that occurs at some location during some time.</dc:description>
@@ -560,7 +556,6 @@
         <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
         <owl:disjointWith rdf:resource="&dwc;Organism"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
-        <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
         <dc:description>A taxonomic determination (e.g., the assignment to a taxon).</dc:description>
@@ -584,7 +579,6 @@
     <owl:Class rdf:about="&dwc;Occurrence">
         <owl:disjointWith rdf:resource="&dwc;Organism"/>
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
-        <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
         <rdfs:comment>Definition taken from Darwin Core vocabulary 2014-11-21.</rdfs:comment>
@@ -597,7 +591,6 @@
 
     <owl:Class rdf:about="&dwc;Organism">
         <owl:disjointWith rdf:resource="&dwc;Taxon"/>
-        <owl:disjointWith rdf:resource="&tc;TaxonConcept"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
         <dc:description>A particular organism or defined group of organisms considered to be taxonomically homogeneous.</dc:description>
         <rdfs:comment>Definition taken from Darwin Core vocabulary 2014-11-21.  Replaces dsw:IndividualOrganism, which is now deprecated.</rdfs:comment>
@@ -631,6 +624,13 @@
     <owl:Class rdf:about="&tc;TaxonConcept">
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
+        <owl:disjointWith rdf:resource="&dcterms;Location"/>
+        <owl:disjointWith rdf:resource="http://purl.org/dsw/Specimen"/>
+        <owl:disjointWith rdf:resource="http://purl.org/dsw/Token"/>
+        <owl:disjointWith rdf:resource="&dwc;Identification"/>
+        <owl:disjointWith rdf:resource="&dwc;Event"/>
+        <owl:disjointWith rdf:resource="&dwc;Occurrence"/>
+        <owl:disjointWith rdf:resource="&dwc;Organism"/>
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
         <rdfs:comment>A taxon concept class (name plus accordingTo) considered to be equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/).  This class was deprecated in favor of the Darwin Core class dwc:Taxon after the dwc:Taxon definition was clarified on 2014-10-26.  Additionally, by that date the TDWG Ontologies (from which this term was taken) were effectively deprecated.</rdfs:comment>
     </owl:Class>
