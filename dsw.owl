@@ -138,7 +138,7 @@
         <rdfs:label xml:lang="en">Derived From</rdfs:label>
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Token instance to an object instance of another Token or an Organism.</rdfs:comment>
-        <dc:description xml:lang="en">range can be IndividualOrganism or another Specimen </dc:description>
+        <dc:description xml:lang="en">Range can be IndividualOrganism or another Specimen </dc:description>
     </owl:ObjectProperty>
     
 
@@ -213,7 +213,7 @@
         <rdfs:label xml:lang="en">Has Identification</rdfs:label>
         <rdfs:comment xml:lang="en">Links a subject Organism instance to an object Identification instance.</rdfs:comment>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
-        <dc:description>The hasIdentification relationship is one-to-many (one individual organism has many identifications)</dc:description>
+        <dc:description xml:lang="en">The hasIdentification relationship is one-to-many (one individual organism has many identifications)</dc:description>
         <owl:inverseOf rdf:resource="http://purl.org/dsw/identifies"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
         <rdfs:domain rdf:resource="&dwc;Organism"/>
@@ -483,8 +483,9 @@
     <!-- http://purl.org/dsw/DriedSpecimen -->
 
     <owl:Class rdf:about="http://purl.org/dsw/DriedSpecimen">
+        <rdfs:label xml:lang="en">Dried Specimen</rdfs:label>
         <rdfs:subClassOf rdf:resource="&dwc;PreservedSpecimen"/>
-        <dc:description>A specimen preserved by drying.</dc:description>
+        <rdfs:comment xml:lang="en">A specimen preserved by drying.</rdfs:comment>
     </owl:Class>
     
 
@@ -539,8 +540,9 @@
     <!-- http://purl.org/dsw/SpecimenInAlcohol -->
 
     <owl:Class rdf:about="http://purl.org/dsw/SpecimenInAlcohol">
+        <rdfs:label xml:lang="en">Specimen In Alcohol</rdfs:label>
         <rdfs:subClassOf rdf:resource="&dwc;PreservedSpecimen"/>
-        <dc:description>A specimen preserved in alcohol.</dc:description>
+        <rdfs:comment xml:lang="en">A specimen preserved in alcohol.</rdfs:comment>
     </owl:Class>
     
 
@@ -661,7 +663,7 @@
         <owl:disjointWith rdf:resource="&foaf;Agent"/>
         <owl:disjointWith rdf:resource="&foaf;Document"/>
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
-        <dc:description>A taxon concept class (name plus accordingTo) considered to be equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/).  This class was deprecated in favor of the Darwin Core class dwc:Taxon after the dwc:Taxon definition was clarified on 2014-10-26.  Additionally, by that date the TDWG Ontologies (from which this term was taken) were effectively deprecated.</dc:description>
+        <dc:description xml:lang="en">A taxon concept class (name plus accordingTo) considered to be equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/).  This class was deprecated in favor of the Darwin Core class dwc:Taxon after the dwc:Taxon definition was clarified on 2014-10-26.  Additionally, by that date the TDWG Ontologies (from which this term was taken) were effectively deprecated.</dc:description>
     </owl:Class>
     
 
