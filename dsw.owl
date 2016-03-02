@@ -3,6 +3,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY dwciri "http://rs.tdwg.org/dwc/iri/" >
     <!ENTITY dcmitype "http://purl.org/dc/dcmitype/" >
@@ -24,6 +25,7 @@
 <rdf:RDF xmlns="http://purl.org/dsw/"
      xml:base="http://purl.org/dsw/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dwciri="http://rs.tdwg.org/dwc/iri/"
@@ -35,8 +37,8 @@
      xmlns:dwctype="http://rs.tdwg.org/dwc/dwctype/"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:tc="http://rs.tdwg.org/ontology/voc/TaxonConcept#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.org/dsw/">
@@ -89,6 +91,12 @@
     
 
 
+    <!-- http://www.w3.org/ns/prov#inverse -->
+
+    <owl:AnnotationProperty rdf:about="&prov;inverse"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -122,12 +130,13 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/atEvent">
         <rdfs:label xml:lang="en">At Event</rdfs:label>
         <dc:creator>Steve Baskauf</dc:creator>
+        <prov:inverse>eventOf</prov:inverse>
         <rdfs:comment xml:lang="en">Links a subject Occurrence instance to an object Event instance.</rdfs:comment>
         <dc:description xml:lang="en">The atEvent relationship is many-to-one (many occurrences at one event)</dc:description>
-        <owl:inverseOf rdf:resource="http://purl.org/dsw/eventOf"/>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:range rdf:resource="&dwc;Event"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -137,9 +146,11 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/derivedFrom">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:label xml:lang="en">Derived From</rdfs:label>
+        <dc:description xml:lang="en">Range can be IndividualOrganism or another Specimen </dc:description>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
+        <prov:inverse>hasDerivative</prov:inverse>
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Token instance to an object instance of another Token or an Organism.</rdfs:comment>
-        <dc:description xml:lang="en">Range can be IndividualOrganism or another Specimen </dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
@@ -152,9 +163,11 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Event instance to an object Occurrence instance.</rdfs:comment>
         <dc:description xml:lang="en">The eventOf relationship is one-to-many (one event has many occurrences)</dc:description>
+        <dc:description xml:lang="en">Use the inverse property dsw:atEvent in preference to this one if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/atEvent"/>
         <rdfs:domain rdf:resource="&dwc;Event"/>
         <rdfs:range rdf:resource="&dwc;Occurrence"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -166,10 +179,11 @@
         <dc:creator>Cam Webb</dc:creator>
         <dc:description xml:lang="en">In most cases this will act like a functional property (only possibly documenting a single occurrence), but some images may document several occurrences, so the formal specification of functional property is omitted.</dc:description>
         <rdfs:comment xml:lang="en">Links a subject Token instance to an object Occurrence instance.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://purl.org/dsw/Token"/>
-        <owl:inverseOf rdf:resource="http://purl.org/dsw/hasEvidence"/>
-        <rdfs:range rdf:resource="&dwc;Occurrence"/>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
+        <prov:inverse>hasEvidence</prov:inverse>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:domain rdf:resource="http://purl.org/dsw/Token"/>
+        <rdfs:range rdf:resource="&dwc;Occurrence"/>
     </owl:ObjectProperty>
     
 
@@ -181,9 +195,9 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:description xml:lang="en">Was georeferenceByURI; deprecated 2014-11-21 to be replaced by dwciri:georeferencedBy</dc:description>
         <rdfs:domain rdf:resource="&dcterms;Location"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <owl:equivalentProperty rdf:resource="&dwciri;georeferencedBy"/>
         <rdfs:range rdf:resource="&foaf;Agent"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -195,8 +209,9 @@
         <rdfs:label xml:lang="en">Has Derivative</rdfs:label>
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Organism or Token instance to an object Token instance.</rdfs:comment>
-        <owl:inverseOf rdf:resource="http://purl.org/dsw/derivedFrom"/>
+        <dc:description xml:lang="en">Use the inverse property dsw:derivedFrom in preference to this one if the link is made in only one direction.</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/derivedFrom"/>
     </owl:ObjectProperty>
     
 
@@ -207,9 +222,11 @@
         <rdfs:label xml:lang="en">Has Evidence</rdfs:label>
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Occurrence instance to an object Token instance.</rdfs:comment>
+        <dc:description xml:lang="en">Use the inverse property dsw:evidenceFor in preference to this one if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/evidenceFor"/>
         <rdfs:range rdf:resource="http://purl.org/dsw/Token"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -221,10 +238,11 @@
         <rdfs:comment xml:lang="en">Links a subject Organism instance to an object Identification instance.</rdfs:comment>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <dc:description xml:lang="en">The hasIdentification relationship is one-to-many (one individual organism has many identifications)</dc:description>
+        <dc:description xml:lang="en">Use the inverse property dsw:identifies in preference to this one if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <owl:inverseOf rdf:resource="http://purl.org/dsw/identifies"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
         <rdfs:domain rdf:resource="&dwc;Organism"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -236,9 +254,11 @@
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Organism instance to an object Occurrence instance.</rdfs:comment>
         <dc:description xml:lang="en">The hasOccurrence relationship is one-to-many (one individual organism may have many occurrences)</dc:description>
+        <dc:description xml:lang="en">Use the inverse property dsw:occurrenceOf in preference to this one if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/occurrenceOf"/>
         <rdfs:range rdf:resource="&dwc;Occurrence"/>
         <rdfs:domain rdf:resource="&dwc;Organism"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -251,10 +271,11 @@
         <dc:date>2011-01-27</dc:date>
         <rdfs:comment xml:lang="en">Links a subject Identification instance to an object Token instance.</rdfs:comment>
         <dc:description xml:lang="en">The subject identification was in part based on the object token. Was identifiedBasedOn</dc:description>
+        <dc:description xml:lang="en">Use the inverse property dsw:isBasisForId in preference to this one if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:range rdf:resource="http://purl.org/dsw/Token"/>
         <owl:inverseOf rdf:resource="http://purl.org/dsw/isBasisForId"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -265,10 +286,10 @@
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:description xml:lang="en">was dsw:identificationByURI; deprecated 2014-11-21 to be replaced by dwciri:identifiedBy</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <owl:equivalentProperty rdf:resource="&dwciri;identifiedBy"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
         <rdfs:range rdf:resource="&foaf;Agent"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -280,9 +301,11 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Identification instance to an object Organism instance.</rdfs:comment>
         <dc:description xml:lang="en">The identifies relationship is many-to-one (many identifications for one individual organism)</dc:description>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
+        <prov:inverse>hasIdentification</prov:inverse>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
         <rdfs:range rdf:resource="&dwc;Organism"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -291,13 +314,15 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/isBasisForId">
         <rdfs:label xml:lang="en">Is Basis For ID</rdfs:label>
+        <prov:inverse>idBasedOn</prov:inverse>
         <dc:date>2011-01-27</dc:date>
         <rdfs:comment xml:lang="en">Links a subject Token instance to an object Identification instance.</rdfs:comment>
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:description xml:lang="en">The subject resource is a basis on which the object identification is made.</dc:description>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:domain rdf:resource="http://purl.org/dsw/Token"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -308,11 +333,12 @@
         <rdfs:label xml:lang="en">Located At</rdfs:label>
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Event instance to an object Location instance.</rdfs:comment>
+        <prov:inverse>locates</prov:inverse>
         <dc:description xml:lang="en">The locatedAt relationship is many-to-one (many events at one location)</dc:description>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
         <rdfs:range rdf:resource="&dcterms;Location"/>
-        <owl:inverseOf rdf:resource="http://purl.org/dsw/locates"/>
-        <rdfs:domain rdf:resource="&dwc;Event"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:domain rdf:resource="&dwc;Event"/>
     </owl:ObjectProperty>
     
 
@@ -324,9 +350,11 @@
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Event instance to an object Locatino instance.</rdfs:comment>
         <dc:description xml:lang="en">The locates relationship is one to many (one location may have many events)</dc:description>
+        <dc:description xml:lang="en">Use the inverse property dsw:locatedAt in preference to this one if the link is made in only one direction.</dc:description>
         <rdfs:domain rdf:resource="&dcterms;Location"/>
-        <rdfs:range rdf:resource="&dwc;Event"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/locatedAt"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:range rdf:resource="&dwc;Event"/>
     </owl:ObjectProperty>
     
 
@@ -337,11 +365,12 @@
         <rdfs:label xml:lang="en">Occurrence Of</rdfs:label>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Occurrence instance to an object Organism instance.</rdfs:comment>
+        <prov:inverse>hasOccurrence</prov:inverse>
         <dc:description xml:lang="en">The occurrrenceOf relationship is many-to-one (many occurrences for one individual organism)</dc:description>
-        <owl:inverseOf rdf:resource="http://purl.org/dsw/hasOccurrence"/>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
         <rdfs:range rdf:resource="&dwc;Organism"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -351,10 +380,10 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/recBy">
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
         <dc:description xml:lang="en">Deprecated 2014-11-21 to be replaced by dwciri:recordedBy</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <owl:equivalentProperty rdf:resource="&dwciri;recordedBy"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
         <rdfs:range rdf:resource="&foaf;Agent"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -366,10 +395,11 @@
         <rdfs:comment xml:lang="en">Links a subject Taxon instance to an object Identification instance.</rdfs:comment>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <dc:description xml:lang="en">The taxonOfID relationship is one-to-many (one taxon may be referenced in many identifications)</dc:description>
+        <dc:description xml:lang="en">Use the well-known dwciri:toTaxon predicate in preference to this one if the link is only made in one direction.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <owl:inverseOf rdf:resource="&dwciri;toTaxon"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
         <rdfs:domain rdf:resource="&dwc;Taxon"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -380,10 +410,10 @@
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <dc:description xml:lang="en">The toTaxon relationship is many-to-one (many identifications can reference one taxon).  This property should link to a taxon concept (i.e. Taxon name plus Authority) URI, such as: http://biodiversity.org.au/apni.taxon/118883 ; deprecated 2014-11-21 to be replaced by dwciri:toTaxon</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <owl:equivalentProperty rdf:resource="&dwciri;toTaxon"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
         <rdfs:range rdf:resource="&tc;TaxonConcept"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
     </owl:ObjectProperty>
     
 
@@ -394,8 +424,8 @@
         <rdfs:label xml:lang="en">Georeferenced By</rdfs:label>
         <rdfs:comment xml:lang="en">Links a subject Location instance to an object Agent instance that did the georeferencing.</rdfs:comment>
         <rdfs:domain rdf:resource="&dcterms;Location"/>
-        <rdfs:range rdf:resource="&foaf;Agent"/>
         <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/dwc/iri/"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
     </owl:ObjectProperty>
     
 
@@ -406,9 +436,9 @@
         <rdfs:label xml:lang="en">Identified By</rdfs:label>
         <dc:description xml:lang="en">Definition based on dwc:identifiedBy but modified to make it appropriate for non-literal values.</dc:description>
         <rdfs:comment xml:lang="en">People, groups, or organizations who assigned the Taxon to the subject</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/dwc/iri/"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
         <rdfs:range rdf:resource="&foaf;Agent"/>
-        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/dwc/iri/"/>
     </owl:ObjectProperty>
     
 
@@ -419,9 +449,9 @@
         <rdfs:label xml:lang="en">Recorded By</rdfs:label>
         <dc:description xml:lang="en">Definition based on dwc:recordedBy but modified to make it appropriate for non-literal objects.</dc:description>
         <rdfs:comment xml:lang="en">People, groups, or organizations responsible for recording the original Occurrence.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/dwc/iri/"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
         <rdfs:range rdf:resource="&foaf;Agent"/>
-        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/dwc/iri/"/>
     </owl:ObjectProperty>
     
 
@@ -431,9 +461,9 @@
     <owl:ObjectProperty rdf:about="&dwciri;toTaxon">
         <rdfs:label xml:lang="en">To Taxon</rdfs:label>
         <rdfs:comment xml:lang="en">Links a subject Identification instance to an object Taxon instance.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/dwc/iri/"/>
         <rdfs:domain rdf:resource="&dwc;Identification"/>
         <rdfs:range rdf:resource="&dwc;Taxon"/>
-        <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/dwc/iri/"/>
     </owl:ObjectProperty>
     
 
@@ -461,8 +491,8 @@
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
         <dc:description xml:lang="en">Deprecated in favor of dwc:organismRemarks on 2014-11-21.</dc:description>
         <dc:creator>Steve Baskauf</dc:creator>
-        <rdfs:domain rdf:resource="http://purl.org/dsw/IndividualOrganism"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:domain rdf:resource="http://purl.org/dsw/IndividualOrganism"/>
     </owl:DatatypeProperty>
     
 
