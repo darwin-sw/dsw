@@ -125,6 +125,22 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002472 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002472">
+        <rdfs:label>is evidence for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002558 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002558">
+        <rdfs:label>has evidence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/dsw/atEvent -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dsw/atEvent">
@@ -181,6 +197,7 @@
         <rdfs:comment xml:lang="en">Links a subject Token instance to an object Occurrence instance.</rdfs:comment>
         <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
         <prov:inverse>hasEvidence</prov:inverse>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002472"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:domain rdf:resource="http://purl.org/dsw/Token"/>
         <rdfs:range rdf:resource="&dwc;Occurrence"/>
@@ -223,9 +240,10 @@
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Occurrence instance to an object Token instance.</rdfs:comment>
         <dc:description xml:lang="en">Use the inverse property dsw:evidenceFor in preference to this one if the link is made in only one direction.</dc:description>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002558"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
-        <owl:inverseOf rdf:resource="http://purl.org/dsw/evidenceFor"/>
         <rdfs:range rdf:resource="http://purl.org/dsw/Token"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/evidenceFor"/>
         <rdfs:domain rdf:resource="&dwc;Occurrence"/>
     </owl:ObjectProperty>
     
@@ -272,6 +290,7 @@
         <rdfs:comment xml:lang="en">Links a subject Identification instance to an object Token instance.</rdfs:comment>
         <dc:description xml:lang="en">The subject identification was in part based on the object token. Was identifiedBasedOn</dc:description>
         <dc:description xml:lang="en">Use the inverse property dsw:isBasisForId in preference to this one if the link is made in only one direction.</dc:description>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002558"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:range rdf:resource="http://purl.org/dsw/Token"/>
         <owl:inverseOf rdf:resource="http://purl.org/dsw/isBasisForId"/>
@@ -320,6 +339,7 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:description xml:lang="en">The subject resource is a basis on which the object identification is made.</dc:description>
         <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002472"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:domain rdf:resource="http://purl.org/dsw/Token"/>
         <rdfs:range rdf:resource="&dwc;Identification"/>
@@ -333,9 +353,9 @@
         <rdfs:label xml:lang="en">Located At</rdfs:label>
         <dc:creator>Cam Webb</dc:creator>
         <rdfs:comment xml:lang="en">Links a subject Event instance to an object Location instance.</rdfs:comment>
+        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
         <prov:inverse>locates</prov:inverse>
         <dc:description xml:lang="en">The locatedAt relationship is many-to-one (many events at one location)</dc:description>
-        <dc:description xml:lang="en">This property is preferred over its inverse if the link is made in only one direction.</dc:description>
         <rdfs:range rdf:resource="&dcterms;Location"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
         <rdfs:domain rdf:resource="&dwc;Event"/>
@@ -352,8 +372,8 @@
         <dc:description xml:lang="en">The locates relationship is one to many (one location may have many events)</dc:description>
         <dc:description xml:lang="en">Use the inverse property dsw:locatedAt in preference to this one if the link is made in only one direction.</dc:description>
         <rdfs:domain rdf:resource="&dcterms;Location"/>
-        <owl:inverseOf rdf:resource="http://purl.org/dsw/locatedAt"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <owl:inverseOf rdf:resource="http://purl.org/dsw/locatedAt"/>
         <rdfs:range rdf:resource="&dwc;Event"/>
     </owl:ObjectProperty>
     
