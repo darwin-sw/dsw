@@ -1,12 +1,12 @@
 # darwin-sw
-The version 0.4 OWL file (in rdf/xml) that is currently served when URIs are dereferenced is at [http://purl.org/dsw/](http://purl.org/dsw/) and in the [ver-0.4 tag](https://github.com/darwin-sw/dsw/tree/ver-0.4).
+The version 1.0 OWL file (in rdf/xml) that is currently served when URIs are dereferenced is at [http://purl.org/dsw/](http://purl.org/dsw/) and in the [1.0 release](https://github.com/darwin-sw/dsw/releases/tag/1.0).
 
-The current version under development (1.0) is [here](https://github.com/darwin-sw/dsw/blob/master/dsw.owl).
+The next version under development (1.1) is [here](https://github.com/darwin-sw/dsw/blob/master/dsw.owl).
 
-The Darwin-SW documentation is located in the dsw repository wiki, which can be accessed by [clicking here](https://github.com/darwin-sw/dsw/wiki). 
+The Darwin-SW documentation is located in the dsw repository wiki, which can be accessed by [clicking here](https://github.com/darwin-sw/dsw/wiki).
 
-Read the Semantic Web Journal submission about Darwin-SW by [clicking here](http://www.semantic-web-journal.net/content/darwin-sw-darwin-core-based-terms-expressing-biodiversity-data-rdf-0). 
+Read the Semantic Web Journal article about Darwin-SW by [clicking here](http://www.semantic-web-journal.net/content/darwin-sw-darwin-core-based-terms-expressing-biodiversity-data-rdf-1).
 
-![](https://raw.githubusercontent.com/darwin-sw/dsw/master/img/dsw-0-4-graph-model.png)
+![](https://raw.githubusercontent.com/darwin-sw/dsw/master/img/dsw-1-0-graph-model.png)
 
-[Click here to download this diagram as a poster-sized PowerPoint slide (46 kb)](https://raw.githubusercontent.com/darwin-sw/dsw/master/img/dsw-0-4-graph-model.pptx)
+[Click here to download this diagram as a poster-sized PowerPoint slide (43 kb)](https://github.com/darwin-sw/dsw/raw/master/img/dsw-1.0-graph-model.pptx)
