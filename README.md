@@ -1,5 +1,5 @@
 # darwin-sw
-The version 1.0 OWL file (in rdf/xml) that is currently served when URIs are dereferenced is at [http://purl.org/dsw/](http://purl.org/dsw/) and in the [1.0 release](https://github.com/darwin-sw/dsw/releases/tag/1.0).
+The version 1.0 OWL file (in rdf/xml) that is currently served when URIs are dereferenced is at [http://purl.org/dsw/](purl.org/dsw/dsw.owl) and in the [1.0 release](https://github.com/darwin-sw/dsw/releases/tag/1.0).
 
 The next version under development (1.1) is [here](https://github.com/darwin-sw/dsw/blob/master/dsw.owl).
 
