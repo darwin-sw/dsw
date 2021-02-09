@@ -1,7 +1,7 @@
 # darwin-sw
-The version 1.0 OWL file (in rdf/xml) that is currently served when URIs are dereferenced is at [http://purl.org/dsw/](http://purl.org/dsw/dsw.owl) and in the [1.0 release](https://github.com/darwin-sw/dsw/releases/tag/1.0), http://dx.doi.org/10.5281/zenodo.46972.
+The version 1.0.1 OWL file (in rdf/xml) that is currently served when URIs are dereferenced is at [http://purl.org/dsw/](http://purl.org/dsw/dsw.owl) and in the [1.0.1 release](https://github.com/darwin-sw/dsw/releases/tag/1.0.1), http://dx.doi.org/10.5281/zenodo.46972.
 
-The next version under development (1.1) is [here](https://github.com/darwin-sw/dsw/blob/master/dsw.owl).
+The version 1.0.1 file is [dsw.owl](https://github.com/darwin-sw/dsw/blob/master/dsw.owl).
 
 The Darwin-SW documentation is located in the dsw repository wiki, which can be accessed by [clicking here](https://github.com/darwin-sw/dsw/wiki).
 
