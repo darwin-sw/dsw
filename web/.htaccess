@@ -1,0 +1,25 @@
+Options -ExecCGI -Indexes
+
+ForceType application/rdf+xml
+
+RewriteEngine On
+
+# requesting RDF, with term
+RewriteCond "%{HTTP_ACCEPT}" "=application/rdf+xml"
+RewriteRule ^(.+)$ $1 [END]
+
+# requesting RDF, blank directory = no term
+RewriteCond "%{HTTP_ACCEPT}" "=application/rdf+xml"
+RewriteRule ^$ dsw.owl [END]
+
+# directly requesting dsw.owl, RDF or HTML
+RewriteRule dsw.owl dsw.owl [END]
+
+# requesting any other file with .owl suffix, redirect to suffixless file
+RewriteRule (.+)\.owl $1 [END]
+
+# requesting HTML, with term
+RewriteRule ^(.+)$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://example.com/url/path/to/this/directory/$1.owl [R=303,END]
+
+# requesting HTML, blank directory = no term
+RewriteRule ^$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://example.com/url/path/to/this/directory/dsw.owl [R=303,END]
