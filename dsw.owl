@@ -26,7 +26,7 @@
         <dc:description>Changes from version 0.3 to 0.4 change DwC class namespace from dwctype: to dwc: to follow class proposal, removed references to TDWG TaxonConcept ontology; deprecated terms that now have equivalent terms in Darwin Core.</dc:description>
         <dc:description>Version 0.4 to 1.0 fixed reversed dsw:locates and dsw:locatedAt. Added labels. Changed comments and descriptions to conform to DC and DwC precedent.  Added subClassOf relations to RO hasEvidence and isEvidenceFor.  Specified preferred direction for inverse object property pairs.</dc:description>
         <dcterms:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/"/>
-        <rdfs:comment>Darwin Semantic Web, version 1.0 . Please see https://github.com/darwin-sw/ for full details</rdfs:comment>
+        <rdfs:comment>Darwin Semantic Web, version 1.0.1 . Please see https://github.com/darwin-sw/ for full details</rdfs:comment>
         <owl:versionInfo>1.0.1</owl:versionInfo>
     </owl:Ontology>
     
