@@ -204,6 +204,7 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:description xml:lang="en">Was georeferenceByURI; deprecated 2014-11-21 to be replaced by dwciri:georeferencedBy</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">Georeferenced By</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
@@ -296,6 +297,7 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:description xml:lang="en">was dsw:identificationByURI; deprecated 2014-11-21 to be replaced by dwciri:identifiedBy</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">Identified By</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
@@ -391,6 +393,7 @@
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <dc:description xml:lang="en">Deprecated 2014-11-21 to be replaced by dwciri:recordedBy</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">Recorded By</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
@@ -421,6 +424,7 @@
         <dc:creator>Steve Baskauf, name changed by Cam Webb</dc:creator>
         <dc:description xml:lang="en">The toTaxon relationship is many-to-one (many identifications can reference one taxon).  This property should link to a taxon concept (i.e. Taxon name plus Authority) URI, such as: http://biodiversity.org.au/apni.taxon/118883 ; deprecated 2014-11-21 to be replaced by dwciri:toTaxon</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">To Taxon</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
@@ -500,6 +504,7 @@
         <dc:creator>Steve Baskauf</dc:creator>
         <dc:description xml:lang="en">Deprecated in favor of dwc:organismRemarks on 2014-11-21.</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">Individual Organism Remarks</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:DatatypeProperty>
     
