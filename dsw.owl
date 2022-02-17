@@ -490,7 +490,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
-    //
+    // 
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
@@ -507,7 +507,7 @@
         <rdfs:label xml:lang="en">Individual Organism Remarks</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
@@ -566,6 +566,7 @@
         <dc:description xml:lang="en">This class is equivalent to the more well-known Darwin Core class dwc:Organism.  It was deprecated following the addition of dwc:Organism to Darwin Core on 2014-10-26.  </dc:description>
         <rdfs:comment xml:lang="en">A particular organism or defined group of organisms considered to be taxonomically homogeneous.  Instances of the Organism class are intended to facilitate linking of one or more Identification instances to one or more Occurrence instances.  Therefore, things that are typically assigned scientific names (such as viruses, hybrids, and lichens) and aggregates whose occurrences are typically recorded (such as packs, clones, and colonies) are included in the scope of this class.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">Individual Organism</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -578,6 +579,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.org/dsw/Specimen"/>
         <dc:description xml:lang="en">Deprecated in favor of the Darwin Core class dwc:LivingSpecimen.</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">Living Specimen</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -589,6 +591,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.org/dsw/Specimen"/>
         <dc:description xml:lang="en">Deprecated in favor of the Darwin Core class dwc:PreservedSpecimen.</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dsw/"/>
+        <rdfs:label xml:lang="en">Preserved Specimen</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -746,6 +749,7 @@
         <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
         <dc:description xml:lang="en">A taxon concept class (name plus accordingTo) considered to be equivalent to TaxonConcept in TDWG TCS (http://www.tdwg.org/standards/117/).  This class was deprecated in favor of the Darwin Core class dwc:Taxon after the dwc:Taxon definition was clarified on 2014-10-26.  Additionally, by that date the TDWG Ontologies (from which this term was taken) were effectively deprecated.</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://rs.tdwg.org/ontology/voc/TaxonConcept#"/>
+        <rdfs:label xml:lang="en">Taxon Concept</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
