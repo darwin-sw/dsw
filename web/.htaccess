@@ -19,7 +19,7 @@ RewriteRule dsw.owl dsw.owl [END]
 RewriteRule (.+)\.owl $1 [END]
 
 # requesting HTML, with term
-RewriteRule ^(.+)$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://example.com/url/path/to/this/directory/$1.owl [R=303,END]
+RewriteRule ^(.+)$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://camwebb.info/dsw/$1.owl [R=303,END]
 
 # requesting HTML, blank directory = no term
-RewriteRule ^$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://example.com/url/path/to/this/directory/dsw.owl [R=303,END]
+RewriteRule ^$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://camwebb.info/dsw/dsw.owl [R=303,END]
