@@ -18,8 +18,12 @@ RewriteRule dsw.owl dsw.owl [END]
 # requesting any other file with .owl suffix, redirect to suffixless file
 RewriteRule (.+)\.owl $1 [END]
 
-# requesting HTML, with term
-RewriteRule ^(.+)$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://camwebb.info/dsw/$1.owl [R=303,END]
+# requesting HTML, with term, from Graphite RDF browser
+RewriteCond "%{REMOTE_ADDR}" "152.78.0.23"
+RewriteRule ^(.+)$ $1 [END]
+
+# requesting HTML, with term, from elsewhere
+RewriteRule ^(.+)$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://camwebb.info/dsw/$1 [R=303,END]
 
 # requesting HTML, blank directory = no term
 RewriteRule ^$ http://graphite.ecs.soton.ac.uk/browser/?uri=http://camwebb.info/dsw/dsw.owl [R=303,END]
